@@ -1,0 +1,14 @@
+# Local cache folders
+.cache/
+
+# Auto-generated build outputs
+site/
+resources/
+
+# Python Virtual Environments
+venv/
+.venv/
+
+# Operating system junk files
+.DS_Store
+Thumbs.db

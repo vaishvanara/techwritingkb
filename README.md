@@ -52,7 +52,7 @@ To run this knowledge base on your local machine:
 
 Zensical is a Python package. We recommend installing it within a virtual environment to keep your dependencies isolated.
 
-"macOS / Linux"
+macOS / Linux
 
 ```bash
 # Create a virtual environment

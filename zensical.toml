@@ -4,9 +4,9 @@ site_description = "A modern technical writing guide exploring shift-left method
 site_url = "https://vaishvanara.github.io/techwritingkb/"
 copyright = """
 ©️ 2026 Technical Writing KB &bull;
-<a href="/pages/about/">About</a> &bull;
-<a href="/pages/privacy/">Privacy</a> &bull;
-<a href="/pages/terms-of-use/">Terms of Use</a>
+<a href="/techwritingkb/pages/about/">About</a> &bull;
+<a href="/techwritingkb/pages/privacy/">Privacy</a> &bull;
+<a href="/techwritingkb/pages/terms-of-use/">Terms of Use</a>
 """
 
 nav = [

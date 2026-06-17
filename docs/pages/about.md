@@ -61,7 +61,7 @@ Have a question, feedback, or a project collaboration idea? Drop a message below
 <div style="max-width: 800px; margin: 0 auto;">
 
 <form action="https://api.web3forms.com/submit" method="POST" style="display:flex; flex-direction:column; gap:1rem; max-width:500px; margin-top:1.5rem;">
-  <input type="hidden" name="access_key" value="692fc14c-2696-458a-9278-d7085afe0d2f">
+  <input type="hidden" name="access_key" value="8dfde8b8-5a91-4f8a-ad96-580d195dee37">
   <label style="display:flex; flex-direction:column; gap:0.25rem; font-size:0.9rem;">
     Name
     <input type="text" name="name" required style="padding:0.5rem; border:1px solid var(--md-typeset-color, #e0e0e0); border-radius:4px; background:transparent; color:inherit;">

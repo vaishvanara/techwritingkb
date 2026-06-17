@@ -52,29 +52,31 @@ To run this knowledge base on your local machine:
 
 Zensical is a Python package. We recommend installing it within a virtual environment to keep your dependencies isolated.
 
-=== "macOS / Linux"
-    ```bash
-    # Create a virtual environment
-    python3 -m venv .venv
-    
-    # Activate the environment
-    source .venv/bin/activate
-    
-    # Install Zensical
-    pip install zensical
-    ```
+"macOS / Linux"
 
-=== "Windows"
-    ```bash
-    # Create a virtual environment
-    python -m venv .venv
+```bash
+# Create a virtual environment
+python3 -m venv .venv
+
+# Activate the environment
+source .venv/bin/activate
     
-    # Activate the environment
-    .venv\Scripts\activate
-    
-    # Install Zensical
-    pip install zensical
-    ```
+# Install Zensical
+pip install zensical
+```
+
+Windows
+
+```bash
+# Create a virtual environment
+python -m venv .venv
+
+# Activate the environment
+.venv\Scripts\activate
+
+# Install Zensical
+pip install zensical
+```
 
 ### Serving the site
 

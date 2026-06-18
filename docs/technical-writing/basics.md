@@ -2,7 +2,7 @@
 icon: lucide/book-open
 title: "What is technical communication?"
 description: An overview of how technical knowledge is translated across different professional fields
-revision_date: 2026-06-06
+revision_date: 2026-06-19
 ---
 
 # What is technical communication?
@@ -29,7 +29,7 @@ This professional shift is formalized in the Technical Communication Body of Kno
 Audience customization is the cornerstone of this definition. A technical writer must adapt the same core information for different groups, ranging from general consumers who need a basic setup guide to subject matter experts (SMEs) who require deep-dive architectural specifications. The goal is always to make the complicated easy to understand so users can reach their goals efficiently.
 
 !!! note
-    The TCBOK is maintained by the Society for Technical Communication (STC)] and serves as an evolving repository of the field's collective expertise and professional standards. The STC ceased operations on January 29, 2025.
+    The TCBOK is maintained by the Society for Technical Communication (STC) and serves as an evolving repository of the field's collective expertise and professional standards. The STC ceased operations on January 29, 2025.
 
 ---
 
@@ -101,13 +101,13 @@ The primary goal of these teams is the peer review. By performing rigorous inter
 
 ## Writing standards and style
 
-To achieve professional-grade clarity, technical writers adhere to standardized formats and style guides. Whether it is the [*Microsoft Writing Style Guide*](https://learn.microsoft.com/en-us/style-guide/welcome/){: target="_blank" rel="noopener" }, the [*Google Developer Documentation Style Guide*](https://developers.google.com/style){: target="_blank" rel="noopener" }, or a specialized framework like the [Darwin Information Typing Architecture (DITA)](../references/dita.md), consistency is the highest priority.
+To achieve professional-grade clarity, technical writers adhere to standardized formats and style guides. Whether it is the [Microsoft Writing Style Guide](https://learn.microsoft.com/en-us/style-guide/welcome/){: target="_blank" rel="noopener" }, the [Google Developer Documentation Style Guide](https://developers.google.com/style){: target="_blank" rel="noopener" }, or a specialized framework like the [Darwin Information Typing Architecture (DITA)](../references/dita.md), consistency is the highest priority.
 
 ### Key writing pillars
 
-- [**Plain language (PL)**](../technical-writing/plain-language.md): This approach prioritizes short sentences, factual content, and simple terms. PL avoids "flowery" language and undefined acronyms.
+- [**Plain language (PL)**](../technical-writing/plain-language.md): This approach prioritizes short sentences, factual content, and simple terms. PL avoids flowery language and undefined acronyms.
 - [**Grammar and tone**](../technical-writing/active-passive.md): High-quality documentation uses an active voice, a formal tone, and an objective third-person perspective. 
-- [**Visual communication**](../technical-writing/visual-communication.md): Modern documentation is rarely text-only. Technical writers use graphics, screenshots, and diagrams created with specialized editing software to reduce the "wall of text" effect and improve retention.
+- [**Visual communication**](../technical-writing/visual-communication.md): Modern documentation is rarely text-only. Technical writers use graphics, screenshots, and diagrams created with specialized editing software to reduce the wall of text effect and improve retention.
 
 !!! tip
     **Active voice example:** 
@@ -123,7 +123,7 @@ The modern technical communicator is a "Swiss Army knife" of digital skills. The
 
 | Skill category | Essential proficiencies |
 | :--- | :--- |
-| **Digital proficiency** | Mastery of content management systems (CMS), word processors ([Microsoft Word](https://www.microsoft.com/en-us/microsoft-365/word){: target="_blank" rel="noopener" }/[Google Docs](https://www.google.com/docs/about/){: target="_blank" rel="noopener" }), and page layout software |
+| **Digital proficiency** | Mastery of content management systems (CMS), word processors (Microsoft Word/Google Docs), and page layout software |
 | **Technical skills** | Understanding of HTML, CSS, Markdown, computer scripting, and sometimes computer-aided design (CAD) wireframing or video editing |
 | **Analytical skills** | Business analysis, information architecture, usability testing, and complex problem-solving |
 | **Design skills** | Information design, UI/UX principles, and website management |
@@ -150,7 +150,7 @@ Within the current global landscape, technical communication is no longer bound 
 
 The rise of the Internet of Things (IoT) has created a unique challenge: technical writers must now document physical hardware alongside the software that controls it. This requires UX integration to verify that the text on a device's small screen works in perfect harmony with the manual on a user's smartphone.
 
-Furthermore, we are seeing the rise of *tactical communication*. This trend includes community-driven documentation, DIY fixes on forums, and *social documentation*, where the community contributes to the knowledge base. This shift moves the technical writer into the role of content curator or moderator.
+Furthermore, we are seeing the rise of *tactical communication*. This trend includes community-driven documentation, DIY fixes on forums, and social documentation, where the community contributes to the knowledge base. This shift moves the technical writer into the role of content curator or moderator.
 
 ---
 

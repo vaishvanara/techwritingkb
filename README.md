@@ -105,5 +105,4 @@ This project is licensed under the [MIT License](https://opensource.org/licenses
 
 ---
 
-**Maintained by [@vaishvanara](https://github.com/vaishvanara)**  
-*Learning in public and building for the community.*
+**Maintained by [@vaishvanara](https://github.com/vaishvanara)**

@@ -11,7 +11,7 @@ hide:
 
 # Terms of use
 
-**Effective date:** June 10, 2026
+**Last modified:** June 24, 2026
 
 Welcome to the Technical Writing KB. By accessing or using this website, you agree to comply with and be bound by the following terms.
 

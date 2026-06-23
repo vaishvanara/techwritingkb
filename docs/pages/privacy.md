@@ -11,7 +11,7 @@ hide:
 
 # Privacy policy
 
-**Effective date:** June 10, 2026
+**Last modified:** June 24, 2026
 
 Your privacy is important to us. This policy outlines how we handle data.
 

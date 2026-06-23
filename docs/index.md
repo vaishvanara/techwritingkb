@@ -4,6 +4,7 @@ hide:
     - navigation
     - toc
     - footer
+    - feedback    
 ---
 
 <div class="grid cards" style="gap: 2rem; margin-top: 2rem;">

@@ -29,7 +29,9 @@ Any information collected is strictly used to:
 
 ## 3. Cookies and tracking
 
-This site uses local browser storage to remember your user preferences (such as Light/Dark mode). It may use essential cookies to track anonymous traffic statistics. You can opt out of cookies by adjusting your browser settings.
+This site uses local browser storage to remember your user preferences (such as light or dark mode). We also use Google Analytics to measure traffic and understand how readers interact with our documentation (such as tracking search effectiveness and page helpfulness).
+
+These tracking features are strictly performance-based and operate only with your permission. If you have already accepted or declined tracking and wish to change your preferences, you can reset your choice at any time by clearing your browser’s cookies for this site, which will cause the consent banner to reappear.
 
 ## 4. Third-party sharing
 

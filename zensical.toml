@@ -162,6 +162,23 @@ name = "GitHub"
 provider = "google"
 property = "G-QB89GTPTYE"
 
+[project.extra.analytics.feedback]
+title = "Was this page helpful?"
+
+[[project.extra.analytics.feedback.ratings]]
+icon = "material/thumb-up-outline"
+name = "This page was helpful"
+data = 1
+note = "Thanks for your feedback!"
+
+[[project.extra.analytics.feedback.ratings]]
+icon = "material/thumb-down-outline"
+name = "This page could be improved"
+data = 0
+note = """
+Thanks for your feedback! Help us improve this page by opening a <a href="https://github.com/vaishvanara/techwritingkb/issues/new/?title=[Feedback]+{title}+-+{url}" target="_blank" rel="noopener">GitHub Issue</a>.
+"""
+
 [project.markdown_extensions.attr_list]
 [project.markdown_extensions.md_in_html]
 

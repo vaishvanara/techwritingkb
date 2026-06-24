@@ -18,20 +18,19 @@ Your privacy is important to us. This policy outlines how we handle data.
 ## 1. Information gathered
 
 - **Voluntary data:** Information provided voluntarily by you via the contact form (such as name, email address, and message content).
-- **Automated data:** Anonymous usage statistics collected via Google Analytics, such as page views, browser type, and time spent on the site. This data is entirely anonymized and cannot be used to identify you.
+- **Automated data:** This site does not use automated tracking scripts or third-party analytics platforms to monitor your behavior or collect usage statistics.
 
 ## 2. Use of information
 
 Any information collected is strictly used to:
 
 - Respond directly to inquiries submitted through the contact form.
-- Analyze site traffic patterns to improve content layout and user experience.
 
 ## 3. Cookies and tracking
 
-This site uses local browser storage to remember your user preferences (such as light or dark mode). We also use Google Analytics to measure traffic and understand how readers interact with our documentation (such as tracking search effectiveness and page helpfulness).
+This site operates as a privacy-first, cookieless platform. We do not use tracking cookies, and no cookie consent banner is required to browse our documentation.
 
-These tracking features are strictly performance-based and operate only with your permission. If you have already accepted or declined tracking and wish to change your preferences, you can reset your choice at any time by clearing your browser’s cookies for this site, which will cause the consent banner to reappear.
+We only use local browser storage (such as localStorage) to remember your personal interface preferences, such as maintaining your choice between light and dark modes across sessions. This data remains entirely on your local machine and is never transmitted to us or any third party.
 
 ## 4. Third-party sharing
 

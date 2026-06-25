@@ -123,7 +123,7 @@ To present documentation value to executives, use the following matrix to catego
 
 -   :lucide-zap: __User activation (Product)__
     
-    **Metric:** Time to hello (TTH)
+    **Metric:** Time-to-hello (TTH)
 
     **Impact:** Increases the activation rate of new sign-ups, which directly impacts monthly recurring revenue (MRR)
 

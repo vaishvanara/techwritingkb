@@ -1,1 +1,2 @@
-check_links.ps1 linguist-documentation
+*.md linguist-detectable=true
+*.ps1 linguist-detectable=true

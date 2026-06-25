@@ -1,4 +1,0 @@
-*.md linguist-language=Markdown
-*.md linguist-detectable=true
-
-*.ps1 linguist-detectable=true

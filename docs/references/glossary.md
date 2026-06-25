@@ -189,7 +189,7 @@ Software used to analyze and improve content for search engine performance, read
 The use of low-fidelity wireframes or mockups to test if a proposed information hierarchy meets user needs.
 
 **content reuse**  
-The practice of using existing content components across multiple documents or outputs to ensure consistency and reduce maintenance effort. (See: [Structured authoring frameworks](structured-authoring.md))
+The practice of using existing content components across multiple documents or outputs to ensure consistency and reduce maintenance effort.
 
 **content rot**  
 The state where documentation becomes inaccurate, redundant, or orphaned over time due to a lack of maintenance.

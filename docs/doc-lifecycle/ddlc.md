@@ -18,7 +18,7 @@ Implementing a rigorous DDLC ensures that technical documentation is not an afte
 
 ## Process maturity and the CMMI
 
-Before examining the steps of the DDLC, understand why a standardized process matters. In technical writing, documentation quality is often measured by the [capability maturity model integration (CMMI)](https://cmmiinstitute.com/){: target="_blank" rel="noopener" }.
+Before examining the steps of the DDLC, understand why a standardized process matters. In technical writing, documentation quality is often measured by the [Capability Maturity Model Integration (CMMI)](https://cmmiinstitute.com/){: target="_blank" rel="noopener" }.
 
 The CMMI is a process-level improvement training and appraisal program. A standardized DDLC allows an organization to move from "Level 1" (Initial/Ad-hoc) to "Level 5" (Optimizing). 
 

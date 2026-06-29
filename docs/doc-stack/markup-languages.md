@@ -70,7 +70,7 @@ While Markdown is excellent for simple README files, many enterprise-level docum
 
 Structure drives the navigation and [information architecture (IA)](../references/ia-design.md) of your documentation site. 
 
-- **Headers:** Use `#` for H1 (Title) and `##` for H2 (subsections). Transformation engines use these to auto-generate the table of contents (TOC).
+- **Headers:** Use `#` for H1 (Title) and `##` for H2 (subsections). [Transformation engines](../doc-stack/tech-stack.md#transformation-engines-and-api-documentation) use these to auto-generate the table of contents (TOC).
 - **Lists:** Use `-` for bullets. For task lists, use `- [ ]` or `- [x]`.
 - **Tables:** Use pipes (`|`) and dashes (`-`) to create data structures.
 

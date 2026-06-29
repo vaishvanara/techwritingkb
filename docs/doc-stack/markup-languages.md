@@ -104,6 +104,16 @@ Technical documentation often needs to highlight specific types of information. 
 
 For developer-centric documentation, code must be formatted properly. Code fences (triple backticks) wrap code snippets. Adding a language identifier (such as `#!python` or `#!json`) triggers syntax highlighting.
 
+````
+```python hl_lines="2"
+def calculate_pi():
+    print("This line is highlighted for emphasis")
+    return 3.14159
+```
+````
+
+**Rendered code block**
+
 ```python hl_lines="2"
 def calculate_pi():
     print("This line is highlighted for emphasis")

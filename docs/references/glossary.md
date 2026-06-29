@@ -18,10 +18,10 @@ The full address of a file or directory starting from the root of the file syste
 **accessibility (a11y)**  
 The practice of making documentation usable by as many people as possible, including those with visual, auditory, or cognitive disabilities.
 
-**active voice**  
+[**active voice**](../technical-writing/active-passive.md)  
 A sentence structure following the subject-verb-object (SVO) pattern to create direct and actionable instructions.
 
-**admonition**  
+[**admonition**](../doc-stack/markup-languages.md#extending-markup-admonitions)  
 A visual element, such as a note, tip, or warning, used to draw a reader's attention to specific information outside the main flow of text. 
 
 **agile documentation**  
@@ -66,6 +66,9 @@ Technology that enables computers to perform tasks typically requiring human int
 **ASCII or UTF-8**  
 Plain-text encoding standards that ensure documentation is transparent, portable, and machine-readable.
 
+[**AsciiDoc**](../doc-stack/markup-languages.md#asciidoc)  
+AsciiDoc is a semantic markup language similar to Markdown but with standardized syntax and native support for tables, cross-references, and PDFs.
+
 **Association of Teachers of Technical Writing (ATTW)**  
 A professional organization focused on the pedagogy and research of technical and professional communication in academic settings.
 
@@ -78,7 +81,7 @@ The practice of making small, independent code or documentation changes that ful
 **atomic content**  
 Documentation written in small, self-contained units or "atoms" to improve findability and AI retrieval efficiency.
 
-**audience analysis**  
+[**audience analysis**](../technical-writing/audience-analysis.md)  
 The process of researching and identifying the specific needs, skills, and goals of readers to ensure technical content is appropriate for their level of expertise and professional requirements.
 
 **audit trail**  
@@ -87,7 +90,7 @@ A step-by-step chronological record that provides evidence of the history and se
 **Australian Society for Technical Communication (ASTC)**  
 A professional body representing technical communicators in Australia, providing resources and networking for industry professionals.
 
-**authentication schemes**  
+[**authentication schemes**](../doc-stack/openapi.md#authentication-schemes)  
 Methods used to verify user identity for API access, including API keys, bearer tokens, and OAuth2.
 
 **automation with a human touch (jidoka)**  
@@ -143,7 +146,7 @@ Specific, actionable verbs used on interface buttons to reduce click hesitation 
 
 ### C
 
-**callout**  
+[**callout**](../doc-stack/markup-languages.md#extending-markup-admonitions)  
 A short string of text connected by a line to a specific part of an illustration or code block to highlight key features.
 
 **Capability Maturity Model Integration (CMMI)**  
@@ -164,7 +167,7 @@ A curated, chronological list of notable changes, bug fixes, and new features ad
 **choice paralysis**  
 A state of indecision caused by presenting too many options to a user, which can be mitigated in documentation through progressive disclosure and clear, simplified navigation and layout paths.
 
-**chunking**  
+[**chunking**](../technical-writing/cognitive-load.md#millers-law-and-chunking)  
 The process of breaking down complex information into small, manageable pieces to improve a reader's ability to process and retain information.
 
 **clear, concise, complete, and correct (4Cs)**  
@@ -176,13 +179,13 @@ The moment a user stops to wonder what an action will trigger due to ambiguous o
 **cloze test**  
 A usability test where words are removed from a passage to measure how well users can predict the content based on context.
 
-**code fence**  
+[**code fence**](../doc-stack/markup-languages.md#code-fences-and-highlighting)  
 Triple backticks used in markdown files to wrap code snippets and enable syntax highlighting for specific programming languages.
 
-**cognitive load theory**  
+[**cognitive load theory**](../technical-writing/cognitive-load.md)  
 A psychological principle regarding the limited capacity of working memory, used in technical writing to simplify complex information.
 
-**Coleman-Liau index**  
+[**Coleman-Liau index**](../technical-writing/readability-scores.md#readability-formulas)  
 A readability formula that calculates the grade level of a text based on characters per word and sentences per hundred words, focusing on objective linguistic data points and metrics.
 
 **command line interface (CLI)**  
@@ -200,7 +203,7 @@ Interactive training programs delivered via computer, often featuring self-paced
 **concept-task-reference (CTR) model**  
 An information typing strategy that categorizes technical content into conceptual overviews, step-by-step procedures, and detailed reference data to improve clarity and facilitate efficient user search and learning.
 
-**conditional processing or rendering**  
+[**conditional processing or rendering**](../doc-stack/metadata-frontmatter.md#conditional-rendering)  
 The automated technique of displaying or hiding specific portions of content based on variables such as user role, product version, or operating system within a single source publishing workflow.
 
 **conditional text**  
@@ -212,10 +215,10 @@ A user interface component designed to prevent accidental data loss or high-risk
 **content audit**  
 A systematic review and evaluation of all existing documentation to assess quality, accuracy, and relevance, identifying gaps, outdated information, or opportunities for consolidation and significant content improvement.
 
-**content design (CD)**  
+[**content design (CD)**](../technical-writing/content-design-foundations.md)  
 The practice of using data and user research to design content that meets specific user needs in a simple, accessible way.
 
-**content engineering**  
+[**content engineering**](../doc-stack/tech-stack.md)  
 The technical discipline of designing and managing the infrastructure, data models, and workflows required to deliver structured content across multiple platforms, devices, and diverse user-facing digital applications.
 
 **content governance**  
@@ -257,7 +260,7 @@ The limited amount of text or data that a large language model can process at on
 **context-sensitive help**  
 Help documentation that provides specific information based on the user's current location or state within a software application.
 
-**continuous documentation**  
+[**continuous documentation**](../doc-stack/docs-as-code.md#continuous-documentation)  
 The practice of integrating documentation updates directly into the software development lifecycle, ensuring that manuals and help files evolve simultaneously with the code they are describing for users.
 
 **continuous integration and continuous deployment (CI/CD)**  
@@ -312,22 +315,22 @@ The overall feeling and ease of use a developer encounters when interacting with
 **developer portal**  
 A centralized web platform providing tools, documentation, and resources such as API keys and sandboxes that developers need to build, test, and manage integrations with a software service.
 
-**developer relations (DevRel)**  
+[**developer relations (DevRel)**](../technical-writing/role-taxonomy.md#hybrid-roles)  
 A specialized professional role focused on building relationships between a software company and external developers, involving technical advocacy, community engagement, and the creation of helpful educational developer resources.
 
-**Diagrams as Code (DaC)**  
+[**Diagrams as Code (DaC)**](../doc-stack/diagrams-as-code.md)  
 The methodology of creating diagrams using text-based scripts and version control, allowing technical writers to generate, update, and manage visual architectures just like they do with software code.
 
 **diff-ability**  
 The ability for version control systems to show precise, line-by-line differences between two versions of a plain-text file.
 
-**digital asset management (DAM)**  
+[**digital asset management (DAM)**](../doc-stack/tech-stack.md#visual-and-asset-management)  
 A system used to store, organize, and retrieve rich media files, such as screenshots, videos, and diagrams, used within documentation.
 
 **DITA map**  
 A structural file used in DITA that organizes individual topics into a hierarchy, defining the sequence and relationship of content for specific outputs such as web pages or PDF files.
 
-**Docs as Code (DaC)**  
+[**Docs as Code (DaC)**](../doc-stack/docs-as-code.md)  
 A philosophy of managing documentation using the same tools and workflows as software development, including Git, markdown, and automation.
 
 **document development life cycle (DDLC)**  
@@ -434,10 +437,10 @@ The practice of using search analytics, support tickets, and user data to decide
 **F-pattern / Z-pattern**  
 Common visual scanning patterns followed by users when reading digital content, which inform layout and information design.
 
-**findability**  
+[**findability**](../doc-stack/kb-architecture.md#findability-and-internal-linking)  
 The ease with which a user can discover specific information within a documentation set using search engines, navigation menus, internal links, and a well-organized, logical content hierarchy.
 
-**Flesch-Kincaid (F-K) readability tests**  
+[**Flesch-Kincaid (F-K) readability tests**](../technical-writing/readability-scores.md#readability-formulas)  
 Readability tests designed to determine the reading grade level of a text based on sentence and syllable counts.
 
 **free and open source software (FOSS)**  
@@ -452,7 +455,7 @@ Specific moments in a user’s interaction with documentation or software where 
 **front-loading**  
 The technique of placing the most important information, such as key terms or primary actions, at the beginning of sentences and paragraphs to improve scannability and reader comprehension.
 
-**frontmatter**  
+[**frontmatter**](../doc-stack/metadata-frontmatter.md#what-is-frontmatter)  
 The introductory sections of a document, or the metadata block at the top of a Markdown file used by static site generators.
 
 **functional group description (FGD)**  
@@ -474,7 +477,7 @@ A concept stating that the quality of output is determined by the quality of inp
 **general design specification (GDS)**  
 An overview document that outlines the high-level architecture and design goals for a software project or documentation set.
 
-**Git**  
+[**Git**](../doc-stack/git.md)  
 A distributed version control system used to track changes in documentation files and facilitate collaboration among writers and developers.
 
 **global variables**  
@@ -498,7 +501,7 @@ A visual way of interacting with a computer using items such as windows, icons, 
 **GraphQL**  
 A query language for APIs that allows clients to request exactly the data they need, requiring specialized schema documentation.
 
-**Gunning fog index**  
+[**Gunning fog index**](../technical-writing/readability-scores.md#readability-formulas)  
 A readability test that estimates the years of formal education needed to understand a piece of writing, based on average sentence length and the percentage of complex words.
 
 ---
@@ -554,7 +557,7 @@ A documentation strategy where published versions are never changed or overwritt
 **imperative mood**  
 A grammatical mood used for instructions where the subject is understood to be "you," starting sentences with a verb (for example, "Select").
 
-**inclusive language**  
+[**inclusive language**](../doc-stack/prose-linting.md#inclusive-language)  
 A writing practice that avoids biased or exclusionary words, ensuring that technical documentation is welcoming, respectful, and accessible to readers from diverse backgrounds and different physical abilities.
 
 **independent software vendor (ISV)**  
@@ -624,7 +627,7 @@ The repetitive process of refining documentation through multiple versions and r
 
 ### J
 
-**jargon**  
+[**jargon**](../technical-writing/plain-language.md#the-jargon-filter)  
 Specialized terminology used by a particular group or profession that may be difficult for outsiders to understand, often requiring simplified explanations in general-purpose user documentation for better clarity.
 
 **Java Development Kit (JDK)**  
@@ -636,7 +639,7 @@ The set of software tools required to run Java applications, distinct from the t
 **JavaScript Object Notation (JSON)**  
 A lightweight, text-based data format used to store and transport data, frequently used for API responses and documentation metadata.
 
-**just-in-time (JIT) learning**  
+[**just-in-time (JIT) learning**](../technical-writing/cognitive-load.md#just-in-time-learning)  
 A delivery model where documentation or training is provided to the user at the exact moment they need it to complete a task.
 
 **justification**  
@@ -661,7 +664,7 @@ A DITA mechanism that uses symbolic names to represent values or links, allowing
 **knowledge base (KB)**  
 A centralized online repository of information, such as articles, guides, and troubleshooting tips, designed for self-service user support.
 
-**knowledge base architecture**  
+[**knowledge base architecture**](../doc-stack/kb-architecture.md)  
 The structural design of a repository of information, including folder organization, taxonomy, and internal linking strategies that ensure users can easily navigate, find, and manage technical content effectively.
 
 **knowledge management system (KMS)**  
@@ -692,7 +695,7 @@ A software application for the administration, documentation, tracking, and deli
 **least astonishment design (LAD)**  
 A design principle stating that a system or interface should behave in a way that users expect, minimizing confusion and surprises.
 
-**lightweight markup language**  
+[**lightweight markup language**](../doc-stack/markup-languages.md)  
 Human-readable, plain-text formats such as Markdown or AsciiDoc that are used to create structured documentation.
 
 **linguistic validation testing (LVT)**  
@@ -704,7 +707,7 @@ An automated tool that scans documentation files to identify broken or dead hype
 **link rot**  
 The process by which hyperlinks point to web pages or resources that have become permanently unavailable over time, leading to a degraded user experience and broken documentation paths.
 
-**linting (prose linting)**  
+[**linting (prose linting)**](../doc-stack/prose-linting.md)  
 The automated process of checking text against a style guide for errors in grammar, voice, and terminology using tools such as Vale.
 
 **locale**  
@@ -717,7 +720,7 @@ The process of adapting a product, service, or document to a specific language, 
 
 ### M
 
-**machine-readable content**  
+[**machine-readable content**](../doc-stack/machine-readable-content.md)  
 Data or text structured in a way that computer programs can easily process and extract information, often using formats such as XML, JSON, or YAML for automated documentation workflows.
 
 **machine translation (MT)**  
@@ -726,10 +729,10 @@ The use of software and artificial intelligence to automatically translate text 
 **machine translation post-editing (MTPE)**  
 A workflow where a human translator reviews and corrects machine-generated translations to ensure accuracy and professional quality.
 
-**Markdown (MD)**  
+[**Markdown (MD)**](../doc-stack/markup-languages.md#markdown-fundamentals)  
 A lightweight markup language with plain-text formatting syntax that allows writers to easily create structured documents.
 
-**markup**  
+[**markup**](../doc-stack/markup-languages.md)  
 A system of tags or codes inserted into a document to define its structure, layout, or how the text should be processed and displayed.
 
 **media independence architecture (MIA)**  
@@ -738,16 +741,16 @@ A design approach that separates content from its presentation, allowing informa
 **metadata**  
 A set of data that provides information about other data, such as tags, author names, and descriptions used to organize and optimize content.
 
-**metadata schema**  
+[**metadata schema**](../doc-stack/metadata-frontmatter.md)  
 A structured framework that defines how information about content is organized and categorized, allowing for improved searchability, filtering, and automated management of digital assets within a documentation system.
 
-**microcopy**  
+[**microcopy**](../technical-writing/ux-writing.md)  
 Small snippets of text found in user interfaces, such as button labels, error messages, and tooltips, used to guide users.
 
 **Microsoft Writing Style Guide**  
 A comprehensive guide that provides standards for writing technical documentation, focusing on terminology, tone, and formatting.
 
-**minimalism**  
+[**minimalist instruction**](../technical-writing/cognitive-load.md#minimalist-instruction-theory)  
 A documentation strategy that focuses on providing only the essential information needed for a user to complete a specific task.
 
 **minimum viable documentation**  
@@ -803,7 +806,7 @@ An editorial standard ensuring that documentation sounds like it was written by 
 **ontology**  
 A formal way of representing categories, properties, and relationships between concepts within a specific domain of knowledge.
 
-**OpenAPI Specification (OAS)**  
+[**OpenAPI Specification (OAS)**](../doc-stack/openapi.md)  
 The industry-standard framework for describing RESTful APIs in a machine-readable format (formerly known as Swagger).
 
 **open source software (OSS)**  
@@ -837,7 +840,7 @@ A collaborative session where a technical writer and a subject matter expert wor
 **PARA method**  
 An organizational model used to sort information by Projects, Areas, Resources, and Archives.
 
-**passive voice**  
+[**passive voice**](../technical-writing/active-passive.md)  
 A grammatical construction where the subject of a sentence is acted upon by the verb, often discouraged in technical writing for being less direct and harder to follow.
 
 **peer review**  
@@ -846,7 +849,7 @@ A collaborative process where colleagues examine each other’s documentation to
 **personally identifiable information (PII)**  
 Sensitive data that can identify an individual, which must be redacted or replaced with synthetic data in public documentation.
 
-**plain language (PL)**  
+[**plain language (PL)**](../technical-writing/plain-language.md)  
 A writing standard that prioritizes simple sentence structures and common vocabulary to ensure the audience can understand content quickly.
 
 **pogo-sticking**  
@@ -858,7 +861,7 @@ A file format that preserves the intended layout and formatting of a document re
 **Portable Network Graphics (PNG)**  
 A raster-graphics file format that supports lossless data compression, commonly used in documentation for high-quality screenshots and diagrams.
 
-**progressive disclosure**  
+[**progressive disclosure**](../technical-writing/cognitive-load.md#progressive-disclosure)  
 A technique of shielding users from advanced or secondary information until it is explicitly requested or required for a task.
 
 **preface**  
@@ -870,13 +873,13 @@ The total perception a user has of a product based on their interactions with th
 **Project Management Professional (PMP)**  
 An internationally recognized professional designation for individuals who lead and direct complex projects and teams.
 
-**prompt engineering**  
+[**prompt engineering**](../technical-writing/prompt-engineering.md)  
 The practice of crafting precise inputs to large language models to generate high-quality, relevant documentation outputs.
 
 **proofreading**  
 The final stage of the editorial process focused on identifying and correcting surface-level errors such as typos, punctuation, and formatting inconsistencies.
 
-**pull request (PR)**  
+[**pull request (PR)**](../doc-stack/git.md#the-pull-request-workflow)  
 A collaborative method used in Git workflows where a writer submits documentation changes for peer review before they are merged into the main project.
 
 ---
@@ -902,7 +905,7 @@ A focused instructional document that leads a user through the initial setup or 
 **rapid application development (RAD)**  
 An agile software development methodology that prioritizes rapid prototyping and quick feedback over long-term, rigid planning.
 
-**readability**  
+[**readability**](../technical-writing/readability-scores.md)  
 An objective measure of how easy a piece of writing is to read and comprehend based on sentence structure and word choice.
 
 **Really Simple Syndication (RSS)**  
@@ -923,7 +926,7 @@ An architectural style for designing networked applications, commonly used to bu
 **request for proposal (RFP)**  
 A formal document that outlines project requirements and invites vendors to submit bids to provide a specific product or service.
 
-**retrieval-augmented generation (RAG)**  
+[**retrieval-augmented generation (RAG)**](../doc-stack/machine-readable-content.md#chunking-strategy-for-rag)  
 A system that retrieves relevant snippets of documentation to provide context to an AI model, ensuring more accurate and grounded answers.
 
 **reStructuredText**  
@@ -951,10 +954,10 @@ A quick, high-level test performed on a document or build to ensure it functions
 **Scalable Vector Graphics (SVG)**  
 An XML-based vector image format that can be scaled to any size without losing quality, making it ideal for responsive documentation diagrams.
 
-**scannability**  
+[**scannability**](../technical-writing/plain-language.md#structural-formatting-scannability)  
 The quality of content that allows readers to quickly find relevant information using headings, lists, and visual cues without having to read every word of the technical text.
 
-**scannability patterns**  
+[**scannability patterns**](../technical-writing/cognitive-load.md#scannability-patterns)  
 Predictable visual paths (such as the F-pattern) that readers follow when skimming content. Technical writers can leverage these natural behaviors to strategically place critical information where distracted users are most likely to see it.
 
 **scent of information**  
@@ -969,7 +972,7 @@ The defined boundaries of a documentation project, specifying what information i
 **screen reader**  
 Assistive software that converts digital text and interface elements into synthesized speech or Braille for users with visual impairments.
 
-**search engine optimization (SEO)**  
+[**search engine optimization (SEO)**](../doc-stack/metadata-frontmatter.md#search-engine-optimization)  
 The practice of structuring and tagging content to improve its visibility and ranking in search engine results.
 
 **Section 508**  
@@ -987,13 +990,13 @@ HTML or XML elements that clearly describe the meaning of the content they conta
 **sentence architecture**  
 The deliberate arrangement of words and phrases within a sentence to ensure maximum clarity, proper emphasis, and easy comprehension for readers who may be scanning the documentation quickly.
 
-**sequence diagram**  
+[**sequence diagram**](../doc-stack/diagrams-as-code.md#sequence-diagrams)  
 A visual representation showing how different system components or actors interact over time, illustrating the chronological order of messages and actions within a specific technical process or workflow.
 
 **service level agreement (SLA)**  
 A formal contract between a service provider and a user that specifies the expected level of service, uptime, and support response times.
 
-**seven Cs of communication**  
+[**seven Cs of communication**](../technical-writing/7-cs.md)  
 A framework used to ensure documentation is clear, concise, concrete, correct, coherent, complete, and courteous.
 
 **shift-left**  
@@ -1002,13 +1005,13 @@ A strategy of involving technical writers earlier in the software development li
 **sidebar hierarchy**  
 The organized navigation menu on a documentation site that defines the relationship and order of different categories and articles.
 
-**signal-to-noise ratio**  
+[**signal-to-noise ratio**](../technical-writing/cognitive-load.md#signal-to-noise-ratio)  
 The balance of critical information (signal) to filler words, redundant formatting, or irrelevant details (noise) in a document.
 
-**single sourcing**  
+[**single sourcing**](../doc-stack/openapi.md#single-sourcing-spec-driven-development)  
 A documentation methodology that allows a single set of source files to be published in multiple output formats or versions.
 
-**single source of truth**  
+[**single source of truth**](../doc-stack/git.md#the-single-source-of-truth)  
 The practice of maintaining a central, authoritative version of content to prevent synchronization issues across different platforms.
 
 **slug**  
@@ -1050,7 +1053,7 @@ A legal document that defines the specific tasks, deliverables, and timelines fo
 **standard operating procedure (SOP)**  
 A set of detailed, step-by-step instructions designed to help employees carry out complex routine operations consistently.
 
-**static site generator (SSG)**  
+[**static site generator (SSG)**](../doc-stack/ssg.md)  
 An engine, such as Docusaurus or MkDocs, that transforms plain-text files into high-performance, searchable documentation websites.
 
 **story pointing**  
@@ -1080,7 +1083,7 @@ A simple sentence structure that identifies the actor, action, and recipient, wi
 **support deflection**  
 A metric measuring the reduction in support tickets achieved when users find answers independently in the documentation.
 
-**syntax highlighting**  
+[**syntax highlighting**](../doc-stack/markup-languages.md#code-fences-and-highlighting)  
 A feature of text editors and documentation sites that displays code in different colors and fonts based on its structural meaning, making it much easier for developers to read.
 
 ---
@@ -1090,16 +1093,16 @@ A feature of text editors and documentation sites that displays code in differen
 **table of contents (TOC)**  
 A navigational aid listing the major sections and page numbers of a document to provide an overview of the content structure.
 
-**target audience (TA)**  
+[**target audience (TA)**](../technical-writing/audience-analysis.md)  
 The specific group of users for whom a document is written, defined by their technical expertise and professional goals.
 
 **task-based testing**  
 A usability research method where participants are asked to complete specific actions using documentation, helping writers identify where instructions are confusing, incomplete, or lead to user errors.
 
-**taxonomy**  
+[**taxonomy**](../doc-stack/metadata-frontmatter.md#taxonomy-management)  
 A system used to classify and organize information into a hierarchical structure to improve findability and site navigation.
 
-**technical communication (TC)**  
+[**technical communication (TC)**](../technical-writing/basics.md)  
 The process of taking complex, specialized knowledge and making it accessible and actionable for a specific audience.
 
 **Technical Communication Body of Knowledge (TCBOK)**  
@@ -1120,7 +1123,7 @@ A detailed document describing the requirements, design, and functional behavior
 **technical translation**  
 The process of converting technical documentation between languages while accurately preserving specialized terminology, complex instructions, and the intended meaning for a specific target global audience.
 
-**technical writing**  
+[**technical writing**](../technical-writing/basics.md)  
 The practice of creating clear, concise documentation that helps users complete tasks or understand complex technical systems.
 
 **template**  
@@ -1168,6 +1171,9 @@ A documentation methodology where content is written as modular, self-contained 
 **transactional content**  
 Automated messages, such as emails or banners, that are triggered by specific user actions such as password resets or account verification.
 
+[**transformation engine**](../doc-stack/tech-stack.md#transformation-engines-and-api-documentation)  
+A transformation engine is a software system designed to map, convert, and route data or structures from one format to another.
+
 **translation management system (TMS)**  
 A software platform used to automate and manage the translation and localization workflow for large document sets.
 
@@ -1180,7 +1186,7 @@ An individual who possesses deep expertise in one specific area, such as technic
 **two-dimensional (2D)**  
 Flat visual content, such as standard screenshots or flowcharts, that includes width and height but no depth.
 
-**typography**  
+[**typography**](../technical-writing/visual-communication.md#typography-and-legibility)  
 The art and technique of arranging type to make written language legible, readable, and visually appealing.
 
 ---
@@ -1220,7 +1226,7 @@ An iterative process where writers and designers focus on the end users and thei
 **user experience (UX)**  
 The overall perception and emotional response a person has when interacting with a product, system, or documentation set.
 
-**user experience writing (UXW)**  
+[**user experience writing (UXW)**](../technical-writing/ux-writing.md)  
 The practice of crafting the UI copy, such as labels, error messages, and tooltips, that guides users through a digital product.
 
 **user interface (UI)**  
@@ -1232,7 +1238,7 @@ The complete series of steps and interactions a user takes with a product and it
 **user need statement**  
 A structured sentence used in content design to anchor an article in a specific user role, task, and goal.
 
-**user persona**  
+[**user persona**](../technical-writing/audience-analysis.md#persona-development-b2b-vs-b2c)  
 A research-based representation of a target user group that helps writers tailor content to specific technical proficiency levels and goals.
 
 ---
@@ -1254,16 +1260,16 @@ Visual images created using mathematical formulas rather than pixels, allowing t
 **verification and validation (V&V)**  
 The procedures used to ensure that documentation accurately reflects the product functionality and effectively meets the needs of the user.
 
-**version control system (VCS)**  
+[**version control system (VCS)**](../doc-stack/git.md)  
 A software tool used to track changes to documentation files over time, allowing multiple contributors to collaborate via a centralized repository.
 
 **versioning**  
 The practice of assigning unique identifiers to different iterations of a document to track historical changes and support specific software releases.
 
-**visual communication**  
+[**visual communication**](../technical-writing/visual-communication.md)  
 The practice of using diagrams, icons, and page layout to deliver information. By reducing reliance on dense text, it allows readers to quickly interpret and understand complex technical concepts.
 
-**visual hierarchy**  
+[**visual hierarchy**](../technical-writing/cognitive-load.md#visual-hierarchy-and-choice-paralysis)  
 The arrangement of design elements in a way that implies importance, guiding the user's eye to the most critical information first through the use of size and spacing.
 
 **voice user interface (VUI)**  

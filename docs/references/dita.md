@@ -80,7 +80,7 @@ DITA enables true single-sourcing, which means you maintain one source of truth 
 
 Beyond simple reuse, DITA allows you to use *attributes* to filter content. You can tag a paragraph as `audience="administrator"` and another as `audience="end-user"`. 
 
-When you generate the output, you can tell the transformation engine to include or exclude specific tags. This allows you to manage content for different products, platforms, or audiences within the same set of files, which reduces the need to maintain multiple versions of the same document.
+When you generate the output, you can tell the [transformation engine](../doc-stack/tech-stack.md#transformation-engines-and-api-documentation) to include or exclude specific tags. This allows you to manage content for different products, platforms, or audiences within the same set of files, which reduces the need to maintain multiple versions of the same document.
 
 ---
 

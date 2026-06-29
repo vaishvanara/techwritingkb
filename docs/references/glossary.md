@@ -1248,7 +1248,7 @@ A research-based representation of a target user group that helps writers tailor
 
 ### V
 
-[**Vale**](../doc-stack/prose-linting.md#introduction-to-vale)
+[**Vale**](../doc-stack/prose-linting.md#introduction-to-vale)  
 Vale is a syntax-aware prose linter for Docs as Code. It ignores code blocks and uses highly extensible, customizable style rules.
 
 **validation**  

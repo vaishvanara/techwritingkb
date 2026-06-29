@@ -144,7 +144,7 @@ To successfully track work, the team must agree on what each column in the diagr
 
 ### **STATE: Editorial Review**
 - **Entrance criteria:** Technical accuracy is confirmed by the SME.
-- **Action:** A peer writer reviews the content for voice, tone, clarity, and the seven Cs of technical communication.
+- **Action:** A peer writer reviews the content for voice, tone, clarity, and the [seven Cs of technical communication](../technical-writing/7-cs.md).
 - **Exit criteria:** All peer review comments are addressed, and the prose meets the organizational quality standard.
 
 ### **STATE: Staging**

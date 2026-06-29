@@ -25,7 +25,7 @@ The foundation of Docs as Code is the use of [American Standard Code for Informa
 - **Automation-ready:** Scripts can parse text-based content to automatically generate site maps, validate links, and check for inclusive language.
 
 !!! NOTE
-    By using [plain text markup](../doc-stack/markup-languages.md) such as Markdown or AsciiDoc, technical writers separate content from presentation. You write the text once, and the transformation engine handles the styling later.
+    By using [plain text markup](../doc-stack/markup-languages.md) such as Markdown or AsciiDoc, technical writers separate content from presentation. You write the text once, and the [transformation engine](../doc-stack/tech-stack.md#transformation-engines-and-api-documentation) handles the styling later.
 
 ---
 

@@ -20,7 +20,7 @@ By using standardized metadata schemas, technical writers can automate site navi
 
 Frontmatter is a block of structured data positioned at the top of a Markdown file. It is traditionally written in [YAML](https://yaml.org/){: target="_blank" rel="noopener" }, but [JSON](https://www.json.org/){: target="_blank" rel="noopener" } or [TOML](https://toml.io/){: target="_blank" rel="noopener" } are sometimes used. This block is fenced by triple dashes (`---`) and acts as the "identity card" for the document.
 
-The transformation engine reads this data before processing the Markdown content. It uses the data to determine how the page should be styled, where it should appear in the navigation, and what metadata should be injected into the HTML `<head>`.
+The [transformation engine](../doc-stack/tech-stack.md#transformation-engines-and-api-documentation) reads this data before processing the Markdown content. It uses the data to determine how the page should be styled, where it should appear in the navigation, and what metadata should be injected into the HTML `<head>`.
 
 **Example YAML frontmatter**
 

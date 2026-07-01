@@ -206,3 +206,13 @@ kwds = { case = "lower" }
 [project.markdown_extensions.def_list]
 [project.markdown_extensions.pymdownx.tasklist]
 custom_checkbox = true
+
+[project.markdown_extensions.zensical.extensions.preview]
+configurations = [
+    { sources.include = [
+        "doc-lifecycle/*",
+        "doc-stack/*",
+        "references/*",
+	    "technical-writing/*"
+    ]}
+]

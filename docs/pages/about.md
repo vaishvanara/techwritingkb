@@ -22,19 +22,19 @@ When technical details are packed too densely, it demands unnecessary mental eff
 
 This knowledge base is organized into four core areas to address the craft of writing and the technical infrastructure required to publish at scale.
 
-### 1. Technical writing foundations
+### 1. [Technical writing foundations](../technical-writing/basics.md)
 
 Excellent documentation begins with clear prose and structured thinking. This section focuses on the craft, emphasizing plain language, active voice, and cognitive frameworks to reduce reader fatigue.
 
-### 2. Documentation infrastructure (Docs as Code)
+### 2. [Documentation infrastructure (Docs as Code)](../doc-stack/tech-stack.md)
 
 Modern documentation must scale alongside software. This section focuses on treating documentation with the same rigor as source code and details how to leverage version control, static site generators, and automated pipelines to build scalable publishing systems.
 
-### 3. Documentation lifecycle (DDLC)
+### 3. [Documentation lifecycle (DDLC)](../doc-lifecycle/ddlc.md)
 
 Content creation is only one step in the broader documentation development life cycle. This section covers strategic workflows, ranging from interviewing subject matter experts to integrating technical writers within Agile development cycles and maintaining content governance.
 
-### 4. Reference materials
+### 4. [Reference materials](../references/glossary.md)
 
 This section provides essential blueprints, including robust global industry standards, structured authoring frameworks, standardized templates, and career development guides for modern technical communication professionals.
 
@@ -42,7 +42,7 @@ This section provides essential blueprints, including robust global industry sta
 
 ## About the author
 
-Henry L. is a technical writer/editor with a background in IT operations, cloud computing, and team management. He created this knowledge base to empower technical communicators with the resources they need to build scalable documentation infrastructure and seamlessly integrate shift-left methodologies into the software development life cycle.
+[Henry L.](https://github.com/vaishvanara){: target="_blank" rel="noopener" } is a technical writer/editor with a background in IT operations, cloud computing, and team management. He created this knowledge base to empower technical communicators with the resources they need to build scalable documentation infrastructure and seamlessly integrate shift-left methodologies into the software development life cycle.
 
 ---
 

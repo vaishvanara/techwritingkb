@@ -18,8 +18,8 @@ Lightweight markup languages are the backbone of modern technical documentation.
 
 For decades, technical writers were tethered to *what you see is what you get* (WYSIWYG) editors. However, as the industry moved toward [Docs as Code](../doc-stack/docs-as-code.md), plain text became the gold standard for several reasons:
 
-- **Version control mastery:** Plain-text files allow for granular "diffs" in [Git](https://git-scm.com/){: target="_blank" rel="noopener" }. You can see exactly which word was changed in a pull request.
-- **Longevity:** Plain text is not dependent on a specific software version. A [Markdown](https://daringfireball.net/projects/markdown/){: target="_blank" rel="noopener" } file created today will still be readable in 50 years.
+- **Version control mastery:** Plain-text files allow for granular "diffs" in [Git](../doc-stack/git.md). You can see exactly which word was changed in a pull request.
+- **Longevity:** Plain text is not dependent on a specific software version. A [Markdown](../doc-stack/markup-languages.md#markdown-fundamentals) file created today will still be readable in 50 years.
 - **Automation:** Text files are easily processed by scripts, allowing for automated spell-checking, link validation, and site generation.
 
 ```mermaid

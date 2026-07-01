@@ -2,7 +2,7 @@
 icon: lucide/list-tree
 title: Glossary of technical communication
 description: "A master list of industry-specific technical terms, acronyms, and professional definitions"
-revision_date: 2026-06-30
+revision_date: 2026-07-01
 ---
 
 # Glossary of technical communication
@@ -57,7 +57,7 @@ A section at the end of a document containing supplementary information that is 
 [**application lifecycle management (ALM)**](../doc-lifecycle/sdlc-integration.md#application-lifecycle-management)  
 The integrated system of people, processes, and tools that manage a software application from its initial conception through retirement.
 
-[**application programming interface (API)**](../doc-stack/openapi.md)  
+**application programming interface (API)**  
 A set of rules and protocols that allow different software applications to communicate and exchange data with each other.
 
 **artificial intelligence (AI)**  
@@ -840,7 +840,7 @@ A collaborative session where a technical writer and a subject matter expert wor
 [**PARA method**](../doc-stack/kb-architecture.md#repository-organizational-models)  
 An organizational model used to sort information by Projects, Areas, Resources, and Archives.
 
-[**passive voice**](../technical-writing/active-passive.md)  
+**passive voice**  
 A grammatical construction where the subject of a sentence is acted upon by the verb, often discouraged in technical writing for being less direct and harder to follow.
 
 [**peer review**](../doc-lifecycle/review-approval.md)  
@@ -1269,7 +1269,7 @@ The procedures used to ensure that documentation accurately reflects the product
 [**version control system (VCS)**](../doc-stack/git.md)  
 A software tool used to track changes to documentation files over time, allowing multiple contributors to collaborate via a centralized repository.
 
-[**versioning**](../doc-stack/git.md)  
+**versioning**  
 The practice of assigning unique identifiers to different iterations of a document to track historical changes and support specific software releases.
 
 [**visual communication**](../technical-writing/visual-communication.md)  

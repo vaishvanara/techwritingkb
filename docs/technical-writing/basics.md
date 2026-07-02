@@ -2,7 +2,7 @@
 icon: lucide/book-open
 title: "What is technical communication?"
 description: An overview of how technical knowledge is translated across different professional fields
-revision_date: 2026-06-19
+revision_date: 2026-07-02
 ---
 
 # What is technical communication?
@@ -18,7 +18,7 @@ In the modern digital landscape, technical communication has evolved far beyond 
 
 ## Modern definition
 
-The contemporary understanding of technical communication has shifted from *producing documentation* to *enabling user success through information design*. Technical communication is no longer just about describing how a product works. It is also about designing information in a manner that minimizes friction for the end user.
+The contemporary understanding of technical communication has shifted from *producing documentation* to [*enabling user success through information design*](../technical-writing/content-design-foundations.md). Technical communication is no longer just about describing how a product works. It is also about designing information in a manner that minimizes friction for the end user.
 
 This professional shift is formalized in the Technical Communication Body of Knowledge (TCBOK), which serves as the industry’s master framework for competencies and standards. According to the TCBOK, technical communication involves three key criteria:
 
@@ -123,7 +123,7 @@ The modern technical communicator is a "Swiss Army knife" of digital skills. The
 
 | Skill category | Essential proficiencies |
 | :--- | :--- |
-| **Digital proficiency** | Mastery of content management systems (CMS), word processors (Microsoft Word/Google Docs), and page layout software |
+| **Digital proficiency** | Mastery of content management systems (CMS), word processors (Microsoft Word or Google Docs), and page layout software |
 | **Technical skills** | Understanding of HTML, CSS, Markdown, computer scripting, and sometimes computer-aided design (CAD) wireframing or video editing |
 | **Analytical skills** | Business analysis, information architecture, usability testing, and complex problem-solving |
 | **Design skills** | Information design, UI/UX principles, and website management |

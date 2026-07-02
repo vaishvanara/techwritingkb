@@ -18,7 +18,7 @@ By implementing a formal protocol, organizations can prevent the two most common
 
 ## Workflow management systems
 
-A workflow management system (WMS) is the platform used to track the status, history, and approval of documentation. While some teams use dedicated project management tools, modern technical writing teams often use [Git](https://git-scm.com/){: target="_blank" rel="noopener" }-based platforms as their WMS.
+A workflow management system (WMS) is the platform used to track the status, history, and approval of documentation. While some teams use dedicated project management tools, modern technical writing teams often use [Git](../doc-stack/git.md)-based platforms as their WMS.
 
 This allows the team to see the lineage of approval:
 

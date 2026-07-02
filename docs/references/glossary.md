@@ -215,6 +215,9 @@ A user interface component designed to prevent accidental data loss or high-risk
 [**content audit**](../doc-lifecycle/governance-maintenance.md#content-audit-framework)  
 A systematic review and evaluation of all existing documentation to assess quality, accuracy, and relevance, identifying gaps, outdated information, or opportunities for consolidation and significant content improvement.
 
+[**content debt (technical debt)**](../doc-lifecycle/agile-workflows.md#managing-content-debt)  
+The backlog of missing, outdated, or poorly structured documentation that requires future effort to resolve.
+
 [**content design (CD)**](../technical-writing/content-design-foundations.md)  
 The practice of using data and user research to design content that meets specific user needs in a simple, accessible way.
 
@@ -1110,9 +1113,6 @@ The process of taking complex, specialized knowledge and making it accessible an
 
 **Technical Communication Body of Knowledge (TCBOK)**  
 A repository of information and best practices maintained by the STC to define the professional competencies of the field. As of 2024, the STC has been dissolved.
-
-[**technical debt (content debt)**](../doc-lifecycle/agile-workflows.md#managing-content-debt)  
-The backlog of missing, outdated, or poorly structured documentation that requires future effort to resolve.
 
 [**technical review**](../doc-lifecycle/review-approval.md#multi-tier-review-logic)  
 A formal evaluation of documentation performed by subject matter experts to ensure that the facts, procedures, and code examples provided are completely accurate and reflect current software behavior.

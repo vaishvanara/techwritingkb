@@ -16,7 +16,7 @@ In technical writing, the seven Cs (clear, concise, concrete, correct, coherent,
 
 ## 1. Clarity
 
-**Goal:** eliminating ambiguity so that only one interpretation of a sentence is possible
+**Goal:** Eliminating ambiguity so that only one interpretation of a sentence is possible
 
 Clarity is the most vital of the seven Cs. If a sentence can be misunderstood, the reader will eventually misinterpret the message. Technical writers must avoid vague pronouns such as "it" or "this" and verify that every instruction has a clear subject and action.
 
@@ -33,7 +33,7 @@ Clarity is the most vital of the seven Cs. If a sentence can be misunderstood, t
 
 ## 2. Conciseness
 
-**Goal:** removing "fluff" and "filler" to respect the reader’s time and cognitive energy
+**Goal:** Removing "fluff" and "filler" to respect the reader’s time and cognitive energy
 
 Conciseness is not about using the fewest words possible; it is about using the most efficient words. Every word in a sentence must earn its place. If a word does not add meaning, it subtracts from the reader's focus.
 
@@ -47,7 +47,7 @@ Conciseness is not about using the fewest words possible; it is about using the 
 
 ## 3. Concreteness
 
-**Goal:** using specific data, facts, and sensory details instead of abstract descriptions
+**Goal:** Using specific data, facts, and sensory details instead of abstract descriptions
 
 Abstract language creates "fog." Concreteness provides the reader with solid ground. Instead of saying something is "fast" or "secure," provide the specific metrics or protocols that prove it.
 
@@ -61,7 +61,7 @@ Abstract language creates "fog." Concreteness provides the reader with solid gro
 
 ## 4. Correctness
 
-**Goal:** verifying technical accuracy, proper grammar, and adherence to style guides
+**Goal:** Verifying technical accuracy, proper grammar, and adherence to style guides
 
 A single technical error, such as a typo in a code snippet or a wrong port number, can render an entire document useless. Correctness also extends to *technical debt* in documentation; if the UI changes but the documentation does not, the documentation is no longer correct.
 
@@ -75,7 +75,7 @@ A single technical error, such as a typo in a code snippet or a wrong port numbe
 
 ## 5. Coherence
 
-**Goal:** creating a logical flow where each idea connects seamlessly to the next
+**Goal:** Creating a logical flow where each idea connects seamlessly to the next
 
 Coherence is the "glue" of an article. An incoherent document appears like a collection of random facts. A coherent document follows a logical hierarchy that moves from the *general* to the *specific* or from a *concept* to a *task*.
 
@@ -96,7 +96,7 @@ graph TD
 
 ## 6. Completeness
 
-**Goal:** providing all necessary information for a user to finish a task without leaving gaps
+**Goal:** Providing all necessary information for a user to finish a task without leaving gaps
 
 A document is complete when the user can reach the "finished" state without needing to search Google or ask a teammate for missing details. This includes documenting the *edge cases* (the things that might go wrong).
 
@@ -114,7 +114,7 @@ A document is complete when the user can reach the "finished" state without need
 
 ## 7. Courtesy
 
-**Goal:** maintaining a professional, helpful, and objective tone that centers the user's needs
+**Goal:** Maintaining a professional, helpful, and objective tone that centers the user's needs
 
 Courtesy in technical writing is about empathy. It acknowledges that the user might be frustrated, in a hurry, or new to the subject. A courteous document is straightforward, non-judgmental, and designed to save the user's time.
 

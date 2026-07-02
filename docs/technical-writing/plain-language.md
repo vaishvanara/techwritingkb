@@ -2,7 +2,7 @@
 icon: lucide/sparkles
 title: "Plain language (PL) standards"
 description: A guide to eliminating jargon and using basic sentence structures for better comprehension
-revision_date: 2026-05-13
+revision_date: 2026-07-02
 ---
 
 # Plain language (PL) standards
@@ -104,9 +104,9 @@ graph LR
 
 How do you know if your language is plain enough? Use objective testing methods:
 
-- **The cloze test:** Take a paragraph and remove every fifth word. Give it to a peer. If they can fill in the blanks with 60% accuracy, the context and language are clear.
-- **Readability scores:** Use formulas such as [Flesch-Kincaid](https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests){: target="_blank" rel="noopener" }. Aim for a grade level of eight to ten.
-- **Peer review:** Ask a non-expert to read your draft. If they have to ask, "*What does this mean?*" regarding a specific word, you need to simplify that word.
+- [**The cloze test**](../doc-lifecycle/usability-testing.md#the-cloze-test): Take a paragraph and remove every fifth word. Give it to a peer. If they can fill in the blanks with 60% accuracy, the context and language are clear.
+- [**Readability scores**](../technical-writing/readability-scores.md): Use formulas such as [Flesch-Kincaid](https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests){: target="_blank" rel="noopener" }. Aim for a grade level of eight to ten.
+- [**Peer review**](../doc-lifecycle/review-approval.md): Ask a non-expert to read your draft. If they have to ask, "*What does this mean?*" regarding a specific word, you need to simplify that word.
 
 !!! quote "The golden rule of plain language"
     "*Clear writing is a sign of clear thinking. If you cannot explain a concept simply, you likely do not understand it well enough yet.*"

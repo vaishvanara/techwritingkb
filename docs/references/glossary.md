@@ -118,6 +118,9 @@ A comprehensive list of raw materials, assemblies, and parts required to manufac
 **block element modifier (BEM)**  
 A CSS naming convention used to create modular, reusable components in web development and documentation styling.
 
+**BM25 (Best Match 25) algorithm**  
+A highly efficient lexical ranking algorithm used by search engines to determine a document's relevance to a given search query.
+
 **boilerplate**  
 Standardized text or code blocks that are reused across multiple documents or templates without significant changes.
 
@@ -215,6 +218,9 @@ A user interface component designed to prevent accidental data loss or high-risk
 [**content audit**](../doc-lifecycle/governance-maintenance.md#content-audit-framework)  
 A systematic review and evaluation of all existing documentation to assess quality, accuracy, and relevance, identifying gaps, outdated information, or opportunities for consolidation and significant content improvement.
 
+**content automation**  
+The use of software systems and scripts to automatically generate, update, format, or publish content without manual human intervention.
+
 [**content debt (technical debt)**](../doc-lifecycle/agile-workflows.md#managing-content-debt)  
 The backlog of missing, outdated, or poorly structured documentation that requires future effort to resolve.
 
@@ -223,6 +229,9 @@ The practice of using data and user research to design content that meets specif
 
 [**content engineering**](../doc-stack/tech-stack.md)  
 The technical discipline of designing and managing the infrastructure, data models, and workflows required to deliver structured content across multiple platforms, devices, and diverse user-facing digital applications.
+
+**content gap analysis**  
+The process of identifying topics, keywords, or formats that your target audience cares about but your website currently lacks or covers poorly compared to competitors.
 
 [**content governance**](../doc-lifecycle/governance-maintenance.md)  
 A strategic framework for managing the lifecycle of content to ensure it remains accurate, consistent, and useful.
@@ -269,6 +278,9 @@ The practice of integrating documentation updates directly into the software dev
 [**continuous integration and continuous deployment (CI/CD)**](../doc-stack/cicd.md)  
 A methodology that automates the building, testing, and deployment of software or documentation to ensure frequent and reliable updates.
 
+**CONTRIBUTING**  
+A documentation file that guides community members on how to submit code, report bugs, and follow project standards for a repository.
+
 **controlled language**  
 A restricted version of a natural language used to limit vocabulary and grammar to reduce ambiguity and translation costs.
 
@@ -293,6 +305,9 @@ The total perception a customer has of a brand based on all interactions, includ
 
 [**Darwin Information Typing Architecture (DITA)**](../references/dita.md)  
 An XML-based open standard for authoring, producing, and delivering information as small, self-contained components called topics.
+
+**data parsing**  
+The process of analyzing a raw string of data or code and converting it into a structured format that a software program can understand.
 
 [**definition of done (DoD)**](../doc-lifecycle/sdlc-integration.md#definition-of-done-dod)  
 A shared checklist of requirements, including documentation, that must be met before a software feature is considered complete.
@@ -911,6 +926,9 @@ An agile software development methodology that prioritizes rapid prototyping and
 [**readability**](../technical-writing/readability-scores.md)  
 An objective measure of how easy a piece of writing is to read and comprehend based on sentence structure and word choice.
 
+**README**  
+The foundational text file in a project repository that introduces the software, explains how to install it, and outlines its usage.
+
 **Really Simple Syndication (RSS)**  
 A standardized web feed format that allows users and applications to receive automated updates from websites or documentation portals.
 
@@ -977,6 +995,9 @@ Assistive software that converts digital text and interface elements into synthe
 
 [**search engine optimization (SEO)**](../doc-stack/metadata-frontmatter.md#search-engine-optimization)  
 The practice of structuring and tagging content to improve its visibility and ranking in search engine results.
+
+**search relevance**  
+The measure of how accurately a search engine matches a user's query with the most helpful, contextual results in a knowledge base.
 
 **Section 508**  
 A US federal law requiring that all electronic and information technology used by the government be accessible to people with disabilities.
@@ -1098,6 +1119,9 @@ A feature of text editors and documentation sites that displays code in differen
 
 **table of contents (TOC)**  
 A navigational aid listing the major sections and page numbers of a document to provide an overview of the content structure.
+
+**tactical writing**  
+The functional side of technical writing that delivers immediate utility through concise text, UI cues, and straightforward workflows.
 
 [**target audience (TA)**](../technical-writing/audience-analysis.md)  
 The specific group of users for whom a document is written, defined by their technical expertise and professional goals.

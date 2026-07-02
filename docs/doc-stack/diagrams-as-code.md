@@ -20,7 +20,7 @@ DaC solves this by allowing technical writers to define visuals using simple tex
 
 ## The maintenance problem
 
-The maintenance gap occurs because static images are disconnected from the [version control](git.md) system of the documentation. 
+The maintenance gap occurs because static images are disconnected from the [version control](../doc-stack/git.md) system of the documentation. 
 
 - **Lost source files:** If the technical writer who created the original diagram leaves the company, the source often disappears with that person.
 - **No "diff" visibility:** You cannot see what changed in an image during a Git pull request. You only see that a binary file was replaced.
@@ -115,7 +115,7 @@ By using text to define these interactions, you can easily update a handshake pr
 
 The diagram lives inside your [Markdown](../doc-stack/markup-languages.md) file as a block of text, which provides the following benefits for collaboration:
 
-- **Git diffs:** When you change a relationship in a diagram, [Git](../doc-stack/git.md) shows the exact line of text that changed.
+- **Git diffs:** When you change a relationship in a diagram, Git shows the exact line of text that changed.
 - **Single source of truth:** The diagram and the explanatory text are in the same file. They are versioned, branched, and merged together.
 - **Global search:** You can search for text inside a diagram using the "Search in Files" feature of your code editor.
 

@@ -1,7 +1,7 @@
 ---
 icon: lucide/tags
 title: Metadata schema and frontmatter
-description: Using YAML and other data structures to organize and optimize content for search 
+description: "Using YAML and other data structures to organize and optimize content for search." 
 revision_date: 2026-06-26
 ---
 

@@ -1,7 +1,7 @@
 ---
 icon: lucide/building-2
 title: "Darwin Information Typing Architecture (DITA)"
-description: "An overview of the DITA framework for managing large-scale, complex documentation through structured authoring and XML"
+description: "An overview of the DITA framework for managing large-scale, complex documentation through structured authoring and XML."
 revision_date: 2026-05-25
 ---
 

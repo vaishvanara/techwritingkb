@@ -1,7 +1,7 @@
 ---
 icon: lucide/message-square-check
 title: Review and approval workflows
-description: "Implementing structured peer reviews and technical sign-offs to ensure content quality"
+description: "Implementing structured peer reviews and technical sign-offs to ensure content quality."
 revision_date: 2026-05-21
 ---
 

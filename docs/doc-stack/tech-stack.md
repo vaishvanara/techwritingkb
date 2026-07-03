@@ -1,7 +1,7 @@
 ---
 icon: lucide/layers
 title: Documentation tech stack directory
-description: A comprehensive look at the categories of software used in modern documentation pipelines
+description: "A comprehensive look at the categories of software used in modern documentation pipelines."
 revision_date: 2026-05-13
 ---
 

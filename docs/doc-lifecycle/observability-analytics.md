@@ -1,7 +1,7 @@
 ---
 icon: lucide/bar-chart-3
 title: Documentation observability
-description: Using data and feedback loops to measure the effectiveness and impact of your content
+description: "Using data and feedback loops to measure the effectiveness and impact of your content."
 revision_date: 2026-05-21
 ---
 

@@ -1,7 +1,7 @@
 ---
 icon: lucide/image
 title: Visual communication principles
-description: How to use layout, white space, and visual cues to simplify dense technical information
+description: "How to use layout, white space, and visual cues to simplify dense technical information."
 revision_date: 2026-05-13
 ---
 

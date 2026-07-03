@@ -1,7 +1,7 @@
 ---
 icon: lucide/git-branch
 title: Version control systems
-description: Why managing documentation in repositories is crucial for modern collaborative environments
+description: "Why managing documentation in repositories is crucial for modern collaborative environments."
 revision_date: 2026-05-15
 ---
 

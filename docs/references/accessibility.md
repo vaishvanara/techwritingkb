@@ -1,7 +1,7 @@
 ---
 icon: lucide/accessibility
 title: Document accessibility standards
-description: Ensuring documentation is inclusive and accessible for users with disabilities
+description: "Ensuring documentation is inclusive and accessible for users with disabilities."
 revision_date: 2026-05-25
 ---
 

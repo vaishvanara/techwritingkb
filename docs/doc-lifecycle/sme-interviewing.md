@@ -1,7 +1,7 @@
 ---
 icon: lucide/mic
 title: SME interviewing techniques
-description: Collaborative research skills for gathering technical details from engineers and product owners
+description: "Collaborative research skills for gathering technical details from engineers and product owners."
 revision_date: 2026-05-20
 ---
 

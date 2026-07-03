@@ -1,7 +1,7 @@
 ---
 icon: lucide/users
 title: Audience analysis frameworks
-description: How to categorize users and tailor technical content to meet their specific expertise levels
+description: "How to categorize users and tailor technical content to meet their specific expertise levels."
 revision_date: 2026-05-13
 ---
 

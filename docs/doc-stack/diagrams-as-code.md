@@ -1,7 +1,7 @@
 ---
 icon: lucide/workflow
 title: "Diagrams as Code (DaC)"
-description: Utilizing text-based tools to generate flowcharts, sequence diagrams, and state maps
+description: "Utilizing text-based tools to generate flowcharts, sequence diagrams, and state maps."
 revision_date: 2026-06-06
 ---
 

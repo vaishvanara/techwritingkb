@@ -1,7 +1,7 @@
 ---
 icon: lucide/network
 title: Emerging API architectures
-description: "Moving beyond REST to understand the documentation needs of GraphQL, gRPC, and webhooks"
+description: "Moving beyond REST to understand the documentation needs of GraphQL, gRPC, and webhooks."
 revision_date: 2026-05-15
 ---
 

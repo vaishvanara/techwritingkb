@@ -1,7 +1,7 @@
 ---
 icon: lucide/briefcase
 title: Technical writing portfolios
-description: "A strategic guide for learners and career changers on building a professional Docs as Code portfolio"
+description: "A strategic guide for learners and career changers on building a professional Docs as Code portfolio."
 revision_date: 2026-04-28
 ---
 

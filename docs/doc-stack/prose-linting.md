@@ -1,7 +1,7 @@
 ---
 icon: lucide/check-square
 title: Automated prose linting
-description: Implementing programmatic checks to maintain voice, tone, and grammar across large document sets
+description: "Implementing programmatic checks to maintain voice, tone, and grammar across large document sets."
 revision_date: 2026-05-15
 ---
 

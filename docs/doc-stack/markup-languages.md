@@ -1,7 +1,7 @@
 ---
 icon: lucide/code-2
 title: Lightweight markup languages
-description: Understanding Markdown and other text-based formats for consistent content creation
+description: "Understanding Markdown and other text-based formats for consistent content creation."
 revision_date: 2026-05-13
 ---
 

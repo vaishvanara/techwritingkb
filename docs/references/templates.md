@@ -1,7 +1,7 @@
 ---
 icon: lucide/copy
 title: Documentation reference templates
-description: "Standardized templates for common documentation deliverables"
+description: "Standardized templates for common documentation deliverables."
 revision_date: 2026-05-25
 ---
 

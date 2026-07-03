@@ -1,7 +1,7 @@
 ---
 icon: lucide/component
 title: "The technical writer’s role in the SDLC"
-description: How documentation tasks fit into the Software Development Life Cycle (SDLC) and Agile ceremonies
+description: "How documentation tasks fit into the Software Development Life Cycle (SDLC) and Agile ceremonies."
 revision_date: 2026-06-06
 ---
 

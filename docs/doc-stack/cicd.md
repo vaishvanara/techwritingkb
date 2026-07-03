@@ -1,7 +1,7 @@
 ---
 icon: lucide/refresh-cw
 title: "Continuous integration and continuous delivery (CI/CD)"
-description: "Setting up CI/CD workflows to auto-deploy documentation sites"
+description: "Setting up CI/CD workflows to auto-deploy documentation sites."
 revision_date: 2026-05-15
 ---
 

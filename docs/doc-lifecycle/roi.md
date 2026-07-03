@@ -1,7 +1,7 @@
 ---
 icon: lucide/trending-up
 title: Documentation return on investment
-description: Using data to prove that quality documentation reduces support costs and increases user retention
+description: "Using data to prove that quality documentation reduces support costs and increases user retention."
 revision_date: 2026-05-21
 ---
 

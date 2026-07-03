@@ -1,7 +1,7 @@
 ---
 icon: lucide/sparkles
 title: "Plain language (PL) standards"
-description: A guide to eliminating jargon and using basic sentence structures for better comprehension
+description: "A guide to eliminating jargon and using basic sentence structures for better comprehension."
 revision_date: 2026-07-02
 ---
 

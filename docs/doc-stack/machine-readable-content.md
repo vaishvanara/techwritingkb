@@ -1,7 +1,7 @@
 ---
 icon: lucide/binary
 title: "Machine-radable content standards"
-description: "How to structure documentation for AI scrapers, RAG systems, and LLM context windows"
+description: "How to structure documentation for AI scrapers, RAG systems, and LLM context windows."
 revision_date: 2026-05-15
 ---
 

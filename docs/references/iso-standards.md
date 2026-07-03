@@ -1,7 +1,7 @@
 ---
 icon: lucide/book-open
 title: Global industry standards
-description: Understanding international standards and regulations for technical documentation
+description: "Understanding international standards and regulations for technical documentation."
 revision_date: 2026-05-25
 ---
 

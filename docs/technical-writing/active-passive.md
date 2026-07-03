@@ -1,7 +1,7 @@
 ---
 icon: lucide/spell-check
 title: Active voice mastery
-description: Techniques for using active voice to create more direct and actionable technical manuals
+description: "Techniques for using active voice to create more direct and actionable technical manuals."
 revision_date: 2026-05-13
 ---
 

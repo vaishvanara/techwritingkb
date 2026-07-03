@@ -1,7 +1,7 @@
 ---
 icon: lucide/iteration-ccw
 title: The document development life cycle (DDLC)
-description: A standardized process for creating content from the initial handoff to final publishing
+description: "A standardized process for creating content from the initial handoff to final publishing."
 revision_date: 2026-05-19
 ---
 

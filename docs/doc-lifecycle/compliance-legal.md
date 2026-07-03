@@ -1,7 +1,7 @@
 ---
 icon: lucide/scale
 title: Compliance and legal documentation
-description: "A guide to documenting for high-stakes regulations like GDPR, SOC2, and HIPAA"
+description: "A guide to documenting for high-stakes regulations like GDPR, SOC2, and HIPAA."
 revision_date: 2026-05-22
 ---
 

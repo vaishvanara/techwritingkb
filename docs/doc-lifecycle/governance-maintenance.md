@@ -1,7 +1,7 @@
 ---
 icon: lucide/shield-check
 title: Content governance and maintenance
-description: Strategies for auditing, updating, and retiring stale documentation to prevent content rot
+description: "Strategies for auditing, updating, and retiring stale documentation to prevent content rot."
 revision_date: 2026-05-21
 ---
 

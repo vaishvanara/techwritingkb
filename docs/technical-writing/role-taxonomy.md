@@ -1,7 +1,7 @@
 ---
 icon: lucide/contact-2
 title: Taxonomy of technical communication roles
-description: Explaining the different titles and responsibilities from technical writer to content strategist
+description: "Explaining the different titles and responsibilities from technical writer to content strategist."
 revision_date: 2026-05-13
 ---
 

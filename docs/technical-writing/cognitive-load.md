@@ -1,7 +1,7 @@
 ---
 icon: lucide/brain
 title: Cognitive load and minimalism
-description: Applying psychological principles to simplify complex information and reduce reader fatigue
+description: "Applying psychological principles to simplify complex information and reduce reader fatigue."
 revision_date: 2026-06-06
 ---
 

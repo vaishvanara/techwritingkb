@@ -1,7 +1,7 @@
 ---
 icon: lucide/kanban-square
 title: Agile documentation workflows
-description: How to track documentation tasks using Scrum and Kanban methodologies
+description: "How to track documentation tasks using Scrum and Kanban methodologies."
 revision_date: 2026-05-21
 ---
 

@@ -1,7 +1,7 @@
 ---
 icon: lucide/gauge
 title: Readability score methodologies
-description: Using Flesch-Kincaid and other formulas to objectively measure and improve content clarity
+description: "Using Flesch-Kincaid and other formulas to objectively measure and improve content clarity."
 revision_date: 2026-05-13
 ---
 

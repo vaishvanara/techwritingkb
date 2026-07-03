@@ -1,7 +1,7 @@
 ---
 icon: lucide/file-json
 title: "Docs as Code philosophy"
-description: The methodology of using developer tools and workflows to manage documentation files
+description: "The methodology of using developer tools and workflows to manage documentation files."
 revision_date: 2026-05-15
 ---
 

@@ -1,7 +1,7 @@
 ---
 icon: lucide/bot
 title: Prompt engineering for technical writers
-description: How to use large language models (LLMs) to draft, summarize, and explain complex code logic
+description: "How to use large language models (LLMs) to draft, summarize, and explain complex code logic."
 revision_date: 2026-05-13
 ---
 

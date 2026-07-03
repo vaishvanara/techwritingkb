@@ -1,7 +1,7 @@
 ---
 icon: lucide/layout-template
 title: Content design foundations
-description: Exploring how technical writing evolves into designing intuitive and helpful user journeys
+description: "Exploring how technical writing evolves into designing intuitive and helpful user journeys."
 revision_date: 2026-05-13
 ---
 

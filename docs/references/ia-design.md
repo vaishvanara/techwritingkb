@@ -1,7 +1,7 @@
 ---
 icon: lucide/folder-tree
 title: Information architecture for documentation
-description: "Organizing documentation navigation, taxonomy, and internal linking for findability"
+description: "Organizing documentation navigation, taxonomy, and internal linking for findability."
 revision_date: 2026-05-25
 ---
 

@@ -1,7 +1,7 @@
 ---
 icon: lucide/user-check
 title: Usability testing for documentation
-description: How to run tests to ensure your documentation actually solves user problems
+description: "How to run tests to ensure your documentation actually solves user problems."
 revision_date: 2026-05-21
 ---
 

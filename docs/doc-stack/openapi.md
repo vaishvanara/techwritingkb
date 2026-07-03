@@ -1,7 +1,7 @@
 ---
 icon: lucide/webhook
 title: OpenAPI Specification (OAS)
-description: A deep dive into the schema used to document RESTful API endpoints and parameters
+description: "A deep dive into the schema used to document RESTful API endpoints and parameters."
 revision_date: 2026-05-15
 ---
 

@@ -1,7 +1,7 @@
 ---
 icon: lucide/layout-panel-left
 title: Developer portal architecture
-description: Understanding the shift from simple documentation sites to interactive portals with "Try It Out" consoles
+description: 'Understanding the shift from simple documentation sites to interactive portals with "Try It Out" consoles.'
 revision_date: 2026-05-15
 ---
 

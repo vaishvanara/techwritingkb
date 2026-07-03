@@ -1,7 +1,7 @@
 ---
 icon: lucide/pen-tool
 title: The seven Cs of communication
-description: "Essential communication principles to make sure software documentation is clear, concise, and correct"
+description: "Essential communication principles to make sure software documentation is clear, concise, and correct."
 revision_date: 2026-05-13
 ---
 

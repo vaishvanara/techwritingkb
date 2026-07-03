@@ -1,7 +1,7 @@
 ---
 icon: lucide/arrow-right-left
 title: Orchestrating content migrations
-description: "Strategies for the complex process of moving content from legacy tools to Markdown and Git"
+description: "Strategies for the complex process of moving content from legacy tools to Markdown and Git."
 revision_date: 2026-05-21
 ---
 

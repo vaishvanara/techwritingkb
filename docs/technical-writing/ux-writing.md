@@ -1,7 +1,7 @@
 ---
 icon: lucide/mouse-pointer-click
 title: UX writing and microcopy
-description: Best practices for crafting error messages, button labels, and tooltips within software interfaces
+description: "Best practices for crafting error messages, button labels, and tooltips within software interfaces."
 revision_date: 2026-05-13
 ---
 

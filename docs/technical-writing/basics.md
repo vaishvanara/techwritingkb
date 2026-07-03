@@ -1,7 +1,7 @@
 ---
 icon: lucide/book-open
 title: "What is technical communication?"
-description: An overview of how technical knowledge is translated across different professional fields
+description: "An overview of how technical knowledge is translated across different professional fields."
 revision_date: 2026-07-02
 ---
 

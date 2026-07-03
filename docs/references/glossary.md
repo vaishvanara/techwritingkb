@@ -1,7 +1,7 @@
 ---
 icon: lucide/list-tree
 title: Glossary of technical communication
-description: "A master list of industry-specific technical terms, acronyms, and professional definitions"
+description: "A master list of industry-specific technical terms, acronyms, and professional definitions."
 revision_date: 2026-07-01
 ---
 

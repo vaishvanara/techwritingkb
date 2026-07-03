@@ -1,7 +1,7 @@
 ---
 icon: lucide/boxes
 title: Structured authoring frameworks
-description: "An introduction to information mapping and topic-based authoring for reusability"
+description: "An introduction to information mapping and topic-based authoring for reusability."
 revision_date: 2026-5-26
 ---
 

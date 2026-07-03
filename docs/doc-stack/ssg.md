@@ -1,7 +1,7 @@
 ---
 icon: lucide/rocket
 title: Static site generators (SSGs)
-description: An overview of how SSGs turn text files into high-performance documentation websites
+description: "An overview of how SSGs turn text files into high-performance documentation websites."
 revision_date: 2026-05-13
 ---
 

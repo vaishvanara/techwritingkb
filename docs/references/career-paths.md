@@ -1,7 +1,7 @@
 ---
 icon: lucide/map
 title: Roles in technical communication
-description: "An overview of career paths, required skill sets, and modern workflows in the documentation industry"
+description: "An overview of career paths, required skill sets, and modern workflows in the documentation industry."
 revision_date: 2026-05-25
 ---
 

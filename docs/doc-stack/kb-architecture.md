@@ -1,7 +1,7 @@
 ---
 icon: lucide/layers-plus
 title: Knowledge base architecture
-description: "Strategic planning for folder structures, internal linking, and content hierarchy to ensure long-term document findability"
+description: "Strategic planning for folder structures, internal linking, and content hierarchy to ensure long-term document findability."
 revision_date: 2026-05-13
 ---
 

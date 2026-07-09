@@ -18,6 +18,9 @@ The full address of a file or directory starting from the root of the file syste
 [**accessibility (a11y)**](../references/accessibility.md)  
 The practice of making documentation usable by as many people as possible, including those with visual, auditory, or cognitive disabilities.
 
+**accessibility budget**  
+Configuration thresholds that allow for selective legacy page exclusions or policy tolerances during automated compliance runs.
+
 [**active voice**](../technical-writing/active-passive.md)  
 A sentence structure following the subject-verb-object (SVO) pattern to create direct and actionable instructions.
 
@@ -29,6 +32,9 @@ An iterative approach to content creation that aligns with the software's develo
 
 **AI-generated content (AIGC)**  
 Text, images, or other media created by large language models and generative tools to assist in the documentation process.
+
+**AI safety guardrails**  
+Programmatic boundaries, input/output filters, and system prompts designed to prevent large language models from generating harmful or restricted content.
 
 [**alternative text or alt txt (alt-txt)**](../references/accessibility.md#alt-text-blueprint)  
 A descriptive attribute added to images to ensure information is accessible to users with visual impairments or when images fail to load.
@@ -50,6 +56,9 @@ An interactive portal feature that allows developers to test API calls and view 
 
 **API reference**  
 A technical manual providing detailed descriptions of specific endpoints, parameters, and return types, usually generated from source code to serve as a precise dictionary for developers during integration.
+
+**API reference generation**  
+The pipeline of extracting inline comment structures directly from codebases to produce technical documentation references automatically.
 
 **appendix**  
 A section at the end of a document containing supplementary information that is too detailed or specialized for the main body.
@@ -93,6 +102,9 @@ A professional body representing technical communicators in Australia, providing
 [**authentication schemes**](../doc-stack/openapi.md#authentication-schemes)  
 Methods used to verify user identity for API access, including API keys, bearer tokens, and OAuth2.
 
+**automated accessibility scans**  
+Programmatic evaluations executed within a CI/CD build pipeline to check compiled HTML files for WCAG violations.
+
 [**automation with a human touch (jidoka)**](../doc-lifecycle/agile-workflows.md#jidoka-automation-with-a-human-touch)  
 A principle from lean manufacturing that emphasizes intelligent automation, often applied to maintaining quality control within documentation workflows.
 
@@ -124,6 +136,9 @@ A highly efficient lexical ranking algorithm used by search engines to determine
 **boilerplate**  
 Standardized text or code blocks that are reused across multiple documents or templates without significant changes.
 
+**bookmap**  
+A master configuration file used to define the structural hierarchy, navigation, and compilation layout of individual documentation topics.
+
 **bounce rate**  
 The percentage of users who leave a documentation site after viewing only one page.
 
@@ -152,6 +167,9 @@ Specific, actionable verbs used on interface buttons to reduce click hesitation 
 [**callout**](../doc-stack/markup-languages.md#extending-markup-admonitions)  
 A short string of text connected by a line to a specific part of an illustration or code block to highlight key features.
 
+**canonical link**  
+HTML metadata specifying the primary URL of a page to prevent search engine indexing penalties on duplicated or versioned pages.
+
 [**Capability Maturity Model Integration (CMMI)**](../doc-lifecycle/ddlc.md#process-maturity-and-the-cmmi)  
 A process improvement training and appraisal program used to guide organizations in streamlining their development and documentation workflows.
 
@@ -163,6 +181,9 @@ A branch of logic dealing with propositions that describe relationships between 
 
 **Certified Professional Technical Communicator (CPTC)**  
 A professional certification offered by the STC to validate the foundational skills and knowledge of technical communicators. As of 2024, the STC has been dissolved and the CPTC program is no longer available.
+
+**chain-of-thought (CoT) prompting**  
+A prompt engineering pattern that forces an AI model to generate intermediate logical reasoning steps before producing its final output.
 
 **changelog**  
 A curated, chronological list of notable changes, bug fixes, and new features added to a software project, helping users understand what has evolved between different specific version releases.
@@ -194,6 +215,9 @@ A readability formula that calculates the grade level of a text based on charact
 **command line interface (CLI)**  
 A text-based interface used to interact with computer programs by typing commands instead of using a graphical user interface.
 
+**Compiled HTML Help (CHM)**  
+A classic tripane desktop help window format that compresses standard HTML, CSS, and navigation files into a single binary.
+
 [**compliance-driven documentation**](../doc-lifecycle/compliance-legal.md)  
 Content created specifically to meet legal, regulatory, or safety standards, requiring high levels of accuracy and strict adherence to specific industry protocols to ensure organizational and user safety.
 
@@ -206,8 +230,14 @@ Interactive training programs delivered via computer, often featuring self-paced
 [**concept-task-reference (CTR) model**](../references/dita.md#ctr-model-information-typing)  
 An information typing strategy that categorizes technical content into conceptual overviews, step-by-step procedures, and detailed reference data to improve clarity and facilitate efficient user search and learning.
 
+**conciseness reward (document length)**  
+A BM25 search indexing behavior that favors short, focused articles over monolithic files when calculating query matches.
+
 [**conditional processing or rendering**](../doc-stack/metadata-frontmatter.md#conditional-rendering)  
 The automated technique of displaying or hiding specific portions of content based on variables such as user role, product version, or operating system within a single source publishing workflow.
+
+**conditional tag expressions**  
+Using Boolean logic filters within source files to dictate which tag variations are included or excluded during compilation.
 
 **conditional text**  
 Content within a source file that is flagged to be included or excluded during the build process based on specific target outputs.
@@ -272,6 +302,9 @@ The limited amount of text or data that a large language model can process at on
 **context-sensitive help**  
 Help documentation that provides specific information based on the user's current location or state within a software application.
 
+**contextual anchors**  
+The practice of using explicit nouns instead of relative pronouns (for example, writing "Configure authentication keys" rather than "Configure this") to ensure isolated content chunks retain meaning during AI retrieval.
+
 [**continuous documentation**](../doc-stack/docs-as-code.md#continuous-documentation)  
 The practice of integrating documentation updates directly into the software development lifecycle, ensuring that manuals and help files evolve simultaneously with the code they are describing for users.
 
@@ -280,6 +313,9 @@ A methodology that automates the building, testing, and deployment of software o
 
 **CONTRIBUTING**  
 A documentation file that guides community members on how to submit code, report bugs, and follow project standards for a repository.
+
+**contribution velocity**  
+A metric tracking the frequency of edits made to documentation channels by non-documentation staff or community members.
 
 **controlled language**  
 A restricted version of a natural language used to limit vocabulary and grammar to reduce ambiguity and translation costs.
@@ -292,6 +328,9 @@ The four basic functions of persistent storage, frequently documented in API ref
 
 **cross-reference**  
 A notation within a document that directs the reader to related information in another part of the same work or a different work.
+
+**CSS Paged Media Module**  
+A W3C stylesheet standard defining print-specific rules (such as margins, breaks, headers, and page counters) to generate PDFs from HTML.
 
 **curse of knowledge**  
 A cognitive bias where an expert unknowingly assumes that others have the background information necessary to understand a topic, often leading to overly complex or confusing technical documentation.
@@ -351,6 +390,9 @@ A structural file used in DITA that organizes individual topics into a hierarchy
 [**Docs as Code (DaC)**](../doc-stack/docs-as-code.md)  
 A philosophy of managing documentation using the same tools and workflows as software development, including Git, markdown, and automation.
 
+**docstring contract**  
+A standardized syntax model agreed upon by writers and developers to ensure code comments compile successfully.
+
 [**document development life cycle (DDLC)**](../doc-lifecycle/ddlc.md)  
 A structured process for creating documentation that includes phases for analysis, design, drafting, review, and publishing.
 
@@ -386,6 +428,9 @@ An early, non-final version of a document intended for internal review, technica
 
 **dwell time**  
 The amount of time a user spends on a specific page, used as a metric to measure engagement or difficulty.
+
+**dynamic filtering (profiling)**  
+Applying metadata attributes to XML elements to show or hide content variations dynamically during publishing.
 
 ---
 
@@ -433,6 +478,9 @@ The final page a user visits before leaving a documentation site, analyzed to de
 [**expert's blind spot**](../technical-writing/audience-analysis.md#the-experts-blind-spot)  
 The tendency for subject matter experts to omit "obvious" steps that are actually crucial for a beginner to understand a task.
 
+**exploded view**  
+A visual representation showing physical hardware components separated but aligned to demonstrate how they fit together, often mapped directly to a BOM.
+
 **Extensible Markup Language (XML)**  
 A flexible text format used to create structured documents that are both human-readable and machine-readable.
 
@@ -445,6 +493,9 @@ An XML-based markup language used to describe the visual layout of printed pages
 **Extensible Stylesheet Language Transformations (XSLT)**  
 A language used to transform an XML document into another format, such as HTML, plain text, or a different XML structure.
 
+**extraction architecture**  
+The automated pipeline that transforms code-level comments (docstrings) into intermediate structured JSON or Markdown formats for final rendering.
+
 [**evidence-based writing**](../technical-writing/content-design-foundations.md#evidence-based-writing)  
 The practice of using search analytics, support tickets, and user data to decide what documentation to create or update.
 
@@ -452,11 +503,20 @@ The practice of using search analytics, support tickets, and user data to decide
 
 ### F
 
+**feature flags (toggle states)**  
+Mechanisms used to deploy software code in a dormant state, requiring writers to employ progressive documentation strategies.
+
+**few-shot prompting**  
+Providing an AI model with in-context, input-to-output examples to guide it in reproducing custom writing styles or strict output schemas.
+
 [**F-pattern / Z-pattern**](../technical-writing/cognitive-load.md#scannability-patterns)  
 Common visual scanning patterns followed by users when reading digital content, which inform layout and information design.
 
 [**findability**](../doc-stack/kb-architecture.md#findability-and-internal-linking)  
 The ease with which a user can discover specific information within a documentation set using search engines, navigation menus, internal links, and a well-organized, logical content hierarchy.
+
+**first-occurrence rule**  
+An editorial constraint that applies tooltip tags exclusively to the first instance of a matched term on a page to reduce visual noise.
 
 [**Flesch-Kincaid (F-K) readability tests**](../technical-writing/readability-scores.md#readability-formulas)  
 Readability tests designed to determine the reading grade level of a text based on sentence and syllable counts.
@@ -547,6 +607,9 @@ The structural organization of information, using heading levels and nested navi
 **high-contrast mode**  
 An accessibility feature that uses a limited color palette with high contrast between text and background, helping users with visual impairments read digital documentation much more easily.
 
+**HowTo schema**  
+A JSON-LD structured data schema used to mark up step-by-step instructions to enable search engine rich results.
+
 **human-computer interaction (HCI)**  
 A multidisciplinary field of study focusing on the design of computer technology and the interaction between humans and digital systems.
 
@@ -608,6 +671,15 @@ The mechanism where a content component or data object acquires the properties o
 **in-line documentation**  
 Helpful content or explanations located directly within a product's source code or user interface rather than in a separate manual.
 
+**inline markup (SVG)**  
+The integration method where vector graphic XML code is placed directly inside the HTML Document Object Model (DOM), allowing dynamic CSS styling.
+
+**input moderation**  
+A pre-processing security layer that intercepts and evaluates user prompts against classification rules before they reach an LLM.
+
+**installation lifecycle**  
+The chronological organization of a hardware or software deployment project into distinct, verifiable milestones.
+
 **Institute of Electrical and Electronics Engineers (IEEE)**  
 A professional association that develops international standards for many industries, including technical communication and software engineering.
 
@@ -626,6 +698,9 @@ A category of property that includes intangible creations of the human intellect
 **interface definition language (IDL)**  
 A language used to describe a software component's interface, allowing different programs to communicate regardless of the language they were written in.
 
+**internal engineering runbook (playbook)**  
+A task-oriented document designed for high-stress incident response, providing step-by-step procedures for DevOps and SRE teams to resolve system failures.
+
 [**internal linking**](../doc-stack/kb-architecture.md#findability-and-internal-linking)  
 The practice of connecting related pages within a single documentation site, helping users discover relevant topics, navigate complex hierarchies, and understand the relationships between different technical concepts.
 
@@ -637,6 +712,9 @@ A set of elements and attributes used in XML and HTML to support the internation
 
 **Internet of Things (IoT)**  
 A network of physical objects embedded with sensors and software that connect and exchange data with other devices over the internet.
+
+**isometric schematic**  
+A technical drawing depicting three-dimensional items (such as hardware systems or IoT ecosystems) on a two-dimensional grid where depth is required.
 
 **iteration**  
 The repetitive process of refining documentation through multiple versions and review cycles based on feedback and testing.
@@ -684,6 +762,9 @@ A centralized online repository of information, such as articles, guides, and tr
 
 [**knowledge base architecture**](../doc-stack/kb-architecture.md)  
 The structural design of a repository of information, including folder organization, taxonomy, and internal linking strategies that ensure users can easily navigate, find, and manage technical content effectively.
+
+**knowledge harvesting**  
+The workflow of identifying high-traffic community contributions and converting them into official, stylized documentation.
 
 **knowledge management system (KMS)**  
 Any kind of IT system that stores and retrieves knowledge to improve understanding, collaboration, and process alignment within an organization.
@@ -753,6 +834,9 @@ A lightweight markup language with plain-text formatting syntax that allows writ
 [**markup**](../doc-stack/markup-languages.md)  
 A system of tags or codes inserted into a document to define its structure, layout, or how the text should be processed and displayed.
 
+**mean time to resolution (MTTR)**  
+An SRE metric measuring the average duration required to resolve system issues, directly optimized by runbook clarity.
+
 [**media independence architecture (MIA)**](../references/structured-authoring.md#media-independence-architecture)  
 A design approach that separates content from its presentation, allowing information to be published across various formats without manual reformatting.
 
@@ -777,6 +861,9 @@ The smallest amount of documentation required to provide value to users and fulf
 **Modern Language Association (MLA)**  
 A professional organization that provides a standard style for formatting papers and citing sources in academic and professional writing.
 
+**multi-channel compilation model**  
+The system architecture of Help Authoring Tools where single-sourced XML or XHTML modules are processed into various outputs (for example, Web, PDF, CHM) by using target configurations.
+
 **Multipurpose Internet Mail Extensions (MIME)**  
 An internet standard that extends the format of email to support attachments and text in character sets other than ASCII.
 
@@ -796,6 +883,9 @@ A branch of artificial intelligence that enables computers to understand, interp
 **navigation**  
 The system of links, menus, and visual cues that allows users to move through a documentation site and find specific information.
 
+**neural search**  
+Search portal architectures relying on semantic vector spaces and intent similarity rather than literal string indexing.
+
 **nominalization**  
 The process of turning a verb into a noun (for example, "verification" instead of "verify"), which is often avoided in plain language to improve clarity.
 
@@ -804,6 +894,9 @@ A legal contract between parties that prohibits the sharing of confidential info
 
 **null result query**  
 A search query performed by a user that returns zero results, serving as a data point to identify gaps in documentation.
+
+**null search rate (NSR)**  
+An analytics metric measuring the percentage of search queries returning zero results, used to identify terminology or content gaps.
 
 ---
 
@@ -838,6 +931,9 @@ A global non-profit consortium that drives the development and adoption of open 
 
 **original equipment manufacturer (OEM)**  
 A company that produces parts and equipment that may be marketed and sold by another manufacturer under a different brand name.
+
+**output sanitization**  
+A post-processing evaluation phase that reviews AI-generated content (for example, checking for toxic language or PII leakage) before serving it to the user.
 
 **output transformation (OT)**  
 The process of converting source files, typically XML or Markdown, into a final deliverable format such as PDF, HTML, or EPUB.
@@ -882,11 +978,17 @@ A raster-graphics file format that supports lossless data compression, commonly 
 [**progressive disclosure**](../technical-writing/cognitive-load.md#progressive-disclosure)  
 A technique of shielding users from advanced or secondary information until it is explicitly requested or required for a task.
 
+**pre-installation auditing**  
+Environmental, electrical, and network prerequisite evaluations performed before system setup begins.
+
 **preface**  
 An introductory section at the beginning of a manual that explains the document's purpose, scope, and intended audience.
 
 **product experience (PX)**  
 The total perception a user has of a product based on their interactions with the interface, functionality, and embedded help content.
+
+**progressive documentation**  
+The practice of restricting or revealing technical content dynamically to align with progressive software rollouts or beta cohorts.
 
 **Project Management Professional (PMP)**  
 An internationally recognized professional designation for individuals who lead and direct complex projects and teams.
@@ -920,8 +1022,14 @@ A focused instructional document that leads a user through the initial setup or 
 
 ### R
 
+**RACI matrix**  
+A responsibility assignment framework mapping who is Responsible, Accountable, Consulted, and Informed across different stages of a documentation project.
+
 **rapid application development (RAD)**  
 An agile software development methodology that prioritizes rapid prototyping and quick feedback over long-term, rigid planning.
+
+**ReAct pattern**  
+A reasoning and acting prompt framework that combines chain-of-thought thinking with external action-tool executions (such as running link checkers or API validators).
 
 [**readability**](../technical-writing/readability-scores.md)  
 An objective measure of how easy a piece of writing is to read and comprehend based on sentence structure and word choice.
@@ -931,6 +1039,9 @@ The foundational text file in a project repository that introduces the software,
 
 **Really Simple Syndication (RSS)**  
 A standardized web feed format that allows users and applications to receive automated updates from websites or documentation portals.
+
+**red-teaming**  
+Structured, adversarial safety testing aimed at finding bypasses or vulnerabilities in AI guardrails.
 
 **relative path**  
 A file address expressed in relation to the current working directory, making it easier to move entire documentation projects between different servers or environments without breaking internal links.
@@ -964,6 +1075,9 @@ A document file format developed for cross-platform document exchange that prese
 
 [**role-based access control (RBAC)**](../doc-stack/developer-portals.md#user-specific-content-rbac)  
 A method of restricting system or document access based on the specific roles assigned to individual users within an organization.
+
+**runbook drift**  
+The divergence that occurs when system infrastructure is modified but its associated runbook is not updated accordingly.
 
 ---
 
@@ -1002,6 +1116,12 @@ The measure of how accurately a search engine matches a user's query with the mo
 **Section 508**  
 A US federal law requiring that all electronic and information technology used by the government be accessible to people with disabilities.
 
+**semantic chunking**  
+Structuring and dividing technical pages into self-contained, conceptual units to optimize ingestion for AI search vectors.
+
+**semantic clustering**  
+Grouping user queries of varying phrasings based on conceptual similarity to isolate missing documentation topics.
+
 [**semantic hierarchy**](../doc-stack/machine-readable-content.md#semantic-structure-and-hierarchy)  
 The logical organization of content using levels of importance, typically represented by headings and subheadings, to help both users and search engines understand the structure of an article.
 
@@ -1010,6 +1130,12 @@ The use of HTML tags or XML elements that clearly describe the meaning and struc
 
 **semantic tags**  
 HTML or XML elements that clearly describe the meaning of the content they contain, helping search engines and assistive technologies better understand and process the documentation's underlying structure.
+
+**semantic versioning (SemVer)**  
+A formal software versioning specification using a `MAJOR.MINOR.PATCH` naming convention to signal breaking, feature, or patch releases.
+
+**semantic wrapper pattern**  
+An accessibility-focused markup structure (such as pairing `role="img"` with `aria-labelledby`) that ensures vector graphics are correctly parsed by assistive technologies.
 
 [**sentence architecture**](../technical-writing/plain-language.md#sentence-architecture)  
 The deliberate arrangement of words and phrases within a sentence to ensure maximum clarity, proper emphasis, and easy comprehension for readers who may be scanning the documentation quickly.
@@ -1025,6 +1151,9 @@ A formal contract between a service provider and a user that specifies the expec
 
 [**seven Cs of communication**](../technical-writing/7-cs.md)  
 A framework used to ensure documentation is clear, concise, concrete, correct, coherent, complete, and courteous.
+
+**shadow docs**  
+Technical knowledge that remains siloed within unstructured environments (such as chat channels or unindexed local wikis).
 
 [**shift-left**](../doc-lifecycle/sdlc-integration.md#the-shift-left-philosophy)  
 A strategy of involving technical writers earlier in the software development life cycle, such as during the design and prototyping phases.
@@ -1043,6 +1172,9 @@ The practice of maintaining a central, authoritative version of content to preve
 
 **slug**  
 The part of a URL that identifies a specific page in a human-readable format, usually derived from the page's title.
+
+**smoke testing (post-installation)**  
+A brief execution cycle or self-test performed to verify that a system is minimally operational before final handoff.
 
 **snippet or partial**  
 A small, reusable file containing text or code that is "included" or referenced in multiple larger documents to ensure consistency.
@@ -1064,6 +1196,9 @@ A methodology where documentation, specifically API specifications, is written b
 
 **special interest group (SIG)**  
 A community within a larger professional organization that focuses on a specific technical area, industry, or professional niche.
+
+**specialty rule (keyword rarity)**  
+A ranking parameter in the BM25 search algorithm that assigns higher score weights to rare technical keywords than common terms.
 
 [**staging environment**](../doc-stack/cicd.md#staging-and-preview-environments)  
 A private, pre-production server where documentation and software are tested and reviewed in a realistic setting to identify and fix issues before being released to the live audience.
@@ -1088,6 +1223,9 @@ An estimation technique used in agile workflows to measure the complexity and re
 
 **string**  
 A technical term for a sequence of characters in code, often managed in a centralized glossary for user interface text.
+
+**structural layering**  
+The organization of a technical illustration into distinct, labeled vector layers (for example, annotations, foreground, background guides) to ensure future editability.
 
 [**Structured Query Language (SQL)**](../doc-lifecycle/observability-analytics.md#sql-for-documentation-analytics)  
 A standard programming language used specifically for managing and manipulating data held in relational databases.
@@ -1120,6 +1258,9 @@ A feature of text editors and documentation sites that displays code in differen
 **table of contents (TOC)**  
 A navigational aid listing the major sections and page numbers of a document to provide an overview of the content structure.
 
+**tactical technical communication**  
+Decoupled, bottom-up knowledge-sharing practices (for example, wikis and community forums) that prioritize rapid, decentralized problem-solving over centralized governance.
+
 **tactical writing**  
 The functional side of technical writing that delivers immediate utility through concise text, UI cues, and straightforward workflows.
 
@@ -1132,17 +1273,23 @@ A usability research method where participants are asked to complete specific ac
 [**taxonomy**](../doc-stack/metadata-frontmatter.md#taxonomy-management)  
 A system used to classify and organize information into a hierarchical structure to improve findability and site navigation.
 
+**TechArticle schema**  
+A JSON-LD metadata format identifying a web page as an authoritative technical resource for search crawlers.
+
 [**technical communication (TC)**](../technical-writing/basics.md)  
 The process of taking complex, specialized knowledge and making it accessible and actionable for a specific audience.
 
 **Technical Communication Body of Knowledge (TCBOK)**  
 A repository of information and best practices maintained by the STC to define the professional competencies of the field. As of 2024, the STC has been dissolved.
 
+**technical manual**  
+A comprehensive document that provides detailed instructions on how to install, operate, or maintain a product.
+
 [**technical review**](../doc-lifecycle/review-approval.md#multi-tier-review-logic)  
 A formal evaluation of documentation performed by subject matter experts to ensure that the facts, procedures, and code examples provided are completely accurate and reflect current software behavior.
 
-**technical manual**  
-A comprehensive document that provides detailed instructions on how to install, operate, or maintain a product.
+**technical SEO**  
+Help portal optimizations aimed at improving search discoverability through crawlability, structured sitemaps, and semantic schema.
 
 [**technical specification**](../references/templates.md#technical-specifications-and-fgds)  
 A detailed document describing the requirements, design, and functional behavior of a system, serving as the primary reference for developers and writers during the software construction process.
@@ -1158,6 +1305,9 @@ A pre-formatted document or file that serves as a starting point for new content
 
 [**terminology management**](../references/iso-standards.md#standardized-terminology-roadmap)  
 The process of identifying, storing, and managing specialized terms to ensure they are used consistently across all documentation sets.
+
+**terminology tooltips**  
+Hover-over user interface elements used to present jargon or acronym definitions without cluttering body text.
 
 [**Text Encoding Initiative (TEI)**](../references/structured-authoring.md#text-encoding-initiative)  
 An international standard for the digital representation of texts, primarily used for data exchange in research and academic libraries.
@@ -1189,6 +1339,9 @@ The basic unit of text, approximately four characters or three-quarters of a wor
 [**tone of voice**](../technical-writing/ux-writing.md#tone-of-voice-in-interfaces)  
 The stylistic character of writing that conveys a specific personality or attitude, such as being professional, helpful, or direct.
 
+**tooltip density**  
+A visual clarity metric tracking the ratio of compiled terminology tooltips to the total word count of a page.
+
 [**tooltips**](../technical-writing/ux-writing.md#onboarding-and-tooltips)  
 Small informational pop-ups that appear when a user hovers over or selects a specific interface element for contextual help.
 
@@ -1203,6 +1356,9 @@ A transformation engine is a software system designed to map, convert, and route
 
 **translation management system (TMS)**  
 A software platform used to automate and manage the translation and localization workflow for large document sets.
+
+**translation memory**  
+A database storing previously translated text segments to reduce enterprise localization costs by avoiding re-translations.
 
 **troubleshooting**  
 A systematic approach to identifying, analyzing, and resolving problems within a software or hardware system.
@@ -1296,6 +1452,9 @@ A software tool used to track changes to documentation files over time, allowing
 **versioning**  
 The practice of assigning unique identifiers to different iterations of a document to track historical changes and support specific software releases.
 
+**viewBox (protocol/attribute)**  
+An SVG attribute that establishes a local coordinate system to allow vector graphics to scale fluidly without hardcoded pixel constraints.
+
 [**visual communication**](../technical-writing/visual-communication.md)  
 The practice of using diagrams, icons, and page layout to deliver information. By reducing reliance on dense text, it allows readers to quickly interpret and understand complex technical concepts.
 
@@ -1318,6 +1477,9 @@ Instructional content and training delivered digitally, often incorporating inte
 **Web Content Accessibility Guidelines (WCAG)**  
 The international standard for web accessibility that provides recommendations for making digital content more accessible to people with disabilities.
 
+**WebHelp / Responsive HTML5**  
+A server-hosted package of standard HTML5, CSS, and search index files serving as the modern successor to desktop CHM help files.
+
 [**webhook**](../doc-stack/emerging-architectures.md#event-driven-architecture-webhooks)  
 An event-driven "reverse API" where a server automatically sends data to a client's URL when a specific trigger occurs.
 
@@ -1332,6 +1494,12 @@ An authoritative report or guide that informs readers about a complex technical 
 
 **whitespace**  
 The areas of a page or screen left intentionally blank to separate elements, improve legibility, and reduce cognitive load for the reader.
+
+**widows and orphans (CSS)**  
+Typographic styling controls used to prevent single, disconnected lines of text from stranding at page boundaries in PDF rendering.
+
+**WinHelp (.hlp)**  
+A legacy, footnote-mapped, binary-based help format introduced by Microsoft.
 
 **who, what, where, when, and why (5Ws)**  
 A research framework used by writers during the discovery phase to ensure all essential information is captured for a specific topic.
@@ -1371,6 +1539,9 @@ A human-readable data serialization language frequently used for configuration f
 
 **zero results indicator**  
 A specific notification displayed when a user's search query returns no matches, ideally providing helpful suggestions or alternative resources to keep the user from becoming frustrated or leaving.
+
+**zero-shot prompting**  
+Instructing a large language model to execute an editorial task (such as active-voice translation) relying purely on its built-in linguistic training without provided examples.
 
 [**zone of proximal development (ZPD)**](../technical-writing/audience-analysis.md#knowledge-mapping-zpd)  
 An instructional design concept representing the gap between what a learner can do without help and what they can do with professional guidance.

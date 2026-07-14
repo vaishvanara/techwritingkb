@@ -6,7 +6,7 @@ revision_date: 2026-05-13
 ---
 
 # Taxonomy of technical communication roles
-*Explaining the different titles and responsibilities from technical writer to content strategist*
+> *Explaining the different titles and responsibilities from technical writer to content strategist*
 
 ---
 

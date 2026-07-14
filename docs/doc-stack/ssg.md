@@ -6,7 +6,7 @@ revision_date: 2026-05-13
 ---
 
 # Static site generators (SSGs)
-*An overview of how SSGs turn text files into high-performance documentation websites*
+> *An overview of how SSGs turn text files into high-performance documentation websites*
 
 ---
 

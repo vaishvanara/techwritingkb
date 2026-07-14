@@ -6,7 +6,7 @@ revision_date: 2026-05-25
 ---
 
 # Documentation reference templates
-*Standardized templates for common documentation deliverables*
+> *Standardized templates for common documentation deliverables*
 
 ---
 

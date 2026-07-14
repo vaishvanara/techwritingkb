@@ -6,7 +6,7 @@ revision_date: 2026-05-13
 ---
 
 # Documentation tech stack directory
-*A comprehensive look at the categories of software used in modern documentation pipelines*
+> *A comprehensive look at the categories of software used in modern documentation pipelines*
 
 ---
 

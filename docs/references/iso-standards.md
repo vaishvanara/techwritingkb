@@ -6,7 +6,7 @@ revision_date: 2026-05-25
 ---
 
 # Global industry standards
-*Understanding international standards and regulations for technical documentation*
+> *Understanding international standards and regulations for technical documentation*
 
 ---
 

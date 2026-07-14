@@ -6,7 +6,7 @@ revision_date: 2026-05-21
 ---
 
 # Orchestrate content migrations
-*Strategies for the complex process of moving content from legacy tools to Markdown and Git*
+> *Strategies for the complex process of moving content from legacy tools to Markdown and Git*
 
 ---
 

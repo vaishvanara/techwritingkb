@@ -6,7 +6,7 @@ revision_date: 2026-05-13
 ---
 
 # Content design foundations
-*Exploring how technical writing evolves into designing intuitive and helpful user journeys*
+> *Exploring how technical writing evolves into designing intuitive and helpful user journeys*
 
 ---
 

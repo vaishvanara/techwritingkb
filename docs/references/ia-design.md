@@ -6,7 +6,7 @@ revision_date: 2026-05-25
 ---
 
 # Information architecture for documentation
-*Organizing documentation navigation, taxonomy, and internal linking for findability*
+> *Organizing documentation navigation, taxonomy, and internal linking for findability*
 
 ---
 

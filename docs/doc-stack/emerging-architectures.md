@@ -6,7 +6,7 @@ revision_date: 2026-05-15
 ---
 
 # Emerging API Architectures
-*Moving beyond REST to understand the documentation needs of GraphQL, gRPC, and webhooks*
+> *Moving beyond REST to understand the documentation needs of GraphQL, gRPC, and webhooks*
 
 ---
 

@@ -6,7 +6,7 @@ revision_date: 2026-05-20
 ---
 
 # SME interviewing techniques
-*Collaborative research skills for gathering technical details from engineers and product owners*
+> *Collaborative research skills for gathering technical details from engineers and product owners*
 
 ---
 

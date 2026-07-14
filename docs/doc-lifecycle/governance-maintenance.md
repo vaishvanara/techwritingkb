@@ -6,7 +6,7 @@ revision_date: 2026-05-21
 ---
 
 # Content governance and maintenance
-*Strategies for auditing, updating, and retiring stale documentation to prevent content rot.*
+> *Strategies for auditing, updating, and retiring stale documentation to prevent content rot.*
 
 ---
 

@@ -6,7 +6,7 @@ revision_date: 2026-06-26
 ---
 
 # Metadata schema and frontmatter
-*Using YAML and other data structures to organize and optimize content for search engines*
+> *Using YAML and other data structures to organize and optimize content for search engines*
 
 ---
 

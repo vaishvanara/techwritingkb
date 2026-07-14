@@ -6,7 +6,7 @@ revision_date: 2026-05-25
 ---
 
 # Roles in technical communication
-*An overview of career paths, required skill sets, and modern workflows in the documentation industry*
+> *An overview of career paths, required skill sets, and modern workflows in the documentation industry*
 
 ---
 

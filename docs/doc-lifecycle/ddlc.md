@@ -6,7 +6,7 @@ revision_date: 2026-05-19
 ---
 
 # The document development life cycle (DDLC)
-*A standardized process for creating content from the initial handoff to final publishing*
+> *A standardized process for creating content from the initial handoff to final publishing*
 
 ---
 

@@ -6,7 +6,7 @@ revision_date: 2026-05-13
 ---
 
 # Knowledge base architecture
-*Strategic planning for folder structures, internal linking, and content hierarchy to ensure long-term document findability*
+> *Strategic planning for folder structures, internal linking, and content hierarchy to ensure long-term document findability*
 
 ---
 

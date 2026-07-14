@@ -6,7 +6,7 @@ revision_date: 2026-05-15
 ---
 
 # Version control systems
-*Why managing documentation in repositories is crucial for modern collaborative environments*
+> *Why managing documentation in repositories is crucial for modern collaborative environments*
 
 ---
 

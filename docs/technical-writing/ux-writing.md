@@ -6,7 +6,7 @@ revision_date: 2026-05-13
 ---
 
 # UX writing and microcopy
-*Best practices for crafting error messages, button labels, and tooltips within software interfaces*
+> *Best practices for crafting error messages, button labels, and tooltips within software interfaces*
 
 ---
 

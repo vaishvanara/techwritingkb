@@ -6,7 +6,7 @@ revision_date: 2026-05-15
 ---
 
 # OpenAPI Specification (OAS)
-*A deep dive into the schema used to document RESTful API endpoints and parameters*
+> *A deep dive into the schema used to document RESTful API endpoints and parameters*
 
 ---
 

@@ -6,7 +6,7 @@ revision_date: 2026-05-15
 ---
 
 # Docs as Code philosophy
-*The methodology of using developer tools and workflows to manage documentation files*
+> *The methodology of using developer tools and workflows to manage documentation files*
 
 ---
 

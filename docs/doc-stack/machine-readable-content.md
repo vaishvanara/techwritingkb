@@ -6,7 +6,7 @@ revision_date: 2026-05-15
 ---
 
 # Machine-Readable Content Standards
-*How to structure documentation for AI scrapers, RAG systems, and LLM context windows*
+> *How to structure documentation for AI scrapers, RAG systems, and LLM context windows*
 
 ---
 

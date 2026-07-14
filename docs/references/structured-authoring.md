@@ -6,7 +6,7 @@ revision_date: 2026-5-26
 ---
 
 # Structured authoring frameworks
-*An introduction to information mapping and topic-based authoring for reusability*
+> *An introduction to information mapping and topic-based authoring for reusability*
 
 ---
 

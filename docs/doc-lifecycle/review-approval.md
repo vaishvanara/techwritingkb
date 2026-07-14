@@ -6,7 +6,7 @@ revision_date: 2026-05-21
 ---
 
 # Review and approval workflows
-*Implementing structured peer reviews and technical sign-offs to ensure content quality*
+> *Implementing structured peer reviews and technical sign-offs to ensure content quality*
 
 ---
 

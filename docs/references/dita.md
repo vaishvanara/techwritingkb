@@ -6,7 +6,7 @@ revision_date: 2026-05-25
 ---
 
 # Darwin Information Typing Architecture (DITA)
-*Overview of the DITA framework for managing large-scale, complex documentation through structured authoring and XML*
+> *Overview of the DITA framework for managing large-scale, complex documentation through structured authoring and XML*
 
 ---
 

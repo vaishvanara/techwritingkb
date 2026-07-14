@@ -6,7 +6,7 @@ revision_date: 2026-05-13
 ---
 
 # Prompt engineering for technical writers
-*How to use large language models (LLMs) to draft, summarize, and explain complex code logic*
+> *How to use large language models (LLMs) to draft, summarize, and explain complex code logic*
 
 ---
 

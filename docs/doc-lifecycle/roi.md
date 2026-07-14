@@ -6,7 +6,7 @@ revision_date: 2026-05-21
 ---
 
 # Documentation return on investment
-*Using data to prove that quality documentation reduces support costs and increases user retention*
+> *Using data to prove that quality documentation reduces support costs and increases user retention*
 
 ---
 

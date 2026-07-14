@@ -6,7 +6,7 @@ revision_date: 2026-07-01
 ---
 
 # Glossary of technical communication
-*A master list of industry-specific technical terms, acronyms, and professional definitions*
+> *A master list of industry-specific technical terms, acronyms, and professional definitions*
 
 ---
 

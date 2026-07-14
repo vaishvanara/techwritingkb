@@ -6,7 +6,7 @@ revision_date: 2026-07-02
 ---
 
 # Plain language (PL) standards
-*A guide to eliminating jargon and using basic sentence structures for better comprehension*
+> *A guide to eliminating jargon and using basic sentence structures for better comprehension*
 
 ---
 

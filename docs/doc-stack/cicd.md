@@ -6,7 +6,7 @@ revision_date: 2026-05-15
 ---
 
 # Continuous integration and continuous delivery (CI/CD)
-*Setting up CI/CD workflows to auto-deploy documentation sites*
+> *Setting up CI/CD workflows to auto-deploy documentation sites*
 
 ---
 

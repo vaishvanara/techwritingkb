@@ -6,7 +6,7 @@ revision_date: 2026-05-15
 ---
 
 # Automated Prose Linting
-*Implementing programmatic checks to maintain voice, tone, and grammar across large document sets*
+> *Implementing programmatic checks to maintain voice, tone, and grammar across large document sets*
 
 ---
 

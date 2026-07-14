@@ -6,7 +6,7 @@ revision_date: 2026-06-06
 ---
 
 # Diagrams as Code (DaC)
-*Utilizing text-based tools to generate flowcharts, sequence diagrams, and state maps*
+> *Utilizing text-based tools to generate flowcharts, sequence diagrams, and state maps*
 
 ---
 

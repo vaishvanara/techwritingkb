@@ -6,7 +6,7 @@ revision_date: 2026-05-13
 ---
 
 # Visual communication principles
-*How to use layout, white space, and visual cues to simplify dense technical information*
+> *How to use layout, white space, and visual cues to simplify dense technical information*
 
 ---
 

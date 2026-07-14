@@ -6,7 +6,7 @@ revision_date: 2026-05-13
 ---
 
 # Audience analysis frameworks
-*How to categorize users and tailor technical content to meet their specific expertise levels*
+> *How to categorize users and tailor technical content to meet their specific expertise levels*
 
 ---
 

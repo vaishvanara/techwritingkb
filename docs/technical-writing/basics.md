@@ -6,7 +6,7 @@ revision_date: 2026-07-02
 ---
 
 # What is technical communication?
-*An overview of how technical knowledge is translated across different professional fields*
+> *An overview of how technical knowledge is translated across different professional fields*
 
 ---
 

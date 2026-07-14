@@ -6,7 +6,7 @@ revision_date: 2026-05-13
 ---
 
 # Active voice mastery
-*Techniques for using active voice to create more direct and actionable technical manuals*
+> *Techniques for using active voice to create more direct and actionable technical manuals*
 
 ---
 

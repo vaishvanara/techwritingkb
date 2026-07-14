@@ -6,7 +6,7 @@ revision_date: 2026-05-21
 ---
 
 # Documentation observability
-*Using data and feedback loops to measure the effectiveness and impact of your content*
+> *Using data and feedback loops to measure the effectiveness and impact of your content*
 
 ---
 

@@ -6,7 +6,7 @@ revision_date: 2026-05-13
 ---
 
 # Readability score methodologies
-*Using Flesch-Kincaid and other formulas to objectively measure and improve content clarity*
+> *Using Flesch-Kincaid and other formulas to objectively measure and improve content clarity*
 
 ---
 

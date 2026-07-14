@@ -6,7 +6,7 @@ revision_date: 2026-05-13
 ---
 
 # Lightweight markup languages
-*Understanding Markdown and other text-based formats for consistent content creation*
+> *Understanding Markdown and other text-based formats for consistent content creation*
 
 ---
 

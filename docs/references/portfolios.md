@@ -6,7 +6,7 @@ revision_date: 2026-04-28
 ---
 
 # Technical writing portfolios
-*A strategic guide for learners and career changers on building a professional Docs as Code portfolio*
+> *A strategic guide for learners and career changers on building a professional Docs as Code portfolio*
 
 ---
 

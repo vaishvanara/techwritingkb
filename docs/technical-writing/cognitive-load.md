@@ -6,7 +6,7 @@ revision_date: 2026-06-06
 ---
 
 # Cognitive load and minimalism
-*Applying psychological principles to simplify complex information and reduce reader fatigue*
+> *Applying psychological principles to simplify complex information and reduce reader fatigue*
 
 ---
 

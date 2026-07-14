@@ -6,7 +6,7 @@ revision_date: 2026-05-25
 ---
 
 # Document accessibility standards
-*Making documentation inclusive and accessible for people with disabilities*
+> *Making documentation inclusive and accessible for people with disabilities*
 
 ---
 

@@ -6,7 +6,7 @@ revision_date: 2026-06-06
 ---
 
 # The technical writer’s role in the SDLC
-*How documentation tasks fit into the software development life cycle (SDLC) and agile ceremonies*
+> *How documentation tasks fit into the software development life cycle (SDLC) and agile ceremonies*
 
 ---
 

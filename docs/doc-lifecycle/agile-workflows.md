@@ -6,7 +6,7 @@ revision_date: 2026-05-21
 ---
 
 # Agile documentation workflows
-*Managing documentation in sprint environments*
+> *Managing documentation in sprint environments*
 
 ---
 

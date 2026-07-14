@@ -6,7 +6,7 @@ revision_date: 2026-05-13
 ---
 
 # The seven Cs of communication
-*Essential communication principles to ensure software documentation is clear, concise, and correct*
+> *Essential communication principles to ensure software documentation is clear, concise, and correct*
 
 ---
 

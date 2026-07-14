@@ -6,7 +6,7 @@ revision_date: 2026-05-22
 ---
 
 # Compliance and legal documentation
-*Manage documentation for high-stakes regulations such as GDPR, SOC2, and HIPAA*
+> *Manage documentation for high-stakes regulations such as GDPR, SOC2, and HIPAA*
 
 ---
 

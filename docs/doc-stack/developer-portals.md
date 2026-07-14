@@ -6,7 +6,7 @@ revision_date: 2026-05-15
 ---
 
 # Developer portal architecture
-*Understanding the shift from simple documentation sites to interactive portals with "Try It Out" consoles*
+> *Understanding the shift from simple documentation sites to interactive portals with "Try It Out" consoles*
 
 ---
 

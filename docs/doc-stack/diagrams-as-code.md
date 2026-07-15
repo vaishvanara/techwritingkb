@@ -173,5 +173,5 @@ Use this quick-start guide to build the three most common diagram types in your 
 - [ ] **Choose your engine.** Use Mermaid.js for web-first documentation and PlantUML for complex PDF or enterprise manuals.
 - [ ] **Establish a style.** Decide on a standard direction; for example, all flowcharts should be `LR`.
 - [ ] **Add to style guide.** Define colors and *classes* for different node types within your [automated prose linting](../doc-stack/prose-linting.md) rules.
-- [ ] **Validate accessibility:** Ensure your rendering plugin includes `aria-labels` for the generated Scalable Vector Graphics (SVG) files.
+- [ ] **Validate accessibility:** Ensure your rendering plugin includes `aria-labels` for the generated [Scalable Vector Graphics (SVG)](../technical-writing/technical-illustration-tools.md#technical-illustration-file-formats) files.
 - [ ] **Enable local preview.** Install an extension, such as "Mermaid Editor" for [Visual Studio Code](https://code.visualstudio.com/){: target="_blank" rel="noopener" }, so you can see the visual change as you type the code.

@@ -1086,7 +1086,7 @@ The divergence that occurs when system infrastructure is modified but its associ
 **sanity check**  
 A quick, high-level test performed on a document or build to ensure it functions as expected and is ready for more thorough review or testing.
 
-**Scalable Vector Graphics (SVG)**  
+[**Scalable Vector Graphics (SVG)**](../technical-writing/technical-illustration-tools.md#technical-illustration-file-formats)  
 An XML-based vector image format that can be scaled to any size without losing quality, making it ideal for responsive documentation diagrams.
 
 [**scannability**](../technical-writing/plain-language.md#structural-formatting-scannability)  
@@ -1440,7 +1440,7 @@ A repetitive process where documentation is drafted, reviewed, and tested multip
 **variables**  
 Placeholders used in documentation source files that are automatically replaced with specific values during the build process to handle repetitive or changing data.
 
-**vector graphics**  
+[**vector graphics**](../technical-writing/technical-illustration-tools.md#technical-illustration-file-formats)  
 Visual images created using mathematical formulas rather than pixels, allowing them to be scaled to any size without losing quality, making them ideal for high-resolution technical illustrations.
 
 **verification and validation (V&V)**  

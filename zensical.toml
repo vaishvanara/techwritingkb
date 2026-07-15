@@ -26,7 +26,8 @@ nav = [
           { "Audience analysis" = "technical-writing/audience-analysis.md" },
           { "Information science" = "technical-writing/cognitive-load.md" },
           { "Content design" = "technical-writing/content-design-foundations.md" },
-          { "Visuals" = "technical-writing/visual-communication.md" }
+          { "Visuals" = "technical-writing/visual-communication.md" },
+          { "Illustrations" = "technical-writing/technical-illustration-tools.md" }
       ]},
       { "Specialist skills" = [
           { "Readability" = "technical-writing/readability-scores.md" },

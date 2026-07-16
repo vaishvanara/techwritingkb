@@ -28,7 +28,7 @@ In this framework, writing is a design tool. Words are treated like UI component
 
 ## The user need statement
 
-Content designers create a *user need statement* before they even draft a single word. This ensures that the content is anchored in a real-world problem rather than a list of engineering specifications.
+Content designers create a user need statement before they even draft a single word. This ensures that the content is anchored in a real-world problem rather than a list of engineering specifications.
 
 !!! quote "Sample template"
     **As a** `[user archetype]`,  
@@ -38,9 +38,9 @@ Content designers create a *user need statement* before they even draft a single
 **Example:**
 
 - **Traditional heading:** "Database configuration settings"
-- **Content design approach:** *As a `[Database Admin]`, I want to `[configure my security settings]` so that `[I can prevent unauthorized access]`.*
+- **Content design approach:** "As a `[Database Admin]`, I want to `[configure my security settings]` so that `[I can prevent unauthorized access]`."
 
-By defining the outcome first, the writer ensures the page only contains the steps required to achieve that specific goal, preventing "scope creep" in the documentation.
+By defining the outcome first, the writer ensures the page only contains the steps required to achieve that specific goal, preventing scope creep in the documentation.
 
 ---
 
@@ -75,7 +75,7 @@ Content design relies on evidence, not assumptions. This means using data to dec
 
 Content designers rarely work in isolation. They use collaborative techniques to observe technical accuracy and design alignment.
 
-- **Pair writing:** A technical writer and a subject matter expert (SME) sit together to draft content in real time. This eliminates the "ping-pong" of email reviews and ensures the technical logic and the user language are merged immediately.
+- **Pair writing:** A technical writer and a subject matter expert (SME) sit together to draft content in real time. This eliminates the back-and-forth of email reviews and ensures the technical logic and the user language are merged immediately.
 - **Content prototyping:** Before building a full documentation site, designers use low-fidelity wireframes or "Greeked text" (Lorem Ipsum) to see if the proposed hierarchy makes sense to a user.
 
 ---
@@ -86,7 +86,7 @@ Content design treats [accessibility](../references/accessibility.md) as a struc
 
 1.  **Semantic hierarchy:** Use H1 for the title, H2 for main sections, and H3 for subsections. Never skip levels for aesthetic reasons.
 2.  **Front-loading:** Place the most important information in the first sentence and the most important keywords at the start of headings.
-3.  **Meaningful links:** Avoid *"Click Here."* Instead, use descriptive links such as *"Download the Security White Paper."*
+3.  **Meaningful links:** Avoid "Click Here." Instead, use descriptive links such as "Download the Security White Paper."
 
 ---
 

@@ -90,7 +90,7 @@ Content design treats [accessibility](../references/accessibility.md) as a struc
 
 ---
 
-## The evolution: Traditional writing vs. content design
+## Traditional writing versus content design
 
 | Feature | Traditional technical writing | Content design |
 | :--- | :--- | :--- |

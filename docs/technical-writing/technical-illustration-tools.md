@@ -119,10 +119,16 @@ Illustrations communicate information quickly, but they are invisible to people 
 
 In addition to descriptive alternative text, you can use embedded accessibility tags directly inside the SVG's XML layout:
 
-```xml
-<svg role="img" aria-labelledby="svg-title svg-desc" ...>
+```xml hl_lines="1-4"
+<svg role="img" 
+     aria-labelledby="svg-title" 
+     aria-describedby="svg-desc" 
+     ...>
   <title id="svg-title">IoT Hub Outer Assembly</title>
-  <desc id="svg-desc">Exploded line drawing showing the front cover separating from the primary PCB chassis.</desc>
+  <desc id="svg-desc">
+    Exploded line drawing showing the front cover separating 
+    from the primary PCB chassis.
+  </desc>
   <!-- Vector paths go here -->
 </svg>
 ```

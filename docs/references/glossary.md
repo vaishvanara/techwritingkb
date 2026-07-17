@@ -2,7 +2,7 @@
 icon: lucide/list-tree
 title: Glossary of technical communication
 description: "A master list of industry-specific technical terms, acronyms, and professional definitions."
-revision_date: 2026-07-01
+revision_date: 2026-07-17
 ---
 
 # Glossary of technical communication
@@ -85,7 +85,7 @@ A professional organization focused on the pedagogy and research of technical an
 An open-source specification used for documenting event-driven architectures, such as webhooks and message-based systems.
 
 **atomic commits**  
-The practice of making small, independent code or documentation changes that fulfill a single task, ensuring that version control history is clear, manageable, and very easy to revert.
+The practice of making small, independent code or documentation changes that fulfill a single task, ensuring that version control history is clear, manageable, and easy to revert.
 
 **atomic content**  
 Documentation written in small, self-contained units or "atoms" to improve findability and AI retrieval efficiency.
@@ -168,7 +168,7 @@ Specific, actionable verbs used on interface buttons to reduce click hesitation 
 A short string of text connected by a line to a specific part of an illustration or code block to highlight key features.
 
 **canonical link**  
-HTML metadata specifying the primary URL of a page to prevent search engine indexing penalties on duplicated or versioned pages.
+HTML metadata specifying the primary address of a page to prevent search engine indexing penalties on duplicated or versioned pages.
 
 [**Capability Maturity Model Integration (CMMI)**](../doc-lifecycle/ddlc.md#process-maturity-and-the-cmmi)  
 A process improvement training and appraisal program used to guide organizations in streamlining their development and documentation workflows.
@@ -182,7 +182,7 @@ A branch of logic dealing with propositions that describe relationships between 
 **Certified Professional Technical Communicator (CPTC)**  
 A professional certification offered by the STC to validate the foundational skills and knowledge of technical communicators. As of 2024, the STC has been dissolved and the CPTC program is no longer available.
 
-**chain-of-thought (CoT) prompting**  
+[**chain-of-thought (CoT) prompting**](../technical-writing/prompt-patterns.md#chain-of-thought-for-source-analysis)  
 A prompt engineering pattern that forces an AI model to generate intermediate logical reasoning steps before producing its final output.
 
 **changelog**  
@@ -414,6 +414,9 @@ The continuous process through which content is planned, created, maintained, an
 [**documentation observability**](../doc-lifecycle/observability-analytics.md)  
 The practice of using analytics, feedback, and system logs to gain visibility into how documentation is used, allowing teams to measure impact and identify areas for content improvement.
 
+[**documentation pipeline**](../doc-stack/cicd.md#the-pipeline-concept)  
+A series of automated steps that trigger whenever you make a change to your documentation repository.
+
 **dogfooding**  
 The practice of having internal staff use a product's documentation to verify its accuracy before it is released to customers.
 
@@ -506,7 +509,7 @@ The practice of using search analytics, support tickets, and user data to decide
 **feature flags (toggle states)**  
 Mechanisms used to deploy software code in a dormant state, requiring writers to employ progressive documentation strategies.
 
-**few-shot prompting**  
+[**few-shot prompting**](../technical-writing/prompt-patterns.md#few-shot-prompting)  
 Providing an AI model with in-context, input-to-output examples to guide it in reproducing custom writing styles or strict output schemas.
 
 [**F-pattern / Z-pattern**](../technical-writing/cognitive-load.md#scannability-patterns)  
@@ -834,7 +837,7 @@ A lightweight markup language with plain-text formatting syntax that allows writ
 [**markup**](../doc-stack/markup-languages.md)  
 A system of tags or codes inserted into a document to define its structure, layout, or how the text should be processed and displayed.
 
-**mean time to resolution (MTTR)**  
+[**mean time to resolution (MTTR)**](../technical-writing/engineering-runbooks.md#automate-runbook-freshness)  
 An SRE metric measuring the average duration required to resolve system issues, directly optimized by runbook clarity.
 
 [**media independence architecture (MIA)**](../references/structured-authoring.md#media-independence-architecture)  
@@ -987,7 +990,7 @@ An introductory section at the beginning of a manual that explains the document'
 **product experience (PX)**  
 The total perception a user has of a product based on their interactions with the interface, functionality, and embedded help content.
 
-**progressive documentation**  
+[**progressive documentation**](../technical-writing/saas-environments.md#progressive-documentation)  
 The practice of restricting or revealing technical content dynamically to align with progressive software rollouts or beta cohorts.
 
 **Project Management Professional (PMP)**  
@@ -1028,7 +1031,7 @@ A responsibility assignment framework mapping who is Responsible, Accountable, C
 **rapid application development (RAD)**  
 An agile software development methodology that prioritizes rapid prototyping and quick feedback over long-term, rigid planning.
 
-**ReAct pattern**  
+[**ReAct (Reasoning and Acting) pattern**](../technical-writing/prompt-patterns.md#react-in-documentation-pipelines)  
 A reasoning and acting prompt framework that combines chain-of-thought thinking with external action-tool executions (such as running link checkers or API validators).
 
 [**readability**](../technical-writing/readability-scores.md)  
@@ -1076,6 +1079,9 @@ A document file format developed for cross-platform document exchange that prese
 [**role-based access control (RBAC)**](../doc-stack/developer-portals.md#user-specific-content-rbac)  
 A method of restricting system or document access based on the specific roles assigned to individual users within an organization.
 
+[**runbook**](../technical-writing/engineering-runbooks.md)  
+A comprehensive, step-by-step guide used by IT and operations teams to manage infrastructure, applications, and services.
+
 **runbook drift**  
 The divergence that occurs when system infrastructure is modified but its associated runbook is not updated accordingly.
 
@@ -1086,7 +1092,7 @@ The divergence that occurs when system infrastructure is modified but its associ
 **sanity check**  
 A quick, high-level test performed on a document or build to ensure it functions as expected and is ready for more thorough review or testing.
 
-[**Scalable Vector Graphics (SVG)**](../technical-writing/technical-illustration-tools.md#technical-illustration-file-formats)  
+[**Scalable Vector Graphics (SVG)**](../technical-writing/svg-for-docs.md)  
 An XML-based vector image format that can be scaled to any size without losing quality, making it ideal for responsive documentation diagrams.
 
 [**scannability**](../technical-writing/plain-language.md#structural-formatting-scannability)  
@@ -1258,10 +1264,10 @@ A feature of text editors and documentation sites that displays code in differen
 **table of contents (TOC)**  
 A navigational aid listing the major sections and page numbers of a document to provide an overview of the content structure.
 
-**tactical technical communication**  
+[**tactical technical communication** (TTC)](../technical-writing/tactical-writing.md)  
 Decoupled, bottom-up knowledge-sharing practices (for example, wikis and community forums) that prioritize rapid, decentralized problem-solving over centralized governance.
 
-**tactical writing**  
+[**tactical writing**](../technical-writing/tactical-writing.md)  
 The functional side of technical writing that delivers immediate utility through concise text, UI cues, and straightforward workflows.
 
 [**target audience (TA)**](../technical-writing/audience-analysis.md)  
@@ -1440,7 +1446,7 @@ A repetitive process where documentation is drafted, reviewed, and tested multip
 **variables**  
 Placeholders used in documentation source files that are automatically replaced with specific values during the build process to handle repetitive or changing data.
 
-[**vector graphics**](../technical-writing/technical-illustration-tools.md#technical-illustration-file-formats)  
+[**vector graphics**](../technical-writing/svg-for-docs.md)  
 Visual images created using mathematical formulas rather than pixels, allowing them to be scaled to any size without losing quality, making them ideal for high-resolution technical illustrations.
 
 **verification and validation (V&V)**  
@@ -1452,7 +1458,7 @@ A software tool used to track changes to documentation files over time, allowing
 **versioning**  
 The practice of assigning unique identifiers to different iterations of a document to track historical changes and support specific software releases.
 
-**viewBox (protocol/attribute)**  
+[**viewBox (protocol/attribute)**](../technical-writing/svg-for-docs.md#the-viewbox-attribute)  
 An SVG attribute that establishes a local coordinate system to allow vector graphics to scale fluidly without hardcoded pixel constraints.
 
 [**visual communication**](../technical-writing/visual-communication.md)  
@@ -1540,7 +1546,7 @@ A human-readable data serialization language frequently used for configuration f
 **zero results indicator**  
 A specific notification displayed when a user's search query returns no matches, ideally providing helpful suggestions or alternative resources to keep the user from becoming frustrated or leaving.
 
-**zero-shot prompting**  
+[**zero-shot prompting**](../technical-writing/prompt-patterns.md#zero-shot-prompting)  
 Instructing a large language model to execute an editorial task (such as active-voice translation) relying purely on its built-in linguistic training without provided examples.
 
 [**zone of proximal development (ZPD)**](../technical-writing/audience-analysis.md#knowledge-mapping-zpd)  

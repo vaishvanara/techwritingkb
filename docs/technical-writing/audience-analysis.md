@@ -67,7 +67,7 @@ A user's relationship with documentation changes based on their *intent* and the
 
 | Mental state | Intent | Action | Document type |
 | :--- | :--- | :--- | :--- |
-| **Lean-back** | Learning | Reading for broad understanding. | Tutorials / White papers |
+| **Lean-back** | Learning | Reading for broad understanding | Tutorials / White papers |
 | **Lean-forward** | Crisis / Task | Searching for a specific error or step | Troubleshooting / API ref |
 
 **Environmental context** also matters: Is the user in a quiet office with two monitors, or are they on a factory floor with a tablet, wearing gloves, in a high-noise area? Your design (font size, use of visuals, and brevity) must reflect these physical realities.

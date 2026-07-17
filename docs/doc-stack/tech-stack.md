@@ -10,7 +10,7 @@ revision_date: 2026-05-13
 
 ---
 
-The modern documentation pipeline is no longer a static repository of files; it's a dynamic knowledge management system (KMS). In today’s [Docs as Code](../doc-stack/docs-as-code.md) environment, a tech stack is an integrated ecosystem designed to manage the content lifecycle from the first keystroke in an editor to the delivery of a website.
+The modern [documentation pipeline](../doc-stack/cicd.md#the-pipeline-concept) is no longer a static repository of files; it's a dynamic knowledge management system (KMS). In today’s [Docs as Code](../doc-stack/docs-as-code.md) environment, a tech stack is an integrated ecosystem designed to manage the content lifecycle from the first keystroke in an editor to the delivery of a website.
 
 This directory explores the layers of the modern documentation tech stack, categorized by their function within the professional workflow.
 

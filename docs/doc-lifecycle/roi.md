@@ -72,7 +72,7 @@ By measuring the reduction in time spent on onboarding per account, you can demo
 
 ## Internal engineering efficiency
 
-Documentation ROI is not just external. Internal runbooks and "How-to" guides for engineers reduce the time spent on institutional knowledge transfers.
+Documentation ROI is not just external. Internal [runbooks](../technical-writing/engineering-runbooks.md) and "How-to" guides for engineers reduce the time spent on institutional knowledge transfers.
 
 - **Operational continuity:** Clear documentation ensures that if a lead developer leaves, the system remains functional.
 - **Onboarding new hires:** A new engineer who can use internal documentation to set up their environment in one day instead of five saves the company a full week of salary.

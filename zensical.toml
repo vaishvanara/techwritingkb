@@ -27,13 +27,21 @@ nav = [
           { "Information science" = "technical-writing/cognitive-load.md" },
           { "Content design" = "technical-writing/content-design-foundations.md" },
           { "Visuals" = "technical-writing/visual-communication.md" },
-          { "Illustrations" = "technical-writing/technical-illustration-tools.md" }
+          { "Illustrations" = "technical-writing/technical-illustration-tools.md" }, # NEW
+          { "Vector graphics" = "technical-writing/svg-for-docs.md" } # NEW
       ]},
       { "Specialist skills" = [
           { "Readability" = "technical-writing/readability-scores.md" },
           { "Microcopy" = "technical-writing/ux-writing.md" },
           { "Role definitions" = "technical-writing/role-taxonomy.md" },
-          { "Prompt engineering" = "technical-writing/prompt-engineering.md" }
+          { "Prompt engineering" = "technical-writing/prompt-engineering.md" },
+          { "Advanced prompting" = "technical-writing/prompt-patterns.md" }, # NEW
+          { "Tactical writing" = "technical-writing/tactical-writing.md" } # NEW
+      ]},
+        { "Industry context" = [
+          { "SaaS environments" = "technical-writing/saas-environments.md" }, # NEW
+          { "Runbooks" = "technical-writing/engineering-runbooks.md" }, # NEW
+          { "Install guides" = "technical-writing/installation-manuals.md" } # NEW
       ]}
   ]},
 

@@ -1146,7 +1146,7 @@ An accessibility-focused markup structure (such as pairing `role="img"` with `ar
 [**sentence architecture**](../technical-writing/plain-language.md#sentence-architecture)  
 The deliberate arrangement of words and phrases within a sentence to ensure maximum clarity, proper emphasis, and easy comprehension for readers who may be scanning the documentation quickly.
 
-[**sentiment widgets**](../doc-lifecycle/observability-analytics.md#sentiment-widgets)
+[**sentiment widgets**](../doc-lifecycle/observability-analytics.md#sentiment-widgets)  
 Visual components embedded on websites or dashboards that measure, display, and analyze the "mood" or emotional tone behind data.
 
 [**sequence diagram**](../doc-stack/diagrams-as-code.md#sequence-diagrams)  

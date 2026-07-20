@@ -50,14 +50,17 @@ nav = [
       { "Core knowledge" = [
           { "Infrastructure" = "doc-stack/tech-stack.md" },
           { "Authoring formats" = "doc-stack/markup-languages.md" },
-          { "Version control" = "doc-stack/git.md" }
+          { "Version control" = "doc-stack/git.md" },
+          { "CCMS" = "doc-stack/ccms-overview.md" }, # NEW
+          { "HATs" = "doc-stack/help-authoring-tools.md" } # NEW
       ]},
       { "Practical application" = [
           { "Authoring models" = "doc-stack/docs-as-code.md" },
           { "Site generation" = "doc-stack/ssg.md" },
           { "KB architecture" = "doc-stack/kb-architecture.md" },
           { "Visual automation" = "doc-stack/diagrams-as-code.md" },
-          { "Data structures" = "doc-stack/metadata-frontmatter.md" }
+          { "Data structures" = "doc-stack/metadata-frontmatter.md" },
+          { "Tooltips" = "doc-stack/terminology-tooltips.md" } # NEW
       ]},
       { "Advanced systems" = [
           { "API standards" = "doc-stack/openapi.md" },
@@ -65,8 +68,17 @@ nav = [
           { "AI preparation" = "doc-stack/machine-readable-content.md" },
           { "Automation" = "doc-stack/cicd.md" },
           { "Advanced APIs" = "doc-stack/emerging-architectures.md" },
-          { "User experience" = "doc-stack/developer-portals.md" }
-      ]}
+          { "User experience" = "doc-stack/developer-portals.md" },
+          { "Accessibility scans" = "doc-stack/automated-a11y-scans.md" }, # NEW
+          { "Data parsing" = "doc-stack/json-logic.md" } # NEW
+      ]},
+      { "Search & automation" = [
+          { "Technical SEO" = "doc-stack/seo-for-docs.md" }, # NEW
+          { "Search logic" = "doc-stack/bm25-search.md" }, # NEW
+          { "Python scripts" = "doc-stack/python-automation.md" }, # NEW
+          { "API automation" = "doc-stack/api-reference-generation.md" }, # NEW
+          { "Export formats" = "doc-stack/pdf-epub-generation.md" } # NEW
+      ]}    
   ]},
 
   # SECTION 3: DOCUMENTATION LIFECYCLE

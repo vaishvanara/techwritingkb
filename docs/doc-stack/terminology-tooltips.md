@@ -75,7 +75,7 @@ In this architecture, writers edit only `global-glossary.yml`. During the build 
 
 Tooltips can present accessibility barriers if implemented poorly. Screen reader users, keyboard-only navigators, and mobile users often cannot trigger standard mouse-hover states.
 
-To ensure your tooltips are compliant with [WCAG 2.1](https://www.w3.org/TR/WCAG21/){: target="_blank" rel="noopener" } standards, apply the following markup rules:
+To ensure your tooltips are compliant with [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/TR/WCAG21/){: target="_blank" rel="noopener" } standards, apply the following markup rules:
 
 *   **Keyboard focus:** Ensure all abbreviation tags can receive focus by adding a `tabindex="0"` attribute. This lets keyboard navigators focus on the term using the **Tab** key.
 *   **Semantic tooltip signaling:** Use ARIA attributes to indicate to assistive technologies that a definition popup exists.

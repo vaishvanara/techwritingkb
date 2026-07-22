@@ -70,7 +70,7 @@ nav = [
           { "Advanced APIs" = "doc-stack/emerging-architectures.md" },
           { "User experience" = "doc-stack/developer-portals.md" },
           { "Accessibility scans" = "doc-stack/automated-a11y-scans.md" }, # NEW
-          { "Data parsing" = "doc-stack/json-logic.md" } # NEW
+          { "JSON structures" = "doc-stack/json-logic.md" } # NEW
       ]},
       { "Search & automation" = [
           { "Technical SEO" = "doc-stack/seo-for-docs.md" }, # NEW

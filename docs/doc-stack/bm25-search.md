@@ -116,7 +116,7 @@ Use primary technical terms in the page title (`<h1>`), the first subheading (`<
 
 Sometimes, users search for terms that do not match official terminology. For example, a product might use the term "directory," but Windows users might search for "folder." 
 
-Instead of cluttering prose by writing "directories (also known as folders)," use page metadata or front matter to provide these synonyms to the search engine:
+Instead of cluttering prose by writing "directories (also known as folders)," use page metadata or [front matter](../doc-stack/metadata-frontmatter.md#what-is-frontmatter) to provide these synonyms to the search engine:
 
 ```yaml
 ---

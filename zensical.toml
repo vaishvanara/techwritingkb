@@ -72,7 +72,7 @@ nav = [
           { "Accessibility scans" = "doc-stack/automated-a11y-scans.md" }, # NEW
           { "JSON structures" = "doc-stack/json-logic.md" } # NEW
       ]},
-      { "Search & automation" = [
+      { "Search and automation" = [
           { "Documentation SEO" = "doc-stack/seo-for-docs.md" }, # NEW
           { "Search logic" = "doc-stack/bm25-search.md" }, # NEW
           { "Python scripts" = "doc-stack/python-automation.md" }, # NEW

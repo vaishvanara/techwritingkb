@@ -59,7 +59,7 @@ If you publish documentation for a flagged feature too early, you might confuse 
 
 To handle this discrepancy, use two main progressive documentation strategies:
 
-1.   **Targeted dynamic content:** If your documentation platform supports it, use metadata or front matter tags to show or hide documentation sections dynamically based on the user's logged-in status or permission group.
+1.   **Targeted dynamic content:** If your documentation platform supports it, use metadata or [front matter](../doc-stack/metadata-frontmatter.md#what-is-frontmatter) tags to show or hide documentation sections dynamically based on the user's logged-in status or permission group.
 2.   **The beta admonition pattern:** If dynamic rendering is not possible, publish the documentation globally, but use a distinct notice banner to set clear expectations.
 
 ```markdown

@@ -2,7 +2,7 @@
 icon: lucide/tags
 title: Metadata schema and frontmatter
 description: "Using YAML and other data structures to organize and optimize content for search." 
-revision_date: 2026-06-26
+revision_date: 2026-07-23
 ---
 
 # Metadata schema and frontmatter
@@ -125,7 +125,7 @@ Below is a reference for the recommended *Mandatory* versus *Optional* fields to
 
 ---
 
-### JSON schema example
+### JSON Schema example
 
 If you are using a tool that requires a strict JSON structure for metadata, your metadata header might look like this:
 

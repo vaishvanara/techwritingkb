@@ -172,7 +172,7 @@ Draft to Review: "To authenticate, send a POST request to `/api/v2/auth/login`."
 
 ## Output schemas for front matter automation
 
-One of the most tedious tasks in managing a large static site is ensuring that metadata, taxonomy tags, and YAML front matter are formatted correctly. You can use schema-enforced prompting to analyze a draft and automatically output syntactically correct metadata.
+One of the most tedious tasks in managing a large static site is ensuring that metadata, taxonomy tags, and YAML [front matter](../doc-stack/metadata-frontmatter.md#what-is-frontmatter) are formatted correctly. You can use schema-enforced prompting to analyze a draft and automatically output syntactically correct metadata.
 
 By writing a prompt that enforces a JSON schema, you can ensure the generated output directly integrates into automated front matter parsers without causing build failures.
 

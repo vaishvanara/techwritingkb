@@ -111,7 +111,7 @@ nav = [
       { "Enterprise standards" = "references/dita.md" },
       { "Global readiness" = "references/iso-standards.md" },
       { "Structured content" = "references/structured-authoring.md" },
-      { "Career strategy" = "references/career-paths.md" },
+      { "Career paths" = "references/career-paths.md" },
       { "Career growth" = "references/portfolios.md" }
   ]}
 ]

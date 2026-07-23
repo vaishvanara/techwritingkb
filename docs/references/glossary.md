@@ -2,7 +2,7 @@
 icon: lucide/list-tree
 title: Glossary of technical communication
 description: "A master list of industry-specific technical terms, acronyms, and professional definitions."
-revision_date: 2026-07-17
+revision_date: 2026-07-21
 ---
 
 # Glossary of technical communication
@@ -48,8 +48,11 @@ A specific target point within a document that allows a hyperlink to jump direct
 **annotation**  
 A note or comment added to a text, diagram, or code snippet to provide extra context or explanation for the reader.
 
-[**API documentation**](../doc-stack/tech-stack.md#transformation-engines-and-api-documentation)  
+[**API documentation**](../doc-stack/openapi.md)  
 Comprehensive instructions for using an application programming interface, including tutorials, code examples, and best practices, to help developers integrate and interact with a specific software service or platform.
+
+**API endpoint**  
+A specific URL where an API receives requests and sends responses to enable communication between different software applications.
 
 **API explorer or sandbox**  
 An interactive portal feature that allows developers to test API calls and view live responses directly in a browser.
@@ -57,7 +60,7 @@ An interactive portal feature that allows developers to test API calls and view 
 **API reference**  
 A technical manual providing detailed descriptions of specific endpoints, parameters, and return types, usually generated from source code to serve as a precise dictionary for developers during integration.
 
-**API reference generation**  
+[**API reference generation**](../doc-stack/api-reference-generation.md)  
 The pipeline of extracting inline comment structures directly from codebases to produce technical documentation references automatically.
 
 **appendix**  
@@ -102,7 +105,7 @@ A professional body representing technical communicators in Australia, providing
 [**authentication schemes**](../doc-stack/openapi.md#authentication-schemes)  
 Methods used to verify user identity for API access, including API keys, bearer tokens, and OAuth2.
 
-**automated accessibility scans**  
+[**automated accessibility scans**](../doc-stack/automated-a11y-scans.md)  
 Programmatic evaluations executed within a CI/CD build pipeline to check compiled HTML files for WCAG violations.
 
 [**automation with a human touch (jidoka)**](../doc-lifecycle/agile-workflows.md#jidoka-automation-with-a-human-touch)  
@@ -130,7 +133,7 @@ A comprehensive list of raw materials, assemblies, and parts required to manufac
 **block element modifier (BEM)**  
 A CSS naming convention used to create modular, reusable components in web development and documentation styling.
 
-**BM25 (Best Match 25) algorithm**  
+[**BM25 (Best Matching 25) algorithm**](../doc-stack/bm25-search.md)  
 A highly efficient lexical ranking algorithm used by search engines to determine a document's relevance to a given search query.
 
 **boilerplate**  
@@ -221,7 +224,7 @@ A classic tripane desktop help window format that compresses standard HTML, CSS,
 [**compliance-driven documentation**](../doc-lifecycle/compliance-legal.md)  
 Content created specifically to meet legal, regulatory, or safety standards, requiring high levels of accuracy and strict adherence to specific industry protocols to ensure organizational and user safety.
 
-**component content management system (CCMS)**  
+[**component content management system (CCMS)**](../doc-stack/ccms-overview.md)  
 A system that manages content at a granular component level rather than at a document level, facilitating high rates of content reuse.
 
 **computer-based training (CBT)**  
@@ -248,7 +251,7 @@ A user interface component designed to prevent accidental data loss or high-risk
 [**content audit**](../doc-lifecycle/governance-maintenance.md#content-audit-framework)  
 A systematic review and evaluation of all existing documentation to assess quality, accuracy, and relevance, identifying gaps, outdated information, or opportunities for consolidation and significant content improvement.
 
-**content automation**  
+[**content automation**](../doc-stack/python-automation.md)  
 The use of software systems and scripts to automatically generate, update, format, or publish content without manual human intervention.
 
 [**content debt (technical debt)**](../doc-lifecycle/agile-workflows.md#managing-content-debt)  
@@ -329,7 +332,7 @@ The four basic functions of persistent storage, frequently documented in API ref
 **cross-reference**  
 A notation within a document that directs the reader to related information in another part of the same work or a different work.
 
-**CSS Paged Media Module**  
+[**CSS Paged Media Module**](../doc-stack/pdf-epub-generation.md#css-paged-media-styling-professional-pdfs)  
 A W3C stylesheet standard defining print-specific rules (such as margins, breaks, headers, and page counters) to generate PDFs from HTML.
 
 **curse of knowledge**  
@@ -390,6 +393,9 @@ A structural file used in DITA that organizes individual topics into a hierarchy
 [**Docs as Code (DaC)**](../doc-stack/docs-as-code.md)  
 A philosophy of managing documentation using the same tools and workflows as software development, including Git, markdown, and automation.
 
+**docstrings**  
+Structured comments embedded directly within source code that describe the purpose, parameters, and return values of functions, classes, or modules to facilitate automated documentation generation.
+
 **docstring contract**  
 A standardized syntax model agreed upon by writers and developers to ensure code comments compile successfully.
 
@@ -448,7 +454,7 @@ The phase of the documentation process where a second writer or editor checks co
 **electronic learning (e-learning)**  
 Instructional content and training delivered digitally, often through a learning management system or interactive web portal.
 
-**electronic publication (EPUB)**  
+[**electronic publication (EPUB)**](../doc-stack/pdf-epub-generation.md#pdf-versus-epub-architectures)  
 An open-standard e-book file format that provides reflowable content for various digital reading devices.
 
 **electronic software delivery (ESD)**  
@@ -496,7 +502,7 @@ An XML-based markup language used to describe the visual layout of printed pages
 **Extensible Stylesheet Language Transformations (XSLT)**  
 A language used to transform an XML document into another format, such as HTML, plain text, or a different XML structure.
 
-**extraction architecture**  
+[**extraction architecture**](../doc-stack/api-reference-generation.md#extraction-architecture)  
 The automated pipeline that transforms code-level comments (docstrings) into intermediate structured JSON or Markdown formats for final rendering.
 
 [**evidence-based writing**](../technical-writing/content-design-foundations.md#evidence-based-writing)  
@@ -595,7 +601,7 @@ A phenomenon in which a large language model generates information that sounds p
 **hash-based message authentication code (HMAC)**  
 A security mechanism used in webhooks to verify that a payload was sent by a trusted source and was not tampered with.
 
-**help authoring tool (HAT)**  
+[**help authoring tool (HAT)**](../doc-stack/help-authoring-tools.md)  
 A specialized software application used to create, manage, and publish help systems and technical documentation in multiple formats.
 
 **heuristic evaluation (HE)**  
@@ -610,7 +616,7 @@ The structural organization of information, using heading levels and nested navi
 **high-contrast mode**  
 An accessibility feature that uses a limited color palette with high contrast between text and background, helping users with visual impairments read digital documentation much more easily.
 
-**HowTo schema**  
+[**HowTo schema**](../doc-stack/seo-for-docs.md#implement-structured-documentation-schema)  
 A JSON-LD structured data schema used to mark up step-by-step instructions to enable search engine rich results.
 
 **human-computer interaction (HCI)**  
@@ -698,7 +704,7 @@ A software suite that provides comprehensive tools for software development, com
 **intellectual property (IP)**  
 A category of property that includes intangible creations of the human intellect, such as copyrights, trademarks, and patented processes.
 
-**interface definition language (IDL)**  
+[**interface definition language (IDL)**](../doc-stack/openapi.md#industry-standard-oas-as-an-idl)  
 A language used to describe a software component's interface, allowing different programs to communicate regardless of the language they were written in.
 
 **internal engineering runbook (playbook)**  
@@ -735,8 +741,11 @@ A software development environment used for developing Java applications, which 
 **Java Runtime Environment (JRE)**  
 The set of software tools required to run Java applications, distinct from the tools required to develop them.
 
-**JavaScript Object Notation (JSON)**  
+[**JavaScript Object Notation (JSON)**](../doc-stack/json-logic.md)  
 A lightweight, text-based data format used to store and transport data, frequently used for API responses and documentation metadata.
+
+[**JSON Payload**](../doc-stack/json-logic.md#anatomy-of-a-json-payload)  
+A text-based representation of structured data. It consists of key-value pairs and ordered lists.
 
 [**just-in-time (JIT) learning**](../technical-writing/cognitive-load.md#just-in-time-learning)  
 A delivery model where documentation or training is provided to the user at the exact moment they need it to complete a task.
@@ -945,6 +954,9 @@ The process of converting source files, typically XML or Markdown, into a final 
 
 ### P
 
+[**parser**](../doc-stack/api-reference-generation.md#2-the-extraction-engine-parser)  
+A software component that takes sequential data, such as code or text, and breaks it down into smaller, structured parts.
+
 [**P.O.U.R.**](../references/accessibility.md#the-four-principles-of-a11y)  
 An acronym for the four principles of accessibility: perceivable, operable, understandable, and robust.
 
@@ -972,7 +984,7 @@ A writing standard that prioritizes simple sentence structures and common vocabu
 **pogo-sticking**  
 A user behavior where individuals quickly bounce back and forth between a search results page and individual documentation articles, indicating that the content is not meeting their immediate needs.
 
-**Portable Document Format (PDF)**  
+[**Portable Document Format (PDF)**](../doc-stack/pdf-epub-generation.md#pdf-versus-epub-architectures)  
 A file format that preserves the intended layout and formatting of a document regardless of the software or hardware used to view it.
 
 **Portable Network Graphics (PNG)**  
@@ -1079,6 +1091,9 @@ A document file format developed for cross-platform document exchange that prese
 [**role-based access control (RBAC)**](../doc-stack/developer-portals.md#user-specific-content-rbac)  
 A method of restricting system or document access based on the specific roles assigned to individual users within an organization.
 
+**ROT data**  
+An acronym in IT and data management that stands for Redundant, Obsolete, and Trivial information stored across enterprise systems.
+
 [**runbook**](../technical-writing/engineering-runbooks.md)  
 A comprehensive, step-by-step guide used by IT and operations teams to manage infrastructure, applications, and services.
 
@@ -1107,6 +1122,9 @@ The visual and textual cues that suggest to a user whether a specific link or pa
 **schema**  
 A formal description of the structure, data types, and constraints allowed within a specific data format, such as XML or JSON.
 
+[**schema markup**](../doc-stack/seo-for-docs.md#implement-structured-documentation-schema)  
+Code added to a website's HTML to explicitly label content. It uses Schema.org vocabulary to help search engines and AI understand web pages, enabling rich search results and accurate AI citations.
+
 **scope**  
 The defined boundaries of a documentation project, specifying what information is included and what is intentionally left out to meet user needs.
 
@@ -1116,7 +1134,7 @@ Assistive software that converts digital text and interface elements into synthe
 [**search engine optimization (SEO)**](../doc-stack/metadata-frontmatter.md#search-engine-optimization)  
 The practice of structuring and tagging content to improve its visibility and ranking in search engine results.
 
-**search relevance**  
+[**search relevance**](../doc-stack/bm25-search.md)  
 The measure of how accurately a search engine matches a user's query with the most helpful, contextual results in a knowledge base.
 
 **Section 508**  
@@ -1133,6 +1151,9 @@ The logical organization of content using levels of importance, typically repres
 
 **semantic markup**  
 The use of HTML tags or XML elements that clearly describe the meaning and structure of the content rather than just its appearance.
+
+[**semantic search**](../doc-stack/seo-for-docs.md#semantic-search-in-modern-help-centers)  
+A data searching technique that uses intent and context to understand the meaning behind a query, delivering more accurate results than traditional keyword matching.
 
 **semantic tags**  
 HTML or XML elements that clearly describe the meaning of the content they contain, helping search engines and assistive technologies better understand and process the documentation's underlying structure.
@@ -1279,7 +1300,7 @@ A usability research method where participants are asked to complete specific ac
 [**taxonomy**](../doc-stack/metadata-frontmatter.md#taxonomy-management)  
 A system used to classify and organize information into a hierarchical structure to improve findability and site navigation.
 
-**TechArticle schema**  
+[**TechArticle schema**](../doc-stack/seo-for-docs.md#implement-structured-documentation-schema)  
 A JSON-LD metadata format identifying a web page as an authoritative technical resource for search crawlers.
 
 [**technical communication (TC)**](../technical-writing/basics.md)  
@@ -1312,7 +1333,7 @@ A pre-formatted document or file that serves as a starting point for new content
 [**terminology management**](../references/iso-standards.md#standardized-terminology-roadmap)  
 The process of identifying, storing, and managing specialized terms to ensure they are used consistently across all documentation sets.
 
-**terminology tooltips**  
+[**terminology tooltips**](../doc-stack/terminology-tooltips.md)  
 Hover-over user interface elements used to present jargon or acronym definitions without cluttering body text.
 
 [**Text Encoding Initiative (TEI)**](../references/structured-authoring.md#text-encoding-initiative)  
@@ -1348,7 +1369,7 @@ The stylistic character of writing that conveys a specific personality or attitu
 **tooltip density**  
 A visual clarity metric tracking the ratio of compiled terminology tooltips to the total word count of a page.
 
-[**tooltips**](../technical-writing/ux-writing.md#onboarding-and-tooltips)  
+[**tooltips**](../doc-stack/terminology-tooltips.md)  
 Small informational pop-ups that appear when a user hovers over or selects a specific interface element for contextual help.
 
 [**topic-based authoring**](../references/dita.md#core-philosophy-topic-based-authoring)  

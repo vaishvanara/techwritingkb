@@ -28,7 +28,7 @@ The following roles are embedded within engineering and product teams. The focus
 
 ### Role deep dive
 
-- **Technical writer:** This is the core role in most software companies. Modern technical writers often follow a [Docs as Code](../doc-stack/docs-as-code.md) workflow, which involves treating documentation files like source code and storing them in a repository (for example, GitHub), using [version control](../doc-stack/git.md), and running [automated tests](../doc-stack/prose-linting.md) for broken links or style violations.
+- **Technical writer:** This is the core role in most software companies. Modern technical writers often follow a [Docs as Code](../doc-stack/docs-as-code.md) workflow, which involves treating documentation files such as source code and storing them in a repository (for example, GitHub), using [version control](../doc-stack/git.md), and running [automated tests](../doc-stack/prose-linting.md) for broken links or style violations.
 - **API documentation writer:** These writers must understand the request-response cycle and be comfortable reading code snippets in languages such as Python, Java, or JavaScript. API documentation writers often manage OpenAPI files to generate interactive reference documentation where developers can test endpoints in real time.
 - **UX writer:** Also known as a content designer, this role focuses on the language within the product itself. UX writers advocate for the user during the design phase, ensuring that the interface is intuitive. They use tools such as Figma to collaborate with designers on the logical flow of information.
 
@@ -111,7 +111,7 @@ Growth in the technical communication field requires staying current with both t
     While Special Interest Groups (SIGs) are excellent for niche networking, [Write the Docs](https://www.writethedocs.org/){: target="_blank" rel="noopener" } has become the primary global community for modern technical writers. Their Slack channel and annual conferences focus on the Docs as Code philosophy and the intersection of writing and software engineering.
     
     - **API documentation:** Highly active discussions on OpenAPI and developer portals.
-    - **Documenting AI:** A growing focus on how to document Large Language Models (LLMs) and use AI for content generation.
+    - **Documenting AI:** A growing focus on how to document large language models (LLMs) and use AI for content generation.
     - **Career advice:** A dedicated space for salary transparency and job listings.
 
 === "Skill mastery"
@@ -119,8 +119,8 @@ Growth in the technical communication field requires staying current with both t
 
     To reach the Staff or Principal level, technical writers should aim for a T-shaped skill set:
     
-    - **The horizontal bar:** Broad knowledge of the entire documentation lifecycle (writing, editing, search engine optimization (SEO), and basic HTML/CSS).
-    - **The vertical bar:** Deep expertise in one technical niche. For example, becoming an expert in Git-based workflows, GraphQL API documentation, or AI prompt engineering for content automation.
+    - **The horizontal bar:** Broad knowledge of the entire [documentation lifecycle](../doc-lifecycle/ddlc.md) (writing, editing, search engine optimization (SEO), and basic HTML/CSS).
+    - **The vertical bar:** Deep expertise in one technical niche. For example, becoming an expert in [Git-based workflows](../doc-stack/git.md), [GraphQL API documentation](../doc-stack/emerging-architectures.md#the-graphql-schema), or [AI prompt engineering](../technical-writing/prompt-engineering.md) for [content automation](../doc-stack/python-automation.md).
 
 ---
 

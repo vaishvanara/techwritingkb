@@ -90,7 +90,9 @@ nav = [
       { "Deep dives" = [
           { "Software integration" = "doc-lifecycle/sdlc-integration.md" },
           { "Project management" = "doc-lifecycle/agile-workflows.md" },
-          { "Peer review" = "doc-lifecycle/review-approval.md" }
+          { "Peer review" = "doc-lifecycle/review-approval.md" },
+          { "Team alignment" = "doc-lifecycle/cross-functional-collaboration.md" }, # NEW
+          { "Contributing" = "doc-lifecycle/contribution-guides.md" } # NEW
       ]},
       { "Expert insights" = [
           { "Feedback loops" = "doc-lifecycle/usability-testing.md" },
@@ -98,21 +100,34 @@ nav = [
           { "Observability" = "doc-lifecycle/observability-analytics.md" },
           { "Migration" = "doc-lifecycle/content-migrations.md" },
           { "Compliance" = "doc-lifecycle/compliance-legal.md" },
-          { "Business impact" = "doc-lifecycle/roi.md" }
+          { "Business impact" = "doc-lifecycle/roi.md" },
+          { "Gap analysis" = "doc-lifecycle/content-gap-analysis.md" }, # NEW
+          { "Content safety" = "doc-lifecycle/ai-safety.md" }, # NEW
+          { "Conversational AI" = "doc-lifecycle/conversational-ai.md" } # NEW
       ]}
   ]},
 
   # SECTION 4: REFERENCE MATERIALS
   { "Reference materials" = [
-      { "Industry terms" = "references/glossary.md" },
-      { "Standard templates" = "references/templates.md" },
-      { "Information design" = "references/ia-design.md" },
-      { "Inclusive design" = "references/accessibility.md" },
-      { "Enterprise standards" = "references/dita.md" },
-      { "Global readiness" = "references/iso-standards.md" },
-      { "Structured content" = "references/structured-authoring.md" },
-      { "Career paths" = "references/career-paths.md" },
-      { "Career growth" = "references/portfolios.md" }
+      { "Foundations and career" = [
+          { "Career paths" = "references/career-paths.md" }, # NEW
+          { "Career growth" = "references/portfolios.md" },
+          { "Industry terms" = "references/glossary.md" }
+      ]},
+      { "Content architecture" = [
+          { "Information design" = "references/ia-design.md" },
+          { "Systems thinking" = "references/systems-thinking.md" }, # NEW
+          { "Structured content" = "references/structured-authoring.md" }
+      ]},
+      { "Global standards" = [
+          { "Enterprise standards" = "references/dita.md" },
+          { "Global readiness" = "references/iso-standards.md" },
+          { "Inclusive design" = "references/accessibility.md" }
+      ]},
+      { "Technical reference" = [
+          { "Standard templates" = "references/templates.md" },
+          { "Cloud terminology" = "references/cloud-services.md" } # NEW
+      ]}
   ]}
 ]
 

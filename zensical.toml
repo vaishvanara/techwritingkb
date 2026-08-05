@@ -92,7 +92,7 @@ nav = [
           { "Project management" = "doc-lifecycle/agile-workflows.md" },
           { "Peer review" = "doc-lifecycle/review-approval.md" },
           { "Team alignment" = "doc-lifecycle/cross-functional-collaboration.md" }, # NEW
-          { "Contributing" = "doc-lifecycle/contribution-guides.md" } # NEW
+          { "Contributing" = "doc-lifecycle/contribution-guidelines.md" } # NEW
       ]},
       { "Expert insights" = [
           { "Feedback loops" = "doc-lifecycle/usability-testing.md" },

@@ -111,8 +111,7 @@ nav = [
   { "Reference materials" = [
       { "Foundations and career" = [
           { "Career paths" = "references/career-paths.md" }, # NEW
-          { "Career growth" = "references/portfolios.md" },
-          { "Industry terms" = "references/glossary.md" }
+          { "Career growth" = "references/portfolios.md" }
       ]},
       { "Content architecture" = [
           { "Information design" = "references/ia-design.md" },
@@ -125,6 +124,7 @@ nav = [
           { "Inclusive design" = "references/accessibility.md" }
       ]},
       { "Technical reference" = [
+          { "Industry terms" = "references/glossary.md" },
           { "Standard templates" = "references/templates.md" },
           { "Cloud terminology" = "references/cloud-services.md" } # NEW
       ]}

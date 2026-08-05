@@ -33,7 +33,10 @@ An iterative approach to content creation that aligns with the software's develo
 **AI-generated content (AIGC)**  
 Text, images, or other media created by large language models and generative tools to assist in the documentation process.
 
-**AI safety guardrails**  
+[**AI knowledge management**](../doc-lifecycle/conversational-ai)  
+Using AI to collect, organize, and retrieve information. It replaces old keyword searches and manual folder sorting with smart tools such as natural language processing and semantic search.
+
+[**AI safety guardrails**](../doc-lifecycle/ai-safety.md)  
 Programmatic boundaries, input/output filters, and system prompts designed to prevent large language models from generating harmful or restricted content.
 
 [**alternative text or alt txt (alt-txt)**](../references/accessibility.md#alt-text-blueprint)  
@@ -263,7 +266,7 @@ The practice of using data and user research to design content that meets specif
 [**content engineering**](../doc-stack/tech-stack.md)  
 The technical discipline of designing and managing the infrastructure, data models, and workflows required to deliver structured content across multiple platforms, devices, and diverse user-facing digital applications.
 
-**content gap analysis**  
+[**content gap analysis**](../doc-lifecycle/content-gap-analysis.md)  
 The process of identifying topics, keywords, or formats that your target audience cares about but your website currently lacks or covers poorly compared to competitors.
 
 [**content governance**](../doc-lifecycle/governance-maintenance.md)  
@@ -314,7 +317,7 @@ The practice of integrating documentation updates directly into the software dev
 [**continuous integration and continuous deployment (CI/CD)**](../doc-stack/cicd.md)  
 A methodology that automates the building, testing, and deployment of software or documentation to ensure frequent and reliable updates.
 
-**CONTRIBUTING**  
+[**CONTRIBUTING**](../doc-lifecycle/contribution-guidelines.md#structure-of-a-contributing-file)  
 A documentation file that guides community members on how to submit code, report bugs, and follow project standards for a repository.
 
 **contribution velocity**  
@@ -683,7 +686,7 @@ Helpful content or explanations located directly within a product's source code 
 **inline markup (SVG)**  
 The integration method where vector graphic XML code is placed directly inside the HTML Document Object Model (DOM), allowing dynamic CSS styling.
 
-**input moderation**  
+[**input moderation**](../doc-lifecycle/ai-safety.md#documenting-input-moderation-rules)  
 A pre-processing security layer that intercepts and evaluates user prompts against classification rules before they reach an LLM.
 
 **installation lifecycle**  
@@ -855,6 +858,9 @@ A design approach that separates content from its presentation, allowing informa
 [**metadata**](../doc-lifecycle/governance-maintenance.md#metadata-governance)  
 A set of data that provides information about other data, such as tags, author names, and descriptions used to organize and optimize content.
 
+**metadata indexing schema**  
+The configuration within a database (specifically a vector database such as Pinecone, Weaviate, or Milvus) that determines which of those attributes are actually searchable or filterable.
+
 [**metadata schema**](../doc-stack/metadata-frontmatter.md)  
 A structured framework that defines how information about content is organized and categorized, allowing for improved searchability, filtering, and automated management of digital assets within a documentation system.
 
@@ -895,7 +901,7 @@ A branch of artificial intelligence that enables computers to understand, interp
 **navigation**  
 The system of links, menus, and visual cues that allows users to move through a documentation site and find specific information.
 
-**neural search**  
+[**neural search**](../doc-lifecycle/conversational-ai.md#3-writing-for-neural-search)  
 Search portal architectures relying on semantic vector spaces and intent similarity rather than literal string indexing.
 
 **nominalization**  
@@ -903,12 +909,6 @@ The process of turning a verb into a noun (for example, "verification" instead o
 
 [**non-disclosure agreement (NDA)**](../doc-lifecycle/compliance-legal.md#confidentiality-and-the-nda-framework)  
 A legal contract between parties that prohibits the sharing of confidential information, often signed by writers working on unreleased products.
-
-**null result query**  
-A search query performed by a user that returns zero results, serving as a data point to identify gaps in documentation.
-
-**null search rate (NSR)**  
-An analytics metric measuring the percentage of search queries returning zero results, used to identify terminology or content gaps.
 
 ---
 
@@ -1037,7 +1037,7 @@ A focused instructional document that leads a user through the initial setup or 
 
 ### R
 
-**RACI matrix**  
+[**RACI matrix**](../doc-lifecycle/cross-functional-collaboration.md#establish-a-collaborative-raci-matrix)  
 A responsibility assignment framework mapping who is Responsible, Accountable, Consulted, and Informed across different stages of a documentation project.
 
 **rapid application development (RAD)**  
@@ -1564,8 +1564,11 @@ A human-readable data serialization language frequently used for configuration f
 
 ### Z
 
-**zero results indicator**  
-A specific notification displayed when a user's search query returns no matches, ideally providing helpful suggestions or alternative resources to keep the user from becoming frustrated or leaving.
+**zero-result rate (ZRR)**  
+An analytics metric measuring the percentage of search queries returning zero results, used to identify terminology or content gaps.
+
+[**zero-result search**](../doc-lifecycle/content-gap-analysis.md#zero-result-searches)  
+A search query performed by a user that returns zero results, serving as a data point to identify gaps in documentation.
 
 [**zero-shot prompting**](../technical-writing/prompt-patterns.md#zero-shot-prompting)  
 Instructing a large language model to execute an editorial task (such as active-voice translation) relying purely on its built-in linguistic training without provided examples.

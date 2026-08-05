@@ -102,7 +102,7 @@ nav = [
           { "Compliance" = "doc-lifecycle/compliance-legal.md" },
           { "Business impact" = "doc-lifecycle/roi.md" },
           { "Gap analysis" = "doc-lifecycle/content-gap-analysis.md" }, # NEW
-          { "Content safety" = "doc-lifecycle/ai-safety.md" }, # NEW
+          { "AI guardrails" = "doc-lifecycle/ai-safety.md" }, # NEW
           { "Conversational AI" = "doc-lifecycle/conversational-ai.md" } # NEW
       ]}
   ]},

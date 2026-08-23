@@ -36,7 +36,7 @@ Text, images, or other media created by large language models and generative too
 [**AI knowledge management**](../doc-lifecycle/conversational-ai)  
 Using AI to collect, organize, and retrieve information. It replaces old keyword searches and manual folder sorting with smart tools such as natural language processing and semantic search.
 
-[**AI safety guardrails**](../doc-lifecycle/ai-safety.md)  
+[**AI safety guardrails**](../industry-terms/ai-safety-guardrails.md)  
 Programmatic boundaries, input/output filters, and system prompts designed to prevent large language models from generating harmful or restricted content.
 
 [**alternative text or alt txt (alt-txt)**](../references/accessibility.md#alt-text-blueprint)  
@@ -51,7 +51,7 @@ A specific target point within a document that allows a hyperlink to jump direct
 **annotation**  
 A note or comment added to a text, diagram, or code snippet to provide extra context or explanation for the reader.
 
-[**API documentation**](../doc-stack/openapi.md)  
+[**API documentation**](../industry-terms/api-documentation.md)  
 Comprehensive instructions for using an application programming interface, including tutorials, code examples, and best practices, to help developers integrate and interact with a specific software service or platform.
 
 **API endpoint**  
@@ -93,7 +93,7 @@ An open-source specification used for documenting event-driven architectures, su
 **atomic commits**  
 The practice of making small, independent code or documentation changes that fulfill a single task, ensuring that version control history is clear, manageable, and easy to revert.
 
-**atomic content**  
+[**atomic content**](../industry-terms/atomic-content.md)  
 Documentation written in small, self-contained units or "atoms" to improve findability and AI retrieval efficiency.
 
 [**audience analysis**](../technical-writing/audience-analysis.md)  
@@ -110,6 +110,9 @@ Methods used to verify user identity for API access, including API keys, bearer 
 
 [**automated accessibility scans**](../doc-stack/automated-a11y-scans.md)  
 Programmatic evaluations executed within a CI/CD build pipeline to check compiled HTML files for WCAG violations.
+
+[**automated API reference generation**](../industry-terms/automated-api-reference-generation.md)  
+An automated process of extracting source code docstrings and converting them into structured documentation tables.
 
 [**automation with a human touch (jidoka)**](../doc-lifecycle/agile-workflows.md#jidoka-automation-with-a-human-touch)  
 A principle from lean manufacturing that emphasizes intelligent automation, often applied to maintaining quality control within documentation workflows.
@@ -142,7 +145,7 @@ A highly efficient lexical ranking algorithm used by search engines to determine
 **boilerplate**  
 Standardized text or code blocks that are reused across multiple documents or templates without significant changes.
 
-**bookmap**  
+[**bookmap**](../industry-terms/bookmap.md)  
 A master configuration file used to define the structural hierarchy, navigation, and compilation layout of individual documentation topics.
 
 **bounce rate**  
@@ -188,7 +191,7 @@ A branch of logic dealing with propositions that describe relationships between 
 **Certified Professional Technical Communicator (CPTC)**  
 A professional certification offered by the STC to validate the foundational skills and knowledge of technical communicators. As of 2024, the STC has been dissolved and the CPTC program is no longer available.
 
-[**chain-of-thought (CoT) prompting**](../technical-writing/prompt-patterns.md#chain-of-thought-for-source-analysis)  
+[**chain-of-thought (CoT) prompting**](../industry-terms/chain-of-thought-prompting.md)  
 A prompt engineering pattern that forces an AI model to generate intermediate logical reasoning steps before producing its final output.
 
 **changelog**  
@@ -197,7 +200,7 @@ A curated, chronological list of notable changes, bug fixes, and new features ad
 **choice paralysis**  
 A state of indecision caused by presenting too many options to a user, which can be mitigated in documentation through progressive disclosure and clear, simplified navigation and layout paths.
 
-[**chunking**](../technical-writing/cognitive-load.md#millers-law-and-chunking)  
+[**chunking**](../industry-terms/chunking.md)  
 The process of breaking down complex information into small, manageable pieces to improve a reader's ability to process and retain information.
 
 **clear, concise, complete, and correct (4Cs)**  
@@ -221,7 +224,7 @@ A readability formula that calculates the grade level of a text based on charact
 **command line interface (CLI)**  
 A text-based interface used to interact with computer programs by typing commands instead of using a graphical user interface.
 
-**Compiled HTML Help (CHM)**  
+[**Compiled HTML Help (CHM)**](../industry-terms/compiled-html-help.md)  
 A classic tripane desktop help window format that compresses standard HTML, CSS, and navigation files into a single binary.
 
 [**compliance-driven documentation**](../doc-lifecycle/compliance-legal.md)  
@@ -233,7 +236,7 @@ A system that manages content at a granular component level rather than at a doc
 **computer-based training (CBT)**  
 Interactive training programs delivered via computer, often featuring self-paced modules and assessments.
 
-[**concept-task-reference (CTR) model**](../references/dita.md#ctr-model-information-typing)  
+[**concept-task-reference (CTR) model**](../industry-terms/concept-task-reference.md)  
 An information typing strategy that categorizes technical content into conceptual overviews, step-by-step procedures, and detailed reference data to improve clarity and facilitate efficient user search and learning.
 
 **conciseness reward (document length)**  
@@ -251,13 +254,13 @@ Content within a source file that is flagged to be included or excluded during t
 [**confirmation dialog**](../technical-writing/ux-writing.md#2-the-confirmation-dialog)  
 A user interface component designed to prevent accidental data loss or high-risk actions by requiring user confirmation.
 
-[**content audit**](../doc-lifecycle/governance-maintenance.md#content-audit-framework)  
+[**content audit**](../industry-terms/content-audit.md)  
 A systematic review and evaluation of all existing documentation to assess quality, accuracy, and relevance, identifying gaps, outdated information, or opportunities for consolidation and significant content improvement.
 
 [**content automation**](../doc-stack/python-automation.md)  
 The use of software systems and scripts to automatically generate, update, format, or publish content without manual human intervention.
 
-[**content debt (technical debt)**](../doc-lifecycle/agile-workflows.md#managing-content-debt)  
+[**content debt (technical debt)**](../industry-terms/content-debt.md)  
 The backlog of missing, outdated, or poorly structured documentation that requires future effort to resolve.
 
 [**content design (CD)**](../technical-writing/content-design-foundations.md)  
@@ -278,7 +281,7 @@ A map of the path a user takes from their initial search intent to the successfu
 **content management (CM)**  
 The systematic process of collecting, managing, and publishing information in any form or medium throughout its lifecycle.
 
-**content management system (CMS)**  
+[**content management system (CMS)**](../industry-terms/content-management-system.md)  
 A software application used to create, manage, and modify digital content, typically using a database and a graphical user interface.
 
 [**content migration**](../doc-lifecycle/content-migrations.md)  
@@ -311,7 +314,7 @@ Help documentation that provides specific information based on the user's curren
 **contextual anchors**  
 The practice of using explicit nouns instead of relative pronouns (for example, writing "Configure authentication keys" rather than "Configure this") to ensure isolated content chunks retain meaning during AI retrieval.
 
-[**continuous documentation**](../doc-stack/docs-as-code.md#continuous-documentation)  
+[**continuous documentation**](../industry-terms/continuous-documentation.md)  
 The practice of integrating documentation updates directly into the software development lifecycle, ensuring that manuals and help files evolve simultaneously with the code they are describing for users.
 
 [**continuous integration and continuous deployment (CI/CD)**](../doc-stack/cicd.md)  
@@ -323,7 +326,7 @@ A documentation file that guides community members on how to submit code, report
 **contribution velocity**  
 A metric tracking the frequency of edits made to documentation channels by non-documentation staff or community members.
 
-**controlled language**  
+[**controlled language**](../industry-terms/controlled-language.md)  
 A restricted version of a natural language used to limit vocabulary and grammar to reduce ambiguity and translation costs.
 
 **conversion rate**  
@@ -335,7 +338,7 @@ The four basic functions of persistent storage, frequently documented in API ref
 **cross-reference**  
 A notation within a document that directs the reader to related information in another part of the same work or a different work.
 
-[**CSS Paged Media Module**](../doc-stack/pdf-epub-generation.md#css-paged-media-styling-professional-pdfs)  
+[**CSS Paged Media Module**](../industry-terms/css-paged-media-module.md)  
 A W3C stylesheet standard defining print-specific rules (such as margins, breaks, headers, and page counters) to generate PDFs from HTML.
 
 **curse of knowledge**  
@@ -372,13 +375,13 @@ An HTML or Markdown list format used to group terms with their corresponding des
 **descriptive links**  
 Hyperlink text that clearly indicates the destination or purpose of the link, improving accessibility for screen readers and helping all users navigate documentation sets more efficiently and intuitively.
 
-**developer experience (DX)**  
+[**developer experience (DX)**](../industry-terms/developer-experience.md)  
 The overall feeling and ease of use a developer encounters when interacting with a company's software, APIs, and technical documentation.
 
 [**developer portal**](../doc-stack/developer-portals.md)  
 A centralized web platform providing tools, documentation, and resources such as API keys and sandboxes that developers need to build, test, and manage integrations with a software service.
 
-[**developer relations (DevRel)**](../technical-writing/role-taxonomy.md#hybrid-roles)  
+[**developer relations (DevRel)**](../industry-terms/developer-relations.md)  
 A specialized professional role focused on building relationships between a software company and external developers, involving technical advocacy, community engagement, and the creation of helpful educational developer resources.
 
 [**Diagrams as Code (DaC)**](../doc-stack/diagrams-as-code.md)  
@@ -411,7 +414,7 @@ A programming interface for web documents that represents the page structure as 
 **Document Type Definition (DTD)**  
 A set of markup declarations that define the structure and legal elements of an XML or SGML document.
 
-[**documentation funnel**](../doc-lifecycle/observability-analytics.md#the-documentation-funnel)  
+[**documentation funnel**](../industry-terms/documentation-funnel.md)  
 A model representing the user journey through documentation, starting from initial search discovery to high-level conceptual understanding and finally to specific technical task completion or successful product troubleshooting.
 
 **documentation lag**  
@@ -490,7 +493,7 @@ The final page a user visits before leaving a documentation site, analyzed to de
 [**expert's blind spot**](../technical-writing/audience-analysis.md#the-experts-blind-spot)  
 The tendency for subject matter experts to omit "obvious" steps that are actually crucial for a beginner to understand a task.
 
-**exploded view**  
+[**exploded view**](../industry-terms/exploded-view.md)  
 A visual representation showing physical hardware components separated but aligned to demonstrate how they fit together, often mapped directly to a BOM.
 
 **Extensible Markup Language (XML)**  
@@ -515,10 +518,10 @@ The practice of using search analytics, support tickets, and user data to decide
 
 ### F
 
-**feature flags (toggle states)**  
+[**feature flags**](../industry-terms/feature-flags.md)  
 Mechanisms used to deploy software code in a dormant state, requiring writers to employ progressive documentation strategies.
 
-[**few-shot prompting**](../technical-writing/prompt-patterns.md#few-shot-prompting)  
+[**few-shot prompting**](../industry-terms/few-shot-prompting.md)  
 Providing an AI model with in-context, input-to-output examples to guide it in reproducing custom writing styles or strict output schemas.
 
 [**F-pattern / Z-pattern**](../technical-writing/cognitive-load.md#scannability-patterns)  
@@ -576,7 +579,7 @@ Placeholders used in documentation systems to represent values that appear in mu
 **Globalization and Localization Association (GALA)**  
 An international non-profit organization that provides resources and standards for the translation and localization industry.
 
-[**globalization, internationalization, localization, and translation (GILT)**](../references/iso-standards.md#gilt-framework)  
+[**globalization, internationalization, localization, and translation (GILT)**](../industry-terms/gilt.md)  
 A collective term for the activities required to prepare and deliver products and documentation for international markets.
 
 **glossary**  
@@ -607,7 +610,7 @@ A security mechanism used in webhooks to verify that a payload was sent by a tru
 [**help authoring tool (HAT)**](../doc-stack/help-authoring-tools.md)  
 A specialized software application used to create, manage, and publish help systems and technical documentation in multiple formats.
 
-**heuristic evaluation (HE)**  
+[**heuristic evaluation (HE)**](../industry-terms/heuristic-evaluation.md)  
 A usability inspection method where experts check an interface against a set of established design principles to identify potential user friction.
 
 **Hick’s law**  
@@ -650,7 +653,7 @@ A documentation strategy where published versions are never changed or overwritt
 **imperative mood**  
 A grammatical mood used for instructions where the subject is understood to be "you," starting sentences with a verb (for example, "Select").
 
-[**inclusive language**](../doc-stack/prose-linting.md#inclusive-language)  
+[**inclusive language**](../industry-terms/inclusive-language.md)  
 A writing practice that avoids biased or exclusionary words, ensuring that technical documentation is welcoming, respectful, and accessible to readers from diverse backgrounds and different physical abilities.
 
 **independent software vendor (ISV)**  
@@ -695,7 +698,7 @@ The chronological organization of a hardware or software deployment project into
 **Institute of Electrical and Electronics Engineers (IEEE)**  
 A professional association that develops international standards for many industries, including technical communication and software engineering.
 
-**instructional design**  
+[**instructional design**](../industry-terms/instructional-design.md)  
 The systematic process of designing and delivering educational materials, applying learning theories to technical documentation to help users master complex skills and software tools through structured educational experiences.
 
 **instructor-led training (ILT)**  
@@ -725,7 +728,7 @@ A set of elements and attributes used in XML and HTML to support the internation
 **Internet of Things (IoT)**  
 A network of physical objects embedded with sensors and software that connect and exchange data with other devices over the internet.
 
-**isometric schematic**  
+[**isometric schematic**](../industry-terms/isometric-schematic.md)  
 A technical drawing depicting three-dimensional items (such as hardware systems or IoT ecosystems) on a two-dimensional grid where depth is required.
 
 **iteration**  
@@ -750,7 +753,7 @@ A lightweight, text-based data format used to store and transport data, frequent
 [**JSON Payload**](../doc-stack/json-logic.md#anatomy-of-a-json-payload)  
 A text-based representation of structured data. It consists of key-value pairs and ordered lists.
 
-[**just-in-time (JIT) learning**](../technical-writing/cognitive-load.md#just-in-time-learning)  
+[**just-in-time (JIT) learning**](../industry-terms/just-in-time-learning.md)  
 A delivery model where documentation or training is provided to the user at the exact moment they need it to complete a task.
 
 **justification**  
@@ -778,7 +781,7 @@ A centralized online repository of information, such as articles, guides, and tr
 [**knowledge base architecture**](../doc-stack/kb-architecture.md)  
 The structural design of a repository of information, including folder organization, taxonomy, and internal linking strategies that ensure users can easily navigate, find, and manage technical content effectively.
 
-**knowledge harvesting**  
+[**knowledge harvesting**](../industry-terms/knowledge-harvesting.md)  
 The workflow of identifying high-traffic community contributions and converting them into official, stylized documentation.
 
 **knowledge management system (KMS)**  
@@ -840,7 +843,7 @@ Data or text structured in a way that computer programs can easily process and e
 **machine translation (MT)**  
 The use of software and artificial intelligence to automatically translate text or speech from one natural language to another.
 
-**machine translation post-editing (MTPE)**  
+[**machine translation post-editing (MTPE)**](../industry-terms/mtpe.md)  
 A workflow where a human translator reviews and corrects machine-generated translations to ensure accuracy and professional quality.
 
 [**Markdown (MD)**](../doc-stack/markup-languages.md#markdown-fundamentals)  
@@ -852,7 +855,7 @@ A system of tags or codes inserted into a document to define its structure, layo
 [**mean time to resolution (MTTR)**](../technical-writing/engineering-runbooks.md#automate-runbook-freshness)  
 An SRE metric measuring the average duration required to resolve system issues, directly optimized by runbook clarity.
 
-[**media independence architecture (MIA)**](../references/structured-authoring.md#media-independence-architecture)  
+[**media independence architecture (MIA)**](../industry-terms/media-independence-architecture.md)  
 A design approach that separates content from its presentation, allowing information to be published across various formats without manual reformatting.
 
 [**metadata**](../doc-lifecycle/governance-maintenance.md#metadata-governance)  
@@ -879,7 +882,7 @@ The smallest amount of documentation required to provide value to users and fulf
 **Modern Language Association (MLA)**  
 A professional organization that provides a standard style for formatting papers and citing sources in academic and professional writing.
 
-**multi-channel compilation model**  
+[**multi-channel compilation model**](../industry-terms/multi-channel-compilation-model.md)  
 The system architecture of Help Authoring Tools where single-sourced XML or XHTML modules are processed into various outputs (for example, Web, PDF, CHM) by using target configurations.
 
 **Multipurpose Internet Mail Extensions (MIME)**  
@@ -901,7 +904,7 @@ A branch of artificial intelligence that enables computers to understand, interp
 **navigation**  
 The system of links, menus, and visual cues that allows users to move through a documentation site and find specific information.
 
-[**neural search**](../doc-lifecycle/conversational-ai.md#3-writing-for-neural-search)  
+[**neural search**](../industry-terms/neural-search.md)  
 Search portal architectures relying on semantic vector spaces and intent similarity rather than literal string indexing.
 
 **nominalization**  
@@ -920,7 +923,7 @@ A goal-setting framework used by teams to track measurable outcomes and align do
 [**observability**](../doc-stack/developer-portals.md#feedback-loops-and-sentiment)  
 The practice of using data, analytics, and feedback loops to measure the effectiveness and health of a documentation site.
 
-**omnichannel delivery**  
+[**omnichannel delivery**](../industry-terms/omnichannel-delivery.md)  
 A content strategy that provides a seamless and consistent user experience across all digital and physical touchpoints, ensuring that information is unified regardless of how the user accesses it.
 
 [**one voice principle**](../doc-lifecycle/governance-maintenance.md#the-one-voice-principle)  
@@ -990,7 +993,7 @@ A file format that preserves the intended layout and formatting of a document re
 **Portable Network Graphics (PNG)**  
 A raster-graphics file format that supports lossless data compression, commonly used in documentation for high-quality screenshots and diagrams.
 
-[**progressive disclosure**](../technical-writing/cognitive-load.md#progressive-disclosure)  
+[**progressive disclosure**](../industry-terms/progressive-disclosure.md)  
 A technique of shielding users from advanced or secondary information until it is explicitly requested or required for a task.
 
 **pre-installation auditing**  
@@ -1037,13 +1040,13 @@ A focused instructional document that leads a user through the initial setup or 
 
 ### R
 
-[**RACI matrix**](../doc-lifecycle/cross-functional-collaboration.md#establish-a-collaborative-raci-matrix)  
+[**RACI matrix**](../industry-terms/raci-matrix.md)  
 A responsibility assignment framework mapping who is Responsible, Accountable, Consulted, and Informed across different stages of a documentation project.
 
 **rapid application development (RAD)**  
 An agile software development methodology that prioritizes rapid prototyping and quick feedback over long-term, rigid planning.
 
-[**ReAct (Reasoning and Acting) pattern**](../technical-writing/prompt-patterns.md#react-in-documentation-pipelines)  
+[**ReAct (Reasoning and Acting) pattern**](../industry-terms/react-pattern.md)  
 A reasoning and acting prompt framework that combines chain-of-thought thinking with external action-tool executions (such as running link checkers or API validators).
 
 [**readability**](../technical-writing/readability-scores.md)  
@@ -1110,7 +1113,7 @@ A quick, high-level test performed on a document or build to ensure it functions
 [**Scalable Vector Graphics (SVG)**](../technical-writing/svg-for-docs.md)  
 An XML-based vector image format that can be scaled to any size without losing quality, making it ideal for responsive documentation diagrams.
 
-[**scannability**](../technical-writing/plain-language.md#structural-formatting-scannability)  
+[**scannability**](../industry-terms/scannability.md)  
 The quality of content that allows readers to quickly find relevant information using headings, lists, and visual cues without having to read every word of the technical text.
 
 [**scannability patterns**](../technical-writing/cognitive-load.md#scannability-patterns)  
@@ -1140,13 +1143,13 @@ The measure of how accurately a search engine matches a user's query with the mo
 **Section 508**  
 A US federal law requiring that all electronic and information technology used by the government be accessible to people with disabilities.
 
-**semantic chunking**  
+[**semantic chunking**](../industry-terms/semantic-chunking.md)  
 Structuring and dividing technical pages into self-contained, conceptual units to optimize ingestion for AI search vectors.
 
 **semantic clustering**  
 Grouping user queries of varying phrasings based on conceptual similarity to isolate missing documentation topics.
 
-[**semantic hierarchy**](../doc-stack/machine-readable-content.md#semantic-structure-and-hierarchy)  
+[**semantic hierarchy**](../industry-terms/semantic-hierarchy.md)  
 The logical organization of content using levels of importance, typically represented by headings and subheadings, to help both users and search engines understand the structure of an article.
 
 **semantic markup**  
@@ -1158,7 +1161,7 @@ A data searching technique that uses intent and context to understand the meanin
 **semantic tags**  
 HTML or XML elements that clearly describe the meaning of the content they contain, helping search engines and assistive technologies better understand and process the documentation's underlying structure.
 
-**semantic versioning (SemVer)**  
+[**semantic versioning (SemVer)**](../industry-terms/semantic-versioning.md)  
 A formal software versioning specification using a `MAJOR.MINOR.PATCH` naming convention to signal breaking, feature, or patch releases.
 
 **semantic wrapper pattern**  
@@ -1191,7 +1194,7 @@ The organized navigation menu on a documentation site that defines the relations
 [**signal-to-noise ratio**](../technical-writing/cognitive-load.md#signal-to-noise-ratio)  
 The balance of critical information (signal) to filler words, redundant formatting, or irrelevant details (noise) in a document.
 
-[**single sourcing**](../doc-stack/openapi.md#single-sourcing-spec-driven-development)  
+[**single sourcing**](../industry-terms/single-sourcing.md)  
 A documentation methodology that allows a single set of source files to be published in multiple output formats or versions.
 
 [**single source of truth**](../doc-stack/git.md#the-single-source-of-truth)  
@@ -1218,7 +1221,7 @@ A collection of software tools, libraries, and documentation used by developers 
 [**software development life cycle (SDLC)**](../doc-lifecycle/sdlc-integration.md)  
 The structured process used by engineering teams to design, develop, test, and deploy high-quality software.
 
-[**spec-driven development**](../doc-stack/openapi.md#single-sourcing-spec-driven-development)  
+[**spec-driven development**](../industry-terms/spec-driven-development.md)  
 A methodology where documentation, specifically API specifications, is written before the code, serving as a blueprint for developers and ensuring that the final product matches the intended design.
 
 **special interest group (SIG)**  
@@ -1263,7 +1266,7 @@ A method of authoring where content is created according to a rigid, predefined 
 **style guide**  
 A set of standards for the writing, design, and formatting of documents to ensure a consistent "one voice" across an organization.
 
-[**style guide as code**](../doc-stack/prose-linting.md#the-style-guide-as-code)  
+[**style guide as code**](../industry-terms/style-guide-as-code.md)  
 The practice of treating editorial rules and formatting standards as programmatic requirements, using automated linting tools to enforce consistent writing styles across large, collaborative documentation projects.
 
 [**subject matter expert (SME)**](../doc-lifecycle/sme-interviewing.md)  
@@ -1294,7 +1297,7 @@ The functional side of technical writing that delivers immediate utility through
 [**target audience (TA)**](../technical-writing/audience-analysis.md)  
 The specific group of users for whom a document is written, defined by their technical expertise and professional goals.
 
-[**task-based testing**](../doc-lifecycle/usability-testing.md#task-based-testing)  
+[**task-based testing**](../industry-terms/task-based-testing.md)  
 A usability research method where participants are asked to complete specific actions using documentation, helping writers identify where instructions are confusing, incomplete, or lead to user errors.
 
 [**taxonomy**](../doc-stack/metadata-frontmatter.md#taxonomy-management)  
@@ -1321,7 +1324,7 @@ Help portal optimizations aimed at improving search discoverability through craw
 [**technical specification**](../references/templates.md#technical-specifications-and-fgds)  
 A detailed document describing the requirements, design, and functional behavior of a system, serving as the primary reference for developers and writers during the software construction process.
 
-**technical translation**  
+[**technical translation**](../industry-terms/technical-translation.md)  
 The process of converting technical documentation between languages while accurately preserving specialized terminology, complex instructions, and the intended meaning for a specific target global audience.
 
 [**technical writing**](../technical-writing/basics.md)  
@@ -1384,7 +1387,7 @@ A transformation engine is a software system designed to map, convert, and route
 **translation management system (TMS)**  
 A software platform used to automate and manage the translation and localization workflow for large document sets.
 
-**translation memory**  
+[**translation memory**](../industry-terms/translation-memory.md)  
 A database storing previously translated text segments to reduce enterprise localization costs by avoiding re-translations.
 
 **troubleshooting**  
@@ -1430,7 +1433,7 @@ A description of a specific scenario in which a user interacts with a system to 
 [**user advocate**](../technical-writing/basics.md#the-user-first-paradigm)  
 A role within a technical team dedicated to representing the end-user's needs and perspectives, ensuring that documentation and product features are designed with the user's success in mind.
 
-**user-centered design (UCD)**  
+[**user-centered design (UCD)**](../industry-terms/user-centered-design.md)  
 An iterative process where writers and designers focus on the end users and their needs at every stage of the documentation development life cycle.
 
 **user experience (UX)**  
@@ -1479,13 +1482,13 @@ A software tool used to track changes to documentation files over time, allowing
 **versioning**  
 The practice of assigning unique identifiers to different iterations of a document to track historical changes and support specific software releases.
 
-[**viewBox (protocol/attribute)**](../technical-writing/svg-for-docs.md#the-viewbox-attribute)  
+[**viewBox (protocol/attribute)**](../industry-terms/viewbox.md)  
 An SVG attribute that establishes a local coordinate system to allow vector graphics to scale fluidly without hardcoded pixel constraints.
 
 [**visual communication**](../technical-writing/visual-communication.md)  
 The practice of using diagrams, icons, and page layout to deliver information. By reducing reliance on dense text, it allows readers to quickly interpret and understand complex technical concepts.
 
-[**visual hierarchy**](../technical-writing/cognitive-load.md#visual-hierarchy-and-choice-paralysis)  
+[**visual hierarchy**](../industry-terms/visual-hierarchy.md)  
 The arrangement of design elements in a way that implies importance, guiding the user's eye to the most critical information first through the use of size and spacing.
 
 **voice user interface (VUI)**  
@@ -1495,7 +1498,7 @@ A technology that allows users to interact with a system through spoken commands
 
 ### W
 
-[**wayfinding**](../references/ia-design.md#wayfinding-and-orientation)  
+[**wayfinding**](../industry-terms/wayfinding.md)  
 The use of visual and structural cues, such as breadcrumbs and pagination, to help users understand their location within a documentation site.
 
 **web-based training (WBT)**  
@@ -1504,7 +1507,7 @@ Instructional content and training delivered digitally, often incorporating inte
 **Web Content Accessibility Guidelines (WCAG)**  
 The international standard for web accessibility that provides recommendations for making digital content more accessible to people with disabilities.
 
-**WebHelp / Responsive HTML5**  
+[**WebHelp / Responsive HTML5**](../industry-terms/webhelp.md)  
 A server-hosted package of standard HTML5, CSS, and search index files serving as the modern successor to desktop CHM help files.
 
 [**webhook**](../doc-stack/emerging-architectures.md#event-driven-architecture-webhooks)  
@@ -1570,7 +1573,7 @@ An analytics metric measuring the percentage of search queries returning zero re
 [**zero-result search**](../doc-lifecycle/content-gap-analysis.md#zero-result-searches)  
 A search query performed by a user that returns zero results, serving as a data point to identify gaps in documentation.
 
-[**zero-shot prompting**](../technical-writing/prompt-patterns.md#zero-shot-prompting)  
+[**zero-shot prompting**](../industry-terms/zero-shot-prompting.md)  
 Instructing a large language model to execute an editorial task (such as active-voice translation) relying purely on its built-in linguistic training without provided examples.
 
 [**zone of proximal development (ZPD)**](../technical-writing/audience-analysis.md#knowledge-mapping-zpd)  

@@ -87,6 +87,6 @@ A software system includes the people who build and use it. Documentation bridge
 Treat your documentation as a system. Use modular content that you can assemble and update without creating inconsistencies.
 
 - **[Single sourcing](../industry-terms/single-sourcing.md):** Keeping content in one place and using it in multiple formats or locations.
-- **[Information lineage](../systems-thinking/information-lineage.md):** Tracking where data comes from, how it is changed, and where it ends up in your documentation.
+- **[Data lineage](../systems-thinking/data-lineage.md):** Tracking where data comes from, how it is changed, and where it ends up in your documentation.
 - **[Ripple effect audit](../systems-thinking/ripple-effect-audit.md):** Checking how a change to one part of the documentation affects other related topics.
 - **[Concept-Task-Reference (CTR) model](../industry-terms/concept-task-reference.md):** Organizing content into conceptual overviews, step-by-step tasks, and technical specifications.

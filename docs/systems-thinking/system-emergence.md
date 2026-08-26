@@ -1,10 +1,10 @@
 ---
-title: System emergence or emergent behavior
+title: System emergence
 description: "Complex behaviors or properties that arise from the interaction of smaller components that individual components do not possess on their own."
 revision_date: 2026-08-24
 ---
 
-# System emergence or emergent behavior
+# System emergence
 
 System emergence is a phenomenon where complex behaviors, properties, or patterns arise from the interactions of individual components within a system. These emergent behaviors belong to the system as a whole; you cannot find or predict them by analyzing a single component in isolation.
 

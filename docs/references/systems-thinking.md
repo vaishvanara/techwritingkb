@@ -37,7 +37,7 @@ Before documenting a system, you must understand the rules that govern its behav
 - **[State and state transition](../systems-thinking/state-transition.md):** The condition of a system at a specific time (for example, *authenticated*, *idle*, or *error*) and the rules for moving between these conditions.
 - **[Inputs, outputs, and side effects](../systems-thinking/inputs-outputs-side-effects.md):** The data or triggers entering a system, the resulting response, and any secondary impacts on other modules, such as database writes or webhooks.
 - **[Feedback loop](../systems-thinking/feedback-loop.md):** A process where a system's output is used as input to change future behavior, such as rate limiting or automated retry logic.
-- **[System emergence](../systems-thinking/system-emergence.md):** Behaviors or properties that appear only when components interact and are not present in the individual parts.
+- **[Emergence](../systems-thinking/emergence.md):** Behaviors or properties that appear only when components interact and are not present in the individual parts.
 - **[Ashby’s Law of Requisite Variety](../systems-thinking/law-of-requisite-variety.md):** The principle that a control mechanism must have at least as many states as the system it is trying to control. In documentation, this means your content must match the complexity of the system to be effective.
 
 ---

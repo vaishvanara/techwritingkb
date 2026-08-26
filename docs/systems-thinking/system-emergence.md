@@ -1,29 +1,29 @@
 ---
-title: System emergence
+title: Emergence
 description: "Complex behaviors or properties that arise from the interaction of smaller components that individual components do not possess on their own."
 revision_date: 2026-08-24
 ---
 
-# System emergence
+# Emergence
 
-System emergence is a phenomenon where complex behaviors, properties, or patterns arise from the interactions of individual components within a system. These emergent behaviors belong to the system as a whole; you cannot find or predict them by analyzing a single component in isolation.
+Emergence is a phenomenon where complex behaviors, properties, or patterns arise from the interactions of individual components within a system. These emergent behaviors belong to the system as a whole; you cannot find or predict them by analyzing a single component in isolation.
 
 ---
 
-## Understand emergence in software and hardware ecosystems
+## Emergence in software and hardware ecosystems
 
 In technical environments, emergence explains why complex systems often behave in unexpected ways after deployment. Components designed and tested individually can interact in production to create entirely new system dynamics.
 
 Emergent behavior falls into two main categories:
 
 - **Functional emergence (Positive):** The intended functionality of a complex system. For example, when multiple independent microservices, messaging queues, and databases interact to create a responsive, auto-scaling e-commerce platform. No single microservice represents the platform, but the platform emerges from their combination.
-- **Emergent misbehavior (Negative):** Unintended or catastrophic failures that arise from component interactions. Common examples include race conditions, thread contention, split-brain scenarios in distributed databases, and cascading failures like retry storms.
+- **Emergent misbehavior (Negative):** Unintended or catastrophic failures that arise from component interactions. Common examples include race conditions, thread contention, split-brain scenarios in distributed databases, and cascading failures such as retry storms.
 
 ---
 
 ## Why emergence poses a challenge for technical communication
 
-Technical writing often uses a reductionist approach: breaking a system into individual components and documenting each piece one by one. This includes listing API endpoints, describing UI buttons, or defining configuration fields. While this is necessary for reference manuals, it does not explain how the system behaves as a whole.
+[Technical writing](../technical-writing/basics.md) often uses a reductionist approach: breaking down a system into separate components and documenting them individually. This includes listing application programming interface (API) endpoints, describing UI buttons, or defining configuration fields. While this is necessary for reference manuals, it does not explain how the system behaves as a whole.
 
 If your documentation covers components only in isolation, you might face the following issues:
 
@@ -55,14 +55,14 @@ Instead of organizing all your content around individual features, create guides
 
 When writing troubleshooting and runbook documentation, address failures that emerge from component interactions.
 
-- **Define multi-component root causes:** Do not limit troubleshooting steps to "restart the service." Explain how to diagnose systemic issues like thread pool exhaustion, deadlocks, or network split-brains.
+- **Define multi-component root causes:** Do not limit troubleshooting steps to "restart the service." Explain how to diagnose systemic issues such as thread pool exhaustion, deadlocks, or network split-brains.
 - **Specify telemetry and observability rules:** Help operators identify emergent patterns by documenting how to correlate logs, metrics, and traces across different services.
 
 ---
 
 ## Real-world example: Emergent misbehavior in a distributed system
 
-The following example shows how to document an emergent failure mode that arises when combining two individually correct features.
+The following example describes how to document an emergent failure mode that arises when combining two individually correct features.
 
 ### Known issue: Lock contention during bulk imports
 
@@ -73,7 +73,7 @@ The following example shows how to document an emergent failure mode that arises
 
 #### The emergent behavior
 
-The following diagram illustrates how these two components interact to create a system-wide failure.
+The following diagram shows how these two components interact to create a system-wide failure.
 
 ```mermaid
 sequenceDiagram

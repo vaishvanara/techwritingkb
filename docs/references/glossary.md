@@ -2,7 +2,7 @@
 icon: lucide/list-tree
 title: Glossary of technical communication
 description: "A master list of industry-specific technical terms, acronyms, and professional definitions."
-revision_date: 2026-07-21
+revision_date: 2026-08-28
 ---
 
 # Glossary of technical communication
@@ -1408,6 +1408,9 @@ The art and technique of arranging type to make written language legible, readab
 ---
 
 ### U
+
+[**ubiquitous language**](../systems-thinking/domain-driven-design.md#strategic-design-ubiquitous-language)  
+A common, shared language used by developers and domain experts to ensure clear communication.
 
 **Unified Modeling Language (UML)**  
 A standardized modeling language used to create visual representations of software systems, workflows, and actor interactions.

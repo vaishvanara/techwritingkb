@@ -10,11 +10,11 @@ A system boundary is the conceptual perimeter that separates the product or serv
 
 ---
 
-## Why boundaries matter
+## Why system boundaries matter
 
-Failing to define clear boundaries leads to documentation drift, scope creep, and user confusion. When boundaries are ambiguous, you might over-document third-party tools, platforms, or APIs. Over-documenting external tools causes the following issues:
+Failing to define clear boundaries leads to documentation drift, scope creep, and user confusion. When system boundaries are ambiguous, you might over-document third-party tools, platforms, or application programming interfaces (APIs). Over-documenting external tools may result in the following issues:
 
-- **Maintenance overhead:** Documenting how to configure an external identity provider (IdP), such as Okta or Auth0, or a specific cloud environment, such as AWS or Azure, means your documentation must change whenever those vendors update their products.
+- **Maintenance overhead:** Documenting how to configure an external identity provider (IdP), such as Okta or Auth0, or a specific cloud environment, such as Amazon Web Services (AWS) or Microsoft Azure, means your documentation must change whenever those vendors update their products.
 - **Support ambiguity:** If your documentation includes detailed steps for configuring external environments, users might expect your support team to troubleshoot those external systems.
 - **Information overload:** Users can struggle to find information about your product when it is buried under instructions for installing dependencies or configuring operating systems.
 
@@ -24,13 +24,13 @@ By establishing clear system boundaries, you align your content with the compone
 
 ## How to identify system boundaries
 
-To define where your system ends and external dependencies begin, analyze the inputs, outputs, and touchpoints of your product. Consider these factors:
+To define where your system ends and external dependencies begin, analyze the inputs, outputs, and touchpoints of your product. Consider the following factors:
 
 - **Administrative control:** If your team cannot modify the code, infrastructure, or configuration of a service, that service is outside your system boundary.
 - **Security and data trust:** Identify where data crosses from your secure environment into an external system. These transition points, such as a payment gateway or a third-party authentication service, represent clear boundaries.
 - **Installation and execution platform:** The boundary changes based on how you deliver your software.
-    - **SaaS:** The system boundary includes the cloud infrastructure you manage and the exposed APIs.
-    - **On-premises software or SDKs:** The boundary lies between your software package and the user’s operating system, hardware, or host application.
+    - **Software as a service (SaaS):** The system boundary includes the cloud infrastructure you manage and the exposed APIs.
+    - **On-premises software or software development kit (SDKs):** The boundary lies between your software package and the user’s operating system, hardware, or host application.
 
 ### Boundary visualization
 
@@ -52,15 +52,15 @@ graph TD
     App <-->|SQL/Permissions| UserDB
     App <--> InternalDB
 
-    style External_Environment fill:#f9f,stroke:#333,stroke-dasharray: 5 5
-    style System_Boundary fill:#bbf,stroke:#333,stroke-width:2px
+    style External_Environment fill:#AB4FAB,stroke:#333,stroke-dasharray: 5 5
+    style System_Boundary fill:#6262DE,stroke:#333,stroke-width:2px
 ```
 
 ---
 
 ## Strategies for documenting system boundaries
 
-Once you identify the boundaries, use the following methods to communicate them.
+Once you identify the system boundaries, use the following methods to communicate them.
 
 ### Use boundary diagrams in architecture overviews
 
@@ -90,13 +90,13 @@ When a user task requires interacting with an external system, document the hand
 
 ## Examples of system boundaries in documentation
 
-These examples show how to manage boundaries in different scenarios.
+The following examples describe how to manage system boundaries in different scenarios.
 
 ### Scenario 1: Documenting a SaaS integration with a third-party API
 
-If your platform integrates with Stripe for payment processing, you do not need to document how Stripe processes payments or how users set up a Stripe account. 
+If your platform integrates with Stripe for payment processing, you do not need to document how Stripe processes payments or how users can set up a Stripe account. 
 
-- **Inside the boundary:** How to input the Stripe API key into your product settings and how your product handles success or failure events returned by Stripe.
+- **Inside the boundary:** How to enter the Stripe API key into your product settings and how your product handles success or failure events returned by Stripe.
 - **Outside the boundary:** How Stripe manages compliance, sets up bank accounts, or handles regional payment regulations.
 
 ### Scenario 2: Documenting an on-premises database installation

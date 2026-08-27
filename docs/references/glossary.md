@@ -218,6 +218,9 @@ Triple backticks used in markdown files to wrap code snippets and enable syntax 
 [**cognitive load theory**](../technical-writing/cognitive-load.md)  
 A psychological principle regarding the limited capacity of working memory, used in technical writing to simplify complex information.
 
+**cognitive friction**  
+The mental effort or frustration a user experiences when interacting with an unintuitive system, slow process, or confusing design.
+
 [**Coleman-Liau index**](../technical-writing/readability-scores.md#readability-formulas)  
 A readability formula that calculates the grade level of a text based on characters per word and sentences per hundred words, focusing on objective linguistic data points and metrics.
 

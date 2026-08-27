@@ -1,131 +1,102 @@
 ---
 title: Coupling and cohesion
 description: "The degree of direct dependency between system modules (coupling) versus how focused a single module's responsibilities are (cohesion)."
-revision_date: 2026-08-24
+revision_date: 2026-08-28
 ---
 
 # Coupling and cohesion
 
-Coupling measures the degree of dependency between system modules. Cohesion measures how focused the responsibilities of a single module are. In technical communication, these principles help you maintain, reuse, and scale documentation components without causing cascading updates.
+Technical debt is not limited to source code; documentation often suffers from the same structural decay. By applying software engineering principles such as coupling and cohesion to [information architecture](../references/ia-design.md), you can create content that scales without becoming difficult to maintain.
 
----
-
-## Foundations in software and documentation
-
-In software engineering, developers aim for **loose coupling** and **high cohesion**. This design philosophy helps make sure that a change in one part of the codebase does not break another part, and that each class or function has one clear responsibility.
-
-When you apply these concepts to technical communication, they govern how you structure information architecture, manage single-sourced content, and design navigation. 
+**Coupling** describes how tightly two topics are linked. **Cohesion** describes how well the content within a single topic sticks to one purpose.
 
 ```mermaid
 flowchart LR
-    subgraph HighCohesion ["High Cohesion"]
-        direction LR
-        A["Topic A: Auth<br>(Focused tasks)"]
-        B["Topic B: Billing<br>(Focused tasks)"]
+    subgraph TopicA ["Topic A (High Cohesion)"]
+        direction TB
+        A1["Auth Concept"]
     end
 
-    A <--> C{{"Loose Coupling<br>(Stable links)"}} <--> B
+    subgraph TopicB ["Topic B (High Cohesion)"]
+        direction TB
+        B1["Billing Task"]
+    end
+
+    TopicA -. "Loose Coupling<br>(Stable Link)" .-> TopicB
 
     %% Styling
-    style HighCohesion fill:#f9f9fb,stroke:#8e8e93,stroke-width:2px,stroke-dasharray: 5 5
-    style A fill:#ffffff,stroke:#007aff,stroke-width:1.5px
-    style B fill:#ffffff,stroke:#007aff,stroke-width:1.5px
-    style C fill:#fff,stroke:#333,stroke-width:1px
+    style TopicA fill:#f9f9fb,stroke:#007aff,stroke-width:2px
+    style TopicB fill:#f9f9fb,stroke:#007aff,stroke-width:2px
 ```
 
-- **Coupling in documentation** refers to how much a topic or content block relies on the context, structure, or existence of another.
-- **Cohesion in documentation** refers to how well the content within a topic or module focuses on a single user goal or concept.
+---
+
+## Reduce fragility through loose coupling
+
+Tightly coupled documentation is brittle. When you change a file path or reword a heading, you might inadvertently trigger a cascade of broken links and logical errors across the documentation set.
+
+### Signs of high coupling
+
+- **Positional reliance:** Phrases such as "as mentioned earlier" or "the table in the next section" fail the moment content is reordered or components are embedded elsewhere.
+- **Path-heavy linking:** Linking by using relative paths (for example, `../../setup.md`) makes the documentation structure rigid. If a file moves, the link breaks.
+- **Grammatical "bleeding":** A reusable snippet that assumes it is part of a numbered list or depends on the context of the preceding paragraph cannot be reused effectively.
+
+### Strategies for decoupling
+
+To build a resilient documentation set, aim for stateless content.
+
+- **Global identifiers:** Use a [content management system (CMS)](../industry-terms/content-management-system.md) or [static site generator (SSG)](../doc-stack/ssg.md) that uses unique IDs or slugs. This decouples the link from the physical location of the file.
+- **Self-contained snippets:** Write reusable fragments that do not rely on outside pronouns or transitions. 
+- **Link instead of duplicating:** Avoid "semantic coupling," where you type out the same prerequisite in multiple places. Point users to a [single source of truth](../doc-stack/git.md#the-single-source-of-truth) instead.
 
 ---
 
-## The impact of coupling on documentation
+## Improve focus with high cohesion
 
-Tightly coupled documentation is fragile. If you modify a product feature or rewrite an article, tightly coupled systems require you to update many other pages that seem unrelated.
+Low cohesion creates monolithic pages. These topics are difficult to scan because they try to address too many different needs at once. High cohesion follows the Single Responsibility Principle: one topic, one intent.
 
-### Indicators of tight coupling in documentation
+### Identifying low cohesion
 
-- **Duplicate procedures:** Copying the same five-step configuration sequence across 10 different guides. If the UI changes, you must find and update every location.
-- **Context-dependent snippets:** Using a single-source snippet that relies on the surrounding text for grammatical or structural meaning. If you move the snippet to a different page, it might not make sense or could break the formatting.
-- **Fragile cross-references:** Linking to specific anchor tags inside volatile procedural topics rather than to stable, high-level conceptual landing pages.
+- **The "kitchen sink" page:** A single 4,000-word article covering high-level sales pitches, deep-dive API specifications, and basic installation.
+- **Context switching:** When a procedural step is interrupted by three paragraphs of theoretical background, the user's flow is broken. 
+- **Mismatched intent:** If a paragraph explains why something matters under a "How to configure" heading, that content belongs elsewhere.
 
-### Strategies for loose coupling
+### Information mapping for cohesion
 
-To design loosely coupled documentation, establish clean interfaces between your content modules.
-
-- **Programmatic cross-referencing:** Link to topics as independent entities. If your publishing system supports it, use unique resource identifiers, such as cross-reference IDs, rather than hard-coded relative file paths that break when you reorganize folders.
-- **Reference by reference:** Instead of embedding detailed prerequisites in every tutorial, link to a dedicated setup guide.
-- **Standalone reuse units:** Make sure that any reusable component, such as a warning note or a code block, is self-contained. It must include the context necessary to stand alone, regardless of the topic that imports it.
-
-!!! note "System thinking principle"
-    Reducing coupling between documentation modules narrows the impact of a single product update. It allows you to update a topic and remain confident that you have not broken the integrity of the rest of the documentation.
+The [Concept-Task-Reference (CTR) model](../industry-terms/concept-task-reference.md) is the standard fix for cohesion issues. By splitting content into theoretical background (concepts), step-by-step actions (tasks), and technical data (reference), you ensure each module has a singular, clear purpose.
 
 ---
 
-## The impact of cohesion on documentation
+## Documentation health matrix
 
-Low-cohesion documentation is difficult to read and maintain because it covers too many subjects. Highly cohesive documentation aligns with the single responsibility principle: each topic focuses on one primary user intent.
-
-### Indicators of low cohesion in documentation
-
-- **The "Catch-all" page:** An article titled *Getting Started and Advanced Configurations* that contains quick starts, security policies, API members, troubleshooting tips, and billing instructions.
-- **Mixed content types:** Mixing deep theoretical concepts, code snippets, and UI steps in the same narrative block. This slows down experienced users who only need the reference and overwhelms new users who only need a simple task.
-- **Weak information architecture:** Topics that lack a clear purpose, leaving the user unsure whether they are reading a conceptual overview, a tutorial, or a technical specification.
-
-### Strategies for high cohesion
-
-You can achieve high cohesion by grouping related ideas and separating unrelated concerns.
-
-**Apply the Concept-Task-Reference (CTR) model:** 
-
-Separate your content into three types:
-
-- **Concepts:** Explain why and how a system works.
-- **Tasks:** Guide the user through how to achieve a specific goal.
-- **Reference:** Provide data, such as API parameters, CLI commands, or error codes.
-
-**Enforce strict topic boundaries:**
-
-If you explain the theory of asymmetric encryption in the middle of a procedure about importing a certificate, move that theory to its own conceptual topic.
+| State | Maintenance cost | User experience |
+| :--- | :--- | :--- |
+| **High cohesion / Loose coupling** | **Low.** Topics are isolated units. You can update or move them without breaking the site. | **Seamless.** Navigation is logical and links are reliable. |
+| **High cohesion / Tight coupling** | **High risk.** Reorganizing a folder or changing a URL breaks many dependencies. | **Functional but brittle.** It works until a writer moves a file. |
+| **Low cohesion / Loose coupling** | **Moderate.** Files do not break, but finding where to update a specific fact is difficult. | **Poor.** Users need to search through numerous files to find relevant information. |
+| **Low cohesion / Tight coupling** | **Critical.** Every product change requires a manual audit of the entire documentation set. | **Frustrating.** Constant circular references and repetitive text. |
 
 ---
 
-## Comparing coupling and cohesion states
+## Refactoring patterns
 
-The relationship between coupling and cohesion affects the health of your documentation. Use the following table to evaluate your content.
+### 1. Extract a concept 
 
-| State | Description | Impact on maintenance | User experience |
-| :--- | :--- | :--- | :--- |
-| **High Cohesion, Low Coupling (Ideal)** | Topics focus on a single goal and connect through stable links. | **Low maintenance.** You can rewrite or move topics independently. | **Excellent.** Users find what they need quickly. |
-| **High Cohesion, High Coupling** | Topics are focused but depend on the wording or order of other topics. | **High risk of breakage.** Changing one topic requires updating several others. | **Good, but fragile.** Navigation is logical, but broken links can ruin the flow. |
-| **Low Cohesion, Low Coupling** | Topics are disorganized but rarely link to each other. | **Moderate maintenance.** Files do not break each other, but finding where to add new information is difficult. | **Poor.** Users must scroll through long pages to find details. |
-| **Low Cohesion, High Coupling** | Unstructured documents that copy and link to information constantly. | **Difficult.** Any product update triggers a massive, manual rewrite. | **Frustrating.** Information is repetitive and difficult to scan. |
+When a task is bogged down by theory, move the background information to its own module.
 
----
+- **Problem:** A "Create Cluster" task pauses at step 2 to explain Paxos consensus algorithms.
+- **Solution:** Keep the task focused on commands. Move the algorithm details to a "Consensus concepts" page and link to it for more information.
 
-## Actionable patterns: Refactoring your documentation
+### 2. Decouple snippets
 
-If you inherit a legacy documentation site with high coupling and low cohesion, use these refactoring patterns to restructure the information.
+Make sure reusable content stands on its own.
 
-### Pattern 1: Extract concept from task
+- **Problem:** A snippet says, "After doing the steps above, click Submit."
+- **Solution:** "Once you have entered the credentials, select **Submit**."
 
-When a task is cluttered with background information, move the explanation to a separate topic.
+### 3. Interface-based linking
 
-- **Before:** A guide on configuring database replication that stops at Step 3 to explain the differences between synchronous and asynchronous replication modes.
-- **After:** 
-  - Keep the task focused on the configuration commands.
-  - Move the explanation to a cohesive conceptual page titled *Database replication modes*.
-  - Insert a link at the beginning of the task: "Before you configure replication, read about `[database replication modes](replication-modes.md)`."
+Avoid linking to specific line numbers or volatile mid-page anchors.
 
-### Pattern 2: Interface-driven linking
-
-Avoid linking to specific UI steps within another guide. Instead, link to the parent entry point.
-
-- **Before:** "Go to step 4 of the `[User Provisioning Guide](user-provisioning.md)` to assign roles." If the provisioning guide changes, this link might point to the wrong step.
-- **After:** "Assign roles to the user. For more information, see `[Assigning roles](assign-roles.md)`."
-
-### Pattern 3: Decouple snippets
-
-Review your documentation snippets and single-sourced files to make sure they do not rely on local variables or specific context.
-
-- **Before:** A reusable warning note that says: "This step is dangerous because of the settings you chose above."
-- **After:** "This configuration can expose your API keys. Make sure you store keys in a secure vault before proceeding."
+- **Problem:** "See step 5 in the Installation Guide."
+- **Solution:** "Complete the `[Installation Guide]` before proceeding." By treating the whole topic as the interface, you do not need to worry if the steps inside it are renumbered.

@@ -12,7 +12,7 @@ A system boundary is the conceptual perimeter that separates the product or serv
 
 ## Why system boundaries matter
 
-Failing to define clear boundaries leads to documentation drift, scope creep, and user confusion. When system boundaries are ambiguous, you might over-document third-party tools, platforms, or application programming interfaces (APIs). Over-documenting external tools may result in the following issues:
+Failing to define clear boundaries leads to documentation drift, scope creep, and user confusion. When system boundaries are ambiguous, you might over-document third-party tools, platforms, or APIs. Over-documenting external tools may result in the following issues:
 
 - **Maintenance overhead:** Documenting how to configure an external identity provider (IdP), such as Okta or Auth0, or a specific cloud environment, such as Amazon Web Services (AWS) or Microsoft Azure, means your documentation must change whenever those vendors update their products.
 - **Support ambiguity:** If your documentation includes detailed steps for configuring external environments, users might expect your support team to troubleshoot those external systems.

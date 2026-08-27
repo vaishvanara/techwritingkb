@@ -23,7 +23,7 @@ Emergent behavior falls into two main categories:
 
 ## Why emergence poses a challenge for technical communication
 
-[Technical writing](../technical-writing/basics.md) often uses a reductionist approach: breaking down a system into separate components and documenting them individually. This includes listing application programming interface (API) endpoints, describing UI buttons, or defining configuration fields. While this is necessary for reference manuals, it does not explain how the system behaves as a whole.
+[Technical writing](../technical-writing/basics.md) often uses a reductionist approach: breaking down a system into separate components and documenting them individually. This includes listing API endpoints, describing UI buttons, or defining configuration fields. While this is necessary for reference manuals, it does not explain how the system behaves as a whole.
 
 If your documentation covers components only in isolation, you might face the following issues:
 

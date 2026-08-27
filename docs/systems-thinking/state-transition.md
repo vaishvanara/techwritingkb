@@ -14,7 +14,7 @@ State is the condition of a system at a specific time. A state transition is the
 
 Understanding system states is essential for users, developers, and support teams. If documentation does not clearly define states and state transitions, users might struggle with system behavior or encounter unexpected errors. Documenting state helps your audience in several ways:
 
-- **Prevents invalid operations:** Users must know which actions are valid in a given state. For example, a developer cannot call a `Refund` application programming interface (API) endpoint on an order that is still in a `Pending Payment` state.
+- **Prevents invalid operations:** Users must know which actions are valid in a given state. For example, a developer cannot call a `Refund` API endpoint on an order that is still in a `Pending Payment` state.
 - **Clarifies asynchronous behavior:** In cloud systems, operations often take time to complete. Documenting transitions, such as moving from `Processing` to `Completed` or `Failed`, helps users understand when to poll for updates or listen for [webhooks](../doc-stack/emerging-architectures.md#event-driven-architecture-webhooks).
 - **Helps with troubleshooting:** When an error occurs, troubleshooting steps depend on the system state. Clear state documentation allows support teams and engineers to immediately isolate the failure point.
 

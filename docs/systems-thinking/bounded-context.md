@@ -1,67 +1,67 @@
 ---
 title: Bounded context
-description: "An explicit boundary within which a domain model applies. In technical documentation, it prevents mixing up terms that mean different things in different services."
-revision_date: 2026-08-24
+description: Explicit boundaries that isolate domain models and their ubiquitous language to prevent linguistic ambiguity in technical documentation.
+revision_date: 2026-08-28
 ---
 
 # Bounded context
 
-A *bounded context* is an explicit conceptual boundary where a specific domain model applies. In technical documentation, defining these boundaries prevents terminology conflicts by isolating concepts that have different meanings in different parts of a system.
+A bounded context defines the specific boundary, both conceptual and physical, where a domain model and its ubiquitous language remain consistent. [Ubiquitous language](../systems-thinking/domain-driven-design.md#strategic-design-ubiquitous-language) is a common, shared language used by developers and domain experts to ensure clear communication. 
+
+Within a large system, terms that look identical often have different meanings. Defining these contexts prevents the documentation from becoming a model that is too broad to be useful. This practice ensures that logic and schemas remain isolated.
 
 ---
 
-## The problem of semantic collisions
+## Solving linguistic ambiguity
 
-As a system grows, a single word often takes on multiple, conflicting meanings. In software engineering and technical writing, this is a *semantic collision*.
+As systems scale, technical terms often change. In [domain-driven design (DDD)](../systems-thinking/domain-driven-design.md), failing to account for this change creates ambiguous terms. These terms are the primary source of logic bugs and developer confusion.
 
-Consider how different departments define the word *Order*:
+Consider the term "order." Its definition changes based on the perspective of the user:
 
 ```mermaid
 graph TD
-    subgraph "Sales Context"
-    A[Order] --> B[Signed Contract]
-    A --> C[Financial Commitment]
+    subgraph Sales Context
+    A[Order] --> B[Contractual Agreement]
+    A --> C[Commission Calculation]
     end
-    subgraph "Inventory Context"
+    subgraph Fulfillment Context
     D[Order] --> E[Physical Pick List]
-    D --> F[Shipping Label]
+    D --> F[Package Dimensions]
     end
-    subgraph "Billing Context"
-    G[Order] --> H[Invoice Trigger]
-    G --> I[Transaction Record]
+    subgraph Billing Context
+    G[Order] --> H[Taxable Event]
+    G --> I[Accounts Receivable Entry]
     end
 ```
 
-Creating a single "Order Management Guide" to cover all these perspectives results in documentation that is difficult to navigate. Developers integrating with a shipping API must filter out irrelevant payment processing rules and contractual definitions.
+Trying to force a single, enterprise-wide definition of an order creates documentation that is either too generic or inaccurate for specific teams. A warehouse engineer needs the weight and dimensions found in the fulfillment context. They do not need to navigate the legal signatures or commission structures relevant only to sales.
 
 ---
 
-## Structure information architecture to reflect boundaries
+## Mirroring boundaries in information architecture
 
-To avoid terminology overlap, align the information architecture (IA) of the documentation with the bounded contexts of the system.
+Documentation should reflect the architecture of the system. To maintain clarity, align your [information architecture (IA)](../references/ia-design.md) with these established domain boundaries.
 
-*   **Separate documentation sets:** Instead of one folder for the entire developer portal, divide guides by service or domain boundary (such as `/docs/billing` and `/docs/fulfillment`).
-*   **Isolate glossaries:** Avoid a single, global glossary for a complex enterprise system. Create context-specific glossaries or explicitly tag terms, such as `Order [Fulfillment Context]` versus `Order [Billing Context]`.
-*   **Name APIs and endpoints contextually:** Ensure API documentation reflects the bounded context. For example, document `/billing/accounts` and `/identity/accounts` as distinct entities with unique schemas.
+- **Namespace-driven documentation**: Organize content by domain, such as /docs/billing/order or /docs/fulfillment/order. This creates a direct mapping between the documentation and the microservices or modules they describe.
+- **Localized glossaries**: Do not use a global glossary. Instead, maintain context-specific glossaries to define the ubiquitous language of that specific domain.
+- **Isolated schemas**: Make sure [API documentation](../industry-terms/api-documentation.md) reflects context-specific data. An identity context user object likely focuses on multi-factor authentication (MFA) and credentials. However, a support context user object focuses on ticket history and service-level agreement (SLA) tiers.
 
-!!! note "The danger of shared models in documentation"
-    Avoid documenting a "universal" object model to satisfy every team. This often results in complex schemas with many optional fields. Documenting these bloated models makes integration difficult and increases the risk of developer errors.
-
----
-
-## Map relationships with context maps
-
-In domain-driven design (DDD), teams use a *context map* to show how different bounded contexts share data. Technical writers use context maps to determine how information flows between different documentation sets.
-
-*   **Identify dependencies:** If the Billing service (downstream) relies on data from the Identity service (upstream), the documentation must explain how data from one context translates to the other.
-*   **Document translation layers:** When systems share data across boundaries, they often use an *anti-corruption layer* or a *shared kernel*. Document these integration layers so developers understand when and how a term's meaning changes as data crosses system boundaries.
+!!! warning "The canonical data model trap"
+    Resist the urge to document a universal object model. Universal models result in large schemas filled with nullable fields. Instead, document the specialized model required for the specific context to minimize implementation errors.
 
 ---
 
-## Benefits of bounded contexts in documentation
+## Navigating dependencies with context maps
 
-Respecting bounded contexts in documentation provides several benefits:
+A context map tracks how different bounded contexts integrate. Documentation must bridge these gaps to help developers navigate workflows that cross boundaries.
 
-*   **Reduced cognitive load:** Developers and users read only the information relevant to their current task.
-*   **Simplified maintenance:** When engineers update the business logic in a specific service, you only need to update the documentation for that bounded context.
-*   **Improved search accuracy:** Documentation portals deliver more relevant results when articles are categorized by domain.
+- **Upstream and downstream flow**: If billing (downstream) consumes events from sales (upstream), the documentation must explicitly map the data transformation.
+- **Translation strategies**: 
+    - **Anti-corruption layers (ACL)**: When a system pulls data from a legacy or external source, document the translation logic. This prevents external definitions from affecting the internal domain model.
+    - **Shared kernels**: If two contexts share a library or database table, document this shared subset as a distinct entity that requires coordination between teams for any change.
+
+---
+
+## Impact on system maintenance
+
+Explicitly documenting bounded contexts ensures model integrity. This allows developers to work within a specific service without causing unintended effects in unrelated domains. This isolation reduces [cognitive load](../technical-writing/cognitive-load.md) because engineers only need to learn the terminology relevant to their immediate task. Furthermore, it enables decoupled maintenance. A change to tax logic in the billing context can occur without a documentation audit for fulfillment or sales.

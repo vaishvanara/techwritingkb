@@ -1,46 +1,46 @@
 ---
 title: Visual hierarchy
-description: Learn how to design clear, accessible layouts in technical communication using visual hierarchy to guide readers through complex details.
-revision_date: 2026-08-19
+description: The arrangement of typography, color, and layout to prioritize information, helping users navigate complex documentation and immediately identify key details.
+revision_date: 2026-08-28
 ---
 
 # Visual hierarchy
 
-> The intentional arrangement of layout, typography, and color to guide a reader's eye toward the most critical technical details first
+> The arrangement of typography, color, and layout to prioritize information, helping users navigate complex documentation and immediately identify key details
 
 ---
 
-## What is visual hierarchy?
+## Defining visual structure
 
-Visual hierarchy is a foundational concept in information design and visual communication. It determines the order in which users process information on a page or screen. Rather than presenting technical content as a uniform block of characters, use visual hierarchy to establish a clear path for the reader's eye. By adjusting size, weight, color, and positioning, you signal which elements are primary (such as headings or system warnings), secondary (such as subheadings or key terms), and tertiary (such as body text).
+Visual hierarchy dictates the order in which a user processes information. Instead of presenting technical content as an undifferentiated wall of text, a strong hierarchy establishes a clear scanning path. By manipulating size, weight, color, and positioning, you signal the relative importance of each element—distinguishing a high-level system warning from standard body text.
 
-This design pattern is rooted in cognitive load theory. Users naturally seek structure to make sense of information. In a user interface (UI) or a digital document, structural cues allow readers to categorize information instantly. A strong visual structure transforms complex documentation into an intuitive experience. This structure directly improves scannability, allowing readers to browse documentation and find specific technical details quickly.
-
----
-
-## Why it matters
-
-When you ignore visual hierarchy, the usability of your document decreases. Without visual landmarks, your audience faces a dense wall of text. This lack of organization forces the reader to expend valuable working memory to distinguish between concepts, which leads to fatigue. For software engineers looking for a specific code block, or product teams checking a release milestone, poor hierarchy reduces findability.
-
-Implementing a consistent hierarchy reduces cognitive friction. It reinforces your information architecture (IA) by establishing clear relationships between parent and child topics. When headings, lists, and callouts behave predictably, users build an accurate mental map of your content. This predictability keeps users engaged, increases task success rates, and reduces support ticket volume. 
+This approach manages cognitive load. When readers encounter a digital document, they immediately look for structure to categorize information. Cues like heading depth and indentation transform dense data into an intuitive map, directly improving scannability for users who need to find specific technical specs quickly.
 
 ---
 
-## Core principles and anatomy
+## The cost of poor organization
 
-To build an effective hierarchy in technical writing, you must use specific design mechanics. These mechanics act as tools for establishing visual dominance:
+Ignoring hierarchy forces the reader to expend working memory simply to distinguish between concepts, leading to rapid fatigue. For an engineer searching for a code block or a manager checking a release milestone, a lack of visual landmarks makes the content functionally inaccessible.
 
-  - **Size and scale:** Larger elements draw attention first. In a document layout, your top-level title must have the largest type. Subsequent headings should decrease in size proportionally to show their nested relationship.
-  - **Contrast and weight:** Bold headings, heavy borders, and distinct color differences stand out against plain body text. High-contrast elements draw focus to critical actions, while lower contrast is reserved for supporting context.
-  - **Proximity and grouping:** Place related items close to one another to signal their connection. For example, a code example must be physically closer to its descriptive paragraph than to the subsequent heading.
-  - **Whitespace:** Surrounding an element with generous margins forces the eye to focus on that single element. Utilizing whitespace strategically is as important as choosing font size.
-  - **Alignment:** Consistent vertical grid lines create anchors for the eye. Aligning elements predictably creates a sense of order that makes the document appear professional.
+Predictable layouts reinforce information architecture (IA). When headings, lists, and callouts behave consistently, users build a reliable mental model of the content. This reduces cognitive friction, increases task success rates, and ultimately lowers support volume by making the documentation self-serve.
+
+---
+
+## Core mechanics
+
+Technical writers use several specific design tools to establish visual dominance:
+
+*   **Size and scale:** Largest elements attract the eye first. Top-level titles should be significantly larger than subheadings to indicate nesting.
+*   **Contrast and weight:** Bold type and heavy borders draw focus to critical actions or warnings, while lower-contrast elements are reserved for supporting context.
+*   **Proximity and grouping:** Physical distance signals relationship. A code snippet must be placed closer to its descriptive paragraph than to the following section.
+*   **Whitespace:** Generous margins force focus. Strategic "negative space" is as functional as the text itself.
+*   **Alignment:** Consistent vertical lines create order. Predictable alignment allows the eye to anchor to specific parts of the page.
 
 ---
 
 ## Design pattern example
 
-The following example compares how unstructured text and structured layouts present the same installation steps. 
+The following comparison illustrates how structured layouts improve readability for installation steps.
 
 === "Unstructured layout"
     ### Installation
@@ -67,31 +67,30 @@ The following example compares how unstructured text and structured layouts pres
 
 ---
 
-### Breakdown of the pattern
+### Implementation breakdown
 
-In the structured layout, several hierarchy rules are active:
-*   **Type scale:** The main heading (H2) is visually dominant over the subsection (H3).
-*   **Visual grouping:** The list separates actions from conceptual paragraphs to prevent information overload.
-*   **Contrast callouts:** The critical administrator warning uses a high-contrast container block (`!!! danger`) to interrupt the reader's scanning path, ensuring they see the risk before proceeding.
-*   **Keyboard shortcuts and code blocks:** The command-line string and keyboard shortcut (**Y**) use distinct styling to separate them from the standard copy.
+The structured layout succeeds by applying these rules:
 
----
-
-## Cognitive impact and user experience
-
-A robust hierarchical structure helps readers achieve specific goals:
-
-- **Rapid orientation:** Readers can determine the scope and relevance of a page within seconds. By scanning the title, headings, and callouts, they can identify if the page answers their question.
-- **Efficient navigation and retrieval:** When users return to a document for a specific code sample or parameter, they often skip the surrounding text. They use visual anchors to jump to the relevant resource, often using search shortcuts like **Ctrl+F** to spot highlighted terms.
+*   **Type scale:** The H2 heading is visually dominant over the H3 subsection.
+*   **Visual grouping:** Lists separate discrete actions from conceptual descriptions.
+*   **Contrast callouts:** A high-contrast container (`!!! danger`) interrupts the scanning path to highlight risk.
+*   **Semantic styling:** Command-line strings and keyboard shortcuts (**Y**) are visually distinct from standard copy.
 
 ---
 
-## Implementation best practices
+## User impact
 
-To maintain a consistent content strategy, apply these rules across your layouts:
+Effective hierarchy serves two primary user behaviors:
 
-- **Follow a strict heading sequence:** Nest headings logically. Do not skip heading levels (for example, from H1 to H3) to achieve a specific font size. Use the styling engine to manage appearance while preserving semantic hierarchy.
-- **Use progressive disclosure:** Do not present all technical data at once. Use expandable content containers to hide advanced configurations or edge cases, keeping the main reading path clear.
+1.  **Rapid orientation:** Readers can determine the scope of a page in seconds by scanning titles and callouts.
+2.  **Information retrieval:** Returning users can skip prose and jump directly to visual anchors like code samples or parameter tables.
+
+---
+
+## Best practices
+
+*   **Logical heading sequences:** Do not skip heading levels (e.g., jumping from H1 to H3) for aesthetic reasons. Use the styling engine to manage appearance while maintaining semantic order.
+*   **Progressive disclosure:** Keep the main path clear by using expandable containers for advanced configurations or edge cases.
 
 ??? note "Example: View advanced configuration values"
     | Parameter | Type | Default | Description |
@@ -99,8 +98,8 @@ To maintain a consistent content strategy, apply these rules across your layouts
     | `max_connections` | Integer | `100` | The maximum number of concurrent client connections. |
     | `timeout_seconds` | Float | `30.0` | Connection limit threshold before termination. |
 
-- **Limit focal points:** If you highlight everything, nothing stands out. Limit the use of bold text, highlight colors, and warning boxes. A single page should rarely have more than two high-priority warning callouts.
-- **Use diagrams for complex flows:** When documenting an intricate system topology or communication cycle, replace long paragraphs with a system diagram.
+*   **Priority management:** If everything is highlighted, nothing is important. Limit bold text and callouts; a single page should rarely feature more than two high-priority warnings.
+*   **Visual translation:** Use diagrams to replace long paragraphs when describing complex system topologies.
 
 ```mermaid
 sequenceDiagram
@@ -118,14 +117,12 @@ sequenceDiagram
 
 ## Common anti-patterns
 
-*   **The highlight desert:** This occurs when a page uses excessive formatting, such as bolding too many nouns or using multiple colorful alerts in a row. The reader's eye moves erratically because too many elements compete for attention.
-*   **The endless scroll:** This pattern features long, uninterrupted passages of prose without clear subheadings, lists, or callouts. Even if the information is accurate, the absence of visual anchors makes the document look like an unstructured technical specification, discouraging quick lookups.
+*   **The highlight desert:** Excessive formatting (too much bolding or multiple colorful alerts) causes the eye to move erratically as elements compete for attention.
+*   **The endless scroll:** Long passages of prose without subheadings or lists look like unstructured specifications and discourage quick lookups.
 
 ---
 
-## How to validate and test usability
+## Testing usability
 
-Evaluate your page layout’s visual strength with the following methods:
-
-- **The squint test:** Step back from your screen and squint until the text becomes a blurry mass. Observe what stands out. You should still identify your main headings, code blocks, and primary callouts as distinct visual blocks. If the page blurs into a uniform gray rectangle, your hierarchy is weak.
-- **Task-based scanning tests:** Ask a colleague to find a specific detail, such as a port number. Observe if their eyes move directly to the correct section or if they scan aimlessly. If they hesitate, consider revising your headings or adding a reference list.
+*   **The squint test:** Step back and squint until the text blurs. You should still be able to identify main headings, code blocks, and primary callouts as distinct visual chunks. 
+*   **Task-based scanning:** Observe a colleague trying to find a specific detail, such as a port number. If they hesitate or scan aimlessly rather than jumping to a specific section, the hierarchy requires revision.

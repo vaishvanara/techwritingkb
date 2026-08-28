@@ -1,120 +1,96 @@
 ---
 title: Scannability
-description: Learn how to apply scannability principles to your documentation, reducing cognitive load and helping users find critical answers quickly.
-revision_date: 2026-08-19
+description: The strategic arrangement of text and visuals to help readers quickly identify, filter, and extract key information from digital content.
+revision_date: 2026-08-28
 ---
 
 # Scannability
 
-> The practice of organizing digital content so users can quickly locate key information without reading every word on the page
+> The strategic arrangement of text and visuals to help readers quickly identify, filter, and extract key information from digital content
 
 ---
 
-## What is scannability?
+## Understanding scannability
 
-Scannability is how you arrange text and visuals to help readers evaluate a document's relevance in seconds. Unlike printed media, where people often read linearly, digital readers browse selectively. 
+Scannability determines how effectively a reader can evaluate a document's relevance in seconds. Unlike the linear progression of printed media, digital reading is selective. Users—particularly engineers and product teams—don't read manuals cover-to-cover. They hunt for specific keywords, API parameters, or code snippets to unblock a task. 
 
-In technical documentation, software engineers and product teams rarely read a manual from start to finish. Instead, they scan for keywords, API parameters, or code snippets to solve an immediate problem. When you prioritize scannability, you align content with how the brain processes digital layouts, making your documentation more efficient.
-
-This approach is based on [cognitive load theory](https://en.wikipedia.org/wiki/Cognitive_load){: target="_blank" rel="noopener" }. The human brain has a limited amount of working memory to process information. A "wall of text" forces the reader to exert significant mental effort to find key concepts. Content design reduces this burden by using a clear visual hierarchy to help the brain filter and prioritize details before the reader begins to process the text.
+This behavior is rooted in [cognitive load theory](https://en.wikipedia.org/wiki/Cognitive_load){: target="_blank" rel="noopener" }. Because working memory is finite, a "wall of text" forces the brain to expend energy simply filtering noise. Content design bypasses this fatigue by using a visual hierarchy to prioritize details before the reader processes a single sentence.
 
 ---
 
-## Why scannability matters
+## Why it matters
 
-Poor scannability reduces usability. If readers face dense blocks of text, they experience cognitive fatigue and often stop reading. If a developer cannot find an integration step quickly, they might abandon your product, file a support ticket, or look for a competitor’s solution.
+Dense text kills usability. When information is buried, users experience cognitive fatigue, leading to skipped steps, abandoned integrations, or unnecessary support tickets. 
 
-Designing for scannability is a key part of audience analysis. It recognizes that users have different goals: some need a quick reference, while others need a tutorial. Scannability serves both. Using a logical heading structure and whitespace respects the reader's time. Clear, active-voice instructions and brief paragraphs keep content easy to scan, which helps lower support costs and build trust in your brand.
-
----
-
-## Core principles and anatomy
-
-To create scannable documentation, use the following structural elements:
-
-*   **Heading hierarchy:** Use sequential heading levels (H2, H3, H4) to create a visual roadmap and show how sections relate to each other.
-*   **Information chunking:** Break long paragraphs into smaller, modular units. Use bulleted lists of three to five items to reduce cognitive fatigue.
-*   **Visual highlights:** Use **bold** for UI elements and `inline code` for file names or parameters. Use callouts (admonitions) to highlight warnings or tips.
-*   **Whitespace:** Use margins and padding between elements to separate ideas and guide the eye.
+Prioritizing scannability is an act of audience respect. It acknowledges that some users need a deep-dive tutorial while others only need a quick syntax reminder. A logical structure and generous whitespace accommodate both. By using active-voice instructions and concise paragraphs, you lower the barrier to entry and build trust through efficiency.
 
 ---
 
-## Design pattern example
+## Core components
 
-The following example shows how scannability principles transform a dense paragraph into clear instructions.
+Effective scannability relies on four structural pillars:
+
+*   **Heading hierarchy:** Sequential levels (H2, H3, H4) provide a visual roadmap of information depth.
+*   **Information chunking:** Breaking concepts into modular units or bulleted lists (ideally three to five items) prevents mental overwhelm.
+*   **Visual semantic markers:** Use **bold** for UI elements and `inline code` for technical parameters. Use callouts for high-priority tips or warnings.
+*   **Intentional whitespace:** Proper margins and padding guide the eye and prevent visual claustrophobia.
+
+---
+
+## Design patterns
+
+Transforming a dense block into scannable steps drastically improves task completion rates.
 
 === "Before (Unscannable)"
     To configure the authentication system, you must first locate the config directory in your project root, open the config.json file, and add your secret API key to the "auth_key" field, but make sure you do not commit this file to your public repository because exposing your key is a major security risk that could compromise your infrastructure.
 
 === "After (Scannable)"
-    To configure the authentication system, follow these steps:
+    **To configure authentication:**
 
     1. Locate the `/config` directory in your project root.
-    2. Open the `config.json` file.
+    2. Open `config.json`.
     3. Add your secret API key to the `auth_key` field.
 
     !!! danger "Security Risk"
-        **Do not commit this file to a public repository.** Exposing your secret API key can compromise your infrastructure.
+        **Do not commit this file to a public repository.** Exposed keys can compromise your entire infrastructure.
 
-### User interaction flow
+### The scanning path
 
-The following diagram illustrates how a user interacts with a scannable page compared to an unscannable one.
+The diagram below contrasts the "F-shaped" scanning pattern of structured content against the high bounce rate of unstructured text.
 
 ```mermaid
 graph TD
-    A[User lands on page] --> B{Is there a visual hierarchy?}
-    B -- Yes --> C[Scan left margin]
-    B -- No --> D[User leaves page / High bounce rate]
-    C --> E[Identify bold terms and code]
-    E --> F[Find target information]
-    F --> G[Complete the task]
+    A[User lands on page] --> B{Clear visual hierarchy?}
+    B -- Yes --> C[Scan left margin/headers]
+    B -- No --> D[High cognitive load / User exits]
+    C --> E[Identify bold terms & code]
+    F[Task completed]
+    E --> F
 ```
 
-### Breakdown of the pattern
-
-The unscannable example hides key actions and a safety warning in a complex sentence. A reader skimming the page will likely miss the warning.
-
-The scannable version uses these design choices:
-*   A clear, bold heading introduces the task.
-*   A numbered list establishes the sequence of events.
-*   `Inline code` formatting distinguishes system assets from the rest of the text.
-*   A danger callout makes the security warning impossible to miss.
+The "After" example works because it isolates actions from risks. A skimmer might overlook a warning buried at the end of a long sentence, but they cannot miss a danger callout.
 
 ---
 
-## Impact on user experience
+## Implementation strategy
 
-Designing for scannability helps users achieve these goals:
+Use these tactics to refine your content:
 
-*   **Fast evaluation:** Readers can determine within seconds if a page has the information they need.
-*   **Task-based navigation:** Readers can skip irrelevant sections and go directly to the steps they need.
-*   **Improved retention:** Separating core concepts from details helps users remember information.
-
----
-
-## Implementation best practices
-
-To apply these patterns to your content strategy, follow these guidelines:
-
-*   **Front-load key terms:** Place critical verbs and technical keywords at the start of headings and list items.
-*   **Keep paragraphs short:** Use no more than three or four sentences per paragraph.
-*   **Use descriptive link text:** Avoid "click here." Use text that describes the link's destination.
-*   **Use bolding sparingly:** Highlight only the most important UI elements or terms. Too much bolding creates visual noise.
+*   **Front-load keywords:** Start headings and list items with the most important nouns or verbs.
+*   **The three-sentence rule:** Aim for paragraphs no longer than three or four sentences.
+*   **Contextual link text:** Avoid "click here." Use descriptive labels that explain exactly where the link leads.
+*   **Avoid "Bold Burnout":** Highlight only the most critical terms. Over-bolding creates visual noise that defeats the purpose of highlighting.
 
 ---
 
 ## Common anti-patterns
 
-Avoid these common mistakes:
-
-*   **The wall of text:** Long, unbroken paragraphs that force linear reading.
-*   **Visual over-saturation:** Too many highlights, bold words, and callouts on one page. This hides information rather than highlighting it.
+*   **The wall of text:** Large, unbroken blocks that demand linear reading.
+*   **Visual clutter:** Too many callouts, colors, or highlights competing for attention. If everything is emphasized, nothing is.
 
 ---
 
-## How to test usability
+## Testing for clarity
 
-Verify your design using these strategies:
-
-*   **The 5-second squint test:** Squint at your page until the text is blurry. If the headers, bold words, and code blocks still stand out, your layout is effective.
-*   **Task-based testing:** Ask a user to find a specific parameter on the page within 10 seconds. Observe if they go directly to the information or get lost in the text.
+*   **The 5-second squint test:** Squint until the text blurs. If you can still distinguish the headers and callouts, your layout is sound.
+*   **Timed navigation:** Challenge a user to find a specific error code or parameter within 10 seconds. If they have to "read" to find it, the scannability has failed.

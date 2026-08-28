@@ -1,39 +1,37 @@
 ---
 title: CSS Paged Media Module
-description: How to use the W3C CSS Paged Media Module to design print-specific layouts, define page breaks, and generate high-fidelity PDFs from HTML.
-revision_date: 2026-08-19
+description: A W3C standard for defining page layouts, margins, and breaks when converting HTML content into paged formats like PDFs or printed paper.
+revision_date: 2026-08-28
 ---
 
 # CSS Paged Media Module
 
-> A W3C standard defining page-specific style rules—like margins and size—to generate print-ready PDFs directly from HTML
+> A W3C standard for defining page layouts, margins, and breaks when converting HTML content into paged formats like PDFs or printed paper
 
 ---
 
-## What is the CSS Paged Media Module?
+## Defining Paged Media
 
-The CSS Paged Media Module is a specification that expands the styling capabilities of CSS. Use it to control the layout, formatting, and design of documents intended for paged media, such as printed paper or a PDF. Instead of treating content as a continuous scroll, this specification instructs browsers or rendering engines to split content into discrete pages, mapping digital elements to physical coordinates.
-
-Technical writers and software engineers use this module in documentation pipelines to automate the rendering of manuals, user guides, and API reference sheets. By adopting this standard, your team can use existing HTML and CSS knowledge to generate consistent printouts or digital documents without using legacy page-layout systems.
+While the web traditionally functions as a continuous scroll, the CSS Paged Media Module shifts the focus to discrete pages. It maps digital elements to physical coordinates, allowing developers to treat HTML content as a series of bounded sheets—essential for manuals, books, or any document intended for print. By using this specification, technical writers can bypass legacy desktop publishing tools and leverage existing CSS skills to automate high-fidelity PDF generation.
 
 ---
 
-## Why it matters
+## Why it matters in modern workflows
 
-In a Docs as Code (DaC) workflow, generating high-fidelity files often requires manual updates or complex conversion pipelines. The CSS Paged Media Module addresses this by letting product teams programmatically manage margins, page orientation, headers, and footers. This approach ensures document styling aligns with your content strategy and that print layouts receive the same automation as web layouts.
+Manual formatting is a significant bottleneck in Docs as Code (DaC) pipelines. Without a programmatic way to handle pagination, automated exports often suffer from "widows" and "orphans"—headers separated from their paragraphs, or code blocks sliced awkwardly across two pages. 
 
-Without this specification, automated documentation pipelines often generate broken layouts. Code snippets might split awkwardly across page breaks, tables might truncate mid-row, and dynamic metadata, such as page numbers, will be missing. These failures make your documentation difficult to read and hurt the experience for offline users.
+The CSS Paged Media Module solves this by giving teams granular control over the print environment. It ensures that metadata like dynamic page numbers, version headers, and legal footers align with the broader content strategy, treating the print layout with the same level of automation and version control as the web layout.
 
 ---
 
 ## Syntax and structure
 
-The CSS Paged Media Module uses the following layout rules and properties:
+The specification relies on a set of rules designed to manage the physical boundaries of the document:
 
-- **@page rule:** The top-level block that defines page boundaries, including paper dimensions, margins, and orientation.
-- **Page margin boxes:** Sixteen regions within the page margins (such as `@top-center` or `@bottom-right`) used for headers, footers, page counts, or logos.
-- **Page breaks:** Properties such as `break-before`, `break-after`, and `break-inside` that control how content splits across pages.
-- **Page counters:** Dynamic variables used within margin content properties to track and display page numbers and totals.
+- **@page rule:** The foundational block. It dictates dimensions (e.g., A4 or U.S. Letter), orientation, and the outer margins of the page box.
+- **Page margin boxes:** These are 16 specific regions—such as `@top-left` or `@bottom-center`—residing within the margins where you can inject headers, footers, or logos.
+- **Page breaks:** Properties like `break-before` and `break-inside` manage the flow, preventing elements from splitting across pages.
+- **Page counters:** These dynamic variables track progress through the document, enabling "Page X of Y" functionality.
 
 ```mermaid
 graph TD
@@ -91,37 +89,24 @@ h2.section-start {
 }
 ```
 
-### How to read this example
-
-- **@page block:** Sets the page format to U.S. letter dimensions with a 1.5-inch margin on all sides.
-- **@top-center margin box:** Adds a running header centered at the top of every page.
-- **counter() functions:** Tracks page progress and displays the current page and total count in the bottom-right margin.
-- **break-inside: avoid:** Instructs the renderer to keep code blocks intact by moving the entire element to the next page if it does not fit on the current one.
+### Key takeaways
+This configuration establishes a standard 1.5-inch margin and uses the `@top-center` box to repeat a manual title across every page. The `counter()` function automates page numbering, while `break-inside: avoid` ensures that code snippets stay in one piece, automatically pushing them to the next page if space is insufficient.
 
 ---
 
-## Common pitfalls
+## Implementation hurdles
 
-When you implement print layouts with CSS, you might encounter several common configuration errors.
+**Limited browser support**  
+Chrome, Firefox, and Safari generally ignore margin boxes (like `@top-center`) during standard printing. For production-grade documents, you must integrate specialized rendering engines like **Prince**, **WeasyPrint**, or **DocRaptor** into your build pipeline.
 
-### Browser limitations
-Most web browsers do not natively support margin boxes (like `@top-center`) during a print job. To use these features, integrate specialized engines like Prince or WeasyPrint into your pipeline to parse these styles and compile the final document.
-
-### Margin and header overlap
-If you place large headers in your margins without increasing the margin height, your body text will overlap your header. Ensure that your `@page` margin space is larger than the content inside your margin box elements.
+**The "overlap" trap**  
+Margins must be sized generously enough to house your margin box content. If your `@page` margin is 0.5 inches but your header font size and padding require 0.75 inches, the body text will bleed into the header.
 
 ---
 
-## Tooling and ecosystem
+## Tooling and Best Practices
 
-- **Engines:** Standalone utilities like Prince, WeasyPrint, and DocRaptor compile HTML and CSS into high-fidelity PDF files.
-- **Linters:** You can configure Stylelint to inspect CSS files for print-specific properties before committing code.
-
----
-
-## Best practices
-
-1. Define dimensions explicitly in your stylesheets rather than relying on default browser paper profiles.
-2. Use physical units, such as inches (in), millimeters (mm), or points (pt), for print margins instead of pixels (px).
-3. Set page-break-avoidance properties on elements that should stay together, such as figures, tables, and code snippets.
-4. Integrate style verification into your build automation to validate your stylesheet properties before running a document compiler.
+- **Validation:** Use Stylelint to catch invalid print properties before they hit your document compiler.
+- **Physical Units:** Always use `in`, `mm`, or `pt` for margins and font sizes. `px` is unreliable in a print context.
+- **Strategic Breaks:** Apply `break-before: page` to primary headers (`h1`, `h2`) to ensure major sections always start on a fresh sheet.
+- **Automation:** Incorporate PDF generation into your CI/CD pipeline to ensure documentation exports are always in sync with the latest commits.

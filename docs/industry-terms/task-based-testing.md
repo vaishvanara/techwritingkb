@@ -1,47 +1,47 @@
 ---
 title: Task-based testing
-description: How to design, execute, and analyze task-based testing to validate the clarity, findability, and accuracy of your documentation.
-revision_date: 2026-08-19
+description: A usability research method where participants perform specific goals using documentation to identify instruction gaps and findability issues.
+revision_date: 2026-08-28
 ---
 
 # Task-based testing
 
-> Validating documentation usability by observing real users completing specific objectives to identify instruction gaps and improve findability
+> A usability research method where participants perform specific goals using documentation to identify instruction gaps and findability issues
 
 ---
 
 ## What is task-based testing?
 
-Task-based testing is a research method where you observe participants as they complete specific goals using only your documentation. Unlike a general content audit, this method tests how documentation performs in a live or simulated environment. It bridges the document development life cycle (DDLC) and the software development life cycle (SDLC) to verify that instructional content works as a reliable interface for the product.
+Task-based testing evaluates documentation by observing users as they attempt to reach specific milestones using only the provided guides. While a content audit checks for accuracy on the page, this method verifies how that information performs in a live environment. It functions as the bridge between the document development life cycle (DDLC) and the software development life cycle (SDLC), ensuring instructions act as a functional interface for the product.
 
-This testing requires collaboration across teams. Technical writers design the test scenarios based on audience analysis. Product managers, user experience (UX) researchers, and quality assurance (QA) engineers help recruit participants, run the sessions, and analyze behavioral data. A subject matter expert (SME) often joins the observation phase to help identify where users struggle with complex systems, such as an API reference or a new developer experience (DX) setup.
+Execution requires cross-functional input. Technical writers design the scenarios, while UX researchers and product managers recruit participants and analyze the resulting behavioral data. Having a subject matter expert (SME) observe these sessions is often the fastest way to pinpoint where users struggle with complex setups, such as API authentication or SDK configurations.
 
 ---
 
 ## Why it matters
 
-Writing accurate instructions isn't enough; information must be easy to find and follow. Internal teams often have an "expert's blind spot," meaning they can't see the documentation from a beginner's perspective. Without task-based testing, you might publish material that seems correct to engineers but confuses real users.
+Accuracy is only half the battle; if a user cannot find or interpret a step, the documentation has failed. Internal teams often suffer from the "curse of knowledge," making it impossible for them to see the instructions from a fresh perspective. Task-based testing strips away these assumptions.
 
-Using this workflow improves efficiency and customer support metrics. Validated documentation increases support deflection by resolving user confusion before a product release. Finding structural problems early also reduces technical debt and prevents the need for reactive documentation patches later.
+Prioritizing this workflow directly impacts the bottom line. Validated docs drive support deflection by resolving friction points before they reach a help desk ticket. Furthermore, catching structural flaws during the testing phase prevents the accumulation of technical debt and the need for emergency documentation patches after a release.
 
 !!! tip "Validate the Docs, Not the User"
-    Task-based testing measures the quality of the documentation, not the intelligence of the participant. If a user can't complete a task, the documentation failed, not the user.
+    If a participant fails a task, the documentation is broken, not the user. The goal is to identify flaws in the content, not to test the participant's technical proficiency.
 
 ---
 
 ## When to adopt this workflow 
 
-Adopt this workflow if you notice friction in product adoption or documentation maintenance, such as:
+Implement this testing process when documentation maintenance becomes reactive rather than proactive. Common triggers include:
 
-- **High volume of support tickets:** Users often ask for help with features that are already documented.
-- **Major product redesign:** You introduce a new interface or architecture that requires updated onboarding and user guides.
-- **Complex developer onboarding:** Engineers struggle to configure a software development kit (SDK) or navigate authentication despite having reference materials.
+- **Support ticket spikes:** Users frequently ask for help with features that are already "documented."
+- **Interface overhauls:** New UI or architectural changes render existing onboarding and user guides obsolete.
+- **Onboarding friction:** New developers struggle to initialize environments or navigate reference materials despite having access to the full docs suite.
 
 ---
 
 ## How the workflow works
 
-This workflow moves from planning to observation and concludes with content updates based on user performance.
+The process moves from objective planning to live observation, ending with data-driven content revisions.
 
 ```mermaid
 graph TD
@@ -50,45 +50,39 @@ graph TD
     C --> D[Analyze and implement fixes]
 ```
 
-1. **Task definition and scenario planning:** The team drafts scenarios based on a validated user persona. Tasks must be objective and should not lead the participant. For example, use "Create a database instance" instead of "Select the green button to start."
-2. **Test facilitation and observation:** Facilitators run sessions while participants perform the tasks. Observers take notes on search patterns, navigation choices, and where users get stuck.
-3. **Data synthesis and documentation updates:** The team reviews success rates, time-on-task, and qualitative feedback. They then update the information architecture (IA), restructure the content hierarchy, and rewrite confusing passages.
+1. **Scenario planning:** Draft objectives based on user personas. Tasks should be neutral and goal-oriented rather than instructional. For example, "Configure a webbook notification" is more effective than "Click the notification tab and enter a URL."
+2. **Observation:** Facilitators monitor participants as they work through the scenarios. Observers should track search queries, navigation paths, and specific "dead ends" where users stop making progress.
+3. **Data synthesis:** The team reviews success rates and time-on-task. These insights drive changes to information architecture (IA), content hierarchy, and the clarity of specific procedural steps.
 
 ---
 
 ## RACI and team roles
 
-To keep the process moving, define clear ownership across teams.
-
-- **Responsible:** Technical writers (designing tasks, taking notes, and updating content) and UX researchers (running sessions).
-- **Accountable:** Documentation lead and product manager (prioritizing documentation fixes in the product backlog).
-- **Consulted:** SMEs (verifying user paths and system accuracy).
-- **Informed:** QA team and support lead (tracking ticket trends after updates).
+*   **Responsible:** Technical writers (task design and content updates) and UX researchers (facilitation).
+*   **Accountable:** Documentation lead and product manager (ensuring fixes are prioritized in the sprint).
+*   **Consulted:** SMEs (technical validation of user paths).
+*   **Informed:** Support and QA teams (monitoring the impact on ticket volume).
 
 ---
 
 ## Pipeline integration and tooling
 
-You can use tools to streamline your preparation. Use automated link checkers and prose linting applications, such as [Vale](https://vale.sh/){: target="_blank" rel="noopener" }, to ensure technical errors don't distract participants.
+Testing is most effective when technical distractions are minimized. Use automated linting tools like [Vale](https://vale.sh/){: target="_blank" rel="noopener" } to catch grammar or style issues before the session so participants can focus on the workflow rather than typos. 
 
-After testing, log findings as issues in your project management system. This ensures that documentation updates are scheduled in the next sprint and tracked alongside software bugs.
-
----
-
-## Troubleshooting and common points of failure
-
-Watch for these common bottlenecks:
-
-- **Leading the participant:** Observers sometimes guide participants when they struggle, which ruins the data. *Solution:* Train facilitators to remain silent and use neutral prompts like, "What would you do next if you were working alone?"
-- **Recruiting the wrong audience:** Testing with internal developers instead of the target audience. *Solution:* Use screener surveys to find participants who match your customer profiles.
-- **Scope creep:** Testing too many complex cases in one session, which tires the participant. *Solution:* Limit sessions to three to five high-priority tasks.
+Findings should be logged as issues in your standard project management tool (e.g., Jira or GitHub). This treats documentation bugs with the same urgency as software bugs, ensuring updates are tracked and completed within the development cycle.
 
 ---
 
-## Key metrics and success criteria
+## Troubleshooting common failures
 
-Measure effectiveness using these indicators:
+- **The "Helper" bias:** Observers often feel the urge to guide participants when they struggle. This invalidates the data. Facilitators must remain silent, using only neutral prompts like, "Talk me through what you’re looking for right now."
+- **Internal echo chambers:** Testing with internal developers who already know the product leads to false positives. Use screener surveys to find participants who match the actual customer profile.
+- **Participant fatigue:** Overloading a session with too many complex scenarios leads to declining performance. Keep sessions focused on three to five high-priority tasks.
 
-- **Task completion rate:** The percentage of participants who complete the objective without help. Aim for 85% or higher.
-- **Time-on-task:** The average time a user spends on a task. A downward trend over time shows improved findability.
-- **Error rate per task:** The number of times a participant takes a wrong action before finding the correct path.
+---
+
+## Key metrics for success
+
+*   **Completion rate:** The percentage of users who finish the task independently. A target of 85% is a standard benchmark.
+*   **Findability speed:** The time taken to locate the correct page or section.
+*   **Error frequency:** The number of incorrect clicks or commands attempted before finding the successful path.

@@ -1,51 +1,51 @@
 ---
 title: Content Audit
-description: Learn how to conduct a systematic content audit to evaluate documentation quality, identify gaps, and prioritize maintenance.
-revision_date: 2026-08-19
+description: A systematic evaluation of documentation to identify inaccuracies, eliminate content debt, and ensure help resources align with current product features.
+revision_date: 2026-08-28
 ---
 
 # Content audit
 
-> Evaluating your existing documentation to identify gaps, correct inaccuracies, and prioritize ongoing content maintenance
+> A systematic evaluation of documentation to identify inaccuracies, eliminate content debt, and ensure help resources align with current product features
 
 ---
 
-## What is a content audit?
+## Defining the audit process
 
-A content audit is the process of evaluating your documentation to assess its accuracy, completeness, and overall health. As a part of the documentation lifecycle, an audit helps ensure your documentation remains a reliable asset. The process involves cataloging published articles, evaluating them against quality standards, and determining whether to update, consolidate, or archive the content.
+A content audit systematically catalogs and evaluates documentation to assess its accuracy, completeness, and structural health. Rather than a one-time fix, it functions as a governance phase within the software development life cycle (SDLC)—ideally occurring between major releases or during product refactoring.
 
-In the software development life cycle (SDLC), a content audit serves as a governance phase between major releases or during product refactoring. While technical writers usually lead the audit, it is a cross-functional effort. Product managers, software engineers, and quality assurance (QA) teams help verify technical accuracy, identify outdated information, and align documentation with current product capabilities.
-
----
-
-## Why content audits matter
-
-Failing to audit documentation leads to content debt. Over time, features change, UIs evolve, and code is deprecated. Without a formal audit, documentation becomes cluttered with stale content that misleads users and increases support costs. 
-
-A systematic audit workflow provides several benefits:
-
-*   **Improves findability:** Streamlines information architecture by removing duplicate or obsolete pages.
-*   **Ensures consistency:** Verifies that articles align with the current style guide and brand voice.
-*   **Reduces engineering support:** Prevents engineers from answering the same support questions by identifying documentation gaps early.
-
-Manual, ad hoc reviews often result in inconsistent quality, overlooked errors, and a fragmented user experience.
+While technical writers typically drive the process, success requires cross-functional input. Product managers, engineers, and QA teams provide the technical verification necessary to align documentation with the actual capabilities of the software. The end goal is a clear decision for every page: update, consolidate, archive, or leave as-is.
 
 ---
 
-## When to use an audit workflow 
+## The cost of content debt
 
-Establish a content audit workflow if you encounter any of the following issues:
+Neglecting documentation leads to "content debt." As UIs evolve and code is deprecated, unmaintained pages become a liability. Stale content misleads users, triggers unnecessary support tickets, and obscures the information users actually need.
 
-- **Rapid product iteration:** The software release cycle is fast, creating a gap between the production environment and the documentation.
-- **Multiple contributors:** Various developers, technical writers, and product managers update docs, leading to inconsistent tone and page layouts.
-- **High support volume:** Customer support reports frequent tickets related to outdated setup guides or broken code examples.
-- **Localization preparation:** You plan to translate documentation. Auditing first prevents spending the budget on translating outdated pages.
+A formal audit workflow resolves these issues by:
+
+*   **Refining findability:** Removing duplicate or obsolete pages clarifies the information architecture.
+*   **Enforcing consistency:** Ensuring all articles follow the current style guide and brand voice.
+*   **Lowering support overhead:** Identifying documentation gaps before they turn into repetitive engineering support queries.
+
+Ad hoc reviews rarely achieve these results, as they often overlook deep-linked errors and fragmented user journeys.
 
 ---
 
-## How the workflow works
+## Implementation triggers
 
-A standard content audit includes four stages: trigger, inventory, evaluation, and resolution.
+Adopt a formal audit workflow if your team experiences any of the following:
+
+- **Aggressive release cycles:** Documentation cannot keep pace with the production environment.
+- **Contribution sprawl:** Multiple authors from different teams have created a patchwork of inconsistent tones and layouts.
+- **Support spikes:** Customer success teams report high volumes of tickets involving broken code samples or outdated setup guides.
+- **Localization shifts:** You need to audit the source English content before spending the budget on translating outdated pages.
+
+---
+
+## The four-stage workflow
+
+The audit follows a linear path from initial discovery to final resolution.
 
 ```mermaid
 graph TD
@@ -56,53 +56,51 @@ graph TD
 ```
 
 ### 1. Inventory compilation
-
-First, catalog all active documentation files. If you use a static site generator (SSG) and a version control system (VCS) like [Git](https://git-scm.com/){: target="_blank" rel="noopener" }, you can programmatically generate this inventory. Use scripts to export file paths from your repository into a tracking spreadsheet.
+Catalog your active documentation. If you store docs in a [Git](https://git-scm.com/){: target="_blank" rel="noopener" } repository, you can programmatically list file paths rather than manually typing them into a spreadsheet.
 
 ??? note "Automating the inventory stage"
-    Run a command-line script in your repository to list all active Markdown file paths for your audit spreadsheet:
+    Run this command in your repository to generate a list of Markdown files for your audit tracker:
     
     ```bash
     find docs/ -name "*.md" > audit-inventory.txt
     ```
 
 ### 2. Technical and quality review
+Verify each page against your quality standards. Technical writers focus on style and metadata, while subject matter experts (SMEs) validate code logic.
 
-Review each prioritized page. Technical writers check for style compliance, while a subject matter expert (SME) ensures that technical concepts and code samples are accurate.
-
-- [ ] Verify the article complies with the style guide.
-- [ ] Use a link checker to fix broken internal or external URLs.
-- [ ] Verify that the front matter metadata is complete.
-- [ ] Ensure the page aligns with accessibility standards.
+- [ ] **Style compliance:** Does the article follow the latest style guide?
+- [ ] **Link integrity:** Are internal and external URLs functional?
+- [ ] **Metadata:** Is the front matter (e.g., `revision_date`) accurate?
+- [ ] **Accessibility:** Does the page structure support screen readers?
 
 ### 3. Resolution and updates
-Based on the review, assign one of four actions to each page: 
-*   **Keep:** No changes needed.
-*   **Update:** Rewrite for accuracy.
-*   **Consolidate:** Merge with another page.
-*   **Archive:** Remove and redirect the page.
+Assign a specific action to every reviewed page:
+*   **Keep:** The content is accurate and requires no changes.
+*   **Update:** The page needs a rewrite or technical correction.
+*   **Consolidate:** Merge the information with a related page to reduce redundancy.
+*   **Archive:** Remove the page and implement a 301 redirect.
 
 ---
 
-## RACI and team roles
+## Team roles (RACI)
 
-To keep the audit on track, define clear ownership across teams.
+Clear ownership prevents the audit from stalling during the review phase.
 
 | Role | Responsibility |
 | :--- | :--- |
-| **Responsible** | **Technical writers**: Perform the initial inventory, run quality scans, and update Markdown files. |
-| **Accountable** | **Documentation lead or product manager**: Approves the audit scope, schedules reviews, and signs off on content deletions. |
-| **Consulted** | **SMEs**: Provide technical reviews and clarify code behaviors. |
-| **Informed** | **Support and QA teams**: Receive updates regarding deleted pages and new guides. |
+| **Responsible** | **Technical writers**: Compile the inventory, run scans, and apply Markdown updates. |
+| **Accountable** | **Documentation Lead**: Defines the scope, sets the schedule, and approves deletions. |
+| **Consulted** | **SMEs**: Conduct technical reviews and verify code behavior. |
+| **Informed** | **Support/QA**: Notified of major content removals or new guide structures. |
 
 ---
 
-## Pipeline integration and tools
+## Automation and pipeline integration
 
-You can automate parts of the workflow. Integrating auditing tools into your continuous integration and continuous deployment (CI/CD) pipeline helps maintain documentation health between formal audits.
+Integrate audit checks into your CI/CD pipeline to catch errors before the next formal review.
 
 === "CI/CD link checking"
-    Add an automated step in your deployment pipeline to run a link checker on every pull request.
+    Automate link validation on every pull request to prevent "link rot."
     
     ```yaml
     # Example GitHub Actions snippet
@@ -111,23 +109,21 @@ You can automate parts of the workflow. Integrating auditing tools into your con
     ```
 
 === "Metadata validation"
-    Use linter configurations to check that every page contains required front matter attributes, such as `revision_date` and `description`.
+    Use linters to ensure every page contains mandatory front matter like `description` and `revision_date`.
 
 ---
 
-## Troubleshooting
+## Managing bottlenecks
 
-- **Audit paralysis due to scope:** The audit stalls because the team tries to review too many pages at once. 
-    *   *Solution:* Group documentation into smaller batches. Prioritize pages with high traffic or those linked to critical product areas.
-- **SME bottlenecks:** Developers do not have time to review assigned articles.
-    *   *Solution:* Schedule short "doc-a-thon" sessions or set up automated reminders. Make review requests specific by highlighting only the sections that need verification.
+*   **Scope Creep:** Trying to audit thousands of pages at once leads to "audit paralysis." **Solution:** Group docs into batches based on traffic or product area.
+*   **SME Availability:** Developers often lack the bandwidth for long reviews. **Solution:** Host a "doc-a-thon" or send specific, deep-linked requests that highlight only the sections requiring technical sign-off.
 
 ---
 
-## Key metrics
+## Success metrics
 
-To measure the effectiveness of your content audit, track these performance metrics:
+Track these KPIs to justify the time spent on auditing:
 
-- **Support ticket deflection:** A decrease in customer issues related to outdated documentation.
-- **Documentation freshness index:** The percentage of high-traffic pages verified or updated within the last six months.
-- **Page count reduction:** Removing dead pages simplifies the site structure, improving usability and search success.
+- **Ticket Deflection:** A measurable drop in support queries related to the audited topics.
+- **Freshness Index:** The percentage of top-tier pages updated within the last six months.
+- **Search Success Rate:** Improvements in internal search accuracy following the removal of redundant pages.

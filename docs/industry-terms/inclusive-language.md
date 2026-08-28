@@ -1,7 +1,7 @@
 ---
-title: Inclusive Language in Technical Documentation
-description: A comprehensive guide to implementing inclusive language in technical documentation to ensure clarity, accessibility, and global reach.
-revision_date: 2026-08-19
+title: Inclusive Language
+description: A writing methodology that avoids bias, exclusionary metaphors, and gendered language to improve accessibility and global translation efficiency.
+revision_date: 2026-08-28
 ---
 
 # Inclusive language
@@ -10,35 +10,35 @@ revision_date: 2026-08-19
 
 ---
 
-## What is inclusive language?
+## Defining inclusive language
 
-Inclusive language is a writing style that focuses on eliminating bias and barriers to understanding. By avoiding terms that rely on gender, race, ability, or specific cultural references, you create content that focuses on the reader's task. In software development and product management, this practice is a key part of digital accessibility and information design.
+Inclusive language removes bias and unnecessary barriers to comprehension. By stripping away terms tied to gender, race, or physical ability, writers create content focused purely on the user's objective. In software and product management, this is an extension of information design—ensuring that every reader, regardless of background, can execute a task without navigating linguistic obstacles.
 
-Inclusive language is based on principles of cognitive science and human-computer interaction (HCI). When readers encounter exclusionary or outdated terminology—such as "master/slave" in software architectures or "sanity check" in testing—it can be distracting. This increases cognitive load and makes it harder for the reader to process information. Using neutral, respectful phrasing allows the reader to focus on instructions.
+The foundation of this approach lies in cognitive science. When a reader encounters exclusionary or outdated jargon—such as "master/slave" or "sanity check"—it creates cognitive friction. These terms distract from the technical instructions, forcing the brain to process cultural or historical baggage instead of the code. Using neutral, precise phrasing minimizes this load.
 
 ---
 
-## Why it matters
+## Strategic impact
 
-Inclusive language is essential for global product expansion. For organizations managing globalization, internationalization, localization, and translation (GILT) workflows, non-inclusive phrasing creates friction. Idioms and culturally specific metaphors often do not translate well, which increases translation costs and reduces the quality of localized content. Prioritizing inclusive terminology during the drafting stage streamlines internationalization (I18n) and ensures that localization (L10n) feels natural to native speakers worldwide.
+Inclusive language is a prerequisite for global scale. For organizations managing localization (L10n) and internationalization (I18n), non-inclusive phrasing introduces technical debt. Idioms and metaphors rarely survive translation; they inflate costs and result in localized content that feels "off" to native speakers. Aligning terminology during the drafting phase streamlines these GILT (Globalization, Internationalization, Localization, and Translation) workflows.
 
-Exclusionary language can also alienate users and impact product adoption. When documentation assumes a user's gender or uses ableist metaphors, it can undermine trust. This often leads to a poor user experience, higher support volumes, and lower product value. Applying inclusive principles keeps users engaged and helps them complete tasks efficiently.
+Beyond the technicalities of translation, exclusionary language erodes user trust. Documentation that assumes a user's gender or uses ableist metaphors can alienate entire demographics, leading to higher support volumes and decreased product adoption. Precise, inclusive language ensures that the focus remains on product value.
 
 ---
 
 ## Core principles
 
-To implement inclusive language, focus on how you select words and frame instructions. Follow these three primary rules:
+Three rules guide the implementation of inclusive language:
 
-- **Use people-first language:** Focus on the person rather than a label or characteristic. Describe users with dignity and avoid terms that equate a person with a condition or background.
-- **Use bias-free, neutral terminology:** Replace historically loaded jargon with precise, functional alternatives. This creates a professional environment for all developers and engineers.
-- **Prioritize global accessibility and plain English:** Avoid regional idioms and metaphors. Use simple sentence structures to make documentation easier to parse for non-native English speakers.
+- **People-first phrasing:** Focus on the individual rather than a characteristic. Prioritize dignity and avoid equating a person with a specific condition.
+- **Bias-free terminology:** Replace loaded historical jargon with functional alternatives. Precision creates a more professional environment for all engineers.
+- **Global accessibility:** Stick to plain English. Avoid regional idioms that confuse non-native speakers and use simple structures to improve machine translatability.
 
 ---
 
 ## Implementation workflow
 
-The following diagram illustrates the process of integrating inclusive language into a standard documentation lifecycle.
+This diagram outlines how to bake inclusive language into the standard documentation lifecycle.
 
 ```mermaid
 graph TD
@@ -53,9 +53,9 @@ graph TD
 
 ---
 
-## Design pattern example
+## Design pattern comparison
 
-The following comparison shows how to refactor technical instructions to remove biased metaphors, ableist language, and gendered assumptions.
+Refactoring instructions often requires swapping social metaphors for technical descriptions.
 
 ```text
 [ Before / Non-Inclusive Pattern ]
@@ -72,40 +72,38 @@ You must then manually run the script.
 ```
 
 !!! tip "Tip: Use functional alternatives"
-    Prioritize technical accuracy. Replacing social metaphors with functional words makes your documentation easier to understand for both human readers and translation software.
+    Prioritize technical accuracy. Functional words make documentation easier to parse for both human readers and translation engines.
 
-### Why these changes work
+### The logic of the refactor
 
-- **Functional substitution:** Replacing "sanity check" with "verify server settings" eliminates ableist terminology and provides a more precise technical instruction.
-- **Objective architecture terms:** Swapping "master/slave" for "primary/secondary" (or "primary/replica") removes metaphors based on slavery and uses industry-standard engineering terms.
-- **Second-person pronouns:** Replacing the gendered pronoun "he" with "you" improves clarity and addresses the user directly, as recommended by the Microsoft Writing Style Guide.
-
----
-
-## Implementation best practices
-
-To adopt inclusive language across your organization, use these strategies:
-
-- **Audit repositories for legacy terms:** Scan your codebase and documentation for terms such as "whitelist," "blacklist," "master," and "slave." Replace them during regular maintenance.
-- **Use "you" to address the user:** Address the reader directly. Avoid third-person singular pronouns ("he," "she," "his," "her") unless you are referring to a specific persona.
-- **Align with Web Content Accessibility Guidelines (WCAG):** Ensure that images and diagrams have descriptive alternative text that avoids bias.
-- **Use automated style checks:** Integrate prose linters into your "docs-as-code" pipeline to flag non-inclusive words during the pull request phase.
+- **Functional Substitution:** "Verify settings" provides a clearer technical instruction than "sanity check" while removing ableist terminology.
+- **Objective Architecture:** Using "primary/secondary" (or "primary/replica") replaces metaphors of human ownership with industry-standard engineering terms.
+- **Direct Address:** Swapping the gendered "he" for "you" clarifies who is performing the action, as recommended by major industry style guides.
 
 ---
 
-## Common anti-patterns
+## Operationalizing inclusion
 
-Avoid these mistakes when adopting inclusive language:
+To move beyond manual checks, use these organizational strategies:
 
-- **Performative over-correction:** Changing technical terms that are not biased or exclusionary can reduce clarity. Always prioritize technical accuracy.
-- **Excessive passive voice:** Do not use the passive voice just to avoid gendered pronouns. For example, instead of "The button must be selected," use the active voice: "Select the button."
+- **Audit legacy repositories:** Use scripts to scan codebases for terms like "whitelist," "blacklist," or "master/slave." Schedule these replacements during routine maintenance.
+- **The "You" Standard:** Address the reader directly. This avoids the trap of third-person singular pronouns ("he/she") and makes the text more engaging.
+- **WCAG Alignment:** Verify that alt-text for diagrams remains objective and free of gender or racial assumptions.
+- **Automated Linters:** Integrate tools like Vale or Alex into your CI/CD pipeline to flag non-inclusive language during pull requests.
 
 ---
 
-## How to validate usability
+## Anti-patterns to avoid
 
-Verify that your content meets inclusive standards by using these strategies:
+- **Performative correction:** Do not change standard technical terms that carry no bias, as this can confuse users. Clarity remains the priority.
+- **Passive voice traps:** Don't default to passive voice just to avoid pronouns. "Select the button" is better than "The button must be selected."
 
-- **Automated linter audits:** Use tools with customizable rulesets to identify non-inclusive terms before merging changes.
-- **Peer reviews:** Conduct reviews with team members from different backgrounds to identify regional jargon or cultural assumptions.
-- **Translation testing:** Use translation tools to see how easily your phrasing translates into other languages. This helps identify text that may cause "translation friction."
+---
+
+## Validation
+
+Verify impact through these channels:
+
+- **Linter Audits:** Use customizable rulesets to catch errors before they reach production.
+- **Cross-functional Reviews:** Invite team members from different regions to identify jargon that may have been missed.
+- **Translation Stress-Tests:** Pass content through translation software to identify "friction points" where metaphors or complex phrasing break the logic.

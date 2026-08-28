@@ -1,47 +1,48 @@
 ---
 title: Semantic hierarchy
-description: Learn how to organize technical information using headers and tags to communicate structural importance and establish logical relationships.
-revision_date: 2026-08-19
+description: A system of organizing digital content through nested headings and tags to establish a logical information architecture and improve accessibility.
+revision_date: 2026-08-28
 ---
 
 # Semantic hierarchy
 
-> The practice of organizing technical information logically by using structural headers and tags to establish relationships and guide readers through your documentation
+> A system of organizing digital content through nested headings and tags to establish a logical information architecture and improve accessibility
 
 ---
 
-## What is semantic hierarchy?
+## Understanding semantic hierarchy
 
-Semantic hierarchy is the practice of organizing information into levels by using headings and HTML tags. This indicates the importance of topics and how they relate to each other. A clear structure helps you build an accurate mental model of the documentation. When you implement a clear structure, you use typography, heading elements, and visual cues to show how concepts are nested.
-
-A structural layout makes content easier to scan. By creating a predictable visual hierarchy, you help readers and people who use assistive technology, such as screen readers, navigate dense data. This foundation also improves search engine optimization (SEO) because search engines use structural tags to index and rank pages.
+Semantic hierarchy uses structural headings and HTML tags to signal the relative importance of topics and their relationships. Beyond mere aesthetics, this structure builds a mental model for the reader. By leveraging typography and visual cues to show how concepts nest within one another, you transform a dense document into a map that is easy to navigate and understand.
 
 ---
 
-## Why structure matters
+## The mechanics of structure
 
-When technical documentation lacks structure, readers see an overwhelming block of text. Without clear pathways, readers might hesitate or jump between pages without finding what they need. This often leads to frustration and causes users to leave the site.
+When documentation lacks hierarchy, it becomes a "wall of text." This creates friction, often leading users to abandon a page when they can't immediately find a specific command or concept. A predictable visual order solves this by providing a logical path.
 
-In contrast, establishing a structural order creates a logical path for the reader. It improves SEO by defining the relationships between topics, which helps search algorithms determine relevance. A consistent system of headers ensures that readers can scan a page quickly to find specific commands or concepts.
+This foundation also serves technical requirements:
+- **Accessibility:** Screen readers rely on tags to generate navigation landmarks for users with visual impairments.
+- **Search Engine Optimization (SEO):** Search algorithms use heading levels to index content relevance and determine page authority.
+- **Scanability:** Most technical users don't read word-for-word; they scan for headers to locate specific solutions.
 
 !!! tip "Design tip"
-    Ensure your design includes enough whitespace around your headers. Ample breathing room prevents visual clutter and helps the layout guide the reader's eye naturally.
+    Apply enough whitespace around headers. "Breathing room" prevents visual clutter and helps the layout guide the reader's eye naturally between sections.
 
 ---
 
-## Core principles and anatomy
+## Core principles
 
-A successful semantic structure relies on three core principles that dictate how you organize and label your content:
+Effective semantic structure relies on three factors:
 
-- **Logical nesting:** Systematically arrange topics where H2 headings group broad concepts, H3 headings break down specific tasks, and H4 headings cover fine details. ==Don't skip levels== (such as jumping from an H2 directly to an H4).
-- **Visual distinction:** Use typography rules, including size, font weight, and line spacing, to reflect heading levels. A strong visual hierarchy ensures that top-level headers are larger and more prominent than subheadings.
-- **Semantic integrity:** Use actual programmatic tags (like `<h2>` and `<h3>` in HTML or corresponding Markdown markers) instead of bolding body text. This makes content accessible to assistive technology and easier to parse during a content migration.
+*   **Logical nesting:** Arrange topics systematically. Use H2s for broad concepts, H3s for specific tasks, and H4s for granular details. Jumping from an H2 directly to an H4 breaks the programmatic outline and confuses assistive technology.
+*   **Visual distinction:** Typography—including size, font weight, and line spacing—must reflect the heading level. Top-level headers should be immediately more prominent than subheadings.
+*   **Semantic integrity:** Use actual programmatic tags (`<h2>`, `<h3>`) or Markdown markers (`##`, `###`) rather than simply bolding body text. This ensures the structure is machine-readable and survives content migrations.
 
 ---
 
 ## Design pattern example
 
-The following example shows how to transform a flat wall of text into a structured layout using semantic markup.
+The following map and code demonstrate how to convert flat text into a functional hierarchy.
 
 === "Visual hierarchy map"
     ```mermaid
@@ -71,48 +72,16 @@ The following example shows how to transform a flat wall of text into a structur
     Run the compilation command to compile your assets.
     ```
 
-### Breakdown of the pattern
+### Structural breakdown
 
-In the example above:
-1. The **H1 (`#`)** defines the page title and establishes the context.
-2. The **H2s (`##`)** divide the document into two phases: configuration and execution.
-3. The **H3s (`###`)** nested under the configuration phase break the setup into two specific subtasks. 
-
-This layout allows a screen reader to compile an accurate table of contents. It also helps readers who scan content to skip directly to execution if they have already configured their environment.
+In this pattern, the **H1** establishes the high-level context. The **H2s** divide the workflow into distinct phases (configuration and execution), while the **H3s** under configuration handle specific subtasks. This allows a screen reader to compile an accurate table of contents and lets experienced users skip directly to execution.
 
 ---
 
-## Impact on user experience
+## Implementation and validation
 
-Implementing a programmatic hierarchy influences how people interact with your technical resources:
+To maintain consistency, keep headings concise and active—usually under eight words. Avoid using bold styles to "fake" a header, as this hides the structure from accessibility software.
 
-- **Faster scannability:** Readers can locate command-line steps quickly by following visual guides and scannability patterns.
-- **Improved retention:** Breaking complex operations into nested, logical phases helps readers understand and remember workflows.
-
----
-
-## Implementation best practices
-
-To maintain a consistent structure, apply these rules to your content strategy:
-
-- **Keep headings concise:** Heading text should be active, direct, and usually fewer than eight words.
-- **Don't use styles for structure:** Don't use bold formatting (`**bold**`) to simulate subheadings. Always use header syntax (like `###`) so accessibility software can interpret the document structure.
-- **Match headings with the page objective:** Ensure that every H2 and H3 header supports the main goal of the page.
-
----
-
-## Common anti-patterns
-
-Avoid these common mistakes when structuring your pages:
-
-- **The flat page:** Using only paragraphs and bold text instead of headers. This forces readers to read every line to find what they need.
-- **Skipped levels:** Jumping from an H2 header directly to an H4. This is often done for aesthetic reasons but disrupts navigation for screen readers.
-
----
-
-## How to validate and test usability
-
-Verify that your structure is working by using these two testing methods:
-
-- **The squint test:** Squint your eyes while looking at your page. You should still be able to identify the distinct sizes and groupings of the headers without reading the actual words.
-- **Accessibility navigation test:** Use a screen reader (such as [NVDA](https://www.nvda-project.org/){: target="_blank" rel="noopener" } or [JAWS](https://www.freedomscientific.com/products/software/jaws/){: target="_blank" rel="noopener" }) to navigate by heading. Ensure the document structure is logical and that no levels are skipped.
+### Testing usability
+*   **The squint test:** Squint at the page until the text is blurry. You should still clearly see the distinct groupings and hierarchy based on size and spacing.
+*   **Navigation testing:** Use a screen reader like [NVDA](https://www.nvda-project.org/) or [JAWS](https://www.freedomscientific.com/products/software/jaws/) to jump between headers. If the flow feels disjointed or levels are missing, the hierarchy needs refinement.

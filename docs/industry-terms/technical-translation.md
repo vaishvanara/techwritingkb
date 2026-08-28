@@ -1,54 +1,54 @@
 ---
 title: Technical translation
-description: Converting technical documentation between languages while accurately preserving specialized terminology, complex instructions, and the intended meaning for a specific target global audience.
-revision_date: 2026-08-24
+description: The specialized process of adapting technical content into other languages while maintaining strict functional equivalence and terminological accuracy.
+revision_date: 2026-08-28
 ---
 
 # Technical translation
 
-Technical translation is the process of adapting specialized documentation—such as API references, hardware manuals, and software strings—into another language. Unlike literary translation, which focuses on tone and aesthetics, technical translation prioritizes functional equivalence, terminological accuracy, and clarity.
-
-For technical writers, software engineers, and product teams, effective translation ensures that global users can install, configure, and troubleshoot products with the same success as native speakers of the source language.
+> The specialized process of adapting technical content into other languages while maintaining strict functional equivalence and terminological accuracy
 
 ---
 
-## The strategic framework of translation
+## What is technical translation?
 
-Technical translation is a specific component within the broader framework of globalization, internationalization, localization, and translation (GILT). 
-
-While internationalization (i18n) focuses on the engineering work required to ensure a product can handle multiple languages and regions, translation focuses on the linguistic accuracy of the content. To produce high-quality translations, product teams must integrate these processes early in the development lifecycle to avoid costly "retrofitting" of text or code.
+Technical translation adapts specialized content—such as API references, hardware manuals, and software strings—for international markets. While creative or literary translation prioritizes tone and aesthetic impact, technical translation centers on functional equivalence. The goal is to ensure that a user in Tokyo or Berlin can configure and troubleshoot a product as effectively as one in San Francisco.
 
 ---
 
-## Authoring for a global audience
+## Integration with GILT frameworks
 
-The quality of a translation depends on the quality of the source text. Technical writers can reduce translation errors and costs by adhering to specific authoring standards.
+Translation is rarely a standalone task; it functions as the linguistic pillar of the Globalization, Internationalization, Localization, and Translation (GILT) framework. 
 
-Using a **controlled language** is one effective strategy. A controlled language is a simplified version of a natural language that uses a restricted vocabulary and a specific set of grammatical rules. By reducing ambiguity and avoiding complex sentence structures, technical writers make the content easier for human translators and automated systems to process.
-
-### Best practices for source content
-
-- **Avoid idioms and metaphors:** Expressions that work in one culture often fail in another.
-- **Use consistent terminology:** Use the same term for the same concept throughout the documentation.
-- **Keep sentences short:** Aim for one idea per sentence to minimize structural confusion.
+Engineering teams usually handle internationalization (i18n) by preparing the codebase to support multiple locales. If this structural work is neglected, the translation process becomes a series of manual "retrofits" that delay releases and inflate costs. High-quality documentation requires integrating linguistic workflows early in the development lifecycle to ensure text expands gracefully in UI elements and handles regional variables like date formats or currency.
 
 ---
 
-## Using translation technology
+## Optimizing source content for global reach
 
-Modern technical translation uses human expertise and software to manage volume and ensure consistency.
+The efficiency of any translation project is dictated by the quality of the source text. Technical writers reduce errors and lower costs by adopting "translation-ready" authoring standards.
 
-### Translation memory
+Implementing a **controlled language**—such as Simplified Technical English—is a primary strategy. By restricting vocabulary and enforcing strict grammatical rules, writers eliminate the ambiguity that often trips up human translators and automated systems. 
 
-A **translation memory** is a database that stores segments of previously translated text. When a writer updates a document, the system identifies identical or similar segments. This technology provides two primary benefits:
+### Writing for clarity
 
-1. **Cost reduction:** Organizations only pay to translate new or modified content.
-2. **Consistency:** It ensures that standard phrases and UI labels are translated identically across different manuals or software versions.
+- **Neutralize phrasing:** Eliminate metaphors and culture-specific idioms that lack direct equivalents.
+- **Enforce terminological consistency:** Use a single term for a single concept. Variations (e.g., using "switch," "toggle," and "button" interchangeably) create confusion during the translation phase.
+- **Syntactic simplicity:** Use short, declarative sentences to minimize structural confusion during machine processing.
 
 ---
 
-### Machine translation and human oversight
+## The technology of modern translation
 
-As artificial intelligence improves, many organizations use a workflow known as **machine translation post-editing (MTPE)**. In this model, a neural machine translation (NMT) engine or a large language model (LLM) produces an initial draft. A professional human translator then reviews and edits the output to ensure technical accuracy and adherence to the style guide. 
+Scale and consistency in technical documentation are achieved through a combination of human expertise and linguistic software.
 
-This approach is useful for high-volume content, such as knowledge bases or internal engineering documentation, where speed is a priority and accuracy is required.
+### Translation Memory (TM)
+
+A **translation memory** is a database storing previously translated segments of text. When documentation is updated, the TM identifies identical or "fuzzy" matches. This creates a more sustainable workflow:
+
+- **Financial efficiency:** Organizations avoid paying for the same translation twice.
+- **Voice consistency:** Standard phrases and UI labels remain identical across different manuals, software versions, and platforms.
+
+### Machine Translation Post-Editing (MTPE)
+
+Modern workflows often leverage **machine translation post-editing**. In this model, a neural machine translation (NMT) engine or large language model (LLM) generates a draft that a professional human translator then refines. This hybrid approach allows teams to process high volumes of content—such as massive knowledge bases or internal engineering wikis—without sacrificing the technical precision required for safety and compliance.

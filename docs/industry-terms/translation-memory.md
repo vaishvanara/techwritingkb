@@ -1,40 +1,40 @@
 ---
 title: Translation memory
-description: Learn how to configure and integrate translation memory into your localization pipeline to reduce costs, maintain consistency, and automate updates.
-revision_date: 2026-08-19
+description: A database of bilingual text segments that stores previously translated content to improve linguistic consistency and reduce localization costs.
+revision_date: 2026-08-28
 ---
 
 # Translation memory
 
-> A database storing previously translated text segments to reduce enterprise localization costs by avoiding manual re-translations
+> A database of bilingual text segments that stores previously translated content to improve linguistic consistency and reduce localization costs
 
 ---
 
 ## What is translation memory?
 
-Translation memory (TM) is a database that stores sentences, paragraphs, or headings (called segments) as bilingual pairs. These pairs consist of source text and its corresponding target-language translation. As you create and edit documentation, the system searches the database to find matching text for new or modified content. If the system finds a match, it provides the existing translation for reuse. This helps you maintain a consistent voice and scale content reuse across platforms.
+Translation memory (TM) stores previously translated segments—sentences, headers, or paragraphs—as bilingual pairs. When authors create or update documentation, the system scans this database for existing matches. If a match is found, the system retrieves the approved translation for reuse. This process maintains a consistent brand voice while scaling content across multiple platforms.
 
-In the software development life cycle (SDLC), the translation memory pipeline works with continuous integration and continuous deployment (CI/CD) systems. The process typically starts after you finalize the source text and before you publish a software release or documentation update. While product managers and localization leads manage the workflow, software engineers configure the APIs or scripts to sync source repositories with a central translation management system (TMS). Quality assurance (QA) teams then validate these matches to ensure they are accurate before delivery.
+Within a modern software development life cycle (SDLC), the TM pipeline integrates directly with CI/CD systems. After source text is finalized, the pipeline syncs source repositories with a central translation management system (TMS) via APIs. While localization leads manage the high-level workflow, software engineers handle the automation scripts, and QA teams validate matches before the final delivery.
 
 ---
 
 ## Why it matters
 
-Using translation memory addresses bottlenecks in manual, repetitive localization workflows. In fast-paced release environments, content often changes slightly—for example, changing a single word in an installation step or fixing a typo. Without translation memory, you might pay to manually translate an entire page again, leading to higher costs and slower time-to-market.
+Manual localization workflows often struggle with repetitive content. In rapid release cycles, updates are frequently minor—such as fixing a typo or adjusting a single step in a procedure. Without translation memory, these small changes can trigger the cost of re-translating an entire page.
 
-Automating translation memory retrieval eliminates these manual roadblocks. It ensures that previously approved translations automatically apply to new documentation versions. This helps you maintain consistency across user manuals, help centers, and UI elements. Because you only pay for new or heavily modified segments, you can reduce localization costs and maximize your budget as your documentation grows.
+Automated TM retrieval identifies these minor deltas, applying approved translations to new versions instantly. This ensures that user manuals, help centers, and UI elements remain synchronized. By paying only for new or heavily modified strings, organizations can maximize their localization budget as documentation volume grows.
 
 !!! info "Pro Tip"
-    Translation memory is different from a glossary. A glossary defines specific words or product names, while translation memory stores complete sentences and strings in context. Use both together for the best linguistic control.
+    A glossary defines specific terminology or product names; translation memory stores complete strings in context. Combine both to ensure total linguistic control.
 
 ---
 
 ## When to adopt this workflow
 
-*   **Scaling localization costs:** Use translation memory when localization budgets increase at the same rate as documentation volume.
-*   **Inconsistent terminology:** Use a central repository when different pages use conflicting translations for identical buttons, error messages, or menu paths.
-*   **Frequent updates:** Adopt this workflow if you publish frequent documentation updates or release notes but experience translation delays.
-*   **Transitioning to "docs as code":** Move to this workflow when migrating from manual file transfers to an automated, code-based publishing pipeline that integrates with source files.
+*   **Linear cost scaling:** Your localization budget is growing at the same rate as your documentation volume.
+*   **Terminological drift:** Identical UI elements, such as buttons or error messages, appear with conflicting translations across different pages.
+*   **Update bottlenecks:** Frequent documentation updates or release notes are consistently delayed by the translation turnaround.
+*   **"Docs as code" migration:** You are moving from manual file transfers to an automated, repository-based publishing pipeline.
 
 ---
 
@@ -47,39 +47,39 @@ graph TD
     C --> D[Database Commit & Localized Output]
 ```
 
-1.  **Segment extraction and database query:** When you merge content changes, the CI/CD pipeline extracts the updated source files (such as Markdown or JSON) and sends them to the TMS. The system parses the text into segments and searches the translation memory database for exact or partial matches.
-2.  **Translator review and quality control:** The system populates the localized files with exact matches (100% matches) or close matches (fuzzy matches). Professional translators or editors then review these segments in the TMS, validating the automatic matches and manually translating only the unique text.
-3.  **Localized file export and database commit:** After validation, the TMS saves the new segments to the master translation memory database. The system then compiles the translated segments into the target file format and sends the localized files back to the development repository via an automated pull request.
+1.  **Segment extraction and database query:** When content changes are merged, the CI/CD pipeline pushes source files (like Markdown or JSON) to the TMS. The system parses the text into segments and searches the TM database for exact or partial matches.
+2.  **Review and quality control:** The system populates files with "100% matches" or "fuzzy matches" (close approximations). Professional editors then review these segments, validating automated matches and translating only the unique, new text.
+3.  **Export and commit:** Validated segments are saved back to the master TM database. The system then compiles the translated content into the target format and returns the files to the development repository via an automated pull request.
 
 ---
 
 ## RACI and team roles
 
-*   **Responsible:** Technical writers and software engineers write source content, configure file integrations, and manage database connections.
-*   **Accountable:** The localization manager or documentation lead maintains database quality, approves style rules, and manages vendor budgets.
-*   **Consulted:** Subject matter experts (SMEs) and product managers clarify technical terminology or verify localized feature behaviors.
-*   **Informed:** QA and developer relations (DevRel) teams receive notifications when localized files are merged and ready for build verification.
+*   **Responsible:** Technical writers and software engineers (content creation and API integration).
+*   **Accountable:** Localization managers or documentation leads (database quality and vendor management).
+*   **Consulted:** SMEs and product managers (technical accuracy and feature behavior).
+*   **Informed:** QA and DevRel teams (notification of merged localized files).
 
 ---
 
 ## Pipeline integration and tooling
 
-Modern development pipelines automate translation memory by integrating the database into the SDLC. Instead of manually exporting and emailing files, teams use continuous localization connectors or command-line interface (CLI) tools. These tools monitor changes in the master branch of a Git repository, parse updated source code or documentation files, and send them to the TMS via APIs.
+Modern development replaces manual file handoffs with CLI tools or continuous localization connectors. These tools monitor Git branches, pushing source updates to the TMS via API as they occur. 
 
-Inside the translation platform, the system pre-translates the file using the translation memory database. You can also use hybrid models where machine translation provides a baseline, but translation memory takes priority to ensure high-priority terminology remains consistent. The automated cycle integrates into standard CI/CD frameworks, triggering build tests and deployment scripts once the localized files return.
+Inside the translation platform, the system pre-translates files using the TM database. Many teams employ hybrid models where machine translation (MT) provides a baseline, but TM takes priority to ensure high-accuracy branding remains untouched. Once localized files return to the repository, they trigger standard build tests and deployment scripts.
 
 ---
 
 ## Troubleshooting and common points of failure
 
-*   **Low leverage due to syntax changes:** Small changes to markup, such as inline code backticks, bolding, or custom tags, can prevent the database from recognizing identical segments. 
-    *   **Solution:** Configure TMS file parsers to treat inline tags as placeholders rather than translatable text.
-*   **Polluted database records:** If incorrect or outdated translations are saved to the master database, the system will populate future files with errors. 
-    *   **Solution:** Establish read-write permissions so only designated senior editors can commit changes to the master database.
+*   **Syntax-driven leverage loss:** Minor changes to markup—such as shifting inline code backticks or bold tags—can prevent the database from recognizing identical segments. 
+    *   **Solution:** Configure TMS parsers to treat inline tags as non-translatable placeholders.
+*   **Database pollution:** Saving incorrect or outdated translations to the master database causes errors to propagate across all future projects.
+    *   **Solution:** Restrict master database write-access to senior editors.
 
 ---
 
 ## Key metrics and success criteria
 
-*   **Translation leverage rate:** The percentage of text segments resolved using existing matches. A higher rate directly reduces project costs.
-*   **Localization cycle time:** The average time from merging a source content commit to deploying the localized page to production.
+*   **Translation leverage rate:** The percentage of content resolved via existing matches. Higher leverage correlates directly with lower costs.
+*   **Localization cycle time:** The duration between a source content commit and the deployment of the localized page.

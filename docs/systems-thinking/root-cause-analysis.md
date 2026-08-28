@@ -1,7 +1,7 @@
 ---
 title: Root cause analysis (RCA)
 description: "Problem-solving methodologies, such as the 5 Whys or fault tree analysis, used to trace failures back to underlying systemic flaws rather than surface symptoms."
-revision_date: 2026-08-24
+revision_date: 2026-08-28
 ---
 
 # Root cause analysis (RCA)
@@ -33,11 +33,11 @@ graph TD
     E -->|Why?| F[Root Cause: Pipeline lacked automated performance testing]
 ```
 
-- **Why did the API crash?** The database ran out of memory.
-- **Why did it run out of memory?** A single analytics query attempted to load a 50GB dataset into RAM without limits.
-- **Why did the query load so much data?** The query lacked indexing and pagination, causing a full table scan.
-- **Why did it run without indexing?** The development team did not test query performance under simulated production-scale loads.
-- **Why was load testing skipped?** The release pipeline did not include automated performance testing as a deployment requirement. (This is the systemic root cause).
+- **Why did the API crash?** The database ran out of memory (OOM).
+- **Why did it run out of memory?** A single analytics query attempted to load a 50GB dataset into the database's memory buffer/RAM.
+- **Why did the query load so much data?** The query lacked **filtering (WHERE clauses) and pagination (LIMIT clauses)**, requesting the entire dataset.
+- **Why were filtering and pagination omitted?** The development team did not test the query's performance or resource consumption under simulated production-scale loads.
+- **Why was load testing skipped?** The release pipeline did not include automated performance testing as a mandatory deployment requirement. (This is the systemic root cause).
 
 ---
 

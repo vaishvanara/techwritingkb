@@ -1,65 +1,65 @@
 ---
 title: "Conway's law"
 description: "The observation that organizations design systems (and documentation) that mirror their internal communication structures."
-revision_date: 2026-08-24
+revision_date: 2026-08-28
 ---
 
 # Conway's law
 
-Conway’s Law states that organizations design systems and documentation structures that mirror their internal communication patterns. If teams operate in isolated silos, the resulting technical systems and documentation typically reflect those divisions.
+Conway’s Law states that "organizations which design systems... are constrained to produce designs which are copies of the communication structures of these organizations." While originally applied to software architecture, this observation extends to technical documentation: the way information is structured and delivered typically mirrors the internal communication paths of the teams that created it.
 
 ---
 
 ## How communication shapes systems
 
-In 1967, programmer Melvin Conway observed that system design is a copy of an organization's communication paths. For example, if four separate engineering teams build a compiler, the result is likely a four-pass compiler.
+In 1967, programmer Melvin Conway observed that a system's design is a functional map of the organization's communication patterns. His classic example noted that if four separate teams are assigned to build a compiler, the resulting software will likely be a four-pass compiler, with each pass corresponding to a specific team's boundary.
 
-This law applies to technical documentation. If front-end and back-end teams rarely collaborate, you might produce two separate documentation portals that use different terminology and lack a unified flow. However, customers experience your product as a single application. Disjointed documentation makes it difficult for them to achieve their goals.
+This law applies directly to technical documentation. If front-end and back-end teams operate in silos with minimal interaction, the documentation often manifests as two distinct portals or sections. These sections frequently use conflicting terminology and lack a unified user journey, even though the end user perceives and uses the product as a single, integrated application.
 
 ```mermaid
 graph TD
-    subgraph "Organization Structure"
-        TeamA[Team A] <--> TeamB[Team B]
-        TeamB <--> TeamC[Team C]
+    subgraph "Organization (Communication Paths)"
+        TeamA[Team A] <-->|Interface 1| TeamB[Team B]
+        TeamB <-->|Interface 2| TeamC[Team C]
     end
 
-    subgraph "System/Docs Architecture"
-        ModuleA[Module/Doc A] <--> ModuleB[Module/Doc B]
-        ModuleB <--> ModuleC[Module/Doc C]
+    subgraph "System/Docs (Architecture)"
+        ModuleA[Module/Doc A] <-->|Interface 1| ModuleB[Module/Doc B]
+        ModuleB <-->|Interface 2| ModuleC[Module/Doc C]
     end
 
-    TeamA -.->|Influences| ModuleA
-    TeamB -.->|Influences| ModuleB
-    TeamC -.->|Influences| ModuleC
+    TeamA -.->|Designs| ModuleA
+    TeamB -.->|Designs| ModuleB
+    TeamC -.->|Designs| ModuleC
 ```
 
 ---
 
 ## Identifying Conway’s Law in documentation
 
-Look for these symptoms in your information architecture to detect the influence of Conway’s Law:
+Symptoms of organizational silos appearing in information architecture include:
 
-- **Inconsistent terminology**: Different squads use different names for the same core system component in their respective documentation sections.
-- **Navigation silos**: Users must understand your internal company structure to find information because directories are organized by department or squad names rather than by user tasks.
-- **Information gaps**: Transition points between systems, such as passing a payload from an API gateway to a background worker, are poorly documented because neither team owns the interface boundary.
+- **Inconsistent terminology**: Disparate teams develop internal "dialects," leading to the same core system component (e.g., a "User ID" vs. a "Principal String") being named differently across documentation sections.
+- **Navigation silos**: Users are forced to understand the internal company hierarchy to find information because the documentation is organized by department or "squad" names rather than by user goals or product features.
+- **Interface gaps**: Integration points—such as the handoff of a JSON payload from an API gateway to a background worker—are often undocumented because the communication gap between the two responsible teams results in neither team "owning" the documentation for the boundary.
 
 ---
 
 ## The Inverse Conway Maneuver
 
-Instead of letting internal communication structures dictate your architecture, use Conway’s Law to your advantage. This practice is the **Inverse Conway Maneuver**.
+The **Inverse Conway Maneuver** is a strategy where an organization is restructured to promote a desired system architecture. If you want a decoupled, microservices-based architecture, you must first organize your teams into small, decoupled, cross-functional units.
 
-By changing how teams interact and how you organize documentation projects, you can guide the final system toward a better design. In technical writing, implement this by creating cross-functional documentation working groups, establishing shared goals, and structuring your documentation portal around customer workflows rather than organizational charts.
+In the context of documentation, you apply this maneuver by organizing documentation contributors around the **customer's journey** rather than the engineering hierarchy. By forming cross-functional documentation working groups that share a single repository and a unified release process, you force the technical content to converge into a cohesive system, regardless of which engineering team built the underlying code.
 
-!!! tip "Prevent documentation silos"
-    To prevent Conway’s Law from fragmenting your documentation, establish a shared style guide, set up cross-team peer reviews, and use a unified search index. These practices help writers and engineers build a cohesive experience regardless of team boundaries.
+!!! tip "Mitigating documentation silos"
+    To decouple documentation from organizational silos, establish a shared style guide, implement cross-team peer reviews (where Team A reviews Team B's docs), and maintain a unified search index. These practices simulate a "single-team" communication structure, leading to a more integrated reader experience.
 
 ---
 
 ## Aligning team structures and documentation
 
-To apply Conway’s Law, adjust your documentation processes to mirror your desired user experience:
+To apply the Inverse Conway Maneuver effectively, adjust processes to mirror the desired user experience:
 
-- **Organize by user tasks**: Group content by user goals—such as integration, deployment, or troubleshooting—rather than internal engineering squads, such as the database or security teams.
-- **Foster cross-team documentation reviews**: Have an engineer or writer from an upstream service review the downstream documentation. This helps identify gaps in integration handoffs before customers find them.
-- **Build shared templates**: Use standardized formats for APIs, runbooks, and release notes across all squads so that the documentation feels unified.
+- **Organize by user tasks**: Group content by functional goals—such as "Authentication" or "Data Processing"—rather than by internal engineering designations like "The Java Team" or "The Infrastructure Squad."
+- **Foster cross-team documentation reviews**: Require an engineer or writer from an upstream service to review downstream documentation. This identifies logic gaps in integration handoffs that mirror the communication gaps between those teams.
+- **Build shared templates**: Standardize formats for API references, runbooks, and release notes. This ensures that even if components are built by different teams, the "interface" presented to the user is consistent and unified.

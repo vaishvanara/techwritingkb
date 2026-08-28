@@ -1,63 +1,62 @@
 ---
 title: Self-healing system
-description: "An architecture designed to automatically detect and recover from operational failures without manual human intervention."
-revision_date: 2026-08-24
+description: "An architecture designed to automatically detect, diagnose, and recover from operational failures without manual human intervention."
+revision_date: 2026-08-28
 ---
 
 # Self-healing system
 
-A self-healing system is a software architecture that autonomously detects, diagnoses, and recovers from operational issues without requiring human intervention. For technical writers and product teams, documenting the operations of self-healing loops, failure override steps, and maintenance mode controls helps operators monitor automated systems and intervene if automated recovery fails.
+A self-healing system is a software architecture that autonomously detects, diagnoses, and recovers from operational issues. By utilizing a closed-loop control system, the architecture maintains a desired state by responding to deviations in real-time. For technical writers and product teams, documenting the logic of these loops, escalation thresholds, and manual override procedures is critical for safe system operation.
 
 ---
 
 ## The architecture of automated recovery
 
-Self-healing architectures use continuous feedback loops, often called control loops. The system monitors its state, compares it to a target state, and takes corrective action if there is a discrepancy.
+Self-healing architectures are modeled on the **MAPE-K framework** (Monitor, Analyze, Plan, Execute, and Knowledge). The system continuously observes its environment and executes compensatory actions when the current state diverges from the desired state.
 
 ```mermaid
-graph LR
-    A[Monitor State] --> B[Compare to Target]
-    B --> C{Discrepancy?}
-    C -- Yes --> D[Take Corrective Action]
-    D --> A
+graph TD
+    A[Monitor: Collect Telemetry] --> B[Analyze: Detect Discrepancy]
+    B --> C{Action Required?}
+    C -- Yes --> D[Plan & Execute: Corrective Action]
+    D --> E[Knowledge Base/Logs]
+    E --> A
     C -- No --> A
 ```
 
 Common implementations of self-healing include:
 
-- **Container orchestration (Kubernetes):** If a container crashes, has a memory leak, or fails its liveness probe, Kubernetes stops and replaces it with a new container instance.
-- **Auto-scaling groups:** If a VM instance stops responding, the cloud infrastructure stops the failed instance and creates a new one from a preconfigured image.
-- **Automated database failovers:** If a primary database node fails, the system promotes a read-only replica to become the new primary node and redirects write traffic to it.
+- **Container Orchestration (Kubernetes):** If a container fails its **liveness probe**, the `kubelet` kills the container and restarts it according to the Pod's `restartPolicy`. If an entire Node becomes unreachable, the Control Plane reschedules the affected Pods onto healthy Nodes.
+- **Auto-scaling groups:** If a Virtual Machine (VM) fails a health check (e.g., EC2 status check), the infrastructure provider terminates the degraded instance and provisions a new one from a launch template to maintain the desired capacity.
+- **Automated Database Failovers:** In a high-availability (HA) cluster, if the primary node fails, a quorum-based election or a health-check monitor promotes a standby replica to primary and updates service discovery (or a load balancer) to redirect write traffic.
 
 ---
 
 ## Why autonomous systems require documentation
 
-Operators must manage, audit, and troubleshoot autonomous processes. Documentation is essential for these tasks:
+Operators must manage, audit, and troubleshoot autonomous processes to prevent "cascading failures." Documentation is essential for these tasks:
 
-- **Explain the triggers and actions:** Document what triggers a self-healing event, what recovery actions the system takes, and the telemetry the system generates. Operators must know if a restarted container is a routine event or a symptom of an architectural bug.
-- **Document the audit trail:** Explain where the system stores self-healing event logs. If a system recovers multiple times, engineers must find those records to perform root cause analysis and optimize thresholds.
-- **Map the boundaries of automation:** Define where automation ends and manual intervention begins. For example, the system might restart a failed service five times; however, on the sixth failure, it should stop, trigger a high-priority alert, and wait for an operator.
+- **Define triggers and recovery actions:** Explicitly state which metrics (e.g., HTTP 5xx rates, memory saturation) trigger specific actions. Operators must distinguish between a routine container restart and a "flapping" service that indicates a deeper architectural flaw.
+- **Document the audit trail:** Specify the location of event logs for automated actions (e.g., Kubernetes Events, AWS CloudTrail, or internal state machine logs). This is vital for **Post-Incident Reviews (PIRs)** and identifying "silent" failures that automation is masking.
+- **Define escalation boundaries:** Automation should have a finite retry budget. For example, a system might attempt to restart a service five times with exponential back-off; if the error persists, the system must "fail-stop," trip a circuit breaker, and escalate to a human operator via high-priority alerting.
 
-!!! warning "Preventing Endless Recovery Loops"
-    If a database is corrupted, a self-healing loop might try to restart the application container indefinitely. This is called a crash loop (or `CrashLoopBackOff` in Kubernetes). Documentation must explain how operators can identify these loops and override the automation to resolve the corruption manually.
+!!! warning "Managing CrashLoopBackOff and Latent Failures"
+    In Kubernetes, a `CrashLoopBackOff` occurs when a container fails repeatedly. The system does not stop trying, but it increases the delay between restarts. Documentation must provide "break-glass" instructions, such as scaling a deployment to zero, to stop the loop while an operator resolves underlying issues like volume corruption or invalid secrets.
 
 ---
 
 ## Documenting maintenance and manual overrides
 
-Automated recovery loops can interfere with scheduled maintenance. If an engineer stops a service to upgrade software, a self-healing system might assume the service failed and try to restart it.
+Automated recovery loops can perceive intentional maintenance as a failure. To prevent "split-brain" scenarios or unintended restarts during updates, documentation must include:
 
-To prevent conflict between operators and automation, include the following in your documentation:
-
-- **Pause and resume procedures:** Provide instructions on how to temporarily disable automated recovery systems before performing manual upgrades or diagnostic tests.
-- **Manual override controls:** Explain how to stop a self-healing process if the automation makes an incident worse, such as when a script deletes healthy instances during a network partition.
-- **Post-maintenance verification:** Describe the steps to re-enable the automated control loops and verify that sensors are active.
+- **Maintenance Mode/Downtime Procedures:** Instructions on how to silence alerts and disable health-check-driven recovery (e.g., setting a `target_group` to manual or using `kubectl scale` to pause controllers).
+- **Manual Override Controls:** Procedures for taking manual control when automation logic fails—such as during a **network partition** where a self-healing script might erroneously terminate healthy instances (fencing).
+- **State Re-synchronization:** Steps to re-enable automated loops and verify that the system's "Knowledge" (current state) matches the reality of the infrastructure after manual changes.
 
 ---
 
 ## Benefits of documenting self-healing systems
 
-- **Safer maintenance:** Operators can perform platform upgrades without triggering false alerts or conflicting with automated behaviors.
-- **Improved system tuning:** A clear map of self-healing triggers helps engineers fine-tune alert thresholds and scaling parameters.
-- **Reduced operational fatigue:** Automation handles routine errors, while documentation guides engineers through complex incidents that automation cannot resolve.
+- **Safer maintenance:** Prevents "fighting the automation" where a system tries to undo an engineer's intentional changes.
+- **Reduced MTTR (Mean Time To Recovery):** Clear documentation of automation boundaries helps engineers quickly identify when a problem has exceeded the system's ability to self-heal.
+- **Observability:** Ensures that "healing" isn't invisible, allowing teams to track system stability trends over time.

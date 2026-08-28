@@ -38,16 +38,16 @@ Tightly coupled documentation is brittle. When you change a file path or reword 
 ### Signs of high coupling
 
 - **Positional reliance:** Phrases such as "as mentioned earlier" or "the table in the next section" fail the moment content is reordered or components are embedded elsewhere.
-- **Path-heavy linking:** Linking by using relative paths (for example, `../../setup.md`) makes the documentation structure rigid. If a file moves, the link breaks.
+- **Path-heavy linking:** Linking by using hardcoded relative paths (for example, `../../setup.md`) makes the documentation structure rigid. If a file moves, the build may fail or links will break unless the environment handles path refactoring automatically.
 - **Grammatical "bleeding":** A reusable snippet that assumes it is part of a numbered list or depends on the context of the preceding paragraph cannot be reused effectively.
 
 ### Strategies for decoupling
 
 To build a resilient documentation set, aim for stateless content.
 
-- **Global identifiers:** Use a [content management system (CMS)](../industry-terms/content-management-system.md) or [static site generator (SSG)](../doc-stack/ssg.md) that uses unique IDs or slugs. This decouples the link from the physical location of the file.
+- **Global identifiers and cross-references:** Use a [content management system (CMS)](../industry-terms/content-management-system.md) or [static site generator (SSG)](../doc-stack/ssg.md) that supports unique IDs or symbolic cross-references (e.g., Hugo's `ref` or Sphinx's `:ref:`). This decouples the link from the physical file path or folder hierarchy.
 - **Self-contained snippets:** Write reusable fragments that do not rely on outside pronouns or transitions. 
-- **Link instead of duplicating:** Avoid "semantic coupling," where you type out the same prerequisite in multiple places. Point users to a [single source of truth](../doc-stack/git.md#the-single-source-of-truth) instead.
+- **Link instead of duplicating:** Avoid **content coupling**, where you type out the same prerequisite or procedure in multiple places. Point users to a [single source of truth](../doc-stack/git.md#the-single-source-of-truth) instead to ensure updates only need to happen in one location.
 
 ---
 
@@ -73,8 +73,8 @@ The [Concept-Task-Reference (CTR) model](../industry-terms/concept-task-referenc
 | :--- | :--- | :--- |
 | **High cohesion / Loose coupling** | **Low.** Topics are isolated units. You can update or move them without breaking the site. | **Seamless.** Navigation is logical and links are reliable. |
 | **High cohesion / Tight coupling** | **High risk.** Reorganizing a folder or changing a URL breaks many dependencies. | **Functional but brittle.** It works until a writer moves a file. |
-| **Low cohesion / Loose coupling** | **Moderate.** Files do not break, but finding where to update a specific fact is difficult. | **Poor.** Users need to search through numerous files to find relevant information. |
-| **Low cohesion / Tight coupling** | **Critical.** Every product change requires a manual audit of the entire documentation set. | **Frustrating.** Constant circular references and repetitive text. |
+| **Low cohesion / Loose coupling** | **Moderate.** Files do not break, but finding where to update a specific fact is difficult. | **Poor.** Users must scan through large volumes of irrelevant information within a file to find what they need. |
+| **Low cohesion / Tight coupling** | **Critical.** Every product change requires a manual audit of the entire documentation set. | **Frustrating.** Constant circular references and repetitive, contradictory text. |
 
 ---
 
@@ -96,7 +96,7 @@ Make sure reusable content stands on its own.
 
 ### 3. Interface-based linking
 
-Avoid linking to specific line numbers or volatile mid-page anchors.
+Avoid linking to volatile internal structures like step numbers.
 
 - **Problem:** "See step 5 in the Installation Guide."
-- **Solution:** "Complete the `[Installation Guide]` before proceeding." By treating the whole topic as the interface, you do not need to worry if the steps inside it are renumbered.
+- **Solution:** "Complete the `[Installation Guide]` before proceeding." By treating the topic as the interface, you do not need to worry if the internal implementation (the steps) is renumbered.

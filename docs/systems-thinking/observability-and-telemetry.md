@@ -1,12 +1,12 @@
 ---
 title: Observability and telemetry
 description: "System capabilities that allow operators to measure internal states via logs, metrics, and traces. These are essential for writing troubleshooting guides."
-revision_date: 2026-08-24
+revision_date: 2026-08-28
 ---
 
 # Observability and telemetry
 
-Observability measures how well you can understand a system's internal state by examining its external outputs. These outputs, known as telemetry, consist of logs, metrics, and traces. Telemetry provides the diagnostic data you need to author accurate troubleshooting guides and runbooks.
+Observability is a property of a system—the degree to which you can understand its internal state by examining its external outputs. These outputs, known as telemetry, consist primarily of logs, metrics, and traces. Telemetry provides the diagnostic data required to author accurate troubleshooting guides and automated runbooks.
 
 ---
 
@@ -14,41 +14,41 @@ Observability measures how well you can understand a system's internal state by 
 
 To write effective support and engineering documentation, you must understand the three types of telemetry data that systems produce:
 
-- **Logs:** Text records of discrete events that occurred at a specific time. Logs describe *what* happened. For example, a log might record a failed login attempt for a specific user ID.
-- **Metrics:** Numeric values measured over time that represent system performance and health, such as CPU use, request rates, or error percentages. Metrics indicate *when* a problem occurs and its scale.
-- **Traces:** Data showing the end-to-end path of a request as it moves through a distributed system. Traces show *where* a bottleneck or failure occurred within a chain of microservices.
+- **Logs:** Immutable, timestamped text or structured records of discrete events. Logs provide high-cardinality context to describe *what* happened. For example, a log might record a `LoginFailed` event containing a specific user ID and the reason for the failure.
+- **Metrics:** Numerical representations of data measured over intervals of time. Metrics are used for aggregation and mathematical observation of system health, such as CPU utilization, request rates, or error counts. Metrics indicate *if* a problem is occurring and the scale of the impact.
+- **Traces:** Data representing the end-to-end journey of a single request or transaction as it moves through various components of a distributed system. A trace is composed of **spans**, where each span represents a specific operation within a service. Traces identify *where* a bottleneck or failure occurred in a request chain.
 
 ---
 
 ## Moving troubleshooting guides from guesswork to observation
 
-Traditional troubleshooting guides often rely on vague, trial-and-error steps, like "Restart the server to see if that fixes the problem." This approach is slow, generic, and increases the risk of downtime.
+Traditional troubleshooting guides often rely on non-deterministic, trial-and-error steps, like "Restart the server to see if that fixes the problem." This approach increases Mean Time to Repair (MTTR) and risks compounding the failure.
 
-By incorporating telemetry into your documentation, you can provide operators with precise diagnostic instructions. Use an observation-based workflow to guide your readers:
+By incorporating telemetry into your documentation, you provide operators with deterministic diagnostic instructions. Use an observation-based workflow to guide your readers:
 
-- **Define metric triggers:** Explain which dashboard metrics indicate a specific issue. For example, "If the rate of HTTP 5xx errors derived from the `http_requests_total` counter exceeds 5%..."
-- **Identify log locations and patterns:** Tell operators where to find the relevant log files and what patterns to search for. For example, "Search `/var/log/api/error.log` for database connection timeout errors."
-- **Use trace IDs for context:** Explain how to use trace IDs to follow a failing request across service boundaries. For example, "Copy the trace ID from the failing API response and search for it in [Jaeger](https://www.jaegertracing.io/){: target="_blank" rel="noopener" } to isolate the failing service."
+- **Define metric triggers and ratios:** Explain which specific queries indicate an issue. For example, "If the error rate—calculated as `rate(http_requests_total{status=~"5.."}[5m]) / rate(http_requests_total[5m])`—exceeds 0.05 (5%)..."
+- **Identify log locations and structured keys:** Tell operators which log streams to inspect and which keys to filter by. For example, "Query the `api-gateway` logs for `status: 500` and check the `exception_context` field for database connection timeouts."
+- **Use trace context for distributed debugging:** Explain how to use Trace IDs to correlate events across service boundaries. For example, "Extract the `traceparent` ID from the failing HTTP header and search for it in [Jaeger](https://www.jaegertracing.io/){: target="_blank" rel="noopener" } to identify which downstream microservice returned the error."
 
 !!! tip "Structured logging and documentation"
-    When engineers write logs, they often use structured formats like JSON. Work with your development team to document these log schemas. Providing a directory of log attributes—such as `severity`, `service.name`, and `exception.message`—helps operators write accurate log queries during an incident.
+    When engineers write logs, they should use structured formats like JSON to ensure machine readability. Work with your development team to document the log schema. Providing a directory of standardized attributes—such as `service.name`, `span.id`, `trace.id`, and `severity_number`—helps operators write precise queries during an incident.
 
 ---
 
 ## What to include when documenting observability tools
 
-If you write internal engineering documentation, make sure you document your organization's observability setup:
+If you write internal engineering documentation, ensure you document the specific implementation of your organization's observability stack:
 
-- **Dashboard directories:** Provide links to standard monitoring dashboards, such as [Grafana](https://grafana.com/){: target="_blank" rel="noopener" } or [Datadog](https://www.datadoghq.com/){: target="_blank" rel="noopener" }. Explain what each panel on the dashboard represents.
-- **Alert definitions:** Document what each automated alert means, who receives it, and the immediate action required when it triggers.
-- **Log levels and standards:** Document your team's standards for log severity levels, like `DEBUG`, `INFO`, `WARN`, `ERROR`, and `FATAL`. This consistency makes logs easier to search during outages.
+- **Dashboard directories:** Provide links to standard monitoring dashboards in tools like [Grafana](https://grafana.com/){: target="_blank" rel="noopener" } or [Datadog](https://www.datadoghq.com/){: target="_blank" rel="noopener" }. Define the data source and the meaning of specific visualizations (e.g., distinguishing between P99 latency and average latency).
+- **Alert definitions and thresholds:** Document the logic behind automated alerts, the specific thresholds (e.g., static vs. anomaly-based), and the expected immediate action (SOP) when an alert triggers.
+- **Instrumentation standards:** Document the team's standards for log severity levels (e.g., following the [OpenTelemetry Logs Data Model](https://opentelemetry.io/docs/specs/otel/logs/data-model/#severity-fields)) and the naming conventions for custom metrics (e.g., `namespace_suffix_unit`).
 
 ---
 
 ## How documenting telemetry improves operations
 
-When you document observability and telemetry clearly, you reduce the time it takes to resolve incidents:
+Clear documentation of telemetry reduces the cognitive load on engineers during high-pressure incidents:
 
-- **Lower Mean Time to Recovery (MTTR):** Operators do not have to guess what is wrong. Your documentation points them directly to the metrics and logs they need.
-- **Faster developer onboarding:** New engineers can quickly learn how to monitor the systems they deploy and which log patterns to watch for.
-- **Higher-quality bug reports:** When support engineers can interpret traces and logs, they can submit bug reports with precise diagnostic data. This helps developers fix issues faster.
+- **Lower Mean Time to Recovery (MTTR):** Precise documentation points operators to the exact telemetry signals needed to identify a root cause, bypassing manual discovery.
+- **Reduced Mean Time to Detection (MTTD):** Properly documented alert definitions ensure that on-call engineers understand the significance of a signal as soon as it fires.
+- **Higher-quality bug reports:** When support engineers can interpret trace spans and log attributes, they can provide developers with the specific line of code or service interaction that failed, accelerating the development of a permanent fix.

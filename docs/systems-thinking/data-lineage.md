@@ -1,20 +1,20 @@
 ---
 title: Data lineage
 description: "Tracking the origin, processing, and final output of technical data across a documentation set."
-revision_date: 2026-08-27
+revision_date: 2026-08-28
 ---
 
 # Data lineage
 
-Data lineage is the practice of tracking the origin, processing, and final output of technical data across a documentation set. By mapping how information flows from its source to various published formats, you can make sure your content remains consistent and accurate as the product changes.
+Data lineage in documentation is the practice of tracking the origin, transformation, and final output of technical information across a documentation set. By mapping how data flows from its source (such as code or configuration files) to various published formats, you can ensure content remains consistent and programmatically synchronized as the product evolves.
 
 ---
 
 ## Why data lineage matters in documentation
 
-If you manage a large documentation library, a single technical detail, such as an API rate limit, might appear on many pages. It might appear in a getting started guide, a developer tutorial, a reference table, and a marketing data sheet. 
+If you manage a large documentation library, a single technical detail, such as an API rate limit, might appear on many pages: a getting started guide, a developer tutorial, a reference table, and a marketing data sheet.
 
-If the engineering team changes that limit in the code base, manually finding and editing every mention in your documents is slow and can lead to errors. Data lineage helps you visualize and track where that detail originated, how it was modified for different contexts, and where it is currently published.
+If the engineering team changes that limit in the source code, manually updating every instance in the documentation is inefficient and prone to human error. Data lineage allows you to treat these values as data objects. By visualizing the flow, you can track where that detail originated, how it was parsed or transformed for different contexts, and which downstream documents are affected by a change at the source.
 
 ---
 
@@ -28,9 +28,9 @@ graph LR
     B --> C[Output: Destination]
 ```
 
-- **Source (Origin)**: The [single source of truth](../doc-stack/git.md#the-single-source-of-truth) for the technical detail, such as an OpenAPI specification file, a database schema, or a central configuration file containing global variables.
-- **Processing (Transformation)**: The way you format or modify raw information for the reader. For example, a build script might pull an API payload description from the source code and transform it into a Markdown table.
-- **Output (Destination)**: The final locations where users consume the documentation, such as [developer portals](../doc-stack/developer-portals.md), in-app [tooltips](../doc-stack/terminology-tooltips.md), or user guides.
+- **Source (Origin)**: The [single source of truth](../doc-stack/git.md#the-single-source-of-truth) for the technical detail. This is typically structured data or code, such as an OpenAPI (Swagger) specification, a database schema, or a central YAML/JSON configuration file.
+- **Processing (Transformation)**: The stage where raw data is parsed, filtered, or formatted. For example, a static site generator (SSG) or a build script may ingest a JSON payload and use a template engine (like Liquid or Jinja) to transform it into a Markdown table or a code snippet.
+- **Output (Destination)**: The final consumption point for the user, such as [developer portals](../doc-stack/developer-portals.md), in-app [tooltips](../doc-stack/terminology-tooltips.md), or PDF user guides.
 
 ---
 
@@ -38,17 +38,17 @@ graph LR
 
 To build a traceable and maintainable documentation system, use these methods:
 
-- **Use variables and global definitions.** Instead of hard-coding values, store shared strings and parameters in centralized files. Reference these variables in your documentation topics so that updating the source file automatically propagates changes to all outputs.
-- **Generate reference documentation from source code.** Use tools that extract comments and schemas directly from the code base, such as [Sphinx](https://www.sphinx-doc.org/){: target="_blank" rel="noopener" }, [JSDoc](https://jsdoc.app/){: target="_blank" rel="noopener" }, or [Doxygen](https://www.doxygen.nl/){: target="_blank" rel="noopener" }. This ensures that reference guides stay synchronized with the application's actual state.
-- **Maintain a content dependency map.** Catalog how your documentation topics connect. Identifying which tutorials rely on specific API specifications makes it easier to assess the impact of changes before a release.
+- **Use variables and global definitions.** Instead of hard-coding values (literals), store shared parameters in centralized metadata files. Reference these variables within your documentation so that updating the source file automatically propagates changes to all output formats during the next build.
+- **Automate reference documentation from source.** Use documentation generators that extract docstrings and schemas directly from the code base, such as [Sphinx](https://www.sphinx-doc.org/){: target="_blank" rel="noopener" } (for Python/reST), [JSDoc](https://jsdoc.app/){: target="_blank" rel="noopener" } (for JavaScript), or [Doxygen](https://www.doxygen.nl/){: target="_blank" rel="noopener" } (for C++/Java). This ensures the "Source" and "Output" remain coupled.
+- **Implement a dependency graph.** Use build tools or custom scripts to maintain a Directed Acyclic Graph (DAG) of your content. This allows you to identify which tutorials or articles rely on specific API specifications, making it easier to perform impact analysis before a release.
 
-!!! tip "Automating lineage checks"
-    Use build scripts or linters to scan documentation files for hard-coded values that should be pulled from the code base. Automation prevents the documentation from drifting away from the source code.
+!!! tip "Automating lineage validation"
+    Use linters or contract testing tools to scan documentation for hard-coded strings that match protected variables. Automation ensures that documentation does not "drift" from the actual state of the application code.
 
 ---
 
 ## Reducing the impact of changes
 
-When you understand the lineage of your data, you can assess the impact of updates more effectively. When an engineering team announces an architectural change, you do not have to guess which documents are affected. 
+When you understand the lineage of your data, you can perform effective impact analysis. When an engineering team announces an architectural change or a schema update, you do not have to manually search for affected content.
 
-You can trace the lineage of the modified component downstream to find every article, code sample, and diagram that requires revision. This proactive maintenance keeps your documentation accurate and prevents users from finding broken links or outdated instructions.
+By tracing the lineage of the modified component downstream, you can programmatically identify every article, code sample, and diagram that requires a rebuild or manual review. This proactive maintenance ensures technical accuracy and prevents the publication of "stale" data or broken examples.

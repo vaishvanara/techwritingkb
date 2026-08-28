@@ -1,55 +1,53 @@
 ---
 title: Domain-driven design (DDD)
 description: Align software implementation and technical documentation with business domains through bounded contexts and ubiquitous language.
-revision_date: 2026-08-24
+revision_date: 2026-08-28
 ---
 
 # Domain-driven design (DDD)
 
-Domain-driven design (DDD) is not just a coding pattern; it is a strategy for managing complexity by pinning the architecture of the software to the evolving business model. 
+Domain-driven design (DDD) is a strategic architectural approach for managing complexity by connecting the implementation of the software directly to an evolving business model. 
 
-In [technical communication](../technical-writing/basics.md), DDD prevents the model-code gap, which is the drift where documentation and code eventually describe two different systems. 
-
-By treating documentation as an extension of the domain model, teams ensure that the vocabulary used by developers, stakeholders, and users remains consistent.
+In [technical communication](../technical-writing/basics.md), DDD prevents the "model-code gap"—a state of divergence where documentation and source code describe two different logical systems. By treating documentation as a formal representation of the domain model, teams ensure the vocabulary used by engineers, stakeholders, and end-users remains synchronized.
 
 ---
 
 ## Strategic design: Ubiquitous language
 
-Ubiquitous language replaces generic glossaries with a rigorous, shared vocabulary embedded in the source code. If a term appears in a class name, method, or variable, it must be the exact term used in the documentation. 
+Ubiquitous language replaces generic glossaries with a rigorous, shared vocabulary embedded directly into the source code and documentation. If a term is defined in the domain model, it must be the exact term used in class names, API endpoints, and technical guides.
 
-Terminological drift, such as using *Tenant* in the code, *Subscriber* in the documentation, and *Client* in the UI, is a bug. It creates cognitive friction and leads to implementation errors.
+Terminological drift (e.g., using *Tenant* in the code, *Subscriber* in the docs, and *Client* in the UI) is a technical defect. This drift increases cognitive load and leads to logic errors during implementation.
 
-*   **Codify the source of truth:** Technical writers should help formalize technical terms during the design phase rather than documenting them afterwards. 
-*   **Treat mismatches as bugs:** Any discrepancy between an API parameter, such as `tenant_id`, and its documentation title is a technical defect.
-*   **Focus on business invariants:** Documentation should explain the rules governing the domain (why a state change is allowed) rather than just listing UI buttons.
+*   **Codify the source of truth:** Technical writers should collaborate with domain experts to formalize terms during [event storming](https://en.wikipedia.org/wiki/Event_storming){: target="_blank" rel="noopener" } sessions, ensuring the language is consistent before the API contract is finalized.
+*   **Treat mismatches as bugs:** Any discrepancy between a code-level identifier (e.g., a `tenant_id` property) and its documentation label is a bug that must be resolved to maintain model integrity.
+*   **Document domain invariants:** Documentation must focus on **domain invariants**—the business rules and consistency constraints that must always be satisfied by the model, regardless of state changes.
 
 !!! tip "API and code alignment"
-    Verify that [JSON payloads](../doc-stack/json-logic.md#anatomy-of-a-json-payload) match documentation labels. If the code uses `tenant_id`, the documentation should not call it a user account number unless the domain model explicitly treats them as synonyms.
+    Verify that [JSON payloads](../doc-stack/json-logic.md#anatomy-of-a-json-payload) match documentation labels. If the code uses `tenant_id`, the documentation should use "Tenant ID." In DDD, Value Objects encapsulate the logic of a property but do not justify the use of synonyms; the Ubiquitous Language must remain identical across all artifacts to prevent cognitive friction.
 
 ---
 
 ## Bounded contexts and information architecture
 
-In large systems, one word can mean different things depending on who is asking. DDD manages this through [bounded contexts](../systems-thinking/bounded-context.md), which are logical boundaries where a specific model applies.
+In large systems, the same term can have different meanings and logic depending on the environment. DDD manages this through **Bounded Contexts**, which define the explicit logical boundaries where a specific model and its ubiquitous language are valid.
 
 ```mermaid
 graph LR
     subgraph BillingContext [Billing Context]
-        B_Account[Account Aggregate] --- Invoices
+        B_Account[Account Aggregate Root] --- Invoices
         B_Account --- Payments
     end
     subgraph IAMContext [IAM Context]
-        I_Account[Account Aggregate] --- Credentials
+        I_Account[Account Aggregate Root] --- Credentials
         I_Account --- Roles
     end
 ```
 
-An *Account* in the **Billing Context** is a financial record of invoices and payments. In the **Identity and Access Management (IAM) Context**, that same word refers to a security principal with credentials and Role-Based Access Control (RBAC) roles. Mixing these descriptions confuses the user and obscures the system logic.
+An *Account* in the **Billing Context** is a financial entity associated with invoices and payment methods. In the **Identity and Access Management (IAM) Context**, the same word refers to a security principal with credentials and Role-Based Access Control (RBAC) permissions. These models represent different concepts and must remain decoupled.
 
-*   **Mirror the information architecture:** Organize documentation categories to reflect the bounded contexts of the system. If the system uses microservices, the documentation hierarchy should likely follow suit.
-*   **Enforce logical isolation:** Keep context-specific logic contained. A guide on billing should not leak authentication implementation details unless it is specifically describing the bridge between the two.
-*   **Map the intersections:** Where contexts meet, use a context map. Explicitly document the Anti-Corruption Layer (ACL) that translates data from one model to another so developers understand how the transformation happens.
+*   **Mirror the bounded contexts:** Organize documentation hierarchy to reflect the system's bounded contexts. While microservices often align with these contexts, the documentation should focus on the logical boundary rather than the deployment unit.
+*   **Enforce logical isolation:** Ensure that context-specific logic remains encapsulated. A billing integration guide should not reference IAM internal implementation details, such as password hashing algorithms, to prevent tight coupling between contexts.
+*   **Map the intersections:** Where different contexts interact, document the **Context Map**, specifically the **Anti-Corruption Layer (ACL)**. This layer translates the semantics and data from an upstream model into the local downstream model, protecting the integrity of the local domain.
 
 ---
 
@@ -57,20 +55,20 @@ An *Account* in the **Billing Context** is a financial record of invoices and pa
 
 ### Active modeling
 
-Technical writers should participate in [event storming](https://en.wikipedia.org/wiki/Event_storming){: target="_blank" rel="noopener" } sessions. By participating in domain modeling, writers can flag ambiguous terms or logic gaps before they are baked into the API contract.
+Technical writers should participate in the initial design phase to identify ambiguous terms or logic gaps before they are codified. If a business rule cannot be explained clearly in documentation, it usually indicates a flaw in the underlying domain model or a violation of an invariant.
 
 ### Parallel directory structures
 
-Align the file structure of the documentation with the package organization of the repository. If the code lives in `src/shipping/` and `src/billing/`, the conceptual guides should follow the same path. This allows developers to find relevant documentation by following the logic of the codebase they are already navigating.
+Align the documentation file structure with the domain modules of the repository. If the code is organized by domain (e.g., `src/shipping/` and `src/billing/`), the conceptual and reference documentation should follow the same path. This allows developers to navigate the "doc-as-code" structure using the same mental model they use for the codebase.
 
 ### Automated language enforcement
 
-Standardize terms using linters such as [Vale](https://vale.sh){: target="_blank" rel="noopener" }. Instead of manual style checks, use automated rules to flag deprecated or non-domain terms in real-time.
+Use automated linters like [Vale](https://vale.sh){: target="_blank" rel="noopener" } to enforce ubiquitous language. Rules can be configured to flag deprecated terms or "leaked" terms from other contexts.
 
 ```yaml
 # Example Vale rule to enforce Ubiquitous Language
 extends: substitution
-message: "Use '%s' instead of '%s' to match the domain model."
+message: "Use '%s' instead of '%s' to maintain ubiquitous language."
 level: error
 ignorecase: true
 swap:
@@ -79,4 +77,4 @@ swap:
   user_account: tenant
 ```
 
-By grounding documentation in DDD principles, the technical narrative becomes a functional part of the system architecture. This reduces the [cognitive load](../technical-writing/cognitive-load.md) on engineers and ensures that the documentation scales alongside the code.
+By grounding documentation in DDD principles, the technical narrative becomes a functional component of the system architecture, reducing [cognitive load](../technical-writing/cognitive-load.md) and ensuring scalability.

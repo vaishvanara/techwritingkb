@@ -1,12 +1,12 @@
 ---
 title: Emergence
 description: "Complex behaviors or properties that arise from the interaction of smaller components that individual components do not possess on their own."
-revision_date: 2026-08-24
+revision_date: 2026-08-28
 ---
 
 # Emergence
 
-Emergence is a phenomenon where complex behaviors, properties, or patterns arise from the interactions of individual components within a system. These emergent behaviors belong to the system as a whole; you cannot find or predict them by analyzing a single component in isolation.
+Emergence is a phenomenon where complex behaviors, properties, or patterns arise from the interactions of individual components within a system. These emergent behaviors belong to the system as a whole; they cannot be identified or predicted solely by analyzing a single component in isolation.
 
 ---
 
@@ -16,8 +16,8 @@ In technical environments, emergence explains why complex systems often behave i
 
 Emergent behavior falls into two main categories:
 
-- **Functional emergence (Positive):** The intended functionality of a complex system. For example, when multiple independent microservices, messaging queues, and databases interact to create a responsive, auto-scaling e-commerce platform. No single microservice represents the platform, but the platform emerges from their combination.
-- **Emergent misbehavior (Negative):** Unintended or catastrophic failures that arise from component interactions. Common examples include race conditions, thread contention, split-brain scenarios in distributed databases, and cascading failures such as retry storms.
+- **Functional emergence:** The intended functionality of a complex system. For example, when multiple independent microservices, messaging queues, and databases interact to create a responsive, auto-scaling e-commerce platform. No single microservice represents the platform, but the platform emerges from their combination.
+- **Emergent misbehavior:** Unintended or catastrophic failures that arise from component interactions. Common examples include race conditions, resource contention, split-brain scenarios in distributed clusters, and cascading failures such as retry storms.
 
 ---
 
@@ -55,7 +55,7 @@ Instead of organizing all your content around individual features, create guides
 
 When writing troubleshooting and runbook documentation, address failures that emerge from component interactions.
 
-- **Define multi-component root causes:** Do not limit troubleshooting steps to "restart the service." Explain how to diagnose systemic issues such as thread pool exhaustion, deadlocks, or network split-brains.
+- **Define multi-component root causes:** Do not limit troubleshooting steps to "restart the service." Explain how to diagnose systemic issues such as thread pool exhaustion, distributed deadlocks, or network split-brains.
 - **Specify telemetry and observability rules:** Help operators identify emergent patterns by documenting how to correlate logs, metrics, and traces across different services.
 
 ---
@@ -68,7 +68,7 @@ The following example describes how to document an emergent failure mode that ar
 
 #### Components involved
 
-- **Inventory Service:** Manages product stock levels. Features an automated lock mechanism to prevent two customers from buying the same item simultaneously.
+- **Inventory Service:** Manages product stock levels. Features an automated row-level locking mechanism to ensure data consistency during stock decrements.
 - **Bulk Update API:** A utility used by administrators to update thousands of product prices and descriptions from a CSV file.
 
 #### The emergent behavior
@@ -86,25 +86,25 @@ sequenceDiagram
     Admin->>BulkUpdateAPI: Start CSV Import (10,000 items)
     BulkUpdateAPI->>Database: Transaction Start: Update Price/Desc
     activate Database
-    Note over Database: Long-running Row Locks
+    Note over Database: Long-running Exclusive Row Locks
     Customer->>InventoryService: Purchase Item
     InventoryService->>Database: Request Write Lock (Stock Decr)
-    Database-->>InventoryService: Wait (Lock Contention)
+    Database-->>InventoryService: Blocked (Lock Contention)
     Customer->>InventoryService: Purchase Item (Retry)
     InventoryService->>Database: Request Write Lock
-    Note over Database, InventoryService: Queue builds up (Thread Exhaustion)
+    Note right of InventoryService: Worker pool saturated (Thread Exhaustion)
     Database-->>BulkUpdateAPI: Transaction Timeout
     deactivate Database
-    BulkUpdateAPI-->>Admin: Error 504 (Timeout)
+    BulkUpdateAPI-->>Admin: Error 504 (Gateway Timeout)
     InventoryService-->>Customer: Error 503 (Service Unavailable)
 ```
 
-Individually, both components perform their tasks reliably and pass isolated unit tests. However, when an administrator runs a bulk update while customers are purchasing items, the system experiences database lock contention. This leads to timeouts and transaction failures across the entire storefront.
+Individually, both components perform their tasks reliably and pass isolated unit tests. However, when an administrator runs a bulk update, the resulting long-held exclusive locks prevent the Inventory Service from performing stock updates. This leads to thread exhaustion in the Inventory Service as it waits for the database, eventually causing a storefront outage.
 
 #### How to avoid this behavior
 
 To prevent this emergent conflict, follow these guidelines:
 
-- **Schedule bulk updates during off-peak hours:** Run imports when customer transaction volume is lowest.
-- **Batch your payloads:** Limit bulk import files to a maximum of 500 records per batch. This allows the Inventory Service to acquire and release locks without causing queue delays.
-- **Use read-only replicas:** Configure the Bulk Update API to read product descriptions from a read-replica database. This keeps the primary database free to process active inventory locks.
+- **Schedule bulk updates during off-peak hours:** Run imports when customer transaction volume is lowest to minimize the probability of lock contention.
+- **Batch your transactions:** Do not process the entire CSV in a single database transaction. Limit batches to 500 records and commit each batch individually to release locks quickly.
+- **Implement Optimistic Concurrency Control (OCC):** Where possible, use versioning (e.g., a `version` column) for price and description updates instead of pessimistic row locks. This allows the Inventory Service to continue processing stock changes without being blocked by metadata updates.

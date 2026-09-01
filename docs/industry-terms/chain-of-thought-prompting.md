@@ -1,7 +1,7 @@
 ---
 title: Chain-of-thought (CoT) prompting
-description: A prompt engineering technique that directs AI models to generate intermediate reasoning steps, improving accuracy in multi-step logical tasks.
-revision_date: 2026-08-28
+description: A prompt engineering technique that directs AI models to generate intermediate reasoning steps, improving accuracy in multi-step logical tasks by leveraging sequential token generation.
+revision_date: 2026-09-02
 ---
 
 # Chain-of-thought (CoT) prompting
@@ -12,17 +12,20 @@ revision_date: 2026-08-28
 
 ## The logic of intermediate steps
 
-Standard large language model (LLM) interactions often fail when applied to multi-step logical problems because the model attempts to predict the final answer in a single pass. Chain-of-thought (CoT) prompting shifts this behavior, forcing the model to articulate its internal logic as a series of sequential steps. 
+Standard large language model (LLM) interactions often fail when applied to multi-step logical problems because the transformer architecture is limited by the computation performed during a single forward pass. Without intermediate steps, the model must map a complex input to a final answer in a fixed number of layers. 
 
-By exposing these intermediate calculations, CoT reduces "hallucinations." It acts as a structural safeguard, ensuring the system verifies its own logic before committing to a final token. For developers and information architects, this turns the "black box" of AI generation into an auditable trail, making it easier to identify exactly where a logical failure occurs.
+Chain-of-thought (CoT) prompting shifts this behavior by allowing the model to decompose the problem into a sequence of tokens that serve as external working memory. By generating these intermediate calculations, the model can attend to its own prior reasoning in the context window. 
+
+This reduces logical hallucinations and ensures that the final token prediction is conditioned on a valid sequence of deductions rather than just the initial prompt. For developers, this provides a "reasoning trace," transforming a probabilistic output into an auditable sequence.
 
 ---
 
 ## Why auditability matters
 
-Accuracy is the baseline for a functional developer experience (DX). If an AI-assisted tool generates invalid code or broken error message architecture, it creates more work than it saves. CoT prompting provides a "reasoning trace" that serves two purposes:
-1. **Accuracy:** It slows the model down, allowing it to allocate more compute (tokens) to the reasoning process.
-2. **Verification:** It allows a "human in the loop" to audit the model’s path. If the conclusion is wrong, the reviewer can see whether the error stemmed from a misunderstanding of the prompt or a breakdown in logic.
+Accuracy is the baseline for a functional developer experience (DX). If an AI-assisted tool generates invalid code or broken architecture, it creates technical debt. CoT prompting provides a "reasoning trace" that serves two purposes:
+
+1.  **Computation Expansion:** It allows the model to allocate more total compute (FLOPs) to a problem by generating more tokens. Each new token generated is a serial computation step that informs the next.
+2.  **Verification:** It allows a "human in the loop" to audit the model’s path. If the conclusion is incorrect, the reviewer can pinpoint whether the error occurred during the initial decomposition (input parsing) or during a specific step of the logical derivation.
 
 ---
 
@@ -30,9 +33,9 @@ Accuracy is the baseline for a functional developer experience (DX). If an AI-as
 
 CoT prompting relies on three primary mechanics:
 
-*   **Task Deconstruction:** Explicitly requiring the model to split a compound problem into distinct, manageable subtasks.
-*   **State Tracking:** Using each step of reasoning to provide the context for the next, ensuring the final output is grounded in the previous deductions.
-*   **Prompt Activation:** Triggering this behavior via zero-shot instructions (e.g., "Think through this step-by-step") or few-shot examples that demonstrate the specific reasoning style required.
+*   **Task Deconstruction:** Forcing the model to break a compound problem into discrete, sequential sub-problems.
+*   **Recursive Context:** Using the output of Step $N$ as the grounded context for Step $N+1$, ensuring the final answer is a mathematical consequence of the preceding tokens.
+*   **Prompt Activation:** Triggering this behavior via Zero-Shot CoT (e.g., adding "Let's think step by step") or Few-Shot CoT, where the model is provided with examples of problems and their corresponding reasoning chains.
 
 ---
 
@@ -43,18 +46,16 @@ The following diagram demonstrates how CoT restructures the path from input to o
 ```mermaid
 graph TD
     A[User Input] --> B[Direct Prompting]
-    B --> C[Instant Prediction]
-    C --> D{High Error Risk}
+    B --> C[Single Forward Pass Prediction]
+    C --> D[Final Output]
     
     A --> E[CoT Prompting]
-    E --> F[Step 1: Identify Parameters]
-    F --> G[Step 2: Trace Logic]
+    E --> F[Token 1..N: Intermediate Reasoning]
+    F --> G[Cross-Attention to Reasoning Steps]
     G --> H[Final Conclusion]
-    I{High Accuracy / Auditable}
-    H --> I
 
-    style D fill:#f96,stroke:#333
-    style I fill:#9f9,stroke:#333
+    style C fill:#fbb,stroke:#333
+    style H fill:#9f9,stroke:#333
 ```
 
 To implement this, move away from open-ended queries toward structured, sequential instructions:
@@ -87,11 +88,13 @@ To implement this, move away from open-ended queries toward structured, sequenti
 ## Best practices and anti-patterns
 
 ### Effective Application
-*   **Use Imperative Verbs:** Structure instructions with clear actions: "Extract," "Verify," "Calculate," then "Conclude."
-*   **Isolate the Answer:** To make outputs programmatically useful, instruct the model to wrap its final answer in a specific format (e.g., JSON or a separate Markdown header) after the reasoning block.
-*   **Model Scaling:** CoT is most effective on larger models (e.g., GPT-4, Claude 3.5 Sonnet). Smaller models may "hallucinate" the reasoning itself.
+
+*   **Instructional Directives:** Use imperative verbs to define the reasoning structure: "Identify," "Verify," and "Calculate" before "Conclude."
+*   **Delimiter usage:** Instruct the model to separate reasoning from the final answer (e.g., using XML tags like `<reasoning>` or JSON keys) to allow for programmatic extraction of the result without the "noise" of the thought process.
+*   **Model Suitability:** CoT is most effective on models with high parameter counts. While smaller models (e.g., Llama 3 8B) can perform CoT, they are more susceptible to "logical drift," where an error in an early reasoning step cascades into a confidently wrong conclusion.
 
 ### Pitfalls to Avoid
-*   **Over-Reasoning Simple Tasks:** Do not force a chain of thought for binary or trivial questions (e.g., "What is the current year?"). This adds unnecessary latency and token cost.
-*   **The "Silent" Thought Trap:** Avoid telling the model to "think" without instructing it to *write* those thoughts down. Most models cannot effectively utilize "hidden" reasoning; the logic must be part of the text stream to influence the final tokens.
-*   **Unformatted Streams:** Without instructions to use lists or headers, the reasoning chain can become a "wall of text" that is difficult for users to scan.
+
+*   **The "Silent" Thought Trap:** For standard autoregressive models (GPT-4o, Claude 3.5), thoughts must be output as tokens to influence the final result. Note: This differs from **Reasoning Models** (like OpenAI o1), which use a hidden, internal chain of thought before outputting the first visible token.
+*   **Token Overhead:** Do not use CoT for low-complexity or high-throughput tasks. Generating reasoning steps increases latency and costs (input/output tokens).
+*   **Unconstrained Reasoning:** Without a structured format, the model may diverge into irrelevant tangents. Use a numbered list or specific headers to keep the reasoning path relevant to the objective.

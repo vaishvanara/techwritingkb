@@ -1,7 +1,7 @@
 ---
 title: Inclusive Language
 description: A writing methodology that avoids bias, exclusionary metaphors, and gendered language to improve accessibility and global translation efficiency.
-revision_date: 2026-08-28
+revision_date: 2026-09-02
 ---
 
 # Inclusive language
@@ -12,17 +12,17 @@ revision_date: 2026-08-28
 
 ## Defining inclusive language
 
-Inclusive language removes bias and unnecessary barriers to comprehension. By stripping away terms tied to gender, race, or physical ability, writers create content focused purely on the user's objective. In software and product management, this is an extension of information design—ensuring that every reader, regardless of background, can execute a task without navigating linguistic obstacles.
+Inclusive language removes bias and unnecessary barriers to comprehension. By replacing terms tied to gender, race, or physical ability with objective alternatives, writers create content focused purely on the user's objective. In software and product management, this is a core component of information design—ensuring that every reader, regardless of background, can execute a task without navigating linguistic obstacles.
 
-The foundation of this approach lies in cognitive science. When a reader encounters exclusionary or outdated jargon—such as "master/slave" or "sanity check"—it creates cognitive friction. These terms distract from the technical instructions, forcing the brain to process cultural or historical baggage instead of the code. Using neutral, precise phrasing minimizes this load.
+The foundation of this approach lies in cognitive science. When a reader encounters exclusionary or outdated jargon—such as "master/slave" or "sanity check"—it creates cognitive friction. These terms distract from technical instructions by invoking cultural or historical baggage. Using neutral, precise phrasing minimizes this cognitive load and keeps the user focused on the technical implementation.
 
 ---
 
 ## Strategic impact
 
-Inclusive language is a prerequisite for global scale. For organizations managing localization (L10n) and internationalization (I18n), non-inclusive phrasing introduces technical debt. Idioms and metaphors rarely survive translation; they inflate costs and result in localized content that feels "off" to native speakers. Aligning terminology during the drafting phase streamlines these GILT (Globalization, Internationalization, Localization, and Translation) workflows.
+Inclusive language is a prerequisite for global scale. For organizations managing localization (L10n) and internationalization (I18n), non-inclusive phrasing introduces technical debt. Idioms and metaphors rarely survive translation; they inflate costs and result in localized content that is confusing or offensive to native speakers. Aligning terminology during the drafting phase streamlines GILT (Globalization, Internationalization, Localization, and Translation) workflows.
 
-Beyond the technicalities of translation, exclusionary language erodes user trust. Documentation that assumes a user's gender or uses ableist metaphors can alienate entire demographics, leading to higher support volumes and decreased product adoption. Precise, inclusive language ensures that the focus remains on product value.
+Beyond translation, exclusionary language erodes user trust. Documentation that assumes a user's gender or uses ableist metaphors can alienate demographics, leading to higher support volumes and decreased product adoption. Precise, inclusive language ensures that the focus remains on product value and technical accuracy.
 
 ---
 
@@ -30,55 +30,58 @@ Beyond the technicalities of translation, exclusionary language erodes user trus
 
 Three rules guide the implementation of inclusive language:
 
-- **People-first phrasing:** Focus on the individual rather than a characteristic. Prioritize dignity and avoid equating a person with a specific condition.
+- **People-first phrasing:** Focus on the individual rather than a characteristic. Prioritize dignity and avoid equating a person with a specific condition (e.g., use "users with visual impairments" rather than "the blind").
 - **Bias-free terminology:** Replace loaded historical jargon with functional alternatives. Precision creates a more professional environment for all engineers.
-- **Global accessibility:** Stick to plain English. Avoid regional idioms that confuse non-native speakers and use simple structures to improve machine translatability.
+- **Global accessibility:** Stick to plain English. Avoid regional idioms and use consistent grammatical structures to improve machine translatability and comprehension for non-native speakers.
 
 ---
 
 ## Implementation workflow
 
-This diagram outlines how to bake inclusive language into the standard documentation lifecycle.
+This diagram outlines the iterative process of integrating inclusive language into the documentation lifecycle.
 
 ```mermaid
 graph TD
     A[Start Content Draft] --> B{Initial Review}
-    B -->|Check for Bias| C[Apply People-First Language]
+    B --> C[Apply People-First Language]
     C --> D[Replace Non-Inclusive Jargon]
     D --> E[Run Automated Prose Linter]
-    E --> F[Peer & Diversity Review]
-    F --> G[Final Publication]
+    E -->|Issues Found| C
+    E -->|Pass| F[Peer & Diversity Review]
+    F -->|Revision Needed| C
+    F -->|Approved| G[Final Publication]
     G --> H[Monitor User Feedback]
+    H -->|Identify Gaps| A
 ```
 
 ---
 
 ## Design pattern comparison
 
-Refactoring instructions often requires swapping social metaphors for technical descriptions.
+Refactoring instructions requires swapping social metaphors for technical descriptions that accurately reflect system architecture.
 
 ```text
 [ Before / Non-Inclusive Pattern ]
 --------------------------------------------------
 To ensure the configuration is correct, perform a sanity check on the servers.
-If a master node fails, the slave nodes will automatically drop their connections.
+If a master node fails, the slave nodes will automatically promote a new leader.
 He must then manually run the script.
 
 [ After / Inclusive Pattern ]
 --------------------------------------------------
-To ensure the configuration is correct, verify the server settings.
-If a primary node fails, the secondary nodes will automatically drop their connections.
+To ensure the configuration is correct, perform a smoke test on the servers.
+If a primary node fails, the replica nodes will automatically elect a new leader.
 You must then manually run the script.
 ```
 
 !!! tip "Tip: Use functional alternatives"
-    Prioritize technical accuracy. Functional words make documentation easier to parse for both human readers and translation engines.
+    Prioritize technical accuracy. Terms like "Allowlist/Denylist" and "Primary/Replica" are more descriptive of actual software behavior than their biased predecessors.
 
 ### The logic of the refactor
 
-- **Functional Substitution:** "Verify settings" provides a clearer technical instruction than "sanity check" while removing ableist terminology.
-- **Objective Architecture:** Using "primary/secondary" (or "primary/replica") replaces metaphors of human ownership with industry-standard engineering terms.
-- **Direct Address:** Swapping the gendered "he" for "you" clarifies who is performing the action, as recommended by major industry style guides.
+- **Technical Precision:** "Smoke test" or "Confidence check" provides a clearer technical instruction than "sanity check," which is an ableist metaphor for basic functional verification.
+- **Objective Architecture:** Using "Primary/Replica" (or "Leader/Follower") replaces metaphors of human ownership with industry-standard engineering terms that describe data relationship and hierarchy.
+- **Direct Address:** Swapping the gendered "he" for the second-person "you" clarifies the actor and aligns with the Microsoft and Google technical style guides.
 
 ---
 
@@ -86,17 +89,17 @@ You must then manually run the script.
 
 To move beyond manual checks, use these organizational strategies:
 
-- **Audit legacy repositories:** Use scripts to scan codebases for terms like "whitelist," "blacklist," or "master/slave." Schedule these replacements during routine maintenance.
-- **The "You" Standard:** Address the reader directly. This avoids the trap of third-person singular pronouns ("he/she") and makes the text more engaging.
-- **WCAG Alignment:** Verify that alt-text for diagrams remains objective and free of gender or racial assumptions.
-- **Automated Linters:** Integrate tools like Vale or Alex into your CI/CD pipeline to flag non-inclusive language during pull requests.
+- **Audit legacy repositories:** Use regex-based scripts to scan codebases and documentation for terms like "whitelist," "blacklist," or "master/slave." Schedule these replacements during routine maintenance or breaking-change windows.
+- **The "You" Standard:** Address the reader directly. This avoids the trap of third-person singular pronouns ("he/she") and simplifies sentence structure.
+- **WCAG Alignment:** Ensure alt-text for diagrams remains objective, focusing on the logical flow rather than the physical appearance of icons or personas.
+- **Automated Linters:** Integrate tools like **Vale** (using the `Microsoft` or `Google` styles) or **AlexJS** into your CI/CD pipeline to flag non-inclusive language during the Pull Request (PR) phase.
 
 ---
 
 ## Anti-patterns to avoid
 
-- **Performative correction:** Do not change standard technical terms that carry no bias, as this can confuse users. Clarity remains the priority.
-- **Passive voice traps:** Don't default to passive voice just to avoid pronouns. "Select the button" is better than "The button must be selected."
+- **Performative correction:** Do not change standard technical terms that carry no bias (e.g., "Parent/Child" in tree structures), as this can confuse users. Clarity remains the priority.
+- **Passive voice traps:** Do not default to passive voice to avoid pronouns. "The button should be clicked" is less effective than "Click the button."
 
 ---
 
@@ -104,6 +107,6 @@ To move beyond manual checks, use these organizational strategies:
 
 Verify impact through these channels:
 
-- **Linter Audits:** Use customizable rulesets to catch errors before they reach production.
-- **Cross-functional Reviews:** Invite team members from different regions to identify jargon that may have been missed.
-- **Translation Stress-Tests:** Pass content through translation software to identify "friction points" where metaphors or complex phrasing break the logic.
+- **Linter Audits:** Use customizable YAML rulesets to catch specific banned terms before they reach the main branch.
+- **Cross-functional Reviews:** Invite team members from different regions to identify "hidden" jargon or idioms.
+- **Translation Stress-Tests:** Use machine translation (MT) to check if technical instructions remain logically sound when translated into target languages.

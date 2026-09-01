@@ -1,7 +1,7 @@
 ---
 title: Feature Flags
 description: Feature flags are software toggles that enable or disable functionality at runtime, allowing documentation to sync with phased feature rollouts.
-revision_date: 2026-08-28
+revision_date: 2026-09-02
 ---
 
 # Feature flags
@@ -12,73 +12,73 @@ revision_date: 2026-08-28
 
 ## Controlled releases and content synchronization
 
-Feature flags (or feature toggles) decouple code deployment from feature release. By wrapping new code in conditional logic, developers can push updates to production without immediately activating them for users. This makes deployments safer and more frequent, but it creates a synchronization challenge: your documentation must reflect the live state of the software in real time.
-
-When engineers use toggles for canary releases or A/B tests, technical writers must work alongside product and QA teams to ensure instructions remain accurate for every user cohort.
+Feature flags (or feature toggles) decouple code deployment from feature release. By wrapping new code in conditional logic, developers can push updates to production without immediately activating them for users. This allows for controlled rollouts—such as canary releases or A/B tests—but requires documentation to reflect the specific state of the software available to different user cohorts.
 
 ---
 
 ## Why documentation needs toggles
 
-Static documentation fails in agile, cloud-based environments. If a user encounters instructions for a hidden feature—or finds a live feature undocumented—the resulting confusion drives up support tickets. Integrating documentation with feature flags eliminates these bottlenecks and prevents the premature exposure of unreleased tools. Relying on manual workflows, such as maintaining duplicate document versions, only slows down the publishing pipeline.
+Static documentation often falls out of sync in agile, cloud-based environments. If a user sees instructions for a hidden feature (or lacks documentation for an active one), it creates friction and increases support volume. 
+
+Integrating documentation with feature flags ensures that content visibility matches the application state, preventing the premature exposure of unreleased tools or "dark features" without requiring manual, duplicate version maintenance.
 
 ---
 
 ## Strategic adoption 
 
-This workflow is most effective for teams pushing code via CI/CD pipelines several times a day. If your product team uses targeted rollouts for specific user personas or struggles to keep the knowledge base synced with a rapidly changing UI, linking your docs pipeline to feature toggles is a necessary step.
+This workflow is essential for teams using CI/CD pipelines to deploy multiple times a day. Linking the documentation pipeline to feature toggles is necessary when a product utilizes targeted rollouts (based on user ID, geography, or persona) or when the UI changes too rapidly for traditional publishing cycles.
 
 ---
 
 ## The documentation workflow
 
-To ensure users only see content relevant to their active features, follow these stages:
+To ensure users only see content relevant to their active features, the pipeline must evaluate flag states during the build or at runtime.
 
 ```mermaid
 graph TD
-    A[Feature Flag Configured] --> B[Writer Creates Conditional Content]
-    B --> C[Docs Merged in Dormant State]
-    C --> D{Flag Toggled On?}
-    D -- No --> E[Content Hidden]
-    D -- Yes --> F[Content Exposed]
+    A[Feature Flag Defined in Code/Config] --> B[Writer Adds Conditional Tags to Source]
+    B --> C[CI/CD Pipeline Initiated]
+    C --> D{Evaluation Method?}
+    D -- Build-time --> E[Static Generator Excludes/Includes Content]
+    D -- Runtime --> F[Client-side Script Toggles Visibility]
+    E --> G[Production Deployment]
+    F --> G[Production Deployment]
 ```
 
-1.  **Mapping:** Identify which documentation sections—such as API references or UI guides—are affected by the software configuration.
-2.  **Conditional Tagging:** Using a docs-as-code (DaC) approach, wrap content blocks in tags that match the application's feature flag keys.
-3.  **Validation:** Use a staging environment to verify that toggling a flag correctly hides or exposes the corresponding content without breaking the site layout.
-4.  **Deployment:** Once merged, the dormant documentation is deployed. When the product team activates the flag in production, the content appears automatically.
+1.  **Mapping:** Identify which documentation components (API references, UI guides, or conceptual topics) correspond to specific feature flag keys in the application code.
+2.  **Conditional Tagging:** Wrap content blocks in conditional statements (e.g., If/Else blocks in Markdown or DITA) that reference the feature flag keys.
+3.  **Validation:** Test the documentation in a staging environment by toggling flag states in the flag provider (e.g., LaunchDarkly) to ensure the correct content is rendered or excluded.
+4.  **Deployment:** 
+    *   **Static Sites:** The content is included or excluded during the build process. Activating a flag requires a site rebuild (often triggered via webhook).
+    *   **Dynamic/Runtime:** The content is shipped to the browser but remains hidden via CSS/JS until the flag is evaluated as `true`.
 
 ---
 
 ## Team responsibilities
 
-A clear distribution of ownership ensures that documentation remains accurate throughout the release cycle.
-
-*   **Technical Writers:** Responsible for tagging documentation and drafting updates.
-*   **Software Engineers:** Responsible for providing flag keys and state updates.
-*   **Product Managers:** Accountable for the release timeline and toggling flags in production.
-*   **QA & SMEs:** Consulted for technical accuracy and testing feature states.
-*   **Support & Marketing:** Informed of feature visibility to prepare for customer inquiries.
+*   **Technical Writers:** Tag documentation source files and manage conditional logic blocks.
+*   **Software Engineers:** Provide the specific flag keys and notify the docs team of changes to flag logic (e.g., moving from a boolean to a multivariate flag).
+*   **Product Managers:** Define the rollout schedule and manage the state of flags in the production environment.
+*   **QA & SMEs:** Validate that the documentation accurately reflects the feature's behavior in different states.
 
 ---
 
 ## Pipeline integration
 
-Integrating flag states into your publishing pipeline reduces manual overhead. Tools like [LaunchDarkly](https://launchdarkly.com/){: target="_blank" rel="noopener" } or [Split](https://www.split.io/){: target="_blank" rel="noopener" } allow build engines to check flag statuses during site generation. 
+Documentation-as-code (DaC) allows for deep integration with feature management platforms like [LaunchDarkly](https://launchdarkly.com/) or [Split](https://www.split.io/). 
 
-For docs-as-code repositories, custom scripts can parse source files to include or exclude content during compilation based on the flag status. Alternatively, runtime JavaScript can dynamically show or hide flagged documentation in the browser. Using identical keys for both code and documentation simplifies validation and ensures your automation remains robust.
+*   **Build-time Integration:** The Static Site Generator (SSG) fetches the current flag states via API during the build process. Content wrapped in "off" flags is completely omitted from the generated HTML, providing better security for sensitive features.
+*   **Runtime Integration:** JavaScript in the browser queries the flag provider and dynamically updates the DOM. While this allows for instant updates without a rebuild, writers must be aware that "hidden" content may still be present in the source code of the page.
 
 ---
 
 ## Troubleshooting
 
-Content-code synchronization often faces two main hurdles: lagging builds and "content debt."
-
-*   **Out-of-sync states:** If the engineering team activates a feature but the documentation remains hidden, use webhooks from your feature flag provider to trigger an automated rebuild of the documentation site.
-*   **Orphaned tags:** When a feature is fully rolled out and the flag is retired, conditional tags often remain in the source files. Include a "flag cleanup" task in your post-launch checklist to remove these tags and reduce long-term maintenance.
+*   **Build Latency:** In build-time configurations, there is a delay between toggling a flag in the product and the documentation update. Use webhooks from your feature flag provider to trigger an automated CI/CD pipeline rebuild immediately upon flag state changes.
+*   **Tag Debt:** Once a feature is 100% rolled out and the flag is retired in the code, the conditional tags in the documentation become "dead code." Establish a "flag cleanup" cadence to remove these tags and convert the conditional content into standard documentation.
 
 ---
 
 ## Success indicators
 
-The effectiveness of feature-flagged documentation is measured by 100% alignment between the live UI and the instructions visible to any given user cohort. Over time, this approach should result in a measurable decrease in support queries related to phased rollouts and missing documentation.
+Success is achieved when there is 1:1 parity between the features accessible to a user and the documentation visible to them. Key metrics include a reduction in "feature discovery" support tickets and the elimination of manual documentation merges for phased releases.

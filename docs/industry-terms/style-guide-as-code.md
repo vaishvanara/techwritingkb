@@ -1,7 +1,7 @@
 ---
 title: Style guide as code
 description: A system for enforcing editorial standards by converting style rules into programmable configuration files integrated directly into development pipelines.
-revision_date: 2026-08-28
+revision_date: 2026-09-02
 ---
 
 # Style guide as code
@@ -42,25 +42,27 @@ The process targets two specific stages: the author's local machine and the remo
 
 ```mermaid
 graph LR
-    A[Local write] --> B[Pre-commit linting]
+    A[Local write] --> B[Commit Hook linting]
     B --> C[CI/CD validation]
     C --> D[Automated build and deploy]
 ```
 
 ```mermaid
 graph TD
-    A[Writer creates markup content] --> B[Local linter runs checks]
-    B -->|Fails| C[Fix errors in editor]
-    C --> B
-    B -->|Passes| D[Push to version control]
-    D --> E[CI/CD pipeline runs validation]
-    E -->|Fails| F[Block pull request merge]
-    F --> C
-    E -->|Passes| G[Deploy updated documentation]
+    A[Author creates markup content] --> B[IDE linter flags errors]
+    B --> C{Author commits?}
+    C -->|Yes| D[Pre-commit hook runs checks]
+    D -->|Fails| E[Commit rejected: Fix errors]
+    E --> B
+    D -->|Passes| F[Push to version control]
+    F --> G[CI/CD pipeline runs validation]
+    G -->|Fails| H[Block pull request merge]
+    H --> E
+    G -->|Passes| I[Deploy updated documentation]
 ```
 
 1. **Local authoring:** As you draft content, a local linter (running as an IDE extension) flags violations in real time. This immediate feedback loop coaches writers on style rules as they work.
-2. **Commit validation:** Before code is pushed, pre-commit hooks can run a final local check to ensure no errors are leaked to the repository.
+2. **Commit validation:** When an author attempts to commit changes, a pre-commit hook executes the linter. If the linter returns a non-zero exit code, the commit is aborted, ensuring no non-compliant prose enters the local history.
 3. **Pipeline enforcement:** Once a pull request is opened, the CI/CD platform executes the full linting suite. If critical errors are detected, the build fails, preventing the merge until the content is compliant.
 
 ---
@@ -69,29 +71,29 @@ graph TD
 
 Effective automation requires clear ownership to prevent rules from becoming too restrictive or falling out of date.
 
-- **Responsible:** Technical writers (rule creation and error resolution) and DevOps engineers (pipeline configuration).
+- **Responsible:** **Authors** (resolving linting errors in their own content) and **Technical Writers** (authoring and maintaining linting rules).
 - **Accountable:** Content operations lead or Documentation manager.
-- **Consulted:** Product managers and subject matter experts (to standardize terminology).
+- **Consulted:** DevOps (pipeline integration), Product managers, and Subject matter experts (standardizing terminology).
 - **Informed:** Software engineering and QA teams.
 
 ---
 
 ## Pipeline integration and tooling
 
-Implementation requires a prose linter capable of parsing markup languages (Markdown, AsciiDoc, reStructuredText). Tools like **Vale** or **textlint** are industry standards because they allow for highly customizable, YAML-based rule sets stored directly in the project repository.
+Implementation requires a prose linter capable of parsing markup languages (Markdown, AsciiDoc, reStructuredText). Tools like **Vale** or **textlint** are industry standards because they allow for highly customizable rules stored directly in the project repository.
 
-A typical configuration file (`.vale.ini`) directs the linter to specific styles:
+A typical configuration file (`.vale.ini`) is written in **INI format** and directs the linter to specific styles:
 
-```yaml hl_lines="2"
+```ini
 # .vale.ini configuration example
 StylesPath = styles
 MinAlertLevel = warning
 
 [*.md]
-BasedOnStyles = EditorialStandards
+BasedOnStyles = Vale, EditorialStandards
 ```
 
-By integrating these tools into **GitHub Actions**, **GitLab CI/CD**, or **Azure Pipelines**, you turn your style guide into a quality gate. If the linter returns a non-zero exit code, the pipeline identifies the exact file and line number of the violation, allowing developers to address issues directly in the PR interface.
+By integrating these tools into **GitHub Actions**, **GitLab CI/CD**, or **Azure Pipelines**, you turn your style guide into a quality gate. If the linter returns a non-zero exit code, the pipeline identifies the exact file and line number of the violation, allowing contributors to address issues directly in the PR interface.
 
 ---
 
@@ -101,13 +103,13 @@ Automated pipelines require tuning to avoid friction between writers and the sys
 
 - **The noise problem:** False positives—like valid technical jargon flagged as typos—can frustrate authors.
     ??? note "The solution"
-        Maintain a shared `accept.txt` or `allowlist.txt` file in the repository. Adding a term here globally resolves the spelling error across the project.
+        Use a **Vocab** definition in Vale. By adding terms to `styles/Vocab/Internal/accept.txt`, you globally resolve spelling errors for project-specific terminology without modifying the base dictionary.
 - **Performance lags:** Linting thousands of legacy files on every commit slows down the development cycle.
     ??? note "The solution"
-        Use `git diff` flags to configure the CI pipeline to only scan modified files.
-- **Tooling bypass:** If local checks are too slow, writers may skip them.
+        Configure the CI pipeline or pre-commit hook to run only on changed files using `git diff --name-only` filtered by extension.
+- **Tooling bypass:** If local checks are too slow or complex, authors may use `--no-verify` to skip hooks.
     !!! tip "Optimization tip"
-        Keep pre-commit checks minimal. Reserve complex structural rules for the remote CI server to keep the local "save-and-check" cycle fast.
+        Keep pre-commit checks minimal (e.g., spelling and terminology). Reserve complex structural or style rules (e.g., sentence length, passive voice) for the remote CI server to keep the local "save-and-commit" cycle fast.
 
 ---
 

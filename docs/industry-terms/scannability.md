@@ -1,7 +1,7 @@
 ---
 title: Scannability
 description: The strategic arrangement of text and visuals to help readers quickly identify, filter, and extract key information from digital content.
-revision_date: 2026-08-28
+revision_date: 2026-09-02
 ---
 
 # Scannability
@@ -30,9 +30,9 @@ Prioritizing scannability is an act of audience respect. It acknowledges that so
 
 Effective scannability relies on four structural pillars:
 
-*   **Heading hierarchy:** Sequential levels (H2, H3, H4) provide a visual roadmap of information depth.
-*   **Information chunking:** Breaking concepts into modular units or bulleted lists (ideally three to five items) prevents mental overwhelm.
-*   **Visual semantic markers:** Use **bold** for UI elements and `inline code` for technical parameters. Use callouts for high-priority tips or warnings.
+*   **Heading hierarchy:** Sequential levels (H2, H3, H4) provide a visual roadmap. To maintain accessibility for screen readers, never skip heading levels (e.g., do not jump from H2 to H4).
+*   **Information chunking:** Breaking concepts into modular units or bulleted lists (ideally three to seven items) prevents mental overwhelm.
+*   **Visual semantic markers:** Use **bold** for UI elements (buttons, menus) and `inline code` for technical parameters, file names, or paths. Use callouts for high-priority tips or warnings.
 *   **Intentional whitespace:** Proper margins and padding guide the eye and prevent visual claustrophobia.
 
 ---
@@ -47,28 +47,29 @@ Transforming a dense block into scannable steps drastically improves task comple
 === "After (Scannable)"
     **To configure authentication:**
 
-    1. Locate the `/config` directory in your project root.
+    1. Locate the `config/` directory in your project root.
     2. Open `config.json`.
     3. Add your secret API key to the `auth_key` field.
 
     !!! danger "Security Risk"
-        **Do not commit this file to a public repository.** Exposed keys can compromise your entire infrastructure.
+        **Do not commit this file to a public repository.** Exposed keys can compromise your infrastructure.
 
 ### The scanning path
 
-The diagram below contrasts the "F-shaped" scanning pattern of structured content against the high bounce rate of unstructured text.
+The diagram below illustrates the decision logic a user follows based on content structure.
 
 ```mermaid
 graph TD
     A[User lands on page] --> B{Clear visual hierarchy?}
-    B -- Yes --> C[Scan left margin/headers]
-    B -- No --> D[High cognitive load / User exits]
+    B -- No --> D[High cognitive load]
+    D --> G[User abandons task]
+    B -- Yes --> C[Scan headers and left margin]
     C --> E[Identify bold terms & code]
-    F[Task completed]
-    E --> F
+    E --> F[Execute task]
+    F --> H[Success]
 ```
 
-The "After" example works because it isolates actions from risks. A skimmer might overlook a warning buried at the end of a long sentence, but they cannot miss a danger callout.
+The "After" example works because it isolates actions from risks. A skimmer might overlook a warning buried at the end of a long sentence, but they cannot miss a styled danger callout.
 
 ---
 
@@ -76,9 +77,9 @@ The "After" example works because it isolates actions from risks. A skimmer migh
 
 Use these tactics to refine your content:
 
-*   **Front-load keywords:** Start headings and list items with the most important nouns or verbs.
-*   **The three-sentence rule:** Aim for paragraphs no longer than three or four sentences.
-*   **Contextual link text:** Avoid "click here." Use descriptive labels that explain exactly where the link leads.
+*   **Front-load keywords:** Start headings and list items with the most important nouns or verbs (e.g., "Configuring Webhooks" instead of "How to make sure your webhooks are configured").
+*   **The three-sentence rule:** Aim for paragraphs no longer than three or four sentences to maintain visual "breathing room."
+*   **Contextual link text:** Avoid "click here." Use descriptive labels that explain the destination (e.g., "See the Authentication API reference").
 *   **Avoid "Bold Burnout":** Highlight only the most critical terms. Over-bolding creates visual noise that defeats the purpose of highlighting.
 
 ---
@@ -87,10 +88,11 @@ Use these tactics to refine your content:
 
 *   **The wall of text:** Large, unbroken blocks that demand linear reading.
 *   **Visual clutter:** Too many callouts, colors, or highlights competing for attention. If everything is emphasized, nothing is.
+*   **Vague Headings:** Using generic headers like "Overview" or "Next Steps" repeatedly without context.
 
 ---
 
 ## Testing for clarity
 
 *   **The 5-second squint test:** Squint until the text blurs. If you can still distinguish the headers and callouts, your layout is sound.
-*   **Timed navigation:** Challenge a user to find a specific error code or parameter within 10 seconds. If they have to "read" to find it, the scannability has failed.
+*   **Timed navigation:** Challenge a user to find a specific error code or parameter within 10 seconds. If they have to read the body text to find it, the scannability has failed.

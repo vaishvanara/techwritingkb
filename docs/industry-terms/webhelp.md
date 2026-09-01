@@ -1,7 +1,7 @@
 ---
 title: WebHelp and responsive HTML5
 description: Standardized web-based documentation formats that deliver responsive, searchable, and browser-accessible content across all modern devices and platforms.
-revision_date: 2026-08-28
+revision_date: 2026-09-02
 ---
 
 # WebHelp and responsive HTML5
@@ -12,20 +12,18 @@ revision_date: 2026-08-28
 
 ## Technical overview
 
-WebHelp replaces the aging Compiled HTML Help (CHM) format with a frameless portal built on **HTML5**, **CSS**, and **JavaScript**. While CHM files rely on local Windows runtime engines—often triggering security blocks on corporate networks—responsive HTML5 outputs run natively in any web browser. 
+Responsive HTML5 has largely superseded the legacy Compiled HTML Help (CHM) format. While CHM files rely on the local Windows `hh.exe` runtime and the `itss.dll` storage engine—which are frequently blocked by Windows "Mark of the Web" security policies—responsive HTML5 outputs run natively in any modern web browser using standard web technologies.
 
-This format is the standard for modern technical documentation because it integrates directly into automated build pipelines and static hosting environments. By using standard web assets, teams can treat documentation as code, deploying updates alongside software releases. The "responsive" aspect ensures the layout shifts dynamically, providing a readable experience on everything from mobile devices to ultrawide monitors.
+Modern WebHelp is **frameless**, moving away from the deprecated HTML `<frameset>` and `<iframe>` architectures of the early 2000s. It integrates directly into CI/CD build pipelines and static hosting environments (e.g., Netlify, GitHub Pages, or S3). By using standard web assets, teams can treat documentation as code (Docs-as-Code). The "responsive" aspect utilizes CSS3 Media Queries and Flexbox/Grid layouts to ensure the UI adapts dynamically to different viewport sizes.
 
 ---
 
 ## Strategic advantages
 
-Shifting from desktop-only formats to WebHelp solves several legacy pain points:
-
-*   **Platform Independence:** Content is accessible on macOS, Linux, iOS, and Android, not just Windows.
-*   **Search Visibility:** Unlike compiled blobs, HTML5 files are indexable by search engines, significantly improving public-facing SEO.
-*   **Analytics and Insights:** Web-first delivery allows you to track user behavior via standard analytics tools—a task impossible with offline files.
-*   **Security:** Eliminates the vulnerabilities associated with CHM's reliance on the Internet Explorer engine and local execution.
+*   **Platform Independence:** Content is accessible on any OS with a modern browser engine (Blink, WebKit, or Gecko).
+*   **Search Engine Optimization (SEO):** Unlike the binary "blobs" of CHM files, HTML5 files are fully indexable by web crawlers like Googlebot.
+*   **Analytics and Insights:** Allows integration of client-side tracking (e.g., Google Analytics or Matomo) to monitor page views and search queries.
+*   **Security:** Eliminates vulnerabilities associated with the CHM format’s reliance on local code execution and legacy Internet Explorer components.
 
 ---
 
@@ -34,16 +32,16 @@ Shifting from desktop-only formats to WebHelp solves several legacy pain points:
 A WebHelp package is a self-contained directory containing the entry point, navigation schemas, and search logic.
 
 ??? note "WebHelp Folder Directory Structure"
-    This diagram illustrates the typical organization of generated output files:
+    This diagram illustrates the typical organization of a modern, static-site generated documentation output:
 
     ```mermaid
     graph TD
         A[webhelp-output/] --> B(index.html - Entry Point)
         A --> C(toc.json - Navigation Map)
-        A --> D(search.json - Search Index)
+        A --> D(search-index.json - Search Data)
         A --> E[assets/]
         E --> E1(css/ - UI Styling)
-        E --> E2(js/ - Logic & Search)
+        E --> E2(js/ - Logic & Search Engine)
         A --> F[topics/]
         F --> F1(getting-started.html)
         F --> F2(troubleshooting.html)
@@ -51,16 +49,16 @@ A WebHelp package is a self-contained directory containing the entry point, navi
 
 ### Core components
 
-*   **`index.html`**: The portal's front door. It initializes the UI, navigation sidebar, and search interface.
-*   **`toc.json`**: A structured mapping of the site's information architecture. It dictates the hierarchy of the sidebar menu.
-*   **`search.json`**: A precompiled, client-side index. It allows users to query content instantly without requiring a backend database.
-*   **Topic Files**: Semantic HTML5 documents containing the actual content, often enriched with metadata for better search filtering.
+*   **`index.html`**: The main landing page. In a Single Page Application (SPA) or AJAX-based help system, this file contains the shell (header, sidebar, search bar) and dynamically loads topic content.
+*   **`toc.json`**: A JSON-formatted tree structure defining the Table of Contents.
+*   **`search-index.json`**: A serialized index of the site's content. A client-side JavaScript engine (located in `assets/js/`) parses this file to return search results without a server-side database.
+*   **Topic Files**: Semantic HTML5 documents. When using a frameless approach, these often contain the raw article content which is then injected into the main UI shell or linked via relative paths.
 
 ---
 
 ## Topic template example
 
-The following template demonstrates a responsive, accessible HTML5 topic designed for a WebHelp framework.
+The following template demonstrates a responsive, accessible HTML5 topic.
 
 ```html
 <!DOCTYPE html>
@@ -69,15 +67,16 @@ The following template demonstrates a responsive, accessible HTML5 topic designe
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Configure initial setup settings for your WebHelp system.">
-    <title>Getting Started with Your WebHelp System</title>
+    <title>Getting Started | WebHelp System</title>
     <link rel="stylesheet" href="../assets/css/webhelp-theme.css">
+    <!-- Script to handle dynamic UI elements like TOC synchronization -->
+    <script src="../assets/js/webhelp-logic.js" defer></script>
 </head>
 <body>
     <header class="webhelp-header">
         <nav class="breadcrumbs" aria-label="Breadcrumb">
             <ol>
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="index.html">User Guide</a></li>
                 <li aria-current="page">Getting Started</li>
             </ol>
         </nav>
@@ -90,7 +89,10 @@ The following template demonstrates a responsive, accessible HTML5 topic designe
             
             <section id="prerequisites">
                 <h2>Prerequisites</h2>
-                <p>Ensure you have access to a web server or a local staging environment for testing.</p>
+                <ul>
+                    <li>Web server (Nginx/Apache) or local preview tool.</li>
+                    <li>Modern web browser (Chrome, Firefox, Safari, Edge).</li>
+                </ul>
             </section>
         </article>
     </main>
@@ -103,21 +105,19 @@ The following template demonstrates a responsive, accessible HTML5 topic designe
 ```
 
 ### Key implementation details
-The `<meta name="viewport">` tag is the linclpin of responsive design, preventing browsers from defaulting to a zoomed-out desktop view on mobile. For accessibility, `aria-label` and `aria-current` attributes ensure that screen readers can interpret the navigation hierarchy, while the `<main>` tag helps search engines prioritize the topic content over UI boilerplate.
+The `<meta name="viewport">` tag is the **linchpin** of responsive design; it instructs the browser to set the page width to the device width and sets the initial scale. For accessibility, `aria-label` and `aria-current` attributes provide context to Screen Readers. The `<main>` and `<article>` tags are semantic landmarks that help both search engines and assistive technology identify the primary content.
 
 ---
 
 ## Common pitfalls to avoid
 
-*   **Hardcoded Absolute Paths:** Using links like `https://site.com/page.html` breaks the package if it is moved to a staging server or local drive. Always use relative paths (`../topics/page.html`).
-*   **Omitting Viewport Settings:** Without the viewport meta tag, the help site becomes unreadable on small screens, as the browser scales the entire layout down to fit the width.
-*   **Bloated Search Indexes:** For large doc sets, uncompressed `search.json` files can delay page loads. Ensure your build tool minifies or chunks search data.
+*   **Hardcoded Absolute Paths:** Using links like `https://site.com/page.html` breaks functionality when viewed in a staging environment or locally via `file://`. Always use relative paths.
+*   **CORS Issues with Local Loading:** Modern browsers block `XMLHttpRequests` (used for `search.json` or `toc.json`) when opened via the `file://` protocol. Documentation intended for offline local use should be bundled using a tool that bypasses this or uses a local web server.
+*   **Missing Alt Text on Topic Images:** Automated build tools often overlook missing `alt` attributes, creating accessibility barriers in the generated HTML.
 
 ---
 
 ## Ecosystem and validation
 
-WebHelp relies on the standard web stack:
-
-*   **Browsers & Servers:** Compatible with all modern engines (Chromium, WebKit, Gecko) and servers like Nginx or Apache.
-*   **Validation:** Use **HTMLHint** for syntax, **axe-core** for WCAG compliance, and automated broken link checkers to ensure integrity across the navigation tree.
+*   **Browsers & Servers:** Compatible with all modern engines and standard web servers.
+*   **Validation:** Use **HTMLHint** for markup integrity, **axe-core** for WCAG compliance, and **Markdown-lint** (if authoring in MD) to catch errors before the HTML generation phase.

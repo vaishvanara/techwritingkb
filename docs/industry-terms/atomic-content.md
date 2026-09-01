@@ -1,12 +1,12 @@
 ---
 title: Atomic Content
 description: Modular documentation design that treats technical information as self-contained, reusable units to simplify maintenance and multi-channel delivery.
-revision_date: 2026-08-28
+revision_date: 2026-09-02
 ---
 
 # Atomic Content
 
-> Modular documentation design that treats technical information as self-contained, reusable units to simplify maintenance and multi-channel delivery.
+> Modular documentation design that treats technical information as self-contained, reusable units to simplify maintenance and multi-channel delivery
 
 ---
 
@@ -31,7 +31,7 @@ Relying on traditional, lengthy layouts often leads to "content rot." In a monol
 Effective atomic units must be autonomous, complete, and structurally consistent.
 
 *   **Singular focus:** Each module covers exactly one concept, task, or reference. If a draft pairs a conceptual explanation with a tutorial, split them. 
-*   **Contextual independence:** Remove relative transitions like "as mentioned previously" or "the steps above." Content must remain coherent regardless of where it is embedded.
+*   **Contextual independence:** Remove relative transitions like "as mentioned previously" or "the steps above." Content must remain coherent regardless of where it is embedded. Use prerequisites in metadata to handle sequence dependencies.
 *   **Structural predictability:** Use a consistent schema. Minimalist instructions keep the focus on user action and facilitate integration with other components.
 
 ??? note "Technical Layer: Semantic metadata"
@@ -45,7 +45,7 @@ This example illustrates the transition from a dense troubleshooting block to di
 
 === "Before: Monolithic guide"
     **Configuring the API Gateway**
-    To configure your API gateway, you need to first generate your security credentials. Log into your dashboard, navigate to **Settings**, and click **Generate API Key**. Once you have your key, open your terminal and set your environment variable using `export API_KEY="your_key"`. Note that you can also run your gateway locally using Docker for testing, which requires running `docker compose up` in your project root, but this is only recommended for local development. For production deployments, we recommend using our managed container service which handles automatic scaling and load balancing. Make sure your firewall allows traffic on port 443 so your API endpoints can receive secure incoming HTTP requests.
+    To configure your API gateway, you need to first generate your security credentials. Log into your dashboard, navigate to **Settings**, and click **Generate API Key**. Once you have your key, open your terminal and set your environment variable using `export API_KEY="your_key"`. Note that you can also run your gateway locally using Docker for testing, which requires running `docker compose up` in your project root, but this is only recommended for local development. For production deployments, we recommend using our managed container service which handles automatic scaling and load balancing. Make sure your firewall allows traffic on port 443 so your API endpoints can receive secure incoming HTTPS requests.
 
 === "After: Atomic content modules"
 
@@ -54,22 +54,24 @@ This example illustrates the transition from a dense troubleshooting block to di
         A[API Gateway Documentation] --> B(Module 1: Task<br/>Generating an API Key)
         A --> C(Module 2: Task<br/>Setting Environment Variables)
         A --> D(Module 3: Reference<br/>Network Port Requirements)
+        A --> E(Module 4: Concept<br/>Local vs Production Environments)
         
         B --> B1[Steps to obtain credentials]
         C --> C1[CLI input and validation]
         D --> D1[Table: HTTPS, Port 443]
+        E --> E1[Docker vs Managed Service]
     ```
 
 ### Why this works
-*   **Intent segregation:** The original guide blurred the lines between local testing, production scaling, and security tasks. The atomic version isolates these into three distinct files.
-*   **Zero temporal debt:** By removing "first" and "once you have," the environment variable instructions are now usable in any context.
+*   **Intent segregation:** The original guide blurred the lines between local testing, production scaling, and security tasks. The atomic version isolates these into four distinct files.
+*   **Zero temporal debt:** By removing "first" and "once you have," the environment variable instructions are now usable in any context (e.g., a CI/CD setup guide) as long as the prerequisite (having a key) is met.
 *   **Cross-functional reuse:** The network reference module can now be pulled into security audits or onboarding guides without dragging along unnecessary API setup steps.
 
 ---
 
 ## Performance and UX metrics
 
-*   **Reduced time-to-success:** Removing conversational filler allows developers to locate and execute commands immediately, accelerating their "time-to-hello."
+*   **Reduced Time-to-First-Call (TTFC):** Removing conversational filler allows developers to locate and execute commands immediately, accelerating their "time-to-hello."
 *   **Improved scannability:** Modular blocks support natural scanning patterns (like the F-pattern), helping users find keyboard shortcuts or configuration values at a glance.
 
 ---

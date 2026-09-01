@@ -1,7 +1,7 @@
 ---
 title: viewBox
 description: An SVG attribute that defines the internal coordinate system and aspect ratio, allowing vector graphics to scale fluidly within any container.
-revision_date: 2026-08-28
+revision_date: 2026-09-02
 ---
 
 # viewBox
@@ -12,46 +12,46 @@ revision_date: 2026-08-28
 
 ## What is viewBox?
 
-The `viewBox` attribute acts as a virtual window over an SVG's artwork. It decouples the internal coordinate system from the physical dimensions of the container, ensuring that graphics scale proportionally without distortion. By defining a local grid, you dictate how coordinates inside the SVG map to the space the browser allocates for the image.
+The `viewBox` attribute acts as a virtual window over an SVG's artwork. It decouples the internal coordinate system (user space) from the physical dimensions of the SVG viewport. This ensures that graphics scale proportionally to fit their container without manual recalculation of coordinates.
 
-Without this attribute, SVGs default to a 1:1 pixel mapping. This makes the graphic rigid; if the container is smaller than the design, the image is cropped. If the container is larger, the image stays small. Adding a `viewBox` allows the browser to stretch or shrink the local coordinates to fill the available space.
+Without this attribute, the SVG uses a 1:1 mapping between user units and viewport pixels. If the container size changes, the SVG viewport expands or shrinks, but the internal elements remain at their fixed absolute sizes. This often leads to "clipping" (if the container is smaller than the drawing) or excessive white space (if the container is larger). Adding a `viewBox` allows the browser to transform the internal coordinate system to fit the viewport dimensions.
 
 ```mermaid
 graph TD
     A[SVG Element] --> B{viewBox defined?}
-    B -- Yes --> C[Browser maps local units to container pixels]
-    B -- No --> D[Browser uses default 1:1 pixel mapping]
-    C --> E[Responsive Scaling]
-    D --> F[Fixed Size / Potential Clipping]
+    B -- Yes --> C[Browser scales user space to fit viewport]
+    B -- No --> D[1:1 mapping of units to pixels]
+    C --> E[Responsive Content Scaling]
+    D --> F[Fixed-size Content / Potential Clipping]
 ```
 
 ---
 
 ## Why it matters
 
-Fixed `height` and `width` attributes often break fluid layouts. Relying on them forces a graphic to occupy a specific number of pixels, regardless of screen density or viewport size. 
+Fixed `height` and `width` attributes on an `<svg>` tag define the viewport's size but do not dictate how content scales. In responsive design, an SVG typically needs to occupy 100% of a fluid container's width.
 
-In modern documentation and UI development, responsiveness is non-negotiable. A properly configured `viewBox` ensures that technical diagrams, icons, and illustrations remain legible across different formats—from mobile help screens to high-resolution PDFs—without requiring manual resizing of individual paths or shapes.
+A properly configured `viewBox` ensures that the internal geometry—paths, circles, and text—maintains its spatial relationship as the container scales. This is essential for cross-platform UI development, ensuring that a single icon asset looks identical on a 16px button and a 500px hero section.
 
 ---
 
 ## Syntax and structure
 
-The syntax uses four numerical values: `viewBox="min-x min-y width height"`.
+The syntax consists of four unitless values: `viewBox="min-x min-y width height"`.
 
-- **min-x**: The left-most coordinate of the grid (usually `0`).
-- **min-y**: The top-most coordinate of the grid (usually `0`).
-- **width**: The horizontal span of the internal canvas.
-- **height**: The vertical span of the internal canvas.
+- **min-x**: The left-most x-coordinate of the visible area.
+- **min-y**: The top-most y-coordinate of the visible area.
+- **width**: The horizontal span of the coordinate system.
+- **height**: The vertical span of the coordinate system.
 
 !!! note "Aspect Ratio Control"
-    The `viewBox` works in tandem with the `preserveAspectRatio` attribute. This determines how the graphic behaves if the container’s dimensions don't perfectly match the `viewBox` ratio (e.g., whether to "meet" the edges or "slice" the overflow).
+    The `viewBox` works in tandem with the `preserveAspectRatio` attribute. If the aspect ratio of the `viewBox` does not match the aspect ratio of the SVG viewport (defined by `width` and `height` attributes or CSS), `preserveAspectRatio` determines whether to scale the image to fit (meet), fill the area by cropping (slice), or distort the image (none).
 
 ---
 
 ## Code example
 
-This configuration enables the coordinate system to fill its parent container:
+This configuration enables the coordinate system to fill its parent container while maintaining a internal 100x100 grid:
 
 ```xml
 <svg viewBox="0 0 100 100" width="100%" height="100%" aria-labelledby="svg-title">
@@ -62,37 +62,35 @@ This configuration enables the coordinate system to fill its parent container:
 
 ### Breakdown
 
-- **`viewBox="0 0 100 100"`**: Establishes a 100x100 unit coordinate system starting at the origin.
-- **`width="100%" height="100%"`**: Instructs the browser to expand the 100-unit grid to 100% of the available parent width.
-- **`circle cx="50" cy="50" r="40"`**: Positions the circle relative to the `viewBox` grid. The center sits at `50,50` regardless of the SVG's actual pixel size on screen.
+- **`viewBox="0 0 100 100"`**: Defines a window from `(0,0)` to `(100,100)`.
+- **`width="100%" height="100%"`**: Sets the SVG viewport to fill the parent container. The `viewBox` will stretch or shrink to fit this viewport.
+- **`circle cx="50" cy="50" r="40"`**: Positions the circle relative to the 100-unit grid. Because `50,50` is the center of the `viewBox`, the circle remains centered regardless of the physical size of the SVG.
 
 ---
 
 ## Common pitfalls
 
-### Mixing absolute and relative dimensions
+### Negative Width or Height
+In the `viewBox` attribute, the `width` and `height` parameters **must not be negative**. A negative value is a syntax error, causing the browser to ignore the `viewBox` entirely and revert to default 1:1 mapping.
 
-Defining `width="400px"` alongside a `viewBox` can prevent the graphic from scaling down on small screens. For maximum flexibility, define dimensions in CSS or use percentages.
+### Zero Width or Height
+If the `width` or `height` in the `viewBox` is set to `0`, the element will not be rendered.
 
-### Zero or negative canvas values
-
-The `width` and `height` (the last two values) must be positive. Setting either to zero prevents the graphic from rendering entirely, as it creates an infinitely small viewing window.
+### Overflow Clipping
+By default, SVG content that falls outside the `viewBox` coordinates is often visible unless the SVG has `overflow: hidden` (the default in most browsers). However, it will not scale with the rest of the drawing.
 
 ---
 
 ## Tooling
 
-Most design and development tools handle `viewBox` generation automatically:
-
-- **Browsers**: Engines like Chromium and WebKit calculate the mapping during the initial layout pass.
-- **Design Tools**: [Figma](https://www.figma.com/) and [Adobe Illustrator](https://www.adobe.com/products/illustrator.html) typically export the artboard dimensions as the `viewBox` values.
-- **Optimization**: [SVGO](https://github.com/svg/svgo) is often used in build scripts to strip unnecessary metadata while preserving the `viewBox` for responsive rendering.
+- **Browsers**: Use the "Computed" tab in DevTools to see how `viewBox` transforms translate to actual pixel dimensions.
+- **Optimization**: Tools like [SVGO](https://github.com/svg/svgo) can automatically calculate the tightest possible `viewBox` for a path, removing unnecessary whitespace.
+- **Design Export**: When exporting from Figma or Illustrator, ensure "Include viewBox" is checked; otherwise, the tool may export fixed pixel dimensions only.
 
 ---
 
 ## Best practices
 
-- **Align with artboards**: Use coordinates that match your original design file to avoid unexpected shifts or skewing.
-- **Verify readability**: Scale the browser window to ensure that labels and thin lines remain visible at smaller sizes.
-- **Accessibility**: Always include a `<title>` tag and appropriate ARIA labels so screen readers can describe the scalable content.
-- **Clean export**: Use optimization scripts to remove hardcoded pixel widths from the SVG tag, leaving only the `viewBox`.
+- **Use Unitless Values**: Values inside the `viewBox` attribute should always be unitless.
+- **Remove Fixed Dimensions**: For maximum responsiveness in web projects, remove the `width` and `height` attributes from the `<svg>` tag (or set them to `100%`) and control the size via CSS.
+- **Center via min-x/min-y**: If you want your coordinate `0,0` to be the center of your graphic, use a negative `min-x` and `min-y` (e.g., `viewBox="-50 -50 100 100"`).

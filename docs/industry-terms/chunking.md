@@ -1,7 +1,7 @@
 ---
 title: Chunking
 description: A content organization strategy that breaks complex information into small, logical units to improve scannability and reduce user cognitive load.
-revision_date: 2026-08-28
+revision_date: 2026-09-02
 ---
 
 # Chunking
@@ -12,13 +12,13 @@ revision_date: 2026-08-28
 
 ## The mechanics of information processing
 
-Chunking groups related information into manageable packages. It acknowledges a fundamental constraint of human psychology: working memory is a bottleneck. When documentation presents long, unstructured blocks of text, it exceeds a reader's mental processing limit. By dividing data into logical segments, you align the content with how the brain naturally absorbs information.
+Chunking groups related information into manageable packages. It acknowledges a fundamental constraint of human psychology: working memory is a bottleneck. When documentation presents long, unstructured blocks of text, it exceeds a reader's mental processing limit—often cited as the "7 ± 2" rule (Miller's Law) or the more contemporary "4 ± 1" rule (Cowan’s Law). By dividing data into logical segments, you align the content with how the brain naturally encodes information.
 
 In technical communication, this creates a bridge between dense engineering specifications and human comprehension. Effective chunking uses paragraphs, lists, and tables to establish a visual hierarchy, transforming "walls of text" into accessible, functional documentation.
 
 ```mermaid
 graph TD
-    A[Complex Information] --> B{Apply Chunking}
+    A[Complex Information] --> B(Apply Chunking Strategy)
     B --> C[Logical Grouping]
     B --> D[Visual Hierarchy]
     B --> E[Whitespace]
@@ -49,7 +49,7 @@ Effective chunking relies on four key characteristics:
 
 ## Pattern transformation
 
-The following example demonstrates how restructuring a dense paragraph into a scannable format improves utility.
+The following example demonstrates how restructuring a dense paragraph into a scannable format improves utility while preserving all technical instructions.
 
 ### Before / Poor Pattern
 
@@ -58,7 +58,6 @@ To configure the integration, you must first verify that your API key is active.
 ### After / Applied Pattern
 
 #### Step 1: Configure the local auth settings
-
 Before starting, confirm that your API key is active in the developer console.
 
 1. Open your project's `config.json` file.
@@ -70,6 +69,10 @@ Before starting, confirm that your API key is active in the developer console.
 
 4. Save the file.
 5. Restart your local server: `npm run dev`.
+
+#### Step 2: Verify connection
+*   **Success:** A green success message indicates authentication is complete.
+*   **Failure:** If an error occurs, verify your network settings and confirm the API key matches the developer console.
 
 ---
 

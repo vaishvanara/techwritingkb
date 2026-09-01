@@ -1,7 +1,7 @@
 ---
 title: Visual hierarchy
 description: The arrangement of typography, color, and layout to prioritize information, helping users navigate complex documentation and immediately identify key details.
-revision_date: 2026-08-28
+revision_date: 2026-09-02
 ---
 
 # Visual hierarchy
@@ -51,7 +51,7 @@ The following comparison illustrates how structured layouts improve readability 
     Before you begin, ensure your server environment is active.
     
     !!! danger "Prerequisite: Administrator privileges required"
-        You must run the installation script as an administrator to avoid installation failure.
+        You must run the installation script with `sudo` to avoid installation failure.
     
     To install the server package, complete the following steps:
     
@@ -59,11 +59,17 @@ The following comparison illustrates how structured layouts improve readability 
        ```bash
        sudo apt-get update
        ```
-    2. Run the direct installer script.
+    2. Run the direct installer script:
+       ```bash
+       sudo ./install-server.sh
+       ```
     3. When the terminal prompts you, press **Y** to confirm.
     
     ### Verification
-    Once the installation finishes, verify the active system status.
+    Once the installation finishes, verify the active system status:
+    ```bash
+    systemctl status server-package
+    ```
 
 ---
 

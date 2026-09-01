@@ -1,7 +1,7 @@
 ---
 title: Concept-Task-Reference (CTR) model
 description: A documentation framework that organizes technical content into conceptual, procedural, and factual topics to improve clarity and reduce cognitive load.
-revision_date: 2026-08-28
+revision_date: 2026-09-02
 ---
 
 # Concept-Task-Reference (CTR) model
@@ -12,9 +12,9 @@ revision_date: 2026-08-28
 
 ## What is the CTR model?
 
-The CTR model is an information architecture strategy that classifies content based on its communicative intent. By separating information into three distinct buckets—what something is (concept), how to do it (task), and technical specifications (reference)—authors can deliver precisely what a user needs at a specific moment. While often associated with the **Darwin Information Typing Architecture (DITA)**, this modular approach is now a standard practice for modern documentation and developer portals.
+The CTR model is an information architecture strategy that classifies content based on its communicative intent. By separating information into three distinct buckets—what something is (**concept**), how to do it (**task**), and technical specifications (**reference**)—authors can deliver precisely what a user needs at a specific moment. While often associated with the **Darwin Information Typing Architecture (DITA)**, this modular approach is now a standard practice for modern documentation and developer portals.
 
-The framework draws from cognitive psychology and **user-centered design (UCD)**. Complex systems require users to process abstract explanations, sequential instructions, and raw data simultaneously. Mixing these types into a single, undifferentiated stream forces the reader to filter the content manually. **Topic-based authoring** eliminates this friction by isolating content types to match natural information-seeking behaviors.
+The framework draws from cognitive psychology and **user-centered design (UCD)**. Complex systems require users to process abstract explanations, sequential instructions, and raw data. Mixing these types into a single, undifferentiated stream forces the reader to filter the content manually. **Topic-based authoring** eliminates this friction by isolating content types to match natural information-seeking behaviors.
 
 ---
 
@@ -30,9 +30,9 @@ The CTR model utilizes **progressive disclosure** to manage **cognitive load**. 
 
 CTR divides documentation into three archetypes, each governed by its own structural rules:
 
-*   **Concept topics:** These provide context and mental models. They define "The What" and "The Why," explaining system architecture, component relationships, and background theory through descriptive prose and diagrams.
-*   **Task topics:** These are goal-oriented, step-by-step instructions ("The How"). Following **minimalist instruction** principles, tasks focus on a single procedure using numbered lists and **active voice** (e.g., "Enter the command" rather than "The command should be entered").
-*   **Reference topics:** These are for quick lookups of objective facts ("The Data"). This includes API schemas, configuration properties, and system requirements. Structured layouts like tables and code blocks are preferred here to maximize scannability.
+*   **Concept topics:** Provide context and mental models. They define "The What" and "The Why," explaining system architecture, component relationships, and background theory through descriptive prose and diagrams.
+*   **Task topics:** Provide goal-oriented, step-by-step instructions ("The How"). Following **minimalist instruction** principles, tasks focus on a single procedure using numbered lists and the **imperative mood** (e.g., "Enter the command" rather than "The command should be entered").
+*   **Reference topics:** Provide quick lookups of objective facts ("The Data"). This includes API schemas, configuration properties, and system requirements. Structured layouts like tables and code blocks are required here to maximize scannability.
 
 ---
 
@@ -93,9 +93,9 @@ The following examples show how these components appear in practice:
     ```markdown
     # API Key reference schema
     
-    The following table defines the data structure for the key generation endpoint.
+    The following table defines the response properties for the key generation endpoint.
     
-    | Parameter | Type | Description |
+    | Property | Type | Description |
     | :--- | :--- | :--- |
     | `id` | `string` | The public unique identifier for the key. |
     | `secret` | `string` | The private authorization credential token. |
@@ -114,7 +114,7 @@ The following examples show how these components appear in practice:
 Effective CTR implementation requires discipline in the team **style guide**:
 
 - **One topic, one goal:** Avoid mixing tutorials and deep-dive schemas in one Markdown file. Keep them separate and use cross-links to provide a path for users who need more detail.
-- **Purposeful titling:** Use gerunds or action-oriented phrases for tasks (e.g., "Configuring the database") and nouns for concepts or reference data (e.g., "Database architecture").
+- **Purposeful titling:** Use **imperative verbs** for tasks (e.g., "Configure the database") and nouns or gerunds for concepts (e.g., "Database architecture" or "About database configuration").
 - **Folder organization:** Reflect the model in your repository structure with directories like `/concepts/`, `/tasks/`, and `/reference/`.
 
 ---

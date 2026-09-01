@@ -1,7 +1,7 @@
 ---
 title: Documentation Funnel
 description: A framework for organizing technical content by user intent, mapping articles to specific stages of product adoption and expertise.
-revision_date: 2026-08-28
+revision_date: 2026-09-02
 ---
 
 # Documentation funnel
@@ -12,14 +12,14 @@ revision_date: 2026-08-28
 
 ## Defining the documentation funnel
 
-A documentation funnel moves away from the "static library" approach, instead organizing technical content to mirror a user’s progression through a product. Borrowing from the marketing funnel concept, this framework categorizes documentation into distinct phases: awareness, onboarding, operation, and optimization. By aligning information architecture with the user's path, you ensure that high-level concepts don't stall advanced users and technical minutiae don't overwhelm beginners.
+A documentation funnel moves away from the "static library" approach, instead organizing technical content to mirror a user’s progression through a product. Borrowing from the marketing funnel concept, this framework categorizes documentation into distinct phases: discovery, onboarding, operation, and optimization. By aligning information architecture with the user's path, you ensure that high-level concepts don't stall advanced users and technical minutiae don't overwhelm beginners.
 
 Implementing this model requires a cross-functional strategy during the design and maintenance phases of the software development life cycle (SDLC):
 
-*   **Technical writers** architect the content hierarchy.
-*   **Product managers** define the target personas and their milestones.
-*   **Engineering and DevRel** pinpoint technical friction and edge cases.
-*   **Customer support** identifies the real-world gaps where users frequently get stuck.
+*   **Technical writers** architect the content hierarchy and taxonomies.
+*   **Product managers** define the target personas and their adoption milestones.
+*   **Engineering and DevRel** pinpoint technical friction, edge cases, and API complexities.
+*   **Customer support** identifies the real-world gaps where users frequently stall or misconfigure the product.
 
 ---
 
@@ -27,7 +27,7 @@ Implementing this model requires a cross-functional strategy during the design a
 
 Unstructured documentation leads to "content bloat"—a graveyard of redundant or outdated articles that confuse readers and degrade the developer experience (DX). A defined funnel acts as a filter, preventing foundational topics from cluttering reference pages and keeping complex configurations out of the way during initial setup.
 
-When publishing remains a manual, ad-hoc process, scaling becomes impossible. Support teams eventually drown in "how-to" tickets because entry points are obscured. Conversely, expert users may churn if the technical meat is buried under basic marketing fluff. A well-designed funnel creates a logical learning flow, automating the transition from curious visitor to power user so engineers can focus on feature development rather than repeating basic instructions.
+When publishing remains a manual, ad-hoc process, scaling becomes impossible. Support teams eventually drown in "how-to" tickets because entry points are obscured. Conversely, expert users may churn if the technical depth is buried under high-level marketing content. A well-designed funnel creates a logical learning flow, guiding the transition from curious visitor to power user.
 
 ---
 
@@ -35,9 +35,9 @@ When publishing remains a manual, ad-hoc process, scaling becomes impossible. Su
 
 As a product scales, flat documentation structures eventually fail. You should transition to a funnel-based workflow if you notice the following:
 
-*   **Navigational friction:** Users struggle to find specific APIs because search results are dominated by high-level overviews.
-*   **Support ticket trends:** Customer success teams report high volumes of queries regarding setup steps that are already documented but difficult to find.
-*   **Persona conflict:** A single documentation path is trying to serve both low-code business users and system architects simultaneously, satisfying neither.
+*   **Navigational friction:** Users struggle to find specific API endpoints because search results are dominated by high-level conceptual overviews.
+*   **Support ticket trends:** Customer success teams report high volumes of "Level 1" queries regarding setup steps that are documented but discoverability is low.
+*   **Persona conflict:** A single documentation path attempts to serve both low-code business users and system architects simultaneously, failing to provide the appropriate level of abstraction for either.
 
 ---
 
@@ -56,11 +56,11 @@ graph TD
 
 1.  **Audit and segment:** Review current articles alongside product teams to identify primary user personas and their specific learning milestones.
 2.  **Content mapping:** Distribute content across four primary stages:
-    *   **Top-of-funnel (Discovery):** Conceptual overviews, architectural diagrams, and white papers.
+    *   **Top-of-funnel (Discovery):** Conceptual overviews, architectural diagrams, and use-case white papers.
     *   **Middle-of-funnel (Onboarding):** Tutorials and "Hello World" quickstarts.
-    *   **Bottom-of-funnel (Operation):** API references, CLI commands, and system configurations.
-    *   **Post-funnel (Resolution):** Troubleshooting logs and FAQs.
-3.  **Iterative optimization:** Use analytics to track where users drop out or which search queries return no results, then adjust the funnel to fill those gaps.
+    *   **Bottom-of-funnel (Operation):** API references, CLI command manifests, and system configuration schemas.
+    *   **Retention/Optimization (Expertise):** Troubleshooting guides, performance tuning, and advanced FAQs.
+3.  **Iterative optimization:** Use analytics to track where users drop out (e.g., high bounce rates on quickstarts) or which search queries return no results, then adjust the funnel to fill those gaps.
 
 ---
 
@@ -68,10 +68,10 @@ graph TD
 
 Clear ownership prevents the funnel from becoming a siloed project:
 
-*   **Responsible:** Technical writers design the hierarchy and maintain the Markdown files.
+*   **Responsible:** Technical writers design the hierarchy and maintain the source files (e.g., Markdown).
 *   **Accountable:** The documentation lead ensures the structure aligns with product releases and adoption targets.
-*   **Consulted:** Software engineers verify the technical accuracy of the reference material.
-*   **Informed:** Support and QA provide data on recurring user pain points.
+*   **Consulted:** Software engineers verify the technical accuracy of reference material and code samples.
+*   **Informed:** Support and QA provide data on recurring user pain points and common error states.
 
 ---
 
@@ -92,10 +92,11 @@ During the CI/CD build, automated scripts can parse these tags to generate dynam
 
 === "Python funnel validator"
     ```python hl_lines="3"
-    # Prevents technical 'leakage' into onboarding guides
+    # Prevents technical 'leakage' (e.g., raw schemas) into onboarding guides
     def validate_funnel_stage(file_content, stage):
-        if stage == "onboarding" and "schema" in file_content:
-            raise ValueError("Onboarding guides should link to schemas, not embed them.")
+        # Checks for the presence of a specific schema definition block in onboarding files
+        if stage == "onboarding" and "type: object" in file_content and "properties:" in file_content:
+            raise ValueError("Onboarding guides should link to full schemas, not embed raw definitions.")
     ```
 
 !!! tip "Linting for intent"
@@ -106,17 +107,14 @@ During the CI/CD build, automated scripts can parse these tags to generate dynam
 ## Failure modes and solutions
 
 *   **The "Leaky" Funnel:** Users read an overview but have no clear path to the quickstart.
-    *   *Solution:* Embed prominent Call-to-Action (CTA) buttons at the end of high-level pages.
+    *   *Solution:* Embed prominent Call-to-Action (CTA) buttons or "Next Steps" links at the end of discovery pages.
 *   **Information Overload:** Writers include exhaustive reference tables within tutorials.
-    *   *Solution:* Use collapsible blocks for dense data or move reference material to dedicated "Bottom-of-funnel" pages.
-
-??? note "Using UI components"
-    Collapsible sections or tabs allow users to opt-in to technical depth, preventing cognitive overload for beginners while remaining accessible to experts.
+    *   *Solution:* Use collapsible blocks for dense data or move reference material to dedicated "Bottom-of-funnel" pages, linking to them from the tutorial.
 
 ---
 
 ## Success metrics
 
-*   **Progression rate:** The percentage of users moving from a quickstart guide to an authenticated API call.
-*   **Ticket deflection:** Reductions in "Level 1" support tickets related to initial configuration.
-*   **Search-to-click ratio:** Improved accuracy in users finding stage-appropriate content on their first search.
+*   **Progression rate:** The percentage of users moving from a quickstart guide to a successful authenticated API call.
+*   **Ticket deflection:** Reduction in "Level 1" support tickets related to initial configuration and environment setup.
+*   **Search-to-click ratio:** Improved accuracy in users clicking on stage-appropriate content (e.g., an expert clicking a reference link rather than a conceptual overview).

@@ -1,7 +1,7 @@
 ---
 title: Technical translation
-description: The specialized process of adapting technical content into other languages while maintaining strict functional equivalence and terminological accuracy.
-revision_date: 2026-08-28
+description: The specialized process of adapting technical content into other languages while maintaining strict functional equivalence, terminological accuracy, and structural integrity for localized environments.
+revision_date: 2026-09-02
 ---
 
 # Technical translation
@@ -12,43 +12,52 @@ revision_date: 2026-08-28
 
 ## What is technical translation?
 
-Technical translation adapts specialized content—such as API references, hardware manuals, and software strings—for international markets. While creative or literary translation prioritizes tone and aesthetic impact, technical translation centers on functional equivalence. The goal is to ensure that a user in Tokyo or Berlin can configure and troubleshoot a product as effectively as one in San Francisco.
+Technical translation adapts specialized content—including API references, hardware manuals, and software UI strings—for international markets. Unlike creative or literary translation, which prioritizes tone and aesthetic impact, technical translation centers on **instrumental equivalence**. The goal is to ensure that a user in Tokyo or Berlin can configure, operate, and troubleshoot a product with the same technical outcome as a user in San Francisco.
 
 ---
 
 ## Integration with GILT frameworks
 
-Translation is rarely a standalone task; it functions as the linguistic pillar of the Globalization, Internationalization, Localization, and Translation (GILT) framework. 
+Translation is a subset of the **GILT** (Globalization, Internationalization, Localization, and Translation) framework. Its success depends on the technical readiness of the underlying asset:
 
-Engineering teams usually handle internationalization (i18n) by preparing the codebase to support multiple locales. If this structural work is neglected, the translation process becomes a series of manual "retrofits" that delay releases and inflate costs. High-quality documentation requires integrating linguistic workflows early in the development lifecycle to ensure text expands gracefully in UI elements and handles regional variables like date formats or currency.
+1.  **Internationalization (i18n):** Engineering teams must prepare the codebase to support multiple locales. This includes abstracting strings from code into resource files (e.g., JSON, YAML, or .gettext), implementing Unicode (UTF-8) support, and ensuring the UI logic accommodates Right-to-Left (RTL) scripts and dynamic string expansion.
+2.  **Localization (l10n):** While translation handles the linguistic conversion, localization adapts non-textual elements, such as date/time formats (ISO 8601 vs. regional variants), currency symbols, and measurement units.
+3.  **Translation (T):** The specific act of converting text from the source language to the target language.
+
+Failure to perform i18n results in "hard-coded" strings that cannot be extracted for translation, leading to broken builds or functional regressions in localized versions.
 
 ---
 
 ## Optimizing source content for global reach
 
-The efficiency of any translation project is dictated by the quality of the source text. Technical writers reduce errors and lower costs by adopting "translation-ready" authoring standards.
+Technical writers must adopt "translation-ready" authoring standards to reduce the "Word Count" costs and "Time to Market" (TTM).
 
-Implementing a **controlled language**—such as Simplified Technical English—is a primary strategy. By restricting vocabulary and enforcing strict grammatical rules, writers eliminate the ambiguity that often trips up human translators and automated systems. 
+### Controlled Language and Standards
 
-### Writing for clarity
+Implementing a **controlled language**—such as **ASD-STE100 (Simplified Technical English)**—is a primary strategy. This reduces ambiguity for both human translators and Machine Translation (MT) engines.
 
-- **Neutralize phrasing:** Eliminate metaphors and culture-specific idioms that lack direct equivalents.
-- **Enforce terminological consistency:** Use a single term for a single concept. Variations (e.g., using "switch," "toggle," and "button" interchangeably) create confusion during the translation phase.
-- **Syntactic simplicity:** Use short, declarative sentences to minimize structural confusion during machine processing.
+- **Terminology Management:** Enforce a 1:1 ratio between concepts and terms. Using "switch," "toggle," and "button" interchangeably breaks Translation Memory (TM) leverage and confuses the end-user.
+- **Syntactic Simplicity:** Use short, declarative sentences (Subject-Verb-Object). Avoid the passive voice to prevent ambiguity in "who" or "what" is performing an action.
+- **Variable and Placeholder Management:** Ensure that variables (e.g., `{user_name}` or `%d`) are protected. Injected variables must be grammatically neutral to prevent agreement errors in inflected languages (e.g., Slavic or Romance languages).
 
 ---
 
 ## The technology of modern translation
 
-Scale and consistency in technical documentation are achieved through a combination of human expertise and linguistic software.
+Scale and consistency are managed through **Computer-Assisted Translation (CAT) tools** and specialized workflows.
 
 ### Translation Memory (TM)
 
-A **translation memory** is a database storing previously translated segments of text. When documentation is updated, the TM identifies identical or "fuzzy" matches. This creates a more sustainable workflow:
+A **translation memory** is a linguistic database that stores "segments" (sentences, headings, or list items) as source-target pairs. 
 
-- **Financial efficiency:** Organizations avoid paying for the same translation twice.
-- **Voice consistency:** Standard phrases and UI labels remain identical across different manuals, software versions, and platforms.
+- **Leverage:** The CAT tool identifies "Exact Matches" and "Fuzzy Matches" (partial similarities). 
+- **Recycling:** Previously translated strings are reused, ensuring that a "Cancel" button is translated identically across every manual and software interface.
 
 ### Machine Translation Post-Editing (MTPE)
 
-Modern workflows often leverage **machine translation post-editing**. In this model, a neural machine translation (NMT) engine or large language model (LLM) generates a draft that a professional human translator then refines. This hybrid approach allows teams to process high volumes of content—such as massive knowledge bases or internal engineering wikis—without sacrificing the technical precision required for safety and compliance.
+In an **MTPE** workflow, a Neural Machine Translation (NMT) engine or a Large Language Model (LLM) generates a "raw" translation. A human subject matter expert (SME) then performs:
+
+- **Light Post-Editing (LPE):** Ensuring the text is accurate and legible without focusing on stylistic polish.
+- **Full Post-Editing (FPE):** Ensuring the text is stylistically appropriate, culturally accurate, and technically perfect.
+
+For high-risk technical content (e.g., medical device instructions or high-voltage hardware manuals), FPE or traditional human translation (HT) is required to meet safety and compliance standards.

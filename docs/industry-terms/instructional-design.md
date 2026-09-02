@@ -1,12 +1,12 @@
 ---
-title: Instructional Design
+title: Instructional design
 description: The systematic methodology of creating educational content and structured pathways to help users master complex technical systems.
-revision_date: 2026-09-02
+revision_date: 2026-09-03
 ---
 
 # Instructional design
 
-> The systematic methodology of creating educational content and structured pathways to help users master complex technical systems
+> *The systematic methodology of creating educational content and structured pathways to help users master complex technical systems*
 
 ---
 
@@ -14,26 +14,26 @@ revision_date: 2026-09-02
 
 Instructional design is the practice of engineering educational experiences to make learning more efficient. Rather than just listing features, it uses cognitive frameworks to map out how a user moves from their first interaction with a system to full autonomy.
 
-In the world of technical documentation, this discipline acts as a bridge between engineering specifications and actual user onboarding. It transforms static reference manuals into goal-oriented environments. By applying these principles, writers ensure content aligns with how developers and engineers actually learn on the job—usually through trial, error, and incremental success.
+In the world of technical documentation, this discipline acts as a bridge between engineering specifications and actual user onboarding. It transforms static reference manuals into goal-oriented environments. By applying these principles, writers ensure content aligns with how developers and engineers actually learn on the job. This learning usually occurs through trial, error, and incremental success.
 
 ---
 
 ## The value of structured learning
 
-Documentation often fails when it becomes a disorganized repository of facts. When users face a wall of unstructured data, they experience a high cognitive load, often leading to frustration or product abandonment. 
+Documentation often fails when it becomes a disorganized repository of facts. When users face a large volume of unstructured data, they experience a high cognitive load, which often leads to frustration or product abandonment. 
 
-Strategic design mitigates this by "chunking" information. By delivering only the data necessary for a specific task—a core tenet of minimalist instruction—you improve scannability and speed. For high-stakes software environments, helping a developer find and execute a command in seconds isn't just about clarity; it’s about improving the overall developer experience (DX).
+Strategic design mitigates this by chunking information. By delivering only the data necessary for a specific task—a core tenet of minimalist instruction—you improve scannability and speed. For critical software environments, helping a developer find and execute a command in seconds is not only about clarity; it is about improving the overall developer experience (DX).
 
 ---
 
 ## Core principles
 
-Effective documentation relies on several foundational elements that ensure content remains practical and supports **Web Content Accessibility Guidelines (WCAG)**.
+Effective documentation relies on several foundational elements that ensure content remains practical and supports Web Content Accessibility Guidelines (WCAG).
 
-*   **Action-oriented objectives:** Replace vague goals like "understand" with measurable verbs. Users should know exactly what they can *configure*, *initialize*, or *deploy* after reading.
-*   **Sequential scaffolding:** Information should flow from foundational concepts to advanced workflows. This prevents burnout by ensuring the user has the necessary context before tackling complex tasks.
-*   **Active application:** Embed hands-on tasks, such as code snippets or CLI commands, directly into the narrative. This creates a feedback loop where the user confirms their comprehension through immediate action.
-*   **Visual accessibility:** Standardized typography and high-contrast code blocks improve readability and help meet **WCAG** success criteria for visual presentation and contrast.
+- **Action-oriented objectives:** Replace vague goals such as *understand* with measurable verbs. Users should know exactly what they can *configure*, *initialize*, or *deploy* after reading.
+- **Sequential scaffolding:** Information should flow from foundational concepts to advanced workflows. This prevents burnout by ensuring the user has the necessary context before tackling complex tasks.
+- **Active application:** Embed hands-on tasks, such as code snippets or command-line interface (CLI) commands, directly into the narrative. This creates a feedback loop where the user confirms their comprehension through immediate action.
+- **Visual accessibility:** Standardized typography and high-contrast code blocks improve readability and help meet WCAG success criteria for visual presentation and contrast.
 
 ### Knowledge acquisition flow
 
@@ -52,7 +52,7 @@ graph TD
 
 ## Design pattern: From features to tasks
 
-Compare these two approaches to an API reference page to see how instructional design changes the user's focus.
+Compare these two approaches to an API reference page to see how instructional design changes the user focus.
 
 === "Traditional layout"
 
@@ -83,7 +83,7 @@ Compare these two approaches to an API reference page to see how instructional d
     Establish an active user session via the `POST /auth` endpoint.
     
     #### Prerequisites
-    - [ ] Obtain an API Key from the developer console.
+    - [ ] Obtain an API key from the developer console.
     - [ ] Export your `API_KEY` to your environment variables.
     
     #### Step 1: Execute the POST request
@@ -112,17 +112,17 @@ The instructional pattern swaps generic headers for behavioral outcomes. By usin
 
 A structured educational format shifts more than just the layout; it changes user behavior:
 
-*   **Confidence (Self-efficacy):** Successfully running code on the first try encourages further exploration and reduces early drop-off.
-*   **Retention:** Active loops move knowledge from short-term memory to long-term mastery, meaning users spend less time looking up the same basic syntax.
+- **Confidence (Self-efficacy):** Successfully running code on the first try encourages further exploration and reduces early drop-off.
+- **Retention:** Active loops move knowledge from short-term memory to long-term mastery, which means users spend less time looking up the same basic syntax.
 
 ---
 
 ## Implementation best practices
 
-To integrate these principles into your **Documentation Development Life Cycle (DDLC)**, consider these strategies:
+To integrate these principles into your Documentation Development Life Cycle (DDLC), consider these strategies:
 
-*   **Analyze the persona:** Tailor the technical depth to your specific audience to avoid over-explaining basics or skipping vital context.
-*   **Progressive disclosure:** Use expandable sections to hide deep-dive technical details. This keeps the primary path clean while allowing experts to dig deeper.
+- **Analyze the persona:** Tailor the technical depth to your specific audience to avoid over-explaining basics or skipping vital context.
+- **Progressive disclosure:** Use expandable sections to hide deep-dive technical details. This keeps the primary path clean while allowing experts to access more information.
 
 ??? example "Configuration details for proxy environments"
     If running behind a proxy, update these variables in your `.env` file:
@@ -131,19 +131,19 @@ To integrate these principles into your **Documentation Development Life Cycle (
     PROXY_IP_ALLOWLIST="192.168.1.1"
     ```
 
-*   **Direct communication:** Use the active voice. Addressing the user as "you" and starting steps with imperative verbs makes instructions easier to parse.
-*   **SME validation:** Maintain a feedback loop with subject matter experts during the **DDLC** to ensure educational steps match the current technical reality.
-*   **Learning-focused architecture:** Organize your Information Architecture (IA) to follow the user journey, starting with installation and moving toward complex references.
+- **Direct communication:** Use the active voice. Addressing the user as "you" and starting steps with imperative verbs makes instructions easier to parse.
+- **SME validation:** Maintain a feedback loop with subject matter experts (SMEs) during the DDLC to ensure educational steps match the current technical reality.
+- **Learning-focused architecture:** Organize your Information Architecture (IA) to follow the user journey, starting with installation and moving toward complex references.
 
 ---
 
 ## Common pitfalls
 
-*   **Information dumping:** Avoid "the firehose" effect—burying the user in architectural diagrams and raw parameters on an introductory page.
-*   **The "Mystery Path":** Tutorials should never ask a user to execute a command without first explaining the goal or the required prerequisites.
+- **Information dumping:** Avoid providing an excessive amount of information, which involves burying the user in architectural diagrams and raw parameters on an introductory page.
+- **Ambiguous instructions:** Tutorials should never ask a user to execute a command without first explaining the goal or the required prerequisites.
 
 ---
 
 ## Validation and testing
 
-Finally, test your documentation with actual users to ensure the knowledge transfer is working. Task-based usability testing—where a user is asked to complete a goal like "Deploy a test server"—will quickly reveal where the design fails. Regular readability audits can also help catch overly complex phrasing or jargon that might block comprehension.
+Finally, test your documentation with actual users to ensure the knowledge transfer is working. Task-based usability testing—where a user is asked to complete a goal such as "Deploy a test server"—will quickly reveal where the design fails. Regular readability audits can also help catch overly complex phrasing or jargon that might block comprehension.

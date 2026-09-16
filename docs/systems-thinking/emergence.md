@@ -1,12 +1,12 @@
 ---
 title: Emergence
 description: "Complex behaviors or properties that arise from the interaction of smaller components that individual components do not possess on their own."
-revision_date: 2026-08-28
+revision_date: 2026-09-17
 ---
 
 # Emergence
 
-Emergence is a phenomenon where complex behaviors, properties, or patterns arise from the interactions of individual components within a system. These emergent behaviors belong to the system as a whole; they cannot be identified or predicted solely by analyzing a single component in isolation.
+Emergence is a phenomenon in which complex behaviors, properties, or patterns arise from the interactions of individual components within a system. These emergent behaviors belong to the system as a whole; they cannot be identified or predicted solely by analyzing a single component in isolation.
 
 ---
 
@@ -23,7 +23,7 @@ Emergent behavior falls into two main categories:
 
 ## Why emergence poses a challenge for technical communication
 
-[Technical writing](../technical-writing/basics.md) often uses a reductionist approach: breaking down a system into separate components and documenting them individually. This includes listing API endpoints, describing UI buttons, or defining configuration fields. While this is necessary for reference manuals, it does not explain how the system behaves as a whole.
+[Technical writing](../technical-writing/basics.md) often uses a reductionist approach: breaking down a system into separate components and documenting them individually. This includes listing API endpoints, describing UI buttons, or defining configuration fields. Although this is necessary for reference manuals, it does not explain how the system behaves as a whole.
 
 If your documentation covers components only in isolation, you might face the following issues:
 
@@ -48,14 +48,14 @@ Make sure your documentation includes architectural overviews that explain the r
 
 Instead of organizing all your content around individual features, create guides based on common usage patterns and real-world scenarios.
 
-- **End-to-end tutorials:** Write step-by-step guides that walk users through complete workflows involving multiple systems. For example, "Integrating Payment, Inventory, and Notification Services."
+- **End-to-end tutorials:** Write step-by-step guides that guide users through complete workflows involving multiple systems. For example, a guide on integrating payment, inventory, and notification services.
 - **State transition maps:** Document how the state of the overall system changes as different components process data at different times.
 
-### 3. Focus on "system-level" failure modes in troubleshooting
+### 3. Focus on system-level failure modes in troubleshooting
 
 When writing troubleshooting and runbook documentation, address failures that emerge from component interactions.
 
-- **Define multi-component root causes:** Do not limit troubleshooting steps to "restart the service." Explain how to diagnose systemic issues such as thread pool exhaustion, distributed deadlocks, or network split-brains.
+- **Define multi-component root causes:** Do not limit troubleshooting steps to restarting the service. Explain how to diagnose systemic issues such as thread pool exhaustion, distributed deadlocks, or network split-brains.
 - **Specify telemetry and observability rules:** Help operators identify emergent patterns by documenting how to correlate logs, metrics, and traces across different services.
 
 ---
@@ -68,10 +68,10 @@ The following example describes how to document an emergent failure mode that ar
 
 #### Components involved
 
-- **Inventory Service:** Manages product stock levels. Features an automated row-level locking mechanism to ensure data consistency during stock decrements.
-- **Bulk Update API:** A utility used by administrators to update thousands of product prices and descriptions from a CSV file.
+- **Inventory service:** A service that manages product stock levels. It features an automated row-level locking mechanism to ensure data consistency during stock decrements.
+- **Bulk update API:** A utility used by administrators to update thousands of product prices and descriptions from a CSV file.
 
-#### The emergent behavior
+#### Emergent behavior
 
 The following diagram shows how these two components interact to create a system-wide failure.
 
@@ -99,7 +99,7 @@ sequenceDiagram
     InventoryService-->>Customer: Error 503 (Service Unavailable)
 ```
 
-Individually, both components perform their tasks reliably and pass isolated unit tests. However, when an administrator runs a bulk update, the resulting long-held exclusive locks prevent the Inventory Service from performing stock updates. This leads to thread exhaustion in the Inventory Service as it waits for the database, eventually causing a storefront outage.
+Individually, both components perform their tasks reliably and pass isolated unit tests. However, when an administrator runs a bulk update, the resulting long-held exclusive locks prevent the inventory service from performing stock updates. This leads to thread exhaustion in the inventory service as it waits for the database, eventually causing a storefront outage.
 
 #### How to avoid this behavior
 
@@ -107,4 +107,4 @@ To prevent this emergent conflict, follow these guidelines:
 
 - **Schedule bulk updates during off-peak hours:** Run imports when customer transaction volume is lowest to minimize the probability of lock contention.
 - **Batch your transactions:** Do not process the entire CSV in a single database transaction. Limit batches to 500 records and commit each batch individually to release locks quickly.
-- **Implement Optimistic Concurrency Control (OCC):** Where possible, use versioning (e.g., a `version` column) for price and description updates instead of pessimistic row locks. This allows the Inventory Service to continue processing stock changes without being blocked by metadata updates.
+- **Implement optimistic concurrency control (OCC):** Where possible, use versioning (for example, a `version` column) for price and description updates instead of pessimistic row locks. This allows the inventory service to continue processing stock changes without being blocked by metadata updates.

@@ -1,7 +1,7 @@
 ---
 title: State and state transition
-description: "The condition of a system at a given point in time (for example, authenticated, idle, or error) and the rules governing how it moves between states."
-revision_date: 2026-08-28
+description: "The condition of a system at a specific time (such as authenticated, idle, or error) and the rules governing how it moves between states."
+revision_date: 2026-09-17
 ---
 
 # State and state transition
@@ -27,7 +27,7 @@ When documenting state-based systems, you will work with four main elements:
 1. **State:** The static condition of the system. Examples include `Connected`, `Offline`, `Synchronizing`, or `Active`.
 2. **Event (or Trigger):** An external or internal occurrence that initiates a state change. This could be a user action, an API call, a system timeout, or a hardware signal.
 3. **Transition:** The allowed path between two states.
-4. **Guard Condition:** A Boolean expression that must evaluate to "true" for a transition to fire. For example, a user can transition from `Guest` to `Authenticated` only if the provided credentials are valid.
+4. **Guard Condition:** A Boolean expression that must evaluate to `true` for a transition to fire. For example, a user can transition from `Guest` to `Authenticated` only if the provided credentials are valid.
 
 ---
 
@@ -79,7 +79,7 @@ If you are [documenting APIs](../industry-terms/api-documentation.md), define st
 }
 ```
 
-In your field description table, clearly define `"requires_action"`:
+In your field description table, clearly define `requires_action`:
 
 > **status** (string): The current phase of the order lifecycle.
 >
@@ -89,7 +89,7 @@ In your field description table, clearly define `"requires_action"`:
 
 ## Best practices for technical writers
 
-- **Standardize terminology.** Use the exact casing and terms used in the code or UI. If the system state is `SUSPENDED` in the database and API, do not refer to it as "paused" or "inactive."
+- **Standardize terminology.** Use the exact casing and terms used in the code or UI. If the system state is `SUSPENDED` in the database and API, do not refer to it as *paused* or *inactive*.
 - **Document terminal states.** Clearly identify terminal states (states from which no further transitions can occur), such as `Deleted` or `Refunded`.
 - **List prohibited actions.** Explaining what a user cannot do in a specific state is often as helpful as explaining what they can do.
 - **Document failure states.** Explain how the system handles the transition to a failed state and how the user can recover or retry the operation.

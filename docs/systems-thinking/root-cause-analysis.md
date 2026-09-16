@@ -1,7 +1,7 @@
 ---
 title: Root cause analysis (RCA)
 description: "Problem-solving methodologies, such as the 5 Whys or fault tree analysis, used to trace failures back to underlying systemic flaws rather than surface symptoms."
-revision_date: 2026-08-28
+revision_date: 2026-09-17
 ---
 
 # Root cause analysis (RCA)
@@ -12,11 +12,11 @@ Root cause analysis (RCA) is a structured problem-solving methodology used to id
 
 ## Core RCA methodologies
 
-When a system fails, it is easy to focus on surface-level symptoms—like a database timeout or a syntax error. RCA methodologies help teams identify the systemic processes, policies, or design flaws that allowed the surface-level error to occur:
+When a system fails, it is easy to focus on surface-level symptoms, such as a database timeout or a syntax error. RCA methodologies help teams identify the systemic processes, policies, or design flaws that allowed the surface-level error to occur:
 
 - **The Five Whys:** An iterative interrogation technique that repeatedly asks "Why?" to drill down through the layers of a problem.
 - **Fault Tree Analysis (FTA):** A top-down, deductive analysis that uses Boolean logic (such as AND/OR gates) to map the combinations of hardware, software, and human failures that lead to an undesirable event.
-- **Fishbone Diagram (Ishikawa):** A visualization tool that categorizes potential causes of a problem into groups—such as people, processes, software, and environment—to identify contributing factors.
+- **Fishbone Diagram (Ishikawa):** A visualization tool that categorizes potential causes of a problem into groups, such as people, processes, software, and environment, to identify contributing factors.
 
 ---
 
@@ -46,7 +46,7 @@ graph TD
 Technical writers provide essential skills during the RCA and post-mortem process. During and after an incident, you can help teams move from technical data to operational clarity:
 
 - **Draft public-facing narratives:** When a service outage affects customers, technical writers translate complex logs and engineering notes into clear, empathetic, and transparent public incident reports.
-- **Structure post-mortem templates:** Help engineers write internal RCAs by designing standardized templates. A good template ensures teams capture critical details like the incident timeline, detection mechanisms, mitigation actions, and action items.
+- **Structure post-mortem templates:** Help engineers write internal RCAs by designing standardized templates. A good template ensures teams capture critical details, such as the incident timeline, detection mechanisms, mitigation actions, and action items.
 - **Maintain a blameless tone:** Focus the narrative on system weaknesses rather than individual mistakes.
 
 !!! note "The Principle of Blameless Post-Mortems"

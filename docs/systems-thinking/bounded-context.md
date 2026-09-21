@@ -1,22 +1,22 @@
 ---
 title: Bounded context
 description: Explicit semantic boundaries that isolate domain models and their ubiquitous language to protect model integrity and prevent linguistic ambiguity
-revision_date: 2026-09-17
+revision_date: 2026-09-21
 ---
 
 # Bounded context
 
-A bounded context defines the semantic boundary where a domain model and its [ubiquitous language](../systems-thinking/domain-driven-design.md#strategic-design-ubiquitous-language) remain consistent. While a bounded context often aligns with physical boundaries, such as a microservice or a specific module's source code, it is primarily a linguistic boundary used to ensure that a specific term has a single, unambiguous meaning.
+A bounded context defines the linguistic boundary where a domain model and its [ubiquitous language](../systems-thinking/domain-driven-design.md#strategic-design-ubiquitous-language) stay consistent. While a bounded context often aligns with physical boundaries, such as a microservice or a specific module's source code, its main purpose is to give every term a single, unambiguous meaning.
 
-Within a large system, terms that look identical often represent different concepts. Defining these contexts prevents the big ball of mud pattern where a single model becomes too bloated to be maintainable. This practice ensures that logic, validation rules, and schemas remain isolated and valid within their specific scope.
+In large systems, identical terms often mean different things in different areas. Defining these boundaries prevents the "big ball of mud" anti-pattern, where a single model becomes too bloated to maintain. Isolating models ensures that logic, validation rules, and schemas remain clean and valid within their specific scope.
 
 ---
 
 ## Solving linguistic ambiguity
 
-As systems scale, the meaning of terms often diverges depending on the domain. In [domain-driven design (DDD)](../systems-thinking/domain-driven-design.md), failing to account for these shifts creates polysemes, which are words with multiple meanings. These are a primary source of logic bugs and developer confusion.
+As systems scale, the meaning of terms often diverges depending on the domain. In [domain-driven design (DDD)](../systems-thinking/domain-driven-design.md), failing to account for these shifts creates polysemes (words with multiple meanings). These are a primary source of logic bugs and developer confusion.
 
-Consider the term order. Its definition changes based on the perspective of the context:
+Consider the term "order." Its definition changes based on the perspective of the context:
 
 ```mermaid
 graph TD
@@ -40,7 +40,7 @@ Trying to force a single, enterprise-wide definition of an order creates a model
 
 ## Mirroring boundaries in information architecture
 
-Documentation should reflect the bounded contexts of the system. To maintain clarity, align your [information architecture (IA)](../references/ia-design.md) with these established domain boundaries.
+Documentation should reflect the bounded contexts of the system. To maintain clarity, align your [information architecture (IA)](../references/ia-design.md) with the following established domain boundaries:
 
 - **Namespace-driven documentation**: Organize content by domain, such as /docs/billing/order or /docs/fulfillment/order. This creates a direct mapping between the documentation and the specific domain services.
 - **Context-specific glossaries**: Avoid a global, enterprise-wide glossary. Instead, maintain localized glossaries that define the ubiquitous language of that specific domain to prevent cross-context confusion.
@@ -58,10 +58,12 @@ A context map tracks how different bounded contexts integrate. Documentation mus
 - **Upstream and downstream flow**: Define the relationship between contexts. If billing (downstream) consumes events from sales (upstream), the documentation should reside where the dependency is managed, typically describing how the downstream context interprets the upstream data.
 - **Translation strategies**: 
     - **Anti-corruption layers (ACL)**: When a system consumes data from a legacy or external context, document the ACL logic. This translation layer ensures that external definitions do not pollute or leak into the internal domain model.
-    - **Shared kernels**: If two contexts share a common subset, such as a shared library or database schema, document this as a Shared Kernel. This requires explicit documentation of the coordination required between teams, as a change by one team affects the other.
+    - **Shared kernels**: If two contexts share a common subset, such as a shared library or database schema, document this as a shared kernel. This requires explicit documentation of the coordination required between teams, as a change by one team affects the other.
 
 ---
 
 ## Impact on system maintenance
 
-Explicitly documenting bounded contexts ensures model integrity. This allows developers to work within a specific service without causing unintended side effects in unrelated domains. This isolation reduces [cognitive load](../technical-writing/cognitive-load.md) because engineers only need to master the terminology and logic relevant to their immediate context. Furthermore, it enables decoupled maintenance; for instance, the tax logic in the billing context can be updated without requiring a logic or documentation audit for the fulfillment or sales contexts.
+Explicitly documenting bounded contexts ensures model integrity. This allows developers to work within a specific service without causing unintended side effects in unrelated domains. This isolation reduces [cognitive load](../technical-writing/cognitive-load.md) because engineers only need to master the terminology and logic relevant to their immediate context. 
+
+Furthermore, it enables decoupled maintenance; for instance, the tax logic in the billing context can be updated without requiring a logic or documentation audit for the fulfillment or sales contexts.

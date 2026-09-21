@@ -111,7 +111,7 @@ Methods used to verify user identity for API access, including API keys, bearer 
 [**automated accessibility scans**](../doc-stack/automated-a11y-scans.md)  
 Programmatic evaluations executed within a CI/CD build pipeline to check compiled HTML files for WCAG violations.
 
-[**automated API reference generation**](../industry-terms/automated-api-reference-generation.md)  
+[**automated API reference generation**](../doc-stack/api-reference-generation.md)  
 An automated process of extracting source code docstrings and converting them into structured documentation tables.
 
 [**automation with a human touch (jidoka)**](../doc-lifecycle/agile-workflows.md#jidoka-automation-with-a-human-touch)  

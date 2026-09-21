@@ -1,7 +1,7 @@
 ---
 title: Blast radius
 description: "The extent of impact or damage a failure or software deployment can cause across connected systems"
-revision_date: 2026-09-17
+revision_date: 2026-09-21
 ---
 
 # Blast radius
@@ -16,7 +16,7 @@ In distributed systems, a small change in one module can ripple through connecte
 
 The following examples illustrate the difference in scale:
 
-- **Small blast radius**: A cell-based architecture isolates user data and resources into distinct, independent units. If the `europe-west` cell experiences a critical failure, the impact is contained to that cell. Users in the `us-east` cell remain unaffected.
+- **Small blast radius**: A cell-based architecture isolates user data and resources into distinct, independent units. If the `europe-west` cell experiences a critical failure, the impact is contained to that cell. Users in the `us-east` cell are unaffected.
 - **Large blast radius**: A shared database configuration is updated incorrectly. Since all microservices depend on this single database instance, the failure of this shared component takes the entire platform offline.
 
 ```mermaid
@@ -54,22 +54,22 @@ Product teams use documentation to map and limit the impact of technical changes
 - **Change risk categorization**: In internal release plans, classify updates by their potential blast radius. Low-impact updates, such as CSS styling tweaks, require minimal verification. High-impact updates, such as changing an authentication protocol or a core networking configuration, require extensive staging tests and automated rollback triggers.
 
 !!! warning "Documentation blast radius"
-    Documentation changes have their own blast radius. If you rename a parameter in an API reference, you must update every conceptual guide, tutorial, and code example that references that parameter. Overlooking these references leads to broken implementations and developer frustration.
+    Documentation changes have their own blast radius. If you rename a parameter in an [API reference](../industry-terms/api-documentation.md), you must update every conceptual guide, tutorial, and code example that references that parameter. Overlooking these references leads to broken implementations and developer frustration.
 
 ---
 
 ## Containment boundaries
 
-Software engineers use containment strategies to minimize the blast radius. Your documentation must reflect these boundaries so teams do not accidentally bypass them during development:
+Software engineers use containment strategies to minimize the blast radius. Your documentation must reflect these [boundaries](../systems-thinking/system-boundary.md) so teams do not accidentally bypass them during development:
 
 - **Bulkheads**: This pattern isolates resources, such as CPU, memory, or connections, to prevent a single failure from cascading. For example, if you allocate separate thread pools for different API endpoints, document these allocations so developers do not accidentally assign unrelated, long-running tasks to critical pools, which could lead to resource exhaustion for the entire service.
 - **Rate limiting and quotas**: Document API rate limits. By enforcing limits on a per-client or per-key basis, the blast radius of a malicious actor or a noisy neighbor is contained to that specific user, protecting the platform's overall availability.
-- **Canary deployments**: Document the rollout process. A canary deployment releases updates to a small percentage of traffic first. If errors occur, the blast radius is limited to that small subset of users, allowing for an automated or manual rollback before a full production release.
+- **Canary deployments**: Document the rollout process. A canary deployment releases updates to a small percentage of users first. If errors occur, the blast radius is limited to that small subset of users, allowing for an automated or manual rollback before a full production release.
 
 ---
 
 ## Impact of mapping the blast radius
 
-- **Faster incident resolution**: When a failure occurs, operators use dependency documentation to isolate the root cause and determine the extent of the damage, reducing the Mean Time To Recovery.
+- **Faster incident resolution**: When a failure occurs, operators use dependency documentation to isolate the root cause and determine the extent of the damage, reducing the [mean time to recovery (MTTR)](../systems-thinking/mean-time-to-recovery.md).
 - **Safe deployments**: Engineers can deploy code with more confidence when they understand the boundaries and failover systems intended to contain failures.
 - **Targeted customer communication**: Understanding the blast radius allows support teams to send incident notifications only to affected users, such as users in a specific cell or shard, rather than alerting the entire customer base.

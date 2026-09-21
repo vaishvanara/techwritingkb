@@ -511,7 +511,7 @@ An XML-based markup language used to describe the visual layout of printed pages
 **Extensible Stylesheet Language Transformations (XSLT)**  
 A language used to transform an XML document into another format, such as HTML, plain text, or a different XML structure.
 
-[**extraction architecture**](../doc-stack/api-reference-generation.md#extraction-architecture)  
+**extraction architecture**  
 The automated pipeline that transforms code-level comments (docstrings) into intermediate structured JSON or Markdown formats for final rendering.
 
 [**evidence-based writing**](../technical-writing/content-design-foundations.md#evidence-based-writing)  

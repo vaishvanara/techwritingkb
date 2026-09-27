@@ -1,0 +1,19 @@
+/* Light Mode */
+[data-md-color-scheme="default"] {
+  --md-default-bg-color: #f8f5f0;
+  --md-default-fg-color: #1a1a18;
+  --md-primary-fg-color: #2c3e4f;
+  --md-accent-fg-color: #8b6f4c;
+  --md-code-bg-color: #efebe4;
+  --md-typeset-a-color: #1D61E0;
+}
+
+/* Dark Mode */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #161514;
+  --md-default-fg-color: #e8e4dc;
+  --md-primary-fg-color: #6b7f93;
+  --md-accent-fg-color: #b08a63;
+  --md-code-bg-color: #1e1d1a;
+  --md-typeset-a-color: #3B82F6;
+}

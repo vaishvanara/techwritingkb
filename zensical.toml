@@ -131,7 +131,7 @@ nav = [
   ]}
 ]
 
-#extra_css = ["stylesheets/extra.css"]
+extra_css = ["stylesheets/extra.css"]
 
 extra_javascript = [
     "javascripts/mathjax.js",
@@ -183,12 +183,15 @@ font.code = "Jetbrains Mono"
 
 [[project.theme.palette]]
 scheme = "default"
+primary = "custom"
+accent = "custom"
 toggle.icon = "lucide/sun"
 toggle.name = "Switch to dark mode"
 
 [[project.theme.palette]]
 scheme = "slate"
-accent = "cyan"
+primary = "custom"
+accent = "custom"
 toggle.icon = "lucide/moon"
 toggle.name = "Switch to light mode"
 

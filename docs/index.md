@@ -27,7 +27,7 @@ hide:
       <li><strong>01</strong> <a href="technical-writing/basics/">Technical writing</a></li>
       <li style="padding-left: 1rem; border-left: 1px solid var(--md-typeset-color, #e0e0e0);"><strong>02</strong> <a href="doc-stack/tech-stack/">Documentation infrastructure</a></li>
       <li style="padding-left: 1rem; border-left: 1px solid var(--md-typeset-color, #e0e0e0);"><strong>03</strong> <a href="doc-lifecycle/ddlc/">Documentation lifecycle</a></li>
-      <li style="padding-left: 1rem; border-left: 1px solid var(--md-typeset-color, #e0e0e0);"><strong>04</strong> <a href="references/glossary/">Reference materials</a></li>
+      <li style="padding-left: 1rem; border-left: 1px solid var(--md-typeset-color, #e0e0e0);"><strong>04</strong> <a href="references/career-paths/">Reference materials</a></li>
     </ul>
   </div>
 

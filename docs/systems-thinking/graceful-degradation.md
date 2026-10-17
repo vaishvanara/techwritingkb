@@ -12,7 +12,7 @@ Graceful degradation is a system ability to maintain essential functionality whe
 
 ## Hard failure versus soft failure
 
-When a system component fails, a poorly designed architecture may suffer a hard failure or cascading failure. In this scenario, the failure of a single non-critical dependency causes the entire system to become unavailable. For example, if a recommendation microservice on an ecommerce site crashes and the checkout page is tightly coupled to it, the user cannot complete their purchase.
+When a system component fails, a poorly designed architecture may suffer a hard failure or [cascading failure](../systems-thinking/cascading-failure.md). In this scenario, the failure of a single non-critical dependency causes the entire system to become unavailable. For example, if a recommendation microservice on an ecommerce site crashes and the checkout page is tightly coupled to it, the user cannot complete their purchase.
 
 By contrast, a system designed with graceful degradation experiences a soft failure. If the system detects that the recommendation service is unresponsive, it invokes a fallback mechanism, such as replacing the widget with a static popular items list or hiding the section entirely, allowing the core checkout workflow to continue.
 
@@ -46,8 +46,8 @@ To support graceful degradation, work with engineering teams to document how the
 - **Document API fallbacks:** In API reference guides, define the expected response when downstream dependencies fail. Specify whether an endpoint returns stale or cached data, a partial JSON object, or a default static response during a degradation event.
 - **Create kill-switch playbooks:** Provide instructions on how to manually trigger load shedding. When a system is under heavy load, operators may need to disable resource-intensive Tier 3 features to preserve Tier 1 stability.
 
-!!! info "Feature Flags and Kill Switches"
-    Many systems use feature flags, such as [LaunchDarkly](https://launchdarkly.com/){: target="_blank" rel="noopener" }, as kill switches. In operations playbooks, document the exact flag keys and the expected impact of toggling them. Toggling these flags reduces system load by disabling non-essential functionality to protect the health of core services.
+!!! info "Feature flags and kill switches"
+    Many systems use [feature flags](../industry-terms/feature-flags.md), such as [LaunchDarkly](https://launchdarkly.com/){: target="_blank" rel="noopener" }, as kill switches. In operations playbooks, document the exact flag keys and the expected impact of toggling them. Toggling these flags reduces system load by disabling non-essential functionality to protect the health of core services.
 
 ---
 

@@ -6,15 +6,15 @@ revision_date: 2026-09-03
 
 # Content audit
 
-> *A systematic evaluation of documentation to identify inaccuracies, remove content debt, and ensure help resources align with current product features*
+> *A systematic evaluation of documentation to identify inaccuracies, remove [content debt](../industry-terms/content-debt.md), and ensure help resources align with current product features*
 
 ---
 
 ## Define the audit process
 
-A content audit systematically catalogs and evaluates documentation to assess its accuracy, completeness, and structural health. It functions as a governance phase within the software development life cycle (SDLC). This occurs during the maintenance phase or as a prerequisite to major product refactoring.
+A content audit systematically catalogs and evaluates documentation to assess its accuracy, completeness, and structural health. It functions as a governance phase within the [software development life cycle](../doc-lifecycle/sdlc-integration.md) (SDLC). This occurs during the maintenance phase or as a prerequisite to major product refactoring.
 
-While technical writers typically drive the process, success requires cross-functional input. Product managers, engineers, and quality assurance (QA) teams provide the technical verification necessary to align documentation with the actual behavior of the software. The goal is a clear decision for every page: keep, update, consolidate, or archive.
+While technical writers typically drive the process, success requires cross-functional input. Product managers, engineers, and [quality assurance](../references/iso-standards.md#quality-assurance-and-compliance-testing) (QA) teams provide the technical verification necessary to align documentation with the actual behavior of the software. The goal is a clear decision for every page: keep, update, consolidate, or archive.
 
 ---
 
@@ -24,8 +24,8 @@ Neglecting documentation leads to content debt. As user interfaces (UIs) change,
 
 A formal audit workflow resolves these issues by:
 
-- Refining findability: Removing duplicate or obsolete pages clarifies the information architecture and improves search indexing.
-- Enforcing consistency: Ensuring all articles follow the current style guide, taxonomy, and voice.
+- Refining findability: Removing duplicate or obsolete pages clarifies the [information architecture](../references/ia-design.md) and improves search indexing.
+- Enforcing consistency: Ensuring all articles follow the current style guide, [taxonomy](../doc-stack/metadata-frontmatter.md#taxonomy-management), and voice.
 - Lowering support overhead: Identifying documentation gaps or broken instructions before they turn into repetitive engineering support queries.
 
 Ad-hoc reviews rarely achieve these results, as they often overlook deep-linked errors and fragmented user journeys.
@@ -61,7 +61,7 @@ graph TD
 Catalog your active documentation. If you store docs in a [Git](https://git-scm.com/){: target="_blank" rel="noopener" } repository, use `git ls-files` to ensure you are only auditing tracked files, avoiding local artifacts or ignored directories.
 
 ??? note "Automate the inventory stage"
-    Run this command in your repository root to generate a list of all tracked Markdown files for your audit tracker:
+    Run this command in your repository root to generate a list of all tracked [Markdown](../doc-stack/markup-languages.md#markdown-fundamentals) files for your audit tracker:
     
     ```bash
     git ls-files "*.md" > audit-inventory.txt
@@ -69,13 +69,13 @@ Catalog your active documentation. If you store docs in a [Git](https://git-scm.
 
 ### 2. Technical and quality review
 
-Verify each page against your quality standards. Technical writers focus on style and metadata, while subject matter experts (SMEs) validate technical accuracy and code logic.
+Verify each page against your quality standards. Technical writers focus on style and metadata, while [subject matter experts](../doc-lifecycle/sme-interviewing.md) (SMEs) validate technical accuracy and code logic.
 
 - [ ] Technical accuracy: Does the content reflect the current state of the UI and API behavior?
 - [ ] Code validation: Do the code snippets execute without errors in the current environment?
 - [ ] Link integrity: Are internal, external, and deep-linked URLs functional without 404 errors?
-- [ ] Metadata: Is the front matter, such as `revision_date`, `status`, or `author`, accurate and complete?
-- [ ] Accessibility: Does the page use semantic HTML or Markdown, such as alt text for images and proper heading levels, to support screen readers?
+- [ ] [Metadata](../doc-lifecycle/governance-maintenance.md#metadata-governance): Is the front matter, such as `revision_date`, `status`, or `author`, accurate and complete?
+- [ ] [Accessibility](../references/accessibility.md): Does the page use semantic HTML or Markdown, such as alt text for images and proper heading levels, to support screen readers?
 
 ### 3. Resolution and updates
 
@@ -103,10 +103,10 @@ Clear ownership prevents the audit from stalling during the review phase. The re
 
 ## Automation and pipeline integration
 
-Integrate audit checks into your continuous integration and continuous delivery (CI/CD) pipeline to catch regression errors between formal audits.
+Integrate audit checks into your continuous integration and continuous delivery ([CI/CD](../doc-stack/cicd.md)) pipeline to catch regression errors between formal audits.
 
 === "CI/CD link checking"
-    Automate link validation on every pull request. If using a tool such as Lychee, ensure it is installed in the runner or use a pre-built action.
+    Automate link validation on every [pull request](../doc-lifecycle/review-approval.md#the-pull-request-workflow). If using a tool such as Lychee, ensure it is installed in the runner or use a pre-built action.
     
     ```yaml
     # Example GitHub Actions snippet using Lychee
@@ -117,7 +117,7 @@ Integrate audit checks into your continuous integration and continuous delivery 
     ```
 
 === "Metadata and style linting"
-    Use tools such as Vale or Markdownlint to ensure every page contains mandatory front matter and adheres to the style guide.
+    Use tools such as [Vale](../doc-stack/prose-linting.md#introduction-to-vale) or Markdownlint to ensure every page contains mandatory front matter and adheres to the style guide.
 
 ---
 
@@ -132,6 +132,6 @@ Integrate audit checks into your continuous integration and continuous delivery 
 
 Track these key performance indicators (KPIs) to justify the time investment:
 
-- Ticket deflection: A reduction in support queries related to audited documentation categories.
+- [Ticket deflection](../doc-lifecycle/observability-analytics.md#support-ticket-correlation): A reduction in support queries related to audited documentation categories.
 - Freshness index: The percentage of high-traffic pages updated within the last 6 to 12 months.
 - Search success rate: Improvement in search-to-click ratios after removing redundant or obsolete content.

@@ -18,9 +18,9 @@ Technical translation adapts specialized content, including application programm
 
 ## Integration with GILT frameworks
 
-Translation is a subset of the Globalization, Internationalization, Localization, and Translation (GILT) framework. Its success depends on the technical readiness of the underlying asset:
+Translation is a subset of the [Globalization, Internationalization, Localization, and Translation](../industry-terms/gilt.md) (GILT) framework. Its success depends on the technical readiness of the underlying asset:
 
-- **Internationalization (i18n):** Engineering teams must prepare the codebase to support multiple locales. This includes abstracting strings from code into resource files, for example, JSON, YAML, or .gettext, implementing Unicode (UTF-8) support, and ensuring the UI logic accommodates right-to-left (RTL) scripts and dynamic string expansion.
+- **Internationalization (i18n):** Engineering teams must prepare the codebase to support multiple locales. This includes abstracting strings from code into resource files, for example, [JSON](../doc-stack/json-logic.md), YAML, or .gettext, implementing Unicode (UTF-8) support, and ensuring the UI logic accommodates right-to-left (RTL) scripts and dynamic string expansion.
 - **Localization (l10n):** While translation handles the linguistic conversion, localization adapts non-textual elements, such as date and time formats (ISO 8601 or regional variants), currency symbols, and measurement units.
 - **Translation:** The specific act of converting text from the source language to the target language.
 
@@ -34,10 +34,10 @@ Technical writers must adopt translation-ready authoring standards to reduce the
 
 ### Controlled Language and Standards
 
-Implementing a controlled language, such as ASD-STE100 (Simplified Technical English), is a primary strategy. This reduces ambiguity for both human translators and machine translation engines.
+Implementing a [controlled language](../industry-terms/controlled-language.md), such as ASD-STE100 (Simplified Technical English), is a primary strategy. This reduces ambiguity for both human translators and machine translation engines.
 
-- **Terminology Management:** Enforce a 1:1 ratio between concepts and terms. Using switch, toggle, and button interchangeably breaks translation memory leverage and confuses the end-user.
-- **Syntactic Simplicity:** Use short, declarative sentences in a subject-verb-object format. Avoid the passive voice to prevent ambiguity in who or what is performing an action.
+- **[Terminology Management](../references/iso-standards.md#standardized-terminology-roadmap):** Enforce a 1:1 ratio between concepts and terms. Using switch, toggle, and button interchangeably breaks translation memory leverage and confuses the end-user.
+- **Syntactic Simplicity:** Use short, declarative sentences in a [subject-verb-object format](../technical-writing/active-passive.md#the-svo-formula). Avoid the passive voice to prevent ambiguity in who or what is performing an action.
 - **Variable and Placeholder Management:** Ensure that variables, for example, {user_name} or %d, are protected. Injected variables must be grammatically neutral to prevent agreement errors in inflected languages, such as Slavic or Romance languages.
 
 ---
@@ -48,14 +48,14 @@ Scale and consistency are managed through computer-assisted translation (CAT) to
 
 ### Translation Memory (TM)
 
-A translation memory is a linguistic database that stores segments (sentences, headings, or list items) as source-target pairs. 
+A [translation memory](../industry-terms/translation-memory.md) is a linguistic database that stores segments (sentences, headings, or list items) as source-target pairs. 
 
 - **Leverage:** The CAT tool identifies exact matches and fuzzy matches (partial similarities). 
 - **Recycling:** Previously translated strings are reused, ensuring that a Cancel button is translated identically across every manual and software interface.
 
 ### Machine Translation Post-Editing (MTPE)
 
-In a machine translation post-editing (MTPE) workflow, a neural machine translation (NMT) engine or a large language model (LLM) generates a raw translation. A human subject matter expert (SME) then performs:
+In a [machine translation post-editing](../industry-terms/mtpe.md) (MTPE) workflow, a neural machine translation (NMT) engine or a large language model (LLM) generates a raw translation. A human subject matter expert (SME) then performs:
 
 - **Light Post-Editing (LPE):** Ensuring the text is accurate and legible without focusing on stylistic polish.
 - **Full Post-Editing (FPE):** Ensuring the text is stylistically appropriate, culturally accurate, and technically perfect.

@@ -6,15 +6,15 @@ revision_date: 2026-09-03
 
 # Wayfinding
 
-> *The system of visual and structural cues used to orient users and guide their navigation through complex information environments*
+> *The system of visual and structural cues used to orient users and guide their [navigation](../references/ia-design.md#the-three-level-rule) through complex information environments*
 
 ---
 
 ## The mechanics of digital orientation
 
-Wayfinding is a concept borrowed from architecture and urban planning. Just as an airport uses signage and landmarks to move travelers toward a gate, technical documentation relies on structural indicators to help readers map out information architecture (IA).
+Wayfinding is a concept borrowed from architecture and urban planning. Just as an airport uses signage and landmarks to move travelers toward a gate, technical documentation relies on structural indicators to help readers map out [information architecture](../references/ia-design.md) (IA).
 
-When a developer lands on your site, they scan for environmental cues. Effective wayfinding turns a sprawling documentation site into a predictable system. By organizing menus, page headers, breadcrumbs, and search boundaries into a cohesive framework, you minimize cognitive load and allow readers to transition seamlessly from high-level overviews to granular technical tasks.
+When a developer lands on your site, they scan for environmental cues. Effective wayfinding turns a sprawling documentation site into a predictable system. By organizing menus, page headers, [breadcrumbs](../references/ia-design.md#breadcrumbs), and search boundaries into a cohesive framework, you minimize cognitive load and allow readers to transition seamlessly from high-level overviews to granular technical tasks.
 
 ---
 
@@ -28,9 +28,9 @@ Most users bypass homepages, arriving at deep-linked pages via search engines. W
 
 ## Core principles
 
-- **Semantic hierarchy:** Use logical HTML heading levels (`<h1>` through `<h6>`) to establish a machine-readable and visually obvious relationship between topics. This ensures wayfinding remains functional for both sighted users and screen reader users.
+- **[Semantic hierarchy](../industry-terms/semantic-hierarchy.md):** Use logical HTML heading levels (`<h1>` through `<h6>`) to establish a machine-readable and visually obvious relationship between topics. This ensures wayfinding remains functional for both sighted users and [screen reader](../references/accessibility.md#screen-reader-optimization) users.
 - **Visual anchors:** Persistent elements, such as a fixed header or an active state in the sidebar, act as fixed reference points during long scrolling sessions.
-- **Progressive disclosure:** Manage navigation complexity by showing top-level categories first, using interactive accordion menus or drill-downs to reveal advanced technical details only when requested.
+- **[Progressive disclosure](../industry-terms/progressive-disclosure.md):** Manage navigation complexity by showing top-level categories first, using interactive accordion menus or drill-downs to reveal advanced technical details only when requested.
 
 ---
 
@@ -89,7 +89,7 @@ graph TD
 1. **Persistent global header:** Sets global context and ensures the search bar is always reachable, regardless of page depth.
 2. **Breadcrumb trails:** Provides a linear path back to the entry point, allowing users to move up the hierarchy (vertical navigation) immediately.
 3. **Active-state indicators (Scrollspy):** Highlighting the current page in the sidebar provides an immediate You are here marker that updates as the user scrolls through sub-sections.
-4. **Structured reading area:** Consistent use of whitespace and typography separates core instructions from secondary information.
+4. **Structured reading area:** Consistent use of whitespace and [typography](../technical-writing/visual-communication.md#typography-and-legibility) separates core instructions from secondary information.
 
 !!! tip "Contextual search"
     Enhance the search experience by allowing users to filter results within their current directory or category, preventing context switching during the discovery phase.
@@ -114,5 +114,5 @@ graph TD
 
 ## Testing for usability
 
-- **Squint test:** Squint at the screen until the text blurs. If the main content, sidebar, and headers are not distinguishable by their shape and position, the visual hierarchy is insufficient.
+- **Squint test:** Squint at the screen until the text blurs. If the main content, sidebar, and headers are not distinguishable by their shape and position, the [visual hierarchy](../industry-terms/visual-hierarchy.md) is insufficient.
 - **Context restoration test:** Send a colleague a link to a deep technical page. If they cannot identify the product name and the parent topic within 10 seconds, the wayfinding cues are failing.

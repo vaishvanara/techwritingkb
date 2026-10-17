@@ -43,8 +43,8 @@ graph TD
 
 Infrastructure may be redundant, but a system remains vulnerable if the information required to operate it is restricted to a single person or a single unverified source. These information SPOFs often include:
 
-- **Tribal knowledge:** If recovery procedures exist only in the memory of one engineer, the system’s mean time to recovery (MTTR) is dependent on that individual's availability.
-- **Static or incomplete runbooks:** A runbook with an outdated command, a missing permission requirement, or an incorrect environment variable acts as a SPOF. If an operator cannot bypass the error, the recovery process fails.
+- **Tribal knowledge:** If recovery procedures exist only in the memory of one engineer, the system's mean time to recovery (MTTR) is dependent on that individual's availability.
+- **Static or incomplete runbooks:** A [runbook](../technical-writing/engineering-runbooks.md) with an outdated command, a missing permission requirement, or an incorrect environment variable acts as a SPOF. If an operator cannot bypass the error, the recovery process fails.
 - **Monopolized publishing toolchains:** If a documentation site relies on a local build script on one developer's machine, the team cannot publish urgent security advisories or API changes if that machine or person is unavailable.
 
 !!! warning "The Bus Factor"
@@ -56,6 +56,6 @@ Infrastructure may be redundant, but a system remains vulnerable if the informat
 
 You can identify and remove information SPOFs by establishing collaborative documentation standards:
 
-- **Test runbooks with non-experts:** Perform Documentation Under Test (DUT). Ask a junior engineer or someone from a different team to follow runbook steps in a staging environment. If they cannot complete the task without outside help, the documentation is a SPOF.
-- **Implement peer reviews:** Treat documentation with the same rigor as source code. Use a docs-as-code workflow where updates require a pull request and a technical peer review to ensure accuracy and knowledge sharing.
+- **Test runbooks with non-experts:** Perform Documentation Under Test (DUT). Ask a junior engineer or someone from a different team to follow runbook steps in a [staging environment](../doc-stack/cicd.md#staging-and-preview-environments). If they cannot complete the task without outside help, the documentation is a SPOF.
+- **Implement peer reviews:** Treat documentation with the same rigor as source code. Use a docs-as-code workflow where updates require a pull request and a technical [peer review](../doc-lifecycle/review-approval.md) to ensure accuracy and knowledge sharing.
 - **Automate pipeline validation:** Use automated link checkers, linter rules, and CI/CD tests. However, ensure the CI/CD pipeline itself is redundant and documented so that it does not become a new SPOF.

@@ -62,4 +62,4 @@ To apply the inverse Conway maneuver effectively, adjust processes to mirror the
 
 - **Organize by user tasks**: Group content by functional goals, such as Authentication or Data Processing, rather than by internal engineering designations such as the Java team or the infrastructure squad.
 - **Foster cross-team documentation reviews**: Require an engineer or writer from an upstream service to review downstream documentation. This identifies logic gaps in integration handoffs that mirror the communication gaps between those teams.
-- **Build shared templates**: Standardize formats for API references, runbooks, and release notes. This ensures that even if components are built by different teams, the interface presented to the user is consistent and unified.
+- **Build shared templates**: Standardize formats for API references, runbooks, and [release notes](../references/templates.md#release-notes). This ensures that even if components are built by different teams, the interface presented to the user is consistent and unified.

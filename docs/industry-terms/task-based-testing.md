@@ -6,15 +6,15 @@ revision_date: 2026-09-03
 
 # Task-based testing
 
-> *A usability research method where participants perform specific goals using documentation to identify instruction gaps and findability issues*
+> *A usability research method where participants perform specific goals using documentation to identify instruction gaps and [findability](../doc-stack/kb-architecture.md#findability-and-internal-linking) issues*
 
 ---
 
 ## What is task-based testing?
 
-Task-based testing evaluates documentation by observing users as they attempt to reach specific milestones using only the provided guides and a controlled environment. While a content audit verifies technical accuracy (is the information correct?), this method verifies procedural efficacy (can the user successfully complete the workflow?). It treats documentation as a functional component of the product interface within the document development life cycle (DDLC).
+Task-based testing evaluates documentation by observing users as they attempt to reach specific milestones using only the provided guides and a controlled environment. While a content audit verifies technical accuracy (is the information correct?), this method verifies procedural efficacy (can the user successfully complete the workflow?). It treats documentation as a functional component of the product interface within the [document development life cycle](../doc-lifecycle/ddlc.md) (DDLC).
 
-Execution requires cross-functional input. Technical writers design the scenarios, while user experience (UX) researchers or product managers recruit participants and facilitate the sessions. Subject matter experts (SMEs) provide the technical baseline, which is the verified set of steps and environment configurations required for a successful outcome, against which the user performance is measured.
+Execution requires cross-functional input. Technical writers design the scenarios, while user experience (UX) researchers or product managers recruit participants and facilitate the sessions. [Subject matter experts](../doc-lifecycle/sme-interviewing.md) (SMEs) provide the technical baseline, which is the verified set of steps and environment configurations required for a successful outcome, against which the user performance is measured.
 
 ---
 
@@ -22,10 +22,10 @@ Execution requires cross-functional input. Technical writers design the scenario
 
 Technical accuracy is a prerequisite, but it does not guarantee usability. If a user cannot locate a step or lacks the prerequisite environment context, the documentation fails. Internal teams often suffer from the curse of knowledge, leading to prerequisite gaps, such as assumed knowledge or pre-configured settings that an external user will not have.
 
-Prioritizing this workflow impacts support costs through support deflection. Furthermore, identifying structural flaws or technical blockers during the testing phase prevents the accumulation of documentation debt and reduces the need for emergency documentation patches following a release.
+Prioritizing this workflow impacts support costs through [support deflection](../doc-lifecycle/roi.md#support-deflection-metric). Furthermore, identifying structural flaws or technical blockers during the testing phase prevents the accumulation of documentation debt and reduces the need for emergency documentation patches following a release.
 
 !!! tip "Validate the Docs, Not the User"
-    If a participant fails a task, the documentation or the product user experience is flawed, not the user. The goal is to identify breakdowns in content, information architecture, or environmental setup instructions.
+    If a participant fails a task, the documentation or the product user experience is flawed, not the user. The goal is to identify breakdowns in content, [information architecture](../references/ia-design.md), or environmental setup instructions.
 
 ---
 
@@ -52,9 +52,9 @@ graph TD
     E --> F[Verify fixes or regression test]
 ```
 
-1. **Scenario planning:** Draft objectives based on user personas. Tasks must be goal-oriented (Enable multi-factor authentication) rather than prescriptive (Click the Security tab).
+1. **Scenario planning:** Draft objectives based on [user personas](../technical-writing/audience-analysis.md#persona-development-b2b-vs-b2c). Tasks must be goal-oriented (Enable multi-factor authentication) rather than prescriptive (Click the Security tab).
 2. **Environment baseline:** Establish a zero-state environment. If the documentation assumes a specific command-line interface (CLI) tool is installed, the test must start with a machine that does not have that tool to verify the installation instructions.
-3. **Observation:** Facilitators monitor participants. Observers track search queries, navigation paths, and technical dead ends (for example, a user gets a 403 error because the documentation missed a permission step).
+3. **Observation:** Facilitators monitor participants. Observers track search queries, [navigation](../references/ia-design.md#the-three-level-rule) paths, and technical dead ends (for example, a user gets a 403 error because the documentation missed a permission step).
 4. **Data synthesis:** The team reviews success rates and time on task. These insights drive changes to information architecture (IA), content hierarchy, and technical prerequisites.
 
 ---
@@ -64,7 +64,7 @@ graph TD
 - **Responsible:** Technical writers (task design and content updates) and UX researchers (session facilitation).
 - **Accountable:** Documentation lead or product manager (ensuring fixes are prioritized in the sprint).
 - **Consulted:** SMEs and engineering (to define the technical happy path and provide environment support).
-- **Informed:** Support and quality assurance (QA) teams (to align testing findings with known edge cases).
+- **Informed:** Support and [quality assurance](../references/iso-standards.md#quality-assurance-and-compliance-testing) (QA) teams (to align testing findings with known edge cases).
 
 ---
 
@@ -87,6 +87,6 @@ Findings must be logged as technical bugs in tools such as Jira or GitHub. A fai
 ## Key metrics for success
 
 - **Task success rate (TSR):** Percentage of users who complete the goal. (Standard benchmark: more than 80 percent).
-- **Time on task (ToT):** Duration from start to completion. High ToT often indicates poor scannability of documentation.
+- **Time on task (ToT):** Duration from start to completion. High ToT often indicates poor [scannability](../industry-terms/scannability.md) of documentation.
 - **Error frequency:** Number of incorrect actions (for example, wrong CLI flags or incorrect API endpoints) per task.
 - **Search-to-goal ratio:** Number of search queries or page navigations required before finding the relevant instruction.

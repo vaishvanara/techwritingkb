@@ -15,15 +15,15 @@ revision_date: 2026-09-03
 
 Zero-shot prompting leverages the weights and semantic associations a model acquired during pre-training to complete tasks without being shown before and after examples. While traditional machine learning often requires specialized datasets to learn a task-specific pattern, zero-shot relies on the ability of the model to generalize from its training distribution to interpret a command in context.
 
-In technical writing, this enables instant linguistic transformations. You can shift a document from passive to active voice or simplify complex descriptions by providing a specific instruction set. The logic is handled by the inference engine of the model, which removes the need for complex regex patterns or hard-coded translation databases for many content-shaping tasks.
+In [technical writing](../technical-writing/basics.md), this enables instant linguistic transformations. You can shift a document from passive to active voice or simplify complex descriptions by providing a specific instruction set. The logic is handled by the inference engine of the model, which removes the need for complex regex patterns or hard-coded translation databases for many content-shaping tasks.
 
 ---
 
 ## Efficiency in the documentation pipeline
 
-Manual editing is often the primary bottleneck in Docs as Code (DaC) workflows. By automating the alignment of draft content with corporate style guides, teams can redirect focus toward information architecture and user research. 
+Manual editing is often the primary bottleneck in Docs as Code (DaC) workflows. By automating the alignment of draft content with corporate style guides, teams can redirect focus toward [information architecture](../references/ia-design.md) and user research. 
 
-Integrating zero-shot automation allows style and consistency checks to happen at the point of creation, often via continuous integration and continuous delivery (CI/CD) hooks or integrated development environment (IDE) plugins, ensuring the human in the loop focuses on technical accuracy rather than rote grammar policing.
+Integrating zero-shot automation allows style and consistency checks to happen at the point of creation, often via continuous integration and continuous delivery ([CI/CD](../doc-stack/cicd.md)) hooks or integrated development environment (IDE) plugins, ensuring the human in the loop focuses on technical accuracy rather than rote grammar policing.
 
 ---
 
@@ -87,7 +87,7 @@ To achieve consistent results across different large language models (LLMs), app
 
 - **Use imperative verbs:** Start instructions with *Rewrite*, *Format*, or *Convert*. Avoid soft phrasing such as "Please try to make this better."
 - **Define negative constraints:** Explicitly state what the model should avoid (for example, "Do not change the code snippets within backticks").
-- **Use delimiters:** Use Markdown delimiters, such as triple backticks (```) or XML tags (<text></text>), to ensure the model does not confuse instructions with the input text.
+- **Use delimiters:** Use [Markdown](../doc-stack/markup-languages.md#markdown-fundamentals) delimiters, such as triple backticks (```) or XML tags (<text></text>), to ensure the model does not confuse instructions with the input text.
 
 !!! tip "Style integration"
     Instead of writing new rules from scratch, provide the model with a specific excerpt from your organization's style guide as context. This forces the model to apply the specific standards of your team to the draft.
@@ -107,5 +107,5 @@ Poorly designed zero-shot prompts can degrade content quality through:
 
 Because LLMs are non-deterministic, you must validate outputs:
 
-- **Automated readability auditing:** Use tools (such as Vale or Hemingway) to verify that the output actually meets the targeted reading grade level.
+- **Automated [readability](../technical-writing/readability-scores.md) auditing:** Use tools (such as Vale or Hemingway) to verify that the output actually meets the targeted reading grade level.
 - **Regression testing:** Maintain a golden set of prompt-response pairs to ensure that model updates or prompt tweaks do not degrade the quality of common edits.

@@ -12,20 +12,20 @@ revision_date: 2026-09-03
 
 ## Defining the documentation funnel
 
-A documentation funnel departs from the static library approach. Instead, it organizes technical content to mirror the progression of a user through a product. Based on the marketing funnel concept, this framework categorizes documentation into distinct phases: discovery, onboarding, operation, and optimization. By aligning information architecture with the path of the user, you ensure that high-level concepts do not hinder advanced users and technical minutiae do not overwhelm beginners.
+A documentation funnel departs from the static library approach. Instead, it organizes technical content to mirror the progression of a user through a product. Based on the marketing funnel concept, this framework categorizes documentation into distinct phases: discovery, onboarding, operation, and optimization. By aligning [information architecture](../references/ia-design.md) with the path of the user, you ensure that high-level concepts do not hinder advanced users and technical minutiae do not overwhelm beginners.
 
-Implementing this model requires a cross-functional strategy during the design and maintenance phases of the software development life cycle (SDLC):
+Implementing this model requires a cross-functional strategy during the design and maintenance phases of the [software development life cycle](../doc-lifecycle/sdlc-integration.md) (SDLC):
 
 - Technical writers architect the content hierarchy and taxonomies.
 - Product managers define the target personas and their adoption milestones.
-- Engineering and developer relations (DevRel) pinpoint technical friction, edge cases, and application programming interface (API) complexities.
+- Engineering and [developer relations](../industry-terms/developer-relations.md) (DevRel) pinpoint technical friction, edge cases, and application programming interface (API) complexities.
 - Customer support identifies the real-world gaps where users frequently stop or misconfigure the product.
 
 ---
 
 ## Strategic value
 
-Unstructured documentation leads to content bloat: an accumulation of redundant or outdated articles that confuse readers and degrade the developer experience (DX). A defined funnel acts as a filter, preventing foundational topics from cluttering reference pages and keeping complex configurations out of the way during initial setup.
+Unstructured documentation leads to content bloat: an accumulation of redundant or outdated articles that confuse readers and degrade the [developer experience](../industry-terms/developer-experience.md) (DX). A defined funnel acts as a filter, preventing foundational topics from cluttering reference pages and keeping complex configurations out of the way during initial setup.
 
 When publishing remains a manual, ad hoc process, scaling becomes impossible. Support teams eventually receive an excessive number of how-to tickets because entry points are obscured. Conversely, expert users might churn if the technical depth is buried under high-level marketing content. A well-designed funnel creates a logical learning flow, guiding the transition from curious visitor to power user.
 
@@ -43,7 +43,7 @@ As a product scales, flat documentation structures eventually fail. You should t
 
 ## Implementing the workflow
 
-The transition begins with a content audit focused on user intent rather than just topic categories.
+The transition begins with a [content audit](../industry-terms/content-audit.md) focused on user intent rather than just topic categories.
 
 ```mermaid
 graph TD
@@ -54,7 +54,7 @@ graph TD
     E --> A
 ```
 
-1. **Audit and segment:** Review current articles alongside product teams to identify primary user personas and their specific learning milestones.
+1. **Audit and segment:** Review current articles alongside product teams to identify primary [user personas](../technical-writing/audience-analysis.md#persona-development-b2b-vs-b2c) and their specific learning milestones.
 2. **Content mapping:** Distribute content across four primary stages:
     - **Top-of-funnel (Discovery):** Conceptual overviews, architectural diagrams, and use-case white papers.
     - **Middle-of-funnel (Onboarding):** Tutorials and Hello World quickstarts.
@@ -68,18 +68,18 @@ graph TD
 
 Clear ownership prevents the funnel from becoming an isolated project. The following roles are based on the Responsible, Accountable, Consulted, and Informed (RACI) model:
 
-- **Responsible:** Technical writers design the hierarchy and maintain the source files, such as Markdown.
+- **Responsible:** Technical writers design the hierarchy and maintain the source files, such as [Markdown](../doc-stack/markup-languages.md#markdown-fundamentals).
 - **Accountable:** The documentation lead ensures the structure aligns with product releases and adoption targets.
 - **Consulted:** Software engineers verify the technical accuracy of reference material and code samples.
-- **Informed:** Support and quality assurance (QA) provide data on recurring user pain points and common error states.
+- **Informed:** Support and [quality assurance](../references/iso-standards.md#quality-assurance-and-compliance-testing) (QA) provide data on recurring user pain points and common error states.
 
 ---
 
 ## Pipeline integration
 
-Modern documentation-as-code pipelines can automate funnel management. By using a static site generator such as [MkDocs](https://www.mkdocs.org/){: target="_blank" rel="noopener" }, you can tag articles with metadata in the YAML front matter to define their funnel stage.
+Modern documentation-as-code pipelines can automate funnel management. By using a [static site generator](../doc-stack/ssg.md) such as [MkDocs](https://www.mkdocs.org/){: target="_blank" rel="noopener" }, you can tag articles with [metadata](../doc-lifecycle/governance-maintenance.md#metadata-governance) in the YAML front matter to define their funnel stage.
 
-During the continuous integration and continuous delivery (CI/CD) build, automated scripts can parse these tags to generate dynamic sidebars or validate content depth.
+During the continuous integration and continuous delivery ([CI/CD](../doc-stack/cicd.md)) build, automated scripts can parse these tags to generate dynamic sidebars or validate content depth.
 
 === "YAML metadata"
     ```yaml hl_lines="4"
@@ -100,7 +100,7 @@ During the continuous integration and continuous delivery (CI/CD) build, automat
     ```
 
 !!! tip "Linting for intent"
-    Incorporate prose linters like Vale to ensure top-of-funnel documents remain free of dense jargon, keeping the entry point accessible.
+    Incorporate prose linters like Vale to ensure top-of-funnel documents remain free of dense [jargon](../technical-writing/plain-language.md#the-jargon-filter), keeping the entry point accessible.
 
 ---
 
@@ -116,5 +116,5 @@ During the continuous integration and continuous delivery (CI/CD) build, automat
 ## Success metrics
 
 - **Progression rate:** The percentage of users moving from a quickstart guide to a successful authenticated API call.
-- **Ticket deflection:** Reduction in Level 1 support tickets related to initial configuration and environment setup.
+- **[Ticket deflection](../doc-lifecycle/observability-analytics.md#support-ticket-correlation):** Reduction in Level 1 support tickets related to initial configuration and environment setup.
 - **Search-to-click ratio:** Improved accuracy in users clicking on stage-appropriate content, such as an expert clicking a reference link rather than a conceptual overview.

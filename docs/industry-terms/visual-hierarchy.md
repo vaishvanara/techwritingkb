@@ -6,7 +6,7 @@ revision_date: 2026-09-03
 
 # Visual hierarchy
 
-> *The arrangement of typography, color, and layout to prioritize information, helping users navigate complex documentation and immediately identify key details*
+> *The arrangement of [typography](../technical-writing/visual-communication.md#typography-and-legibility), color, and layout to prioritize information, helping users navigate complex documentation and immediately identify key details*
 
 ---
 
@@ -14,7 +14,7 @@ revision_date: 2026-09-03
 
 Visual hierarchy dictates the order in which a user processes information. Instead of presenting technical content as an undifferentiated block of text, a strong hierarchy establishes a clear scanning path. By manipulating size, weight, color, and positioning, you signal the relative importance of each element, which distinguishes a high-level system warning from standard body text.
 
-This approach manages cognitive load. When readers encounter a digital document, they immediately look for structure to categorize information. Cues such as heading depth and indentation transform dense data into an intuitive map, directly improving scannability for users who need to find specific technical specifications quickly.
+This approach manages cognitive load. When readers encounter a digital document, they immediately look for structure to categorize information. Cues such as heading depth and indentation transform dense data into an intuitive map, directly improving scannability for users who need to find specific [technical specifications](../references/templates.md#technical-specifications-and-fgds) quickly.
 
 ---
 
@@ -22,7 +22,7 @@ This approach manages cognitive load. When readers encounter a digital document,
 
 Ignoring hierarchy forces the reader to expend working memory simply to distinguish between concepts, leading to rapid fatigue. For an engineer searching for a code block or a manager checking a release milestone, a lack of visual landmarks makes the content functionally inaccessible.
 
-Predictable layouts reinforce information architecture (IA). When headings, lists, and callouts behave consistently, users build a reliable mental model of the content. This reduces cognitive friction, increases task success rates, and ultimately lowers support volume by making the documentation self-service.
+Predictable layouts reinforce [information architecture](../references/ia-design.md) (IA). When headings, lists, and callouts behave consistently, users build a reliable mental model of the content. This reduces cognitive friction, increases task success rates, and ultimately lowers support volume by making the documentation self-service.
 
 ---
 
@@ -40,7 +40,7 @@ Technical writers use several specific design tools to establish visual dominanc
 
 ## Design pattern example
 
-The following comparison illustrates how structured layouts improve readability for installation steps.
+The following comparison illustrates how structured layouts improve [readability](../technical-writing/readability-scores.md) for installation steps.
 
 === "Unstructured layout"
     ### Installation
@@ -79,7 +79,7 @@ The structured layout succeeds by applying these rules:
 
 - **Type scale:** The H2 heading is visually dominant over the H3 subsection.
 - **Visual grouping:** Lists separate discrete actions from conceptual descriptions.
-- **Contrast callouts:** A high-contrast container (`!!! danger`) interrupts the scanning path to highlight risk.
+- **Contrast [callouts](../doc-stack/markup-languages.md#extending-markup-admonitions):** A high-contrast container (`!!! danger`) interrupts the scanning path to highlight risk.
 - **Semantic styling:** Command-line strings and keyboard shortcuts (**Y**) are visually distinct from standard copy.
 
 ---
@@ -96,7 +96,7 @@ Effective hierarchy serves two primary user behaviors:
 ## Best practices
 
 - **Logical heading sequences:** Do not skip heading levels (for example, jumping from H1 to H3) for aesthetic reasons. Use the styling engine to manage appearance while maintaining semantic order.
-- **Progressive disclosure:** Keep the main path clear by using expandable containers for advanced configurations or edge cases.
+- **[Progressive disclosure](../industry-terms/progressive-disclosure.md):** Keep the main path clear by using expandable containers for advanced configurations or edge cases.
 
 ??? note "Example: View advanced configuration values"
     | Parameter | Type | Default | Description |

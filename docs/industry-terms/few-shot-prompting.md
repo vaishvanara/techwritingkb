@@ -1,12 +1,12 @@
 ---
 title: Few-shot prompting
-description: A prompt design technique providing specific input-output examples to guide an AI model’s logic, style, and formatting within the context of a single query.
+description: A prompt design technique providing specific input-output examples to guide an AI model's logic, style, and formatting within the context of a single query.
 revision_date: 2026-09-03
 ---
 
 # Few-shot prompting
 
-> *A prompt design technique providing specific input-output examples to guide an AI model’s logic, style, and formatting within the context of a single query*
+> *A prompt design technique providing specific input-output examples to guide an AI model's logic, style, and formatting within the context of a single query*
 
 ---
 
@@ -22,7 +22,7 @@ In technical documentation workflows, this method serves as a live frame of refe
 
 Relying on zero-shot commands, which are instructions without examples, introduces high variance. LLMs may ignore structural constraints, deviate from established style guides, or default to a generic tone. 
 
-While few-shot prompting acts as a quality guardrail, it introduces a trade-off in inference cost and latency. Few-shot prompts increase the token count of the input, so they consume more of the context window and increase the time-to-first-token (TTFT) compared to zero-shot prompts. However, this is typically offset by the reduction in manual editorial cycles and retry logic.
+While few-shot prompting acts as a quality guardrail, it introduces a trade-off in inference cost and latency. Few-shot prompts increase the token count of the input, so they consume more of the [context window](../technical-writing/prompt-engineering.md#context-window-management) and increase the time-to-first-token (TTFT) compared to zero-shot prompts. However, this is typically offset by the reduction in manual editorial cycles and retry logic.
 
 ---
 
@@ -32,7 +32,7 @@ A high-performing few-shot prompt relies on a deliberate, modular layout.
 
 - Logic mapping: Every exemplar must demonstrate a clear transformation from raw input to refined output. 
 - Exemplar integrity: The model is a statistical pattern matcher; it will replicate errors present in your examples. Use only vetted, high-accuracy examples.
-- Schema strictness: If your workflow requires JSON, YAML, or specific Markdown headers, your examples must mirror that schema exactly to ensure the model maintains structural integrity.
+- Schema strictness: If your workflow requires [JSON](../doc-stack/json-logic.md), YAML, or specific Markdown headers, your examples must mirror that schema exactly to ensure the model maintains structural integrity.
 - Clear delimiters: Use distinct markers, such as `###`, `---`, or XML-style tags, such as `<example>`, to isolate instructions from examples and the user query. This prevents prompt injection or leakage, where the model confuses the demonstration data with the actual task.
 
 ```mermaid
@@ -103,9 +103,9 @@ The following comparison illustrates how few-shot examples shift a model from co
 
 ## Common anti-patterns
 
-- Template patterns: If every example uses the same placeholder, such as "SAMPLE_TEXT," the model may treat the placeholder as a literal string rather than a variable.
+- [Template](../references/templates.md) patterns: If every example uses the same placeholder, such as "SAMPLE_TEXT," the model may treat the placeholder as a literal string rather than a variable.
 - Label inconsistency: If Example 1 uses `Input:` and Example 2 uses `User Query:`, the model may fail to identify the repeating pattern, leading to structural breakdown.
-- Contextual noise: Avoid including unrelated metadata, such as timestamps or internal IDs, in your examples unless you want that metadata present in the final output.
+- Contextual noise: Avoid including unrelated [metadata](../doc-lifecycle/governance-maintenance.md#metadata-governance), such as timestamps or internal IDs, in your examples unless you want that metadata present in the final output.
 
 ---
 

@@ -14,15 +14,15 @@ revision_date: 2026-09-03
 
 Single sourcing is a strategy where information is managed in a central repository but deployed to various platforms. Rather than duplicating text across different guides, writers build modular blocks of information that populate specific outputs. This follows the Do Not Repeat Yourself (DRY) principle common in software engineering, creating a lean [information architecture](https://en.wikipedia.org/wiki/Information_architecture).
 
-Beyond efficiency, this approach reduces cognitive load. By using structured modules, procedures and concepts stay identical wherever they appear. When users move between a web portal and a PDF manual, consistent terminology and instructional steps help them recognize patterns and complete tasks without the friction caused by conflicting instructions.
+Beyond efficiency, this approach reduces cognitive load. By using structured modules, procedures and concepts stay identical wherever they appear. When users move between a web portal and a [PDF](../doc-stack/pdf-epub-generation.md#pdf-versus-epub-architectures) manual, consistent terminology and instructional steps help them recognize patterns and complete tasks without the friction caused by conflicting instructions.
 
 ---
 
 ## Mitigating content decay
 
-Without a single source, documentation inevitably decays. When technical details change, such as an application programming interface (API) endpoint or a system requirement, manual updates across manuals, quick start guides, and user interface (UI) tooltips are prone to human error. Missing a single instance leads to contradictory information that erodes user trust and increases support volume.
+Without a single source, documentation inevitably decays. When technical details change, such as an application programming interface (API) endpoint or a system requirement, manual updates across manuals, [quick start guides](../references/templates.md#quick-start-guide), and user interface (UI) tooltips are prone to human error. Missing a single instance leads to contradictory information that erodes user trust and increases support volume.
 
-Centralizing the source of truth prevents these silos. In a web context, this strategy also supports search engine optimization (SEO). By publishing a single authoritative web version and using canonical tags for variants, you prevent search engines from penalizing the site for duplicate content, ensuring users are directed to the correct topic.
+Centralizing the source of truth prevents these silos. In a web context, this strategy also supports [search engine optimization](../doc-stack/metadata-frontmatter.md#search-engine-optimization) (SEO). By publishing a single authoritative web version and using canonical tags for variants, you prevent search engines from penalizing the site for duplicate content, ensuring users are directed to the correct topic.
 
 ---
 
@@ -55,7 +55,7 @@ graph TD
 
 ### How the pattern functions
 
-The diagram illustrates the flow from source modules and configuration files through a publishing engine, such as a static site generator (SSG) or a component content management system (CCMS). 
+The diagram illustrates the flow from source modules and configuration files through a publishing engine, such as a static site generator (SSG) or a [component content management system](../doc-stack/ccms-overview.md) (CCMS). 
 
 To implement variables, you define keys in a central configuration:
 
@@ -65,7 +65,7 @@ product_name: "CloudScale Engine"
 release_version: "2.4.1"
 ```
 
-Then, reference these placeholders in your Markdown using the syntax required by your engine (for example, [Liquid](https://shopify.github.io/liquid/) for Jekyll/Eleventy or [Hugo’s Shortcodes](https://gohugo.io/)):
+Then, reference these placeholders in your [Markdown](../doc-stack/markup-languages.md#markdown-fundamentals) using the syntax required by your engine (for example, [Liquid](https://shopify.github.io/liquid/) for Jekyll/Eleventy or [Hugo's Shortcodes](https://gohugo.io/)):
 
 ```markdown
 To install the {{ site.product_name }} application, run the installer for version {{ site.release_version }}.
@@ -82,16 +82,16 @@ Open the application and click the **Start** button.
 ```
 
 ??? note "Developer-centric workflows"
-    Single sourcing is a pillar of documentation as code. It treats documentation with the same modular discipline as software, typically moving from source file through a static site generator to a production server via a continuous integration and continuous delivery (CI/CD) pipeline.
+    Single sourcing is a pillar of documentation as code. It treats documentation with the same modular discipline as software, typically moving from source file through a static site generator to a production server via a continuous integration and continuous delivery ([CI/CD](../doc-stack/cicd.md)) pipeline.
 
 ---
 
 ## Implementation best practices
 
-- Version control everything: Manage source modules in [Git](https://git-scm.com/). This aligns documentation with software release cycles and enables transparent peer reviews and rollbacks.
+- Version control everything: Manage source modules in [Git](https://git-scm.com/). This aligns documentation with software release cycles and enables transparent [peer reviews](../doc-lifecycle/review-approval.md) and rollbacks.
 - Centralize variables: Avoid hardcoding names, dates, or versions. Keep a dedicated library to prevent hidden text that requires manual hunting.
 - Write context-neutral content: Avoid directional phrases such as "as mentioned above" or "in the next chapter." These break when a snippet is reused in a different order or format.
-- Prune near-duplicates: Regularly audit your repository for topics that are almost identical. Merge these into a single template with conditional logic to prevent content debt.
+- Prune near-duplicates: Regularly audit your repository for topics that are almost identical. Merge these into a single template with conditional logic to prevent [content debt](../industry-terms/content-debt.md).
 
 ---
 

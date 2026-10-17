@@ -6,20 +6,20 @@ revision_date: 2026-09-03
 
 # RACI matrix
 
-> *A responsibility assignment framework mapping who is responsible, accountable, consulted, and informed across the documentation lifecycle*
+> *A responsibility assignment framework mapping who is responsible, accountable, consulted, and informed across the [documentation lifecycle](../doc-lifecycle/ddlc.md)*
 
 ---
 
 ## Defining the framework
 
-A RACI matrix clarifies project roles by mapping tasks to personnel based on four distinct involvement levels. In technical communication, this framework streamlines the documentation development life cycle (DDLC) by defining the following roles:
+A RACI matrix clarifies project roles by mapping tasks to personnel based on four distinct involvement levels. In technical communication, this framework streamlines the documentation development life cycle ([DDLC](../doc-lifecycle/ddlc.md)) by defining the following roles:
 
-- **Responsible:** The individuals who perform the work to complete the task, such as writing the draft or updating the Markdown files.
+- **Responsible:** The individuals who perform the work to complete the task, such as writing the draft or updating the [Markdown](../doc-stack/markup-languages.md#markdown-fundamentals) files.
 - **Accountable:** The person with final decision-making authority and sign-off. Only one person must be accountable for each task to ensure clear ownership.
-- **Consulted:** Subject matter experts (SMEs) whose opinions are sought. This is a two-way communication channel, such as developers providing technical verification.
+- **Consulted:** [Subject matter experts](../doc-lifecycle/sme-interviewing.md) (SMEs) whose opinions are sought. This is a two-way communication channel, such as developers providing technical verification.
 - **Informed:** Stakeholders who are kept up to date on progress or completion but do not contribute to the work. This is a one-way communication channel.
 
-Success depends on active participation from across the organization, including engineering, quality assurance (QA), and product management, to keep documentation synchronized with software releases.
+Success depends on active participation from across the organization, including engineering, [quality assurance](../references/iso-standards.md#quality-assurance-and-compliance-testing) (QA), and product management, to keep documentation synchronized with software releases.
 
 ---
 
@@ -36,8 +36,8 @@ By designating a developer as consulted and a product manager as accountable, yo
 As product complexity increases, informal check-ins often fail. Consider implementing a matrix if you recognize these symptoms:
 
 - **Launch bottlenecks:** Software is ready for production, but user guides are stuck in a review cycle with no clear final approver.
-- **Content debt:** Documentation becomes stale because no specific owner is tasked with the maintenance phase of the DDLC.
-- **Notification fatigue:** Engineers ignore Jira tickets or pull requests (PRs) because they are tagged on items where they should only be informed, not consulted.
+- **[Content debt](../industry-terms/content-debt.md):** Documentation becomes stale because no specific owner is tasked with the maintenance phase of the DDLC.
+- **Notification fatigue:** Engineers ignore Jira tickets or [pull requests](../doc-lifecycle/review-approval.md#the-pull-request-workflow) (PRs) because they are tagged on items where they should only be informed, not consulted.
 - **Duplicated effort:** Multiple writers or developers unknowingly work on the same application programming interface (API) reference because the responsible party was not defined.
 
 ---
@@ -59,8 +59,8 @@ graph LR
 ```
 
 1. **Stage 1: Role alignment:** During kickoff, the documentation manager assigns roles. Engineers are tagged as consulted for technical precision, while product leaders are accountable for the accuracy of the value proposition.
-2. **Stage 2: Drafting and reviews:** Technical writers (responsible) draft content and initiate peer reviews. They then request a technical review from the assigned SME.
-3. **Stage 3: Sign-off and publishing:** Once the technical review is complete, the accountable stakeholder provides the final sign-off. Following publication, automated webhooks notify informed parties, such as support or marketing, that the content is live.
+2. **Stage 2: Drafting and reviews:** Technical writers (responsible) draft content and initiate peer reviews. They then request a [technical review](../doc-lifecycle/review-approval.md#multi-tier-review-logic) from the assigned SME.
+3. **Stage 3: Sign-off and publishing:** Once the technical review is complete, the accountable stakeholder provides the final sign-off. Following publication, automated [webhooks](../doc-stack/emerging-architectures.md#event-driven-architecture-webhooks) notify informed parties, such as support or marketing, that the content is live.
 
 ??? note "Variation: The RASCI Alternative"
     The RASCI model adds a supportive (S) role. This identifies team members who assist the responsible party in performing the task. This is useful for coauthoring or when a junior writer requires mentorship.
@@ -71,11 +71,11 @@ graph LR
 
 Embedding the RACI matrix into your toolchain prevents the framework from being ignored or unused. 
 
-In a docs-as-code environment, use CODEOWNERS files in your Git repository to enforce these roles. For example, a repository can be configured to block a PR from merging until it receives an approval from the specific person or team designated as accountable. 
+In a docs-as-code environment, use CODEOWNERS files in your [Git](../doc-stack/git.md) repository to enforce these roles. For example, a repository can be configured to block a PR from merging until it receives an approval from the specific person or team designated as accountable. 
 
 - **Jira/Asana:** Automatically assign ticket owners (responsible) and watchers (informed) based on document type.
-- **GitHub/GitLab:** Use PR templates to list the consulted SMEs and require a sign-off from the accountable lead before merging.
-- **CI/CD:** Pipelines can trigger notifications to Slack or Microsoft Teams to notify the informed group automatically upon a successful build and deploy.
+- **GitHub/GitLab:** Use PR [templates](../references/templates.md) to list the consulted SMEs and require a sign-off from the accountable lead before merging.
+- **[CI/CD](../doc-stack/cicd.md):** Pipelines can trigger notifications to Slack or Microsoft Teams to notify the informed group automatically upon a successful build and deploy.
 
 ---
 

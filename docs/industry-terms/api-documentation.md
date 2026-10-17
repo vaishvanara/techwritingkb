@@ -12,9 +12,9 @@ revision_date: 2026-09-03
 
 # What is API documentation?
 
-Application programming interface (API) documentation is the contract between a service and its consumers. It defines how to interact with an API by detailing endpoints, authentication protocols, input parameters, and response formats. These formats are typically JavaScript Object Notation (JSON) or Extensible Markup Language (XML). Instead of serving as a static manual, modern documentation often functions as a live reference.
+Application programming interface (API) documentation is the contract between a service and its consumers. It defines how to interact with an API by detailing endpoints, authentication protocols, input parameters, and response formats. These formats are typically [JavaScript Object Notation](../doc-stack/json-logic.md) (JSON) or Extensible Markup Language (XML). Instead of serving as a static manual, modern documentation often functions as a live reference.
 
-Many teams use the [OpenAPI Specification (OAS)](https://www.openapis.org/){: target="_blank" rel="noopener" } to drive a spec-driven workflow. This allows for a docs-as-code approach where documentation generators extract metadata directly from the specification file. This process integrates with version control and continuous integration and continuous delivery (CI/CD) pipelines. Integration ensures that developer portals stay updated alongside the codebase.
+Many teams use the [OpenAPI Specification (OAS)](https://www.openapis.org/){: target="_blank" rel="noopener" } to drive a spec-driven workflow. This allows for a docs-as-code approach where documentation generators extract metadata directly from the specification file. This process integrates with version control and continuous integration and continuous delivery ([CI/CD](../doc-stack/cicd.md)) pipelines. Integration ensures that developer portals stay updated alongside the codebase.
 
 ```mermaid
 graph TD
@@ -43,9 +43,9 @@ Ignoring documentation standards leads to several risks:
 
 ## Syntax and structure
 
-Machine-readable schemas, such as [YAML](https://yaml.org/){: target="_blank" rel="noopener" } (YAML Ain't Markup Language) or [JSON](https://www.json.org/){: target="_blank" rel="noopener" }, form the backbone of modern API references. To be functional, an OpenAPI 3.x specification requires several core components:
+Machine-readable schemas, such as [YAML](https://yaml.org/){: target="_blank" rel="noopener" } (YAML Ain't [Markup](../doc-stack/markup-languages.md) Language) or [JSON](https://www.json.org/){: target="_blank" rel="noopener" }, form the backbone of modern API references. To be functional, an OpenAPI 3.x specification requires several core components:
 
-- **Metadata:** The API title, description, and version. This is defined in the `info` object.
+- **[Metadata](../doc-lifecycle/governance-maintenance.md#metadata-governance):** The API title, description, and version. This is defined in the `info` object.
 - **Servers:** Root addresses (base URLs) for sandbox and production environments.
 - **Paths and Operations:** The Uniform Resource Identifier (URI) paths and the permitted Hypertext Transfer Protocol (HTTP) methods, such as `#!http GET`, `#!http POST`, `#!http PUT`, or `#!http DELETE`.
 - **Parameters:** Requirements categorized by location: `path`, `query`, `header`, or `cookie`.
@@ -90,8 +90,8 @@ paths:
 
 ### Key components
 
-- **`openapi: 3.0.3`**: The semantic version of the OpenAPI Specification that the document follows.
-- **`/users/{id}`**: The relative path that uses a template expression (`{id}`) to target specific resources.
+- **`openapi: 3.0.3`**: The semantic version of the [OpenAPI Specification](../doc-stack/openapi.md) that the document follows.
+- **`/users/{id}`**: The relative path that uses a [template](../references/templates.md) expression (`{id}`) to target specific resources.
 - **`in: path`**: This indicates the parameter is part of the URL path. In OAS 3.0, path parameters must have `required: true`.
 - **`application/json`**: The media type used for the response body.
 
@@ -102,7 +102,7 @@ paths:
 Even technical teams struggle to keep reference pages accurate. Addressing these three areas prevents the most common integration hurdles.
 
 **Preventing Documentation Drift**
-Drift occurs when code evolves but the OpenAPI spec remains static. To solve this, integrate contract testing or validation tools into your CI/CD pipeline. If the code implementation and the spec do not match, the build should fail.
+Drift occurs when code evolves but the OpenAPI spec remains static. To solve this, integrate contract testing or validation tools into your CI/[CD](../technical-writing/content-design-foundations.md) pipeline. If the code implementation and the spec do not match, the build should fail.
 
 **Beyond the happy path**
 Documentation often ignores error states. Every endpoint should define standard HTTP error codes, such as 400 (Bad Request), 401 (Unauthorized), and 429 (Too Many Requests), along with specific error schemas that explain the failure.
@@ -118,7 +118,7 @@ The right tools turn static files into interactive developer hubs:
 
 - UI Generators: [Redocly](https://redocly.com/), [Swagger UI](https://swagger.io/tools/swagger-ui/), and [Stoplight Elements](https://stoplight.io/open-source/elements) render schemas into searchable portals.
 - Linters: [Spectral](https://stoplight.io/open-source/spectral) or [Vacuum](https://quobix.com/vacuum/) enforce style consistency and schema validity.
-- Security: Scanners, such as [42Crunch](https://42crunch.com/), check that endpoints do not accidentally expose personally identifiable information (PII) or contain security vulnerabilities.
+- Security: Scanners, such as [42Crunch](https://42crunch.com/), check that endpoints do not accidentally expose [personally identifiable information](../doc-lifecycle/compliance-legal.md#eliminating-pii) (PII) or contain security vulnerabilities.
 
 ---
 
@@ -130,4 +130,4 @@ The right tools turn static files into interactive developer hubs:
 - **Automate everything:** Use tools to generate documentation from the spec file. Do not manually maintain separate HTML tables for API parameters.
 - **Enforce style:** Use a linter to flag schema errors and naming convention violations before they reach production.
 - **Enable Try It Out:** Use mock servers (such as Prism) or sandbox environments in your portal so developers can test calls immediately.
-- **Strict Versioning:** Use SemVer to signal when an update introduces breaking changes for consumers.
+- **Strict Versioning:** Use [SemVer](../industry-terms/semantic-versioning.md) to signal when an update introduces breaking changes for consumers.

@@ -6,7 +6,7 @@ revision_date: 2026-09-03
 
 # Compiled HTML Help (CHM)
 
-> *A proprietary Microsoft format that packages HTML content, navigation data, and indexing into a single, searchable binary file for offline documentation*
+> *A proprietary Microsoft format that packages HTML content, [navigation](../references/ia-design.md#the-three-level-rule) data, and indexing into a single, searchable binary file for offline documentation*
 
 ---
 
@@ -14,7 +14,7 @@ revision_date: 2026-09-03
 
 Microsoft introduced Compiled HTML Help (CHM) alongside Windows 98 as the successor to the WinHelp format. It functions as a container (using ITS storage technology), bundling multiple source files, such as HTML, CSS, images, and specialized navigation data, into one .chm binary. For decades, it served as the standard for distributing help content with Windows desktop applications.
 
-While modern systems generally favor web-based documentation or static site generators (SSGs), CHM remains relevant in closed-network environments and legacy enterprise software. Its primary advantages are its self-contained nature and the ability to run natively on Windows without an active internet connection.
+While modern systems generally favor web-based documentation or [static site generators](../doc-stack/ssg.md) (SSGs), CHM remains relevant in closed-network environments and legacy enterprise software. Its primary advantages are its self-contained nature and the ability to run natively on Windows without an active internet connection.
 
 ---
 
@@ -27,7 +27,7 @@ Technical writers benefit from a pre-built user interface that includes a search
 However, the format introduces specific operational challenges:
 
 - **Security restrictions:** Windows security updates, specifically the Mark of the Web, often block CHM files accessed via network shares or those downloaded from the web. This results in **Navigation Canceled** errors.
-- **Version control friction:** .chm files are compiled binaries and do not support code diffs. This makes it difficult to track changes within the binary itself. Teams must version the source files instead in a version control system (VCS).
+- **Version control friction:** .chm files are compiled binaries and do not support code diffs. This makes it difficult to track changes within the binary itself. Teams must version the source files instead in a [version control system](../doc-stack/git.md) (VCS).
 
 ??? note "Legacy window layout"
     The classic Compiled HTML Help interface uses a tripane layout:
@@ -117,7 +117,7 @@ If a software UI calls a context ID but the viewer displays **Topic Not Found**,
 
 ## Tooling and ecosystem
 
-- **Parsers:** While `hh.exe` is the Windows default, cross-platform users can access content via `KChmViewer` or `GnoCHM`.
+- **[Parsers](../doc-stack/api-reference-generation.md#2-the-extraction-engine-parser):** While `hh.exe` is the Windows default, cross-platform users can access content via `KChmViewer` or `GnoCHM`.
 - **Automation:** The `hhc.exe` compiler is unique because it returns an exit code of 1 for success and 0 for failure. This is the inverse of standard command-line interface (CLI) conventions, where 0 typically indicates success. Build scripts must be configured to interpret a return code of 1 as a successful compilation.
 
 ---
@@ -126,5 +126,5 @@ If a software UI calls a context ID but the viewer displays **Topic Not Found**,
 
 - **Keep binaries out of VCS:** Commit only the raw source files (.hhp, .hhc, .htm, etc.). Storing the compiled .chm in a version control system leads to repository bloat and merge conflicts.
 - **Path Consistency:** While the CHM internal file system is case-insensitive, use lowercase paths for all source files to ensure compatibility with modern web-based build tools that may process the same source files.
-- **Design for Accessibility:** The legacy MSHTML engine has limited support for modern Accessible Rich Internet Applications (ARIA) attributes. Use simple, semantic HTML and ensure high-contrast CSS is tested within the viewer.
-- **Integrate with CI/CD:** Call `hhc.exe` within your continuous integration and continuous delivery (CI/CD) pipeline. Since `hhc.exe` does not output to `stderr` on failure, you must parse the compilation log file to identify missing files or broken links.
+- **Design for [Accessibility](../references/accessibility.md):** The legacy MSHTML engine has limited support for modern Accessible Rich Internet Applications (ARIA) attributes. Use simple, semantic HTML and ensure high-contrast CSS is tested within the viewer.
+- **Integrate with [CI/CD](../doc-stack/cicd.md):** Call `hhc.exe` within your continuous integration and continuous delivery (CI/[CD](../technical-writing/content-design-foundations.md)) pipeline. Since `hhc.exe` does not output to `stderr` on failure, you must parse the compilation log file to identify missing files or broken links.

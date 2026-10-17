@@ -49,7 +49,7 @@ The format consists of three non-negative integers. You can also include suffixe
 - **MINOR:** Incremented for adding functionality in a backward-compatible manner.
 - **PATCH:** Incremented for backward-compatible bug fixes.
 - **Pre-release:** An optional hyphenated string (for example, `-alpha.1`). Note: Pre-release versions have a lower precedence than the associated normal version (for example, `1.0.0-alpha` < `1.0.0`).
-- **Build metadata:** An optional string preceded by a plus sign (+) (for example, `+build.104`). This is ignored when determining version precedence.
+- **Build [metadata](../doc-lifecycle/governance-maintenance.md#metadata-governance):** An optional string preceded by a plus sign (+) (for example, `+build.104`). This is ignored when determining version precedence.
 
 **Major Version Zero:** Versions in the `0.y.z` format are for initial development. In this phase, the public API is not considered stable, and breaking changes may occur at any time without a MAJOR increment.
 
@@ -64,7 +64,7 @@ Developers use range specifiers to manage these updates automatically:
 
 ## Code example
 
-This JavaScript Object Notation (JSON) snippet demonstrates how a software development kit (SDK) configuration might define its own version and its requirements for other dependencies.
+This [JavaScript Object Notation](../doc-stack/json-logic.md) (JSON) snippet demonstrates how a software development kit (SDK) configuration might define its own version and its requirements for other dependencies.
 
 ```json
 {
@@ -108,6 +108,6 @@ SemVer is meaningless if users do not know what parts of the code are public. Ex
 ## Best practices
 
 - **Document the public API:** Clearly state which endpoints and methods are stable.
-- **Automate increments:** Use continuous integration and continuous delivery (CI/CD) tools to calculate version numbers based on pull request (PR) metadata.
+- **Automate increments:** Use continuous integration and continuous delivery ([CI/CD](../doc-stack/cicd.md)) tools to calculate version numbers based on pull request (PR) metadata.
 - **Maintain a changelog:** Provide a human-readable [changelog](https://keepachangelog.com/en/1.1.0/).
 - **Deprecate before breaking:** Use console warnings to alert users of upcoming changes several minor versions before the major release that removes the feature.

@@ -14,7 +14,7 @@ In large systems, identical terms often mean different things in different areas
 
 ## Solving linguistic ambiguity
 
-As systems scale, the meaning of terms often diverges depending on the domain. In [domain-driven design (DDD)](../systems-thinking/domain-driven-design.md), failing to account for these shifts creates polysemes (words with multiple meanings). These are a primary source of logic bugs and developer confusion.
+As systems scale, the meaning of terms often diverges depending on the domain. In [domain-driven design](../systems-thinking/domain-driven-design.md) (DDD), failing to account for these shifts creates polysemes (words with multiple meanings). These are a primary source of logic bugs and developer confusion.
 
 Consider the term "order." Its definition changes based on the perspective of the context:
 

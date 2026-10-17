@@ -35,7 +35,7 @@ graph TD
 
 - **Why did the API crash?** The database ran out of memory (OOM).
 - **Why did it run out of memory?** A single analytics query attempted to load a 50GB dataset into the database's memory buffer/RAM.
-- **Why did the query load so much data?** The query lacked **filtering (WHERE clauses) and pagination (LIMIT clauses)**, requesting the entire dataset.
+- **Why did the query load so much data?** The query lacked filtering (WHERE clauses) and [pagination](../references/ia-design.md#pagination) (LIMIT clauses), requesting the entire dataset.
 - **Why were filtering and pagination omitted?** The development team did not test the query's performance or resource consumption under simulated production-scale loads.
 - **Why was load testing skipped?** The release pipeline did not include automated performance testing as a mandatory deployment requirement. (This is the systemic root cause).
 

@@ -14,13 +14,13 @@ revision_date: 2026-09-03
 
 Progressive disclosure sequences information across multiple screens, steps, or layers. Rather than presenting a user with too much information at once, you surface essential data first and defer granular or rarely used information to secondary layers, such as expandable sections, such as accordions, subpages, or modals.
 
-This approach acknowledges the limits of human cognitive load. When information architecture (IA) mirrors a user's workflow, it transforms a large amount of data into a guided narrative. By analyzing your audience, you can separate the must-know functional requirements from the nice-to-know optimization parameters, ensuring advanced procedures do not obstruct the critical path.
+This approach acknowledges the limits of human cognitive load. When [information architecture](../references/ia-design.md) (IA) mirrors a user's workflow, it transforms a large amount of data into a guided narrative. By analyzing your audience, you can separate the must-know functional requirements from the nice-to-know optimization parameters, ensuring advanced procedures do not obstruct the critical path.
 
 ---
 
 ## The cost of dense text
 
-Ignoring this principle creates friction for both user experience (UX) and developer experience (DX). Documentation fails when it forces installation steps, configuration variables, API schemas, and troubleshooting tips into a single, flat hierarchy. This lack of prioritization obscures critical commands and leads to choice paralysis, where users abandon a product because they cannot identify the entry point.
+Ignoring this principle creates friction for both user experience (UX) and [developer experience](../industry-terms/developer-experience.md) (DX). Documentation fails when it forces installation steps, configuration variables, API schemas, and troubleshooting tips into a single, flat hierarchy. This lack of prioritization obscures critical commands and leads to choice paralysis, where users abandon a product because they cannot identify the entry point.
 
 Integrating progressive disclosure lowers the barrier to entry. It allows new users to onboard via streamlined instructions while keeping advanced configurations accessible via toggles or deep links for power users.
 
@@ -97,7 +97,7 @@ The improved example reduces the visual weight of the initial setup. By moving s
 - **Target the 80th percentile:** Design the primary layer for the vast majority of users. Use telemetry or usability data to confirm which details are essential for initial success.
 - **Write descriptive triggers:** Avoid generic **More info** labels. Use action-oriented text, such as **View advanced configuration variables** or **Check system requirements**.
 - **Maintain local context:** Use UI controls, such as tabs or accordions, to reveal information in-place. Redirecting a user to a new page for a single variable adds unnecessary interaction cost and breaks their workflow.
-- **Maintain searchability:** Ensure that content hidden within disclosure elements remains indexable by site search and search engine optimization (SEO) crawlers.
+- **Maintain searchability:** Ensure that content hidden within disclosure elements remains indexable by site search and [search engine optimization](../doc-stack/metadata-frontmatter.md#search-engine-optimization) (SEO) crawlers.
 
 ---
 

@@ -30,7 +30,7 @@ Effective isometric diagrams follow strict structural rules to maintain geometri
 
 - 30-degree alignment: The two horizontal axes (X and Y) must be drawn at 30 degrees from the horizontal baseline. The vertical axis (Z) remains at 90 degrees.
 - 1:1:1 axial scale: In technical isometric drawing, use the same scale for all three axes. Do not apply foreshortening (the approximately 82% reduction used in true isometric projection), as it interferes with the ability of the reader to measure or gauge relative size.
-- Exploded views: For complex assemblies, pull components apart along the vertical (Z) or parallel (X/Y) axes. Use dashed trace lines to show the assembly path and preserve the installation order.
+- [Exploded views](../industry-terms/exploded-view.md): For complex assemblies, pull components apart along the vertical (Z) or parallel (X/Y) axes. Use dashed trace lines to show the assembly path and preserve the installation order.
 - Contextual anchoring: Align ports and connection points strictly to the isometric grid to ensure wiring paths and cable entries are clear.
 
 ---
@@ -76,8 +76,8 @@ By isolating dimensions (the 3-inch gap) and specific physical locations, such a
 ### Implementation strategies
 
 - Fixed vantage point: Stick to a single viewing angle, typically the near-bird's-eye view (top-front-right), throughout a document set to prevent user disorientation.
-- Vector precision: Use vector formats, such as Scalable Vector Graphics (SVG), rather than raster images, such as Portable Network Graphics (PNG) or Joint Photographic Experts Group (JPG) files. This preserves line weights and ensures that labels remain legible when users zoom in on high-density port clusters.
-- Layered detail: Avoid visual clutter by using detail callouts or exploded views for dense component clusters rather than crowding a single layer.
+- Vector precision: Use vector formats, such as [Scalable Vector Graphics](../technical-writing/svg-for-docs.md) (SVG), rather than raster images, such as Portable Network Graphics (PNG) or Joint Photographic Experts Group (JPG) files. This preserves line weights and ensures that labels remain legible when users zoom in on high-density port clusters.
+- Layered detail: Avoid visual clutter by using detail [callouts](../doc-stack/markup-languages.md#extending-markup-admonitions) or exploded views for dense component clusters rather than crowding a single layer.
 
 ### Mistakes to avoid
 

@@ -58,9 +58,9 @@ Instead of trying to document an infinite number of configurations, you do not n
 
 When the product is inherently complex, the variety of the regulator must be amplified to provide the necessary responses.
 
-- **Implement [single sourcing](../industry-terms/single-sourcing.md) and [conditional processing](../doc-stack/metadata-frontmatter.md#conditional-rendering)**. Use tools that allow you to reuse modular content to generate custom outputs. This matches the variety of user environments, such as OS or subscription tier, without a linear increase in maintenance effort.
+- **Implement single sourcing and conditional processing**. Use tools that allow you to reuse modular content to generate custom outputs. This matches the variety of user environments, such as OS or subscription tier, without a linear increase in maintenance effort.
 - **Create interactive decision trees**. Replace static troubleshooting pages with diagnostic tools. These tools guide users toward a specific solution based on error codes, effectively matching the high variety of the software internal states.
-- **Use metadata-driven search**. Organize content with a precise taxonomy. This allows users to filter a high-variety documentation portal to find the specific path that matches their unique environmental variety.
+- **Use metadata. Organize content with a precise taxonomy. This allows users to filter a high-variety documentation portal to find the specific path that matches their unique environmental variety.
 
 ---
 

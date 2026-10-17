@@ -51,7 +51,7 @@ Product teams use documentation to map and limit the impact of technical changes
 
 - **Deployment runbooks**: Explicitly state the potential blast radius of each step in a deployment process. If a step involves a database schema migration, include a warning about which upstream services might experience latency or connection errors during the transition.
 - **Dependency maps**: Keep architecture diagrams updated. If developers need to update Service A, they should use the documentation to identify that Services B, C, and D depend on its output. This prevents unexpected downstream outages.
-- **Change risk categorization**: In internal release plans, classify updates by their potential blast radius. Low-impact updates, such as CSS styling tweaks, require minimal verification. High-impact updates, such as changing an authentication protocol or a core networking configuration, require extensive staging tests and automated rollback triggers.
+- **Change risk categorization**: In internal release plans, classify updates by their potential blast radius. Low-impact updates, such as CSS styling tweaks, require minimal verification. High-impact updates, such as changing an authentication protocol or a core networking configuration, require extensive [staging](../doc-stack/cicd.md#staging-and-preview-environments) tests and automated rollback triggers.
 
 !!! warning "Documentation blast radius"
     Documentation changes have their own blast radius. If you rename a parameter in an [API reference](../industry-terms/api-documentation.md), you must update every conceptual guide, tutorial, and code example that references that parameter. Overlooking these references leads to broken implementations and developer frustration.
@@ -70,6 +70,6 @@ Software engineers use containment strategies to minimize the blast radius. Your
 
 ## Impact of mapping the blast radius
 
-- **Faster incident resolution**: When a failure occurs, operators use dependency documentation to isolate the root cause and determine the extent of the damage, reducing the [mean time to recovery (MTTR)](../systems-thinking/mean-time-to-recovery.md).
+- **Faster incident resolution**: When a failure occurs, operators use dependency documentation to isolate the [root cause](../systems-thinking/root-cause-analysis.md) and determine the extent of the damage, reducing the [mean time to recovery (MTTR)](../systems-thinking/mean-time-to-recovery.md).
 - **Safe deployments**: Engineers can deploy code with more confidence when they understand the boundaries and failover systems intended to contain failures.
 - **Targeted customer communication**: Understanding the blast radius allows support teams to send incident notifications only to affected users, such as users in a specific cell or shard, rather than alerting the entire customer base.

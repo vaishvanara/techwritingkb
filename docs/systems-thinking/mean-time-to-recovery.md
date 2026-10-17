@@ -38,7 +38,7 @@ graph LR
 
 During a production outage, engineers experience high cognitive load. Design your runbooks for quick scanning and rapid execution:
 
-- **Include explicit entry criteria:** At the top of the runbook, list the specific alerts or metric thresholds that validate the guide. For example, use this runbook if the `DatabaseConnectionTimeout` alert fires or if the `db_cpu_utilization` metric exceeds 95 percent for more than 5 minutes.
+- **Include explicit entry criteria:** At the top of the [runbook](../technical-writing/engineering-runbooks.md), list the specific alerts or metric thresholds that validate the guide. For example, use this runbook if the `DatabaseConnectionTimeout` alert fires or if the `db_cpu_utilization` metric exceeds 95 percent for more than 5 minutes.
 - **Format commands for immediate execution:** Write command-line interface commands in code blocks. Use standardized delimiters for variables, such as `{{ENVIRONMENT_NAME}}` or `${DATABASE_ID}`, to make placeholders visually distinct from valid shell syntax and to prevent accidental execution of unreplaced strings.
 - **Show expected outputs:** After a critical command, show an example of the expected successful standard output or JavaScript Object Notation response. This allows the operator to verify state transitions before proceeding.
 
@@ -63,4 +63,4 @@ An incident is not recovered until system health is verified against baseline me
 
 ## Why MTTR is a key technical writing metric
 
-Measuring MTTR gives technical writing teams a way to demonstrate business value. By comparing MTTR before and after a runbook update or the implementation of a documentation portal, you do not just guess; you quantify how high-quality documentation saves engineering hours, prevents customer churn, and reduces the cost of downtime.
+Measuring MTTR gives [technical writing](../technical-writing/basics.md) teams a way to demonstrate business value. By comparing MTTR before and after a runbook update or the implementation of a documentation portal, you do not just guess; you quantify how high-quality documentation saves engineering hours, prevents customer churn, and reduces the cost of downtime.

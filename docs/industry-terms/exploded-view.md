@@ -16,7 +16,7 @@ An exploded view is a diagram or 3D rendering that displaces the components of a
 
 By maintaining the orientation of every screw, plate, and housing, these illustrations allow a user to see through the exterior of a device without losing the context of the whole.
 
-In technical communication, these drawings act as a visual bridge between a list of parts and the physical reality of assembly. They transform dense, multi-step mechanical instructions into a single, navigable map.
+In [technical communication](../technical-writing/basics.md), these drawings act as a visual bridge between a list of parts and the physical reality of assembly. They transform dense, multi-step mechanical instructions into a single, navigable map.
 
 ---
 
@@ -24,7 +24,7 @@ In technical communication, these drawings act as a visual bridge between a list
 
 Complex hardware often creates a problem where users know what the device does but not how it is held together. Exploded views solve this problem by externalizing the mental effort required to understand an assembly. Instead of forcing a technician to cross-reference long text descriptions while rotating a heavy object, the diagram provides an immediate spatial reference.
 
-When these views are integrated into digital documentation, they typically map directly to a bill of materials (BOM). This creates a functional link between a 3D shape and its metadata, such as part numbers, torque specifications, or supplier links, which accelerates the troubleshooting and procurement process.
+When these views are integrated into digital documentation, they typically map directly to a bill of materials (BOM). This creates a functional link between a 3D shape and its [metadata](../doc-lifecycle/governance-maintenance.md#metadata-governance), such as part numbers, torque specifications, or supplier links, which accelerates the troubleshooting and procurement process.
 
 ---
 
@@ -35,7 +35,7 @@ To maintain clarity, an exploded view relies on a few necessary structural eleme
 - **Trail lines:** These dashed or lightweight lines, also known as leader lines or flow lines, act as the path for each part. They show exactly where a component seats or the axis along which it travels during installation.
 - **Spatial displacement:** Parts must be moved far enough to eliminate overlapping edges but must stay close enough to maintain the visual connection of the assembly.
 - **Isometric or axonometric projection:** Using a standard 30-degree angle for isometric drawings ensures that depth is represented without the distortion found in perspective drawings, which keeps component proportions consistent.
-- **Callouts:** These alphanumeric tags, or balloons, link the drawing to the parts list and act as the primary index for the user.
+- **[Callouts](../doc-stack/markup-languages.md#extending-markup-admonitions):** These alphanumeric tags, or balloons, link the drawing to the parts list and act as the primary index for the user.
 
 ---
 
@@ -83,5 +83,5 @@ Effective illustrations prioritize utility over artistic flair. To ensure a prof
 
 A visual illustration is only useful if it is readable. Test your exploded views with two simple checks:
 
-- **The five-second callout test:** Ask a technician to find a specific part number. If they cannot locate the callout or follow the trail line within five seconds, the visual hierarchy is too cluttered.
+- **The five-second callout test:** Ask a technician to find a specific part number. If they cannot locate the callout or follow the trail line within five seconds, the [visual hierarchy](../industry-terms/visual-hierarchy.md) is too cluttered.
 - **Silent assembly test:** Can a user determine the assembly order using only the diagram, without reading the text instructions? This is the benchmark for a successful technical illustration.

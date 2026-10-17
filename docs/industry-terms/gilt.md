@@ -12,9 +12,9 @@ revision_date: 2026-09-03
 
 ## What is GILT?
 
-GILT (globalization, internationalization, localization, and translation) is an operational framework designed to scale software and technical content across international borders. Rather than treating global deployment as a final refinement, mature product teams embed GILT into the software development life cycle (SDLC) to connect engineering, linguistics, and technical communication.
+GILT (globalization, internationalization, localization, and translation) is an operational framework designed to scale software and technical content across international borders. Rather than treating global deployment as a final refinement, mature product teams embed GILT into the [software development life cycle](../doc-lifecycle/sdlc-integration.md) (SDLC) to connect engineering, linguistics, and technical communication.
 
-Success depends on cross-functional collaboration. Developers build the technical foundation for adaptability, while product managers define market priorities. Technical writers create the source content using modular, translation-ready architectures, and quality assurance (QA) teams verify that linguistic assets and visual layouts remain stable across different regional configurations.
+Success depends on cross-functional collaboration. Developers build the technical foundation for adaptability, while product managers define market priorities. Technical writers create the source content using modular, translation-ready architectures, and [quality assurance](../references/iso-standards.md#quality-assurance-and-compliance-testing) (QA) teams verify that linguistic assets and visual layouts remain stable across different regional configurations.
 
 The framework relies on four distinct but interdependent pillars:
 
@@ -31,14 +31,14 @@ The framework relies on four distinct but interdependent pillars:
 
 ## Strategic advantages
 
-Fragmented, manual translation workflows inevitably generate technical and content debt. When engineering and documentation teams operate without a unified GILT strategy, localized code branches often drift out of sync, resulting in expensive manual patches and stalled release cycles.
+Fragmented, manual translation workflows inevitably generate technical and [content debt](../industry-terms/content-debt.md). When engineering and documentation teams operate without a unified GILT strategy, localized code branches often drift out of sync, resulting in expensive manual patches and stalled release cycles.
 
 A structured GILT pipeline offers several operational improvements:
 
-- **Content efficiency:** Single-sourcing and content reuse allow teams to write once and deploy everywhere, significantly lowering per-language costs.
+- **Content efficiency:** Single-sourcing and [content reuse](../references/dita.md#content-reuse-and-single-sourcing) allow teams to write once and deploy everywhere, significantly lowering per-language costs.
 - **Synchronized releases (Simship):** Automation ensures localized assets move through the pipeline at the same velocity as the core software, enabling simultaneous shipping (simship).
 - **Brand integrity:** Strict adherence to style guides and controlled vocabularies (glossaries) eliminates ambiguity, ensuring a consistent user experience (UX) regardless of region.
-- **Minimized engineering friction:** A robustly internationalized codebase means developers spend less time fixing broken layouts or duplicating templates for right-to-left (RTL) languages or double-byte character sets.
+- **Minimized engineering friction:** A robustly internationalized codebase means developers spend less time fixing broken layouts or duplicating [templates](../references/templates.md) for right-to-left (RTL) languages or double-byte character sets.
 
 ---
 
@@ -69,8 +69,8 @@ graph TD
     G --> A
 ```
 
-1. **Extraction and encoding:** Technical teams separate user-facing strings from the source code. These strings are stored in external resource files (such as JSON, XLIFF, or YAML) and encoded via [Unicode](https://home.unicode.org/){: target="_blank" rel="noopener" } (typically UTF-8) to support global character sets.
-2. **Linguistic optimization:** Writers refine source strings using controlled language. Removing idioms and passive voice at the source prevents expensive errors during translation.
+1. **Extraction and encoding:** Technical teams separate user-facing strings from the source code. These strings are stored in external resource files (such as [JSON](../doc-stack/json-logic.md), XLIFF, or YAML) and encoded via [Unicode](https://home.unicode.org/){: target="_blank" rel="noopener" } (typically UTF-8) to support global character sets.
+2. **Linguistic optimization:** Writers refine source strings using [controlled language](../industry-terms/controlled-language.md). Removing idioms and passive voice at the source prevents expensive errors during translation.
 3. **Translation and memory:** Optimized files enter a translation management system (TMS). Translation engines leverage historical translation memories (TM) and term bases (TB) to process only new or modified segments, ensuring consistency and cost savings.
 4. **Validation:** Translated strings are reintegrated into the application. QA teams perform both automated (visual regression) and manual checks to ensure the UI remains functional despite text expansion or bidirectional (Bidi) text requirements.
 
@@ -82,22 +82,22 @@ Assigning clear roles via a Responsible, Accountable, Consulted, and Informed (R
 
 - **Responsible:** Technical writers (modular content), software engineers (code internationalization), and localization coordinators (pipeline management).
 - **Accountable:** Globalization program managers or product owners who define market priorities and approve budget allocation.
-- **Consulted:** Subject matter experts (SMEs) for terminology accuracy and legal teams for regional compliance.
+- **Consulted:** [Subject matter experts](../doc-lifecycle/sme-interviewing.md) (SMEs) for terminology accuracy and legal teams for regional compliance.
 - **Informed:** Customer support and sales teams who need to prepare for localized product updates.
 
 ---
 
 ## Automation and "Docs as Code"
 
-Modern GILT workflows treat documentation as software. Rather than manual file transfers, content repositories are linked directly to localization pipelines via application programming interfaces (APIs) or command-line interface (CLI) tools. When a writer merges a change or opens a pull request (PR), the continuous integration and continuous delivery (CI/CD) pipeline triggers the GILT process automatically.
+Modern GILT workflows treat documentation as software. Rather than manual file transfers, content repositories are linked directly to localization pipelines via application programming interfaces (APIs) or command-line interface (CLI) tools. When a writer merges a change or opens a pull request (PR), the continuous integration and continuous delivery ([CI/CD](../doc-stack/cicd.md)) pipeline triggers the GILT process automatically.
 
 ??? note "Pipeline automation steps"
     1. **Trigger:** A documentation merge occurs in the main branch.
-    2. **Linting:** Automated tools check Markdown or source files against style, terminology, and internationalization rules.
+    2. **[Linting](../doc-stack/prose-linting.md):** Automated tools check Markdown or source files against style, terminology, and internationalization rules.
     3. **Parsing/Extraction:** The build system prepares data structures (such as .pot or .json) for translation.
     4. **Sync:** The system pushes files to the translation management system (TMS).
-    5. **Integration:** Once translated, files are committed back to the repository via an automated PR.
-    6. **Deployment:** The CI/CD engine rebuilds the site or application, serving the correct locale-specific assets to the end user.
+    5. **Integration:** Once translated, files are committed back to the repository via an automated [PR](../doc-lifecycle/review-approval.md#the-pull-request-workflow).
+    6. **Deployment:** The CI/[CD](../technical-writing/content-design-foundations.md) engine rebuilds the site or application, serving the correct locale-specific assets to the end user.
 
 ---
 
@@ -112,7 +112,7 @@ GILT pipelines often face predictable technical friction. Addressing these early
 - **Text expansion:** Rigid containers (fixed-width or fixed-height) break when strings grow in translation.
     - *Fix:* Use responsive CSS (Flexbox or Grid), avoid fixed pixel widths, and use pseudo-localization to simulate text growth before sending content to translators.
 - **Context gaps:** Translators often work on isolated strings in a spreadsheet-like view without seeing the UI.
-    - *Fix:* Attach screenshots, developer notes, or metadata comments to strings to explain their location and function.
+    - *Fix:* Attach screenshots, developer notes, or [metadata](../doc-lifecycle/governance-maintenance.md#metadata-governance) comments to strings to explain their location and function.
 
 ---
 

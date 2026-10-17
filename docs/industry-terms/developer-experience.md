@@ -12,9 +12,9 @@ revision_date: 2026-09-03
 
 ## Defining the Developer Environment
 
-Developer experience (DX) encompasses the workflows and resources engineers navigate when interacting with a technical platform. While user experience (UX) focuses on general consumption, DX addresses specialized interfaces such as application programming interfaces (APIs), including Representational State Transfer (REST), GraphQL, and gRPC. It also includes command-line interfaces (CLIs), software development kits (SDKs), and client libraries. 
+Developer experience (DX) encompasses the workflows and resources engineers navigate when interacting with a technical platform. While user experience (UX) focuses on general consumption, DX addresses specialized interfaces such as application programming interfaces (APIs), including Representational State Transfer (REST), GraphQL, and gRPC. It also includes command-line interfaces (CLIs), [software development kits](../doc-stack/emerging-architectures.md#documenting-sdks) (SDKs), and client libraries. 
 
-At its core, DX is the application of cognitive load theory to software engineering. If an engineer spends mental energy deciphering inconsistent endpoint naming or fragmented documentation, they have less capacity to solve architectural problems.
+At its core, DX is the application of [cognitive load theory](../technical-writing/cognitive-load.md) to software engineering. If an engineer spends mental energy deciphering inconsistent endpoint naming or fragmented documentation, they have less capacity to solve architectural problems.
 
 Prioritizing DX is a business strategy. High-quality DX lowers the barrier to entry and drives product adoption through self-service onboarding. When documentation aligns with code through docs-as-code workflows, developers solve their own problems rather than opening support tickets. In these workflows, documentation is versioned and tested alongside the codebase. Conversely, poor DX leads to platform abandonment. If a code example is deprecated or an integration path is opaque, developers will migrate to a competitor with a lower friction threshold.
 
@@ -77,6 +77,6 @@ Dense text hinders information retrieval. Transforming instructional prose into 
 Great DX requires continuous maintenance and automated validation to prevent documentation rot.
 
 - **Write for scanners:** Use H2 and H3 headings and bulleted lists. Developers typically use F-shaped scanning patterns to locate code blocks.
-- **Verified code snippets:** Do not publish partial snippets. Every code block should be a functional unit and ideally verified through a CI/CD pipeline, such as by using tools like `markdown-code-block-tester`, to ensure compatibility with the latest API version.
+- **Verified code snippets:** Do not publish partial snippets. Every code block should be a functional unit and ideally verified through a [CI/CD](../doc-stack/cicd.md) pipeline, such as by using tools like `markdown-code-block-tester`, to ensure compatibility with the latest API version.
 - **Observational testing (friction logging):** Perform friction logs where a developer attempts an integration from scratch. Document every instance where they consulted a search engine or felt frustrated.
-- **Tight feedback loops:** Provide **Was this helpful?** widgets and a public issue tracker. Community feedback is the primary sensor for identifying edge-case bugs or outdated SDK dependencies.
+- **Tight [feedback loops](../systems-thinking/feedback-loop.md):** Provide **Was this helpful?** widgets and a public issue tracker. Community feedback is the primary sensor for identifying edge-case bugs or outdated SDK dependencies.

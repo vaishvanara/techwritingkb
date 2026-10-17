@@ -29,7 +29,7 @@ Perform a structured audit whenever you plan to update a core system component o
 - **Update and verify**: Edit the affected files and update shared content snippets. Build your documentation site locally and run a link checker to verify internal consistency. If file paths or URIs have changed, ensure server-side redirects are configured to prevent 404 errors for external users.
 
 !!! tip "Automate dependency tracking"
-    If you use a docs-as-code workflow, run link checkers and schema validators in your continuous integration (CI) pipeline. You can also map dependencies using [YAML](https://yaml.org/){: target="_blank" rel="noopener" } front matter tags or Related Topics metadata, which allow scripts to generate a visual dependency graph of file relationships.
+    If you use a docs-as-code workflow, run link checkers and schema validators in your continuous integration (CI) pipeline. You can also map dependencies using [YAML](https://yaml.org/){: target="_blank" rel="noopener" } front matter tags or Related Topics [metadata](../doc-lifecycle/governance-maintenance.md#metadata-governance), which allow scripts to generate a visual dependency graph of file relationships.
 
 ---
 
@@ -39,4 +39,4 @@ Design your documentation architecture to simplify future ripple effect audits:
 
 - **Apply the DRY (Don't repeat yourself) principle**: Use reusable content snippets or global variables for values that change frequently, such as port numbers, version strings, or base URLs. Updating the source snippet propagates the change to all referencing topics automatically.
 - **Maintain a single source of truth (SSoT)**: Centralize technical specifications. For example, use an OpenAPI definition to generate API reference pages so that changes to the backend automatically update the documentation.
-- **Define clear metadata**: Use consistent taxonomy tags for files. If you tag all topics related to a specific microservice, you can use those tags to programmatically identify all files within the impact radius of a service update.
+- **Define clear metadata**: Use consistent [taxonomy](../doc-stack/metadata-frontmatter.md#taxonomy-management) tags for files. If you tag all topics related to a specific microservice, you can use those tags to programmatically identify all files within the impact radius of a service update.

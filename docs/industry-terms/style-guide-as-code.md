@@ -12,7 +12,7 @@ revision_date: 2026-09-03
 
 ## What is style guide as code?
 
-Style guide as code transforms static editorial manuals into executable logic. By translating grammar, tone, and formatting rules into configuration files, teams can treat prose quality in the same way as code quality. This shift moves syntax and terminology enforcement from human editors to automated linters, which catches errors before they reach a pull request (PR).
+Style guide as code transforms static editorial manuals into executable logic. By translating grammar, tone, and formatting rules into configuration files, teams can treat prose quality in the same way as code quality. This shift moves syntax and terminology enforcement from human editors to automated linters, which catches errors before they reach a [pull request](../doc-lifecycle/review-approval.md#the-pull-request-workflow) (PR).
 
 Although technical writers typically author and refine these rules, the workflow relies on a partnership with DevOps and engineering. These teams integrate the checks into local integrated development environments (IDEs) and continuous integration (CI) pipelines. This ensures that every contributor, from developers to product managers, receives instant feedback on their documentation as they write it.
 
@@ -20,9 +20,9 @@ Although technical writers typically author and refine these rules, the workflow
 
 ## Why it matters
 
-Manual editorial reviews are frequent bottlenecks. Editors often spend significant time correcting recurring issues such as passive voice, serial commas, or deprecated product names. When documentation relies on human memory alone, consistency fluctuates, and technical debt accumulates as releases outpace the editing queue.
+Manual editorial reviews are frequent bottlenecks. Editors often spend significant time correcting recurring issues such as passive voice, serial commas, or deprecated product names. When documentation relies on human memory alone, consistency fluctuates, and [technical debt](../industry-terms/content-debt.md) accumulates as releases outpace the editing queue.
 
-Automating these checks shifts the focus of the editor from proofreading to content strategy and technical accuracy. Instant feedback within the editing environment empowers authors to fix their own mistakes immediately. This results in a faster documentation lifecycle where human review is reserved for substance rather than syntax.
+Automating these checks shifts the focus of the editor from proofreading to content strategy and technical accuracy. Instant feedback within the editing environment empowers authors to fix their own mistakes immediately. This results in a faster [documentation lifecycle](../doc-lifecycle/ddlc.md) where human review is reserved for substance rather than syntax.
 
 ---
 
@@ -61,9 +61,9 @@ graph TD
     G -->|Passes| I[Deploy updated documentation]
 ```
 
-1. Local authoring: As you draft content, a local linter (running as an IDE extension) flags violations in real time. This immediate feedback loop coaches writers on style rules as they work.
+1. Local authoring: As you draft content, a local linter (running as an IDE extension) flags violations in real time. This immediate [feedback loop](../systems-thinking/feedback-loop.md) coaches writers on style rules as they work.
 2. Commit validation: When an author attempts to commit changes, a pre-commit hook executes the linter. If the linter returns a non-zero exit code, the commit is aborted, which ensures no non-compliant prose enters the local history.
-3. Pipeline enforcement: Once a PR is opened, the continuous integration and continuous delivery (CI/CD) platform executes the full linting suite. If critical errors are detected, the build fails, which prevents the merge until the content is compliant.
+3. Pipeline enforcement: Once a PR is opened, the continuous integration and continuous delivery ([CI/CD](../doc-stack/cicd.md)) platform executes the full linting suite. If critical errors are detected, the build fails, which prevents the merge until the content is compliant.
 
 ---
 
@@ -71,18 +71,18 @@ graph TD
 
 Effective automation requires clear ownership to prevent rules from becoming too restrictive or falling out of date.
 
-- Responsible: Authors (resolving linting errors in their own content) and technical writers (authoring and maintaining linting rules).
+- Responsible: Authors (resolving [linting](../doc-stack/prose-linting.md) errors in their own content) and technical writers (authoring and maintaining linting rules).
 - Accountable: Content operations lead or documentation manager.
-- Consulted: DevOps (pipeline integration), product managers, and subject matter experts (standardizing terminology).
-- Informed: Software engineering and quality assurance (QA) teams.
+- Consulted: DevOps (pipeline integration), product managers, and [subject matter experts](../doc-lifecycle/sme-interviewing.md) (standardizing terminology).
+- Informed: Software engineering and [quality assurance](../references/iso-standards.md#quality-assurance-and-compliance-testing) (QA) teams.
 
 ---
 
 ## Pipeline integration and tooling
 
-Implementation requires a prose linter capable of parsing markup languages such as Markdown, AsciiDoc, or reStructuredText. Tools such as Vale or textlint are industry standards because they allow for highly customizable rules stored directly in the project repository.
+Implementation requires a prose linter capable of parsing markup languages such as [Markdown](../doc-stack/markup-languages.md#markdown-fundamentals), AsciiDoc, or reStructuredText. Tools such as Vale or textlint are industry standards because they allow for highly customizable rules stored directly in the project repository.
 
-A typical configuration file (.vale.ini) is written in the INI format and directs the linter to specific styles:
+A typical configuration file (.[vale](../doc-stack/prose-linting.md#introduction-to-vale).ini) is written in the INI format and directs the linter to specific styles:
 
 ```ini
 # .vale.ini configuration example
@@ -93,7 +93,7 @@ MinAlertLevel = warning
 BasedOnStyles = Vale, EditorialStandards
 ```
 
-By integrating these tools into GitHub Actions, GitLab CI/CD, or Azure Pipelines, you turn your style guide into a quality gate. If the linter returns a non-zero exit code, the pipeline identifies the exact file and line number of the violation, which allows contributors to address issues directly in the PR interface.
+By integrating these tools into GitHub Actions, GitLab CI/[CD](../technical-writing/content-design-foundations.md), or Azure Pipelines, you turn your style guide into a quality gate. If the linter returns a non-zero exit code, the pipeline identifies the exact file and line number of the violation, which allows contributors to address issues directly in the PR interface.
 
 ---
 
@@ -101,7 +101,7 @@ By integrating these tools into GitHub Actions, GitLab CI/CD, or Azure Pipelines
 
 Automated pipelines require tuning to avoid friction between writers and the system.
 
-- **The noise problem**: False positives, such as valid technical jargon flagged as typos, can frustrate authors.  
+- **The noise problem**: False positives, such as valid technical [jargon](../technical-writing/plain-language.md#the-jargon-filter) flagged as typos, can frustrate authors.  
     - **Solution:** Use a `Vocab` definition in Vale. By adding terms to `styles/Vocab/Internal/accept.txt`, you globally resolve spelling errors for project-specific terminology without modifying the base dictionary.
 
 - **Performance lags**: Linting thousands of legacy files on every commit slows down the development cycle.  

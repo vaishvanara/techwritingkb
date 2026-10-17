@@ -6,13 +6,13 @@ revision_date: 2026-09-03
 
 # Semantic hierarchy
 
-> *A system of organizing digital content through nested headings and tags to establish a logical information architecture and improve accessibility*
+> *A system of organizing digital content through nested headings and tags to establish a logical [information architecture](../references/ia-design.md) and improve accessibility*
 
 ---
 
 ## Understanding semantic hierarchy
 
-Semantic hierarchy uses structural HTML elements (`<h1>` through `<h6>`) to signal the relative importance of topics and their relationships. This structure builds a programmatic tree that defines the document information architecture. While visual cues, such as typography and whitespace, help sighted users, the underlying semantic tags ensure that the document logic is preserved across different platforms, including screen readers and search engine crawlers.
+Semantic hierarchy uses structural HTML elements (`<h1>` through `<h6>`) to signal the relative importance of topics and their relationships. This structure builds a programmatic tree that defines the document information architecture. While visual cues, such as typography and whitespace, help sighted users, the underlying semantic tags ensure that the document logic is preserved across different platforms, including [screen readers](../references/accessibility.md#screen-reader-optimization) and search engine crawlers.
 
 ---
 
@@ -22,12 +22,12 @@ When documentation lacks hierarchy, it becomes a dense block of text. This creat
 
 This foundation serves three core technical requirements:
 
-- **Accessibility:** Screen readers use heading tags to generate navigation landmarks. Users with visual impairments often navigate by jumping from header to header to understand page layout.
-- **Search engine optimization (SEO):** Search algorithms use heading levels to parse the context and relevance of content, which influences how segments of the page appear in featured snippets and search results.
-- **Scannability:** Technical users scan for headers to locate specific solutions. Correct hierarchy ensures that the visual prominence of a header matches its programmatic depth.
+- **Accessibility:** Screen readers use heading tags to generate [navigation](../references/ia-design.md#the-three-level-rule) landmarks. Users with visual impairments often navigate by jumping from header to header to understand page layout.
+- **[Search engine optimization](../doc-stack/metadata-frontmatter.md#search-engine-optimization) (SEO):** Search algorithms use heading levels to parse the context and relevance of content, which influences how segments of the page appear in featured snippets and search results.
+- **[Scannability](../industry-terms/scannability.md):** Technical users scan for headers to locate specific solutions. Correct hierarchy ensures that the visual prominence of a header matches its programmatic depth.
 
 !!! tip "Design tip"
-    Apply enough whitespace around headers using CSS margins rather than empty `<br>` tags. This maintains a clean separation between sections without introducing redundant elements into the accessibility tree.
+    Apply enough whitespace around headers using CSS margins rather than empty `<br>` tags. This maintains a clean separation between sections without introducing redundant elements into the [accessibility](../references/accessibility.md) tree.
 
 ---
 
@@ -36,8 +36,8 @@ This foundation serves three core technical requirements:
 Effective semantic structure relies on three factors:
 
 - **Logical nesting:** Arrange topics systematically. A page must have exactly one `<h1>` defining the primary topic. Use `<h2>` for major sections, `<h3>` for sub-sections, and so on. Jumping levels (for example, from an `<h2>` directly to an `<h4>`) violates Web Content Accessibility Guidelines (WCAG) 1.3.1 (Info and Relationships) and creates a disjointed experience for assistive technology.
-- **Visual-semantic alignment:** While typography, including size and font weight, visually reflects the hierarchy, it must match the underlying tags. An `<h2>` should never be visually smaller than an `<h3>`. 
-- **Semantic integrity:** Use actual programmatic tags or Markdown markers (`##`, `###`) rather than applying styles, such as bold or increased font size, to standard paragraph text. Bolding text does not add a node to the document outline.
+- **Visual-semantic alignment:** While [typography](../technical-writing/visual-communication.md#typography-and-legibility), including size and font weight, visually reflects the hierarchy, it must match the underlying tags. An `<h2>` should never be visually smaller than an `<h3>`. 
+- **Semantic integrity:** Use actual programmatic tags or [Markdown](../doc-stack/markup-languages.md#markdown-fundamentals) markers (`##`, `###`) rather than applying styles, such as bold or increased font size, to standard paragraph text. Bolding text does not add a node to the document outline.
 
 ---
 

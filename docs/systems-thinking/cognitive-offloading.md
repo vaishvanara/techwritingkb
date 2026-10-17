@@ -57,6 +57,6 @@ Different document formats serve different cognitive needs during system operati
 
 ## Maintaining offloading tools
 
-An outdated tool increases cognitive load more than a total lack of documentation. If an engineer runs a command from a runbook and it fails, they must perform context recovery to determine why the tool failed while simultaneously troubleshooting the original incident.
+An outdated tool increases cognitive load more than a total lack of documentation. If an engineer runs a command from a [runbook](../technical-writing/engineering-runbooks.md) and it fails, they must perform context recovery to determine why the tool failed while simultaneously troubleshooting the original incident.
 
 To keep offloading tools effective, perform regular game day exercises or test runs of incident guides to verify that commands, dependencies, and environment variables are current. After resolving an incident, identify which sections of the documentation were ambiguous or slow to use, and update those documents as part of the post-incident review process.

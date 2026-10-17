@@ -6,15 +6,15 @@ revision_date: 2026-09-03
 
 # Heuristic evaluation
 
-> *A usability inspection method where experts audit content against predefined principles to identify friction points and improve information architecture*
+> *A usability inspection method where experts audit content against predefined principles to identify friction points and improve [information architecture](../references/ia-design.md)*
 
 ---
 
 ## What is heuristic evaluation?
 
-Heuristic evaluation (HE) is a systematic usability inspection where evaluators check a documentation set against established usability principles, which are also known as heuristics. In technical communication, this involves auditing help centers, API references, and manuals to find friction points—areas where the information architecture, navigation, or content design prevents a user from completing a goal. 
+Heuristic evaluation (HE) is a systematic usability inspection where evaluators check a documentation set against established usability principles, which are also known as heuristics. In technical communication, this involves auditing help centers, API references, and manuals to find friction points—areas where the information architecture, [navigation](../references/ia-design.md#the-three-level-rule), or content design prevents a user from completing a goal. 
 
-Unlike user testing, which observes participant behavior, a heuristic review relies on the expertise of evaluators to predict usability problems based on proven frameworks, such as Nielsen’s 10 Usability Heuristics. While a technical review focuses on the accuracy of code and facts, a heuristic evaluation focuses on the usability and findability of that information.
+Unlike user testing, which observes participant behavior, a heuristic review relies on the expertise of evaluators to predict usability problems based on proven frameworks, such as Nielsen's 10 Usability Heuristics. While a [technical review](../doc-lifecycle/review-approval.md#multi-tier-review-logic) focuses on the accuracy of code and facts, a heuristic evaluation focuses on the usability and findability of that information.
 
 ---
 
@@ -59,22 +59,22 @@ graph LR
 To maintain objectivity, the evaluator should ideally not be the primary author of the content being reviewed.
 
 - **Responsible:** Evaluators (UX writers, peer technical writers, or usability specialists). They perform the walkthroughs and document violations.
-- **Accountable:** Documentation manager or product owner. They ensure the evaluation is integrated into the documentation development life cycle (DDLC) and approve the final remediation plan.
-- **Consulted:** Subject matter experts (SMEs), such as engineers or support staff. They provide context on technical constraints or common user pitfalls.
+- **Accountable:** Documentation manager or product owner. They ensure the evaluation is integrated into the documentation development life cycle ([DDLC](../doc-lifecycle/ddlc.md)) and approve the final remediation plan.
+- **Consulted:** [Subject matter experts](../doc-lifecycle/sme-interviewing.md) (SMEs), such as engineers or support staff. They provide context on technical constraints or common user pitfalls.
 - **Informed:** Development teams. They are notified of structural changes that may affect product UI or navigation.
 
 ---
 
 ## Pipeline integration
 
-Integrating HE into existing workflows ensures usability is treated as a Definition of Done requirement.
+Integrating HE into existing workflows ensures usability is treated as a [Definition of Done](../doc-lifecycle/sdlc-integration.md#definition-of-done-dod) requirement.
 
 === "Jira and GitHub"
-    Use templates to log violations. Tagging issues with `heuristic:consistency` or `severity:2` allows for filtering by usability impact rather than just technical urgency.
+    Use [templates](../references/templates.md) to log violations. Tagging issues with `heuristic:consistency` or `severity:2` allows for filtering by usability impact rather than just technical urgency.
 === "Severity gates"
     For major releases, configure the release checklist to require a usability sign-off. Documentation cannot be merged if critical (Level 4) or major (Level 3) violations remain unresolved.
 === "Self-check heuristics"
-    Include a subset of heuristics in pull request (PR) templates. This encourages writers to check for Minimalist Design and Match Between System and Real World during the drafting phase.
+    Include a subset of heuristics in [pull request](../doc-lifecycle/review-approval.md#the-pull-request-workflow) (PR) templates. This encourages writers to check for Minimalist Design and Match Between System and Real World during the drafting phase.
 
 ---
 

@@ -12,9 +12,9 @@ revision_date: 2026-09-03
 
 ## The logic of semantic chunking
 
-Semantic chunking breaks long-form documentation into smaller, self-contained sections based on shifts in conceptual meaning rather than arbitrary word counts or layout constraints. This approach mirrors how the human brain processes complex data by grouping information into cohesive, chunked units. This method reduces the cognitive load required to navigate dense technical instructions.
+Semantic [chunking](../industry-terms/chunking.md) breaks long-form documentation into smaller, self-contained sections based on shifts in conceptual meaning rather than arbitrary word counts or layout constraints. This approach mirrors how the human brain processes complex data by grouping information into cohesive, chunked units. This method reduces the cognitive load required to navigate dense technical instructions.
 
-In the context of retrieval-augmented generation (RAG) and semantic search, semantic chunking is a method of splitting text where the boundaries are determined by shifts in the embedding space. When a document is indexed, text is converted into vector embeddings, which are high-dimensional mathematical representations of meaning. If a single chunk spans multiple unrelated topics, its vector representation becomes a centroid of those disparate concepts, diluting its similarity score against specific queries. By ensuring each chunk maintains a singular semantic focus, developers improve the precision and recall of the retrieval pipeline, which ensures AI agents surface the most relevant context.
+In the context of [retrieval-augmented generation](../doc-stack/machine-readable-content.md#chunking-strategy-for-rag) (RAG) and semantic search, semantic chunking is a method of splitting text where the boundaries are determined by shifts in the embedding space. When a document is indexed, text is converted into vector embeddings, which are high-dimensional mathematical representations of meaning. If a single chunk spans multiple unrelated topics, its vector representation becomes a centroid of those disparate concepts, diluting its similarity score against specific queries. By ensuring each chunk maintains a singular semantic focus, developers improve the precision and recall of the retrieval pipeline, which ensures AI agents surface the most relevant context.
 
 ---
 
@@ -32,7 +32,7 @@ A semantically chunked document follows a modular structure where chunks are opt
 
 - Singular Focus: A chunk should address one core concept or task. In algorithmic semantic chunking, this is often identified by monitoring the cosine distance between sentence embeddings; a spike in distance indicates a topic shift and a natural break point.
 - Contextual Independence: Each unit must stand alone. Use precise nouns and explicit terminology. Avoid anaphoric references, such as "this system" or "the previously mentioned tool," which lose their referents when a chunk is retrieved in isolation.
-- Structural Signposting: Use standard Markdown headers (H2, H3) to define boundaries. While AI models can use semantic similarity to split text, explicit headers provide structural hints to parsers and help humans navigate the document hierarchy.
+- Structural Signposting: Use standard [Markdown](../doc-stack/markup-languages.md#markdown-fundamentals) headers (H2, H3) to define boundaries. While AI models can use semantic similarity to split text, explicit headers provide structural hints to parsers and help humans navigate the document hierarchy.
 
 ---
 
@@ -71,7 +71,7 @@ graph TD
     style Chunked_Pipeline fill:#bbf,stroke:#333,stroke-width:2px
 ```
 
-In the legacy model, unrelated workflows such as connection errors and Secure Sockets Layer (SSL) rotation are merged into a single paragraph. This produces a noisy vector embedding that sits between both topics, potentially failing to reach the similarity threshold for either search query. By applying semantic chunking, each subtopic is isolated. This allows a search agent to retrieve only the Certificate Rotation chunk, providing the LLM with a clean, relevant context window.
+In the legacy model, unrelated workflows such as connection errors and Secure Sockets Layer (SSL) rotation are merged into a single paragraph. This produces a noisy vector embedding that sits between both topics, potentially failing to reach the similarity threshold for either search query. By applying semantic chunking, each subtopic is isolated. This allows a search agent to retrieve only the Certificate Rotation chunk, providing the LLM with a clean, relevant [context window](../technical-writing/prompt-engineering.md#context-window-management).
 
 ---
 
@@ -83,7 +83,7 @@ Effective semantic chunking requires a shift in how content is authored and proc
 - Resolve pronoun anchors: Replace relative pronouns with specific names. A paragraph should remain coherent even if read out of context.
 - Maintain modularity: Link to prerequisites rather than assuming they are present in the context window.
 - Prefer semantic over character limits: Do not rely on naive chunking, which splits at strict character counts. Use semantic splitting tools that analyze the meaning of sentences to find the optimal breakpoint.
-- Metadata enrichment: Attach the document title and H1 context to each chunk metadata to preserve global context within local segments.
+- [Metadata](../doc-lifecycle/governance-maintenance.md#metadata-governance) enrichment: Attach the document title and H1 context to each chunk metadata to preserve global context within local segments.
 
 ---
 
@@ -93,4 +93,4 @@ To test if a section is truly semantic, apply the following:
 
 1. The Isolation Test: Copy a single H2 section into a blank document. If a reader can complete the task without the surrounding text, the chunk is semantically complete.
 2. The Cosine Similarity Check (Technical): Use an embedding model to compare sentences within a chunk. If the similarity score drops significantly at a specific point, that point likely requires a new header or a split.
-3. Visual Hierarchy Test: Ensure that headers clearly delineate the start of new conceptual vectors.
+3. [Visual Hierarchy](../industry-terms/visual-hierarchy.md) Test: Ensure that headers clearly delineate the start of new conceptual vectors.

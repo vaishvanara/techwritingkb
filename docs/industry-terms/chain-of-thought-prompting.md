@@ -6,7 +6,7 @@ revision_date: 2026-09-03
 
 # Chain-of-thought (CoT) prompting
 
-> *A prompt engineering technique that directs AI models to generate intermediate reasoning steps, improving accuracy in multi-step logical tasks*
+> *A [prompt engineering](../technical-writing/prompt-engineering.md) technique that directs AI models to generate intermediate reasoning steps, improving accuracy in multi-step logical tasks*
 
 ---
 
@@ -14,7 +14,7 @@ revision_date: 2026-09-03
 
 Standard large language model (LLM) interactions often fail when applied to multi-step logical problems because the transformer architecture is limited by the computation performed during a single forward pass. Without intermediate steps, the model must map a complex input to a final answer in a fixed number of layers. 
 
-Chain-of-thought (CoT) prompting shifts this behavior by allowing the model to decompose the problem into a sequence of tokens that serve as external working memory. By generating these intermediate calculations, the model can attend to its own prior reasoning in the context window. 
+Chain-of-thought (CoT) prompting shifts this behavior by allowing the model to decompose the problem into a sequence of tokens that serve as external working memory. By generating these intermediate calculations, the model can attend to its own prior reasoning in the [context window](../technical-writing/prompt-engineering.md#context-window-management). 
 
 This reduces logical hallucinations and ensures that the final token prediction is conditioned on a valid sequence of deductions rather than just the initial prompt. For developers, this provides a reasoning trace, transforming a probabilistic output into an auditable sequence.
 
@@ -22,7 +22,7 @@ This reduces logical hallucinations and ensures that the final token prediction 
 
 ## Why auditability matters
 
-Accuracy is the baseline for a functional developer experience (DX). If an AI-assisted tool generates invalid code or broken architecture, it creates technical debt. Chain-of-thought prompting provides a reasoning trace that serves two purposes:
+Accuracy is the baseline for a functional developer experience (DX). If an AI-assisted tool generates invalid code or broken architecture, it creates [technical debt](../industry-terms/content-debt.md). Chain-of-thought prompting provides a reasoning trace that serves two purposes:
 
 1.  **Computation Expansion:** It allows the model to allocate more total compute (floating-point operations per second or FLOPs) to a problem by generating more tokens. Each new token generated is a serial computation step that informs the next.
 2.  **Verification:** It allows human review to audit the path of the model. If the conclusion is incorrect, the reviewer can pinpoint whether the error occurred during the initial decomposition (input parsing) or during a specific step of the logical derivation.
@@ -90,7 +90,7 @@ To implement this, move away from open-ended queries toward structured, sequenti
 ### Effective Application
 
 -   **Instructional Directives:** Use imperative verbs to define the reasoning structure: Identify, Verify, and Calculate before Conclude.
--   **Delimiter usage:** Instruct the model to separate reasoning from the final answer (for example, using Extensible Markup Language (XML) tags such as `<reasoning>` or JavaScript Object Notation (JSON) keys) to allow for programmatic extraction of the result without the unnecessary information of the thought process.
+-   **Delimiter usage:** Instruct the model to separate reasoning from the final answer (for example, using Extensible [Markup](../doc-stack/markup-languages.md) Language (XML) tags such as `<reasoning>` or [JavaScript Object Notation](../doc-stack/json-logic.md) (JSON) keys) to allow for programmatic extraction of the result without the unnecessary information of the thought process.
 -   **Model Suitability:** CoT is most effective on models with high parameter counts. While smaller models (such as Llama 3 8B) can perform CoT, they are more susceptible to logical drift, where an error in an early reasoning step cascades into a confidently wrong conclusion.
 
 ### Pitfalls to Avoid

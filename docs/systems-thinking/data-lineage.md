@@ -29,7 +29,7 @@ graph LR
 ```
 
 - **Source (Origin)**: The [single source of truth](../doc-stack/git.md#the-single-source-of-truth) for the technical detail. This is typically structured data or code, such as an OpenAPI (Swagger) specification, a database schema, or a central YAML/JSON configuration file.
-- **Processing (Transformation)**: The stage where raw data is parsed, filtered, or formatted. For example, a static site generator (SSG) or a build script may ingest a JSON payload and use a template engine (such as Liquid or Jinja) to transform it into a Markdown table or a code snippet.
+- **Processing (Transformation)**: The stage where raw data is parsed, filtered, or formatted. For example, a static site generator (SSG) or a build script may ingest a [JSON payload](../doc-stack/json-logic.md#anatomy-of-a-json-payload) and use a template engine (such as Liquid or Jinja) to transform it into a Markdown table or a code snippet.
 - **Output (Destination)**: The final consumption point for the user, such as [developer portals](../doc-stack/developer-portals.md), in-app [tooltips](../doc-stack/terminology-tooltips.md), or PDF user guides.
 
 ---
@@ -38,7 +38,7 @@ graph LR
 
 To build a traceable and maintainable documentation system, use these methods:
 
-- **Use variables and global definitions.** Instead of hardcoding values (literals), store shared parameters in centralized metadata files. Reference these variables within your documentation so that updating the source file automatically propagates changes to all output formats during the next build.
+- **Use variables and global definitions.** Instead of hardcoding values (literals), store shared parameters in centralized [metadata](../doc-lifecycle/governance-maintenance.md#metadata-governance) files. Reference these variables within your documentation so that updating the source file automatically propagates changes to all output formats during the next build.
 - **Automate reference documentation from source.** Use documentation generators that extract docstrings and schemas directly from the codebase, such as [Sphinx](https://www.sphinx-doc.org/){: target="_blank" rel="noopener" } (for Python/reST), [JSDoc](https://jsdoc.app/){: target="_blank" rel="noopener" } (for JavaScript), or [Doxygen](https://www.doxygen.nl/){: target="_blank" rel="noopener" } (for C++/Java). This ensures the Source and Output remain coupled.
 - **Implement a dependency graph.** Use build tools or custom scripts to maintain a directed acyclic graph (DAG) of your content. This allows you to identify which tutorials or articles rely on specific API specifications, making it easier to perform impact analysis before a release.
 

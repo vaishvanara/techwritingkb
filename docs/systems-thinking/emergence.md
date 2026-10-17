@@ -53,7 +53,7 @@ Instead of organizing all your content around individual features, create guides
 
 ### 3. Focus on system-level failure modes in troubleshooting
 
-When writing troubleshooting and runbook documentation, address failures that emerge from component interactions.
+When writing troubleshooting and [runbook](../technical-writing/engineering-runbooks.md) documentation, address failures that emerge from component interactions.
 
 - **Define multi-component root causes:** Do not limit troubleshooting steps to restarting the service. Explain how to diagnose systemic issues such as thread pool exhaustion, distributed deadlocks, or network split-brains.
 - **Specify telemetry and observability rules:** Help operators identify emergent patterns by documenting how to correlate logs, metrics, and traces across different services.

@@ -22,7 +22,7 @@ This minimalist methodology hinges on context. Rather than forcing a user to nav
 
 Documentation that ignores JIT principles often results in setup fatigue, where users are confronted with large blocks of text during high-friction moments such as onboarding. When a user is forced to search external databases for field requirements, such as specific encryption standards or character limits, frustration builds, leading to abandoned workflows and increased support volume.
 
-Implementing JIT learning minimizes this interaction cost. By designing for scannability and surfacing information only when triggered by user action or data-driven friction points, documentation transforms from a static reference into an active tool for user success.
+Implementing JIT learning minimizes this interaction cost. By designing for [scannability](../industry-terms/scannability.md) and surfacing information only when triggered by user action or data-driven friction points, documentation transforms from a static reference into an active tool for user success.
 
 ---
 
@@ -32,7 +32,7 @@ Effective JIT implementations rely on four fundamental pillars:
 
 - **Contextual relevance:** Content must adapt to the current state of the user, such as a specific input field, a complex dashboard view, or an error state.
 - **Minimalist scope:** Documentation should solve the immediate problem. Avoid explaining secondary features or historical background that is not relevant to the current step.
-- **Progressive disclosure:** Complex technical details should follow a layered architecture. Present a high-level summary first, allowing users to expand deeper technical instructions only if needed.
+- **[Progressive disclosure](../industry-terms/progressive-disclosure.md):** Complex technical details should follow a layered architecture. Present a high-level summary first, allowing users to expand deeper technical instructions only if needed.
 - **Embedded delivery:** Help should feel like a native part of the UI. Use inline components to prevent layout shifts or jarring transitions to new tabs.
 
 ---
@@ -70,7 +70,7 @@ Use collapsible detail blocks to tuck away advanced technical steps until they a
 ### Pattern breakdown
 
 - **Contextual triggers:** Visual markers, such as info icons, allow users to self-select help only when they encounter uncertainty.
-- **Microcopy:** The pop-up provides immediate format requirements, such as Base64 only, without leaving the focus of the field.
+- **[Microcopy](../technical-writing/ux-writing.md):** The pop-up provides immediate format requirements, such as Base64 only, without leaving the focus of the field.
 - **Layered complexity:** Advanced command-line interface (CLI) commands are hidden within an expandable container, keeping the primary interface clean for experienced users.
 - **Actionable guidance:** Clear, verb-driven labels guide the user toward the next successful interaction.
 
@@ -91,9 +91,9 @@ Shifting to a JIT model directly influences three key product metrics:
 To build a robust JIT strategy, prioritize the following:
 
 - **Map the friction:** Use heatmaps or session recordings to identify where users hesitate. Target these specific areas for microcopy improvements.
-- **Entry point visibility:** Use consistent visual language, such as info icons or tooltips, so users recognize where help is available.
+- **Entry point visibility:** Use consistent visual language, such as info icons or [tooltips](../doc-stack/terminology-tooltips.md), so users recognize where help is available.
 - **Imperative language:** Keep text brief and action-oriented. Use strong verbs to direct the user toward a solution.
-- **Actionable empty states:** Treat blank dashboards as learning opportunities. Replace **No data found** with starter templates or **Create your first...** calls to action.
+- **Actionable empty states:** Treat blank dashboards as learning opportunities. Replace **No data found** with starter [templates](../references/templates.md) or **Create your first...** calls to action.
 
 ---
 
@@ -110,5 +110,5 @@ To build a robust JIT strategy, prioritize the following:
 Confirm your JIT strategy through targeted testing:
 
 - **Observational testing:** Watch users interact with complex features. Note if they find and utilize the help elements when they encounter a hurdle.
-- **Analytics review:** Monitor click-through rates (CTR) on help triggers. High engagement with a specific icon may suggest that the underlying UI is non-intuitive and requires a redesign rather than just more help text.
-- **Readability auditing:** Ensure microcopy is accessible, such as Web Content Accessibility Guidelines (WCAG) compliant, and free of jargon that could alienate new users.
+- **Analytics review:** Monitor click-through rates ([CTR](../industry-terms/concept-task-reference.md)) on help triggers. High engagement with a specific icon may suggest that the underlying UI is non-intuitive and requires a redesign rather than just more help text.
+- **Readability auditing:** Ensure microcopy is accessible, such as Web Content [Accessibility](../references/accessibility.md) Guidelines (WCAG) compliant, and free of jargon that could alienate new users.

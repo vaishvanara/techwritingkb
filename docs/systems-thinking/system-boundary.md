@@ -15,7 +15,7 @@ A system boundary is the conceptual perimeter that separates the components, cod
 Failing to define clear boundaries leads to documentation drift, scope creep, and support overhead. When system boundaries are ambiguous, you risk over-documenting third-party tools or infrastructure. Over-documenting external components results in:
 
 - **Maintenance overhead:** Documenting how to configure an external identity provider (IdP), such as Okta or Auth0, or a cloud provider service, such as AWS IAM, requires updates whenever those third parties change their UI or API logic.
-- **Support ambiguity:** If documentation includes detailed setup for external environments, users may hold your support team accountable for troubleshooting issues within those external systems (for example, debugging a user’s local network or firewall).
+- **Support ambiguity:** If documentation includes detailed setup for external environments, users may hold your support team accountable for troubleshooting issues within those external systems (for example, debugging a user's local network or firewall).
 - **Information overload:** The core product value is obscured when users must navigate through instructions for installing underlying dependencies or configuring host operating systems.
 
 By establishing clear system boundaries, you align your content strictly with the components your product manages, updates, and supports.
@@ -27,10 +27,10 @@ By establishing clear system boundaries, you align your content strictly with th
 To define where your system ends and external dependencies begin, analyze the flow of data and the limits of administrative control.
 
 - **Administrative control:** If your team does not manage the source code, deployment lifecycle, or versioning of a component, that component exists outside your system boundary.
-- **Security and data trust:** Identify the trust boundary. Points where data crosses from your managed environment into an external system (for example, via a webhook or a payment gateway) represent clear system boundaries.
+- **Security and data trust:** Identify the trust boundary. Points where data crosses from your managed environment into an external system (for example, via a [webhook](../doc-stack/emerging-architectures.md#event-driven-architecture-webhooks) or a payment gateway) represent clear system boundaries.
 - **Delivery Model:** The boundary location shifts based on the architecture:
     - **SaaS:** The boundary typically encompasses the exposed APIs, User Interface (UI), and the managed backend services. The underlying cloud infrastructure (for example, AWS/GCP) is an external dependency relative to the user-facing documentation.
-    - **On-premises/SDKs:** The boundary lies between your binary/library and the user’s runtime environment (JVM, CLR, etc.), operating system, or host application.
+    - **On-premises/SDKs:** The boundary lies between your binary/library and the user's runtime environment (JVM, CLR, etc.), operating system, or host application.
 
 ### Boundary visualization
 
@@ -94,7 +94,7 @@ When a task requires an external system, document the *requirements* rather than
 If your platform uses Stripe for payments:
 
 - **Inside the boundary:** The configuration of the Stripe API key within your dashboard and the handling of Stripe Webhook events.
-- **Outside the boundary:** Stripe’s PCI compliance certification, bank account verification workflows, and Stripe’s internal ledger logic.
+- **Outside the boundary:** Stripe's PCI compliance certification, bank account verification workflows, and Stripe's internal ledger logic.
 
 ### Scenario 2: On-premises database requirements
 

@@ -6,7 +6,7 @@ revision_date: 2026-09-03
 
 # CSS Paged Media Module
 
-> *A World Wide Web Consortium (W3C) standard for defining page layouts, margins, and breaks when converting Hypertext Markup Language (HTML) content into paged formats such as Portable Document Format (PDF) files or paper*
+> *A [World Wide Web Consortium](../references/accessibility.md#compliance-framework-w3c) (W3C) standard for defining page layouts, margins, and breaks when converting Hypertext Markup Language (HTML) content into paged formats such as Portable Document Format (PDF) files or paper*
 
 ---
 
@@ -14,15 +14,15 @@ revision_date: 2026-09-03
 
 While the web traditionally functions as a continuous scroll, the Cascading Style Sheets (CSS) Paged Media Module shifts the focus to discrete pages. It maps digital elements to a page model consisting of the page box, which contains the page area and the margin area. This allows developers to treat HTML content as a series of bounded sheets, which is essential for manuals, books, or any document intended for print. 
 
-By using this specification, technical writers can bypass legacy desktop publishing tools and leverage existing CSS skills to automate high-fidelity PDF generation.
+By using this specification, technical writers can bypass legacy desktop publishing tools and leverage existing CSS skills to automate high-fidelity [PDF](../doc-stack/pdf-epub-generation.md#pdf-versus-epub-architectures) generation.
 
 ---
 
 ## Why it matters in modern workflows
 
-Manual formatting is a significant bottleneck in documentation as code (DaC) pipelines. Without a programmatic way to handle pagination, automated exports often suffer from widows and orphans. These are single lines of text left alone at the top or bottom of a page, or headers separated from their following paragraphs.
+Manual formatting is a significant bottleneck in documentation as code ([DaC](../doc-stack/diagrams-as-code.md)) pipelines. Without a programmatic way to handle pagination, automated exports often suffer from widows and orphans. These are single lines of text left alone at the top or bottom of a page, or headers separated from their following paragraphs.
 
-The CSS Paged Media Module solves this by giving teams granular control over the print environment. It ensures that metadata, such as dynamic page numbers, version headers, and legal footers, align with the broader content strategy. This treats the print layout with the same level of automation and version control as the web layout.
+The CSS Paged Media Module solves this by giving teams granular control over the print environment. It ensures that [metadata](../doc-lifecycle/governance-maintenance.md#metadata-governance), such as dynamic page numbers, version headers, and legal footers, align with the broader content strategy. This treats the print layout with the same level of automation and version control as the web layout.
 
 ---
 
@@ -98,7 +98,7 @@ h2.section-start {
 ```
 
 ### Key takeaways
-This configuration establishes a standard letter size and uses the `@top-center` margin box to repeat the title of the manual across every page. The `counter()` functions automate page numbering. To ensure readability, the `orphans` and `widows` properties prevent isolated lines of text, while `break-inside: avoid` ensures that code snippets do not split across pages.
+This configuration establishes a standard letter size and uses the `@top-center` margin box to repeat the title of the manual across every page. The `counter()` functions automate page numbering. To ensure [readability](../technical-writing/readability-scores.md), the `orphans` and `widows` properties prevent isolated lines of text, while `break-inside: avoid` ensures that code snippets do not split across pages.
 
 ---
 
@@ -117,4 +117,4 @@ The margin area size is fixed by the `@page` margin property. If the content inj
 - **Validation:** Use Stylelint with print-specific plugins to catch invalid properties before document generation.
 - **Physical Units:** Use absolute units such as `in`, `mm`, or `pt`. Avoid `px`, because its physical scale can vary between rendering engines.
 - **Strategic Breaks:** Apply `break-before: page` to primary headers, such as `h1` and `h2`, to ensure major sections always start on a fresh sheet.
-- **Automation:** Incorporate PDF generation into your continuous integration and continuous delivery (CI/CD) pipeline to ensure documentation exports remain synchronized with the latest commits.
+- **Automation:** Incorporate PDF generation into your continuous integration and continuous delivery ([CI/CD](../doc-stack/cicd.md)) pipeline to ensure documentation exports remain synchronized with the latest commits.

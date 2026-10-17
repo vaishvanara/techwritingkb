@@ -45,13 +45,13 @@ While chaos engineering primarily tests software, it is also effective for testi
 - **Refine error and alert messages:** Verify that telemetry platforms generate the exact alerts and error codes described in troubleshooting guides. If the system produces an undocumented error code or fails to trigger an alert during an experiment, update the monitoring configuration and the guides.
 
 !!! warning "Limit the blast radius"
-    When planning chaos experiments, always define a blast radius, which is the maximum potential impact of the experiment. Start in a staging environment. When moving to production, limit the blast radius to a specific subset of users, a single container, or a specific geographic region. While scheduling experiments during low-traffic hours reduces impact, it is not a substitute for a technical containment boundary. Always have a pre-validated rollback plan to immediately restore the steady state.
+    When planning chaos experiments, always define a blast radius, which is the maximum potential impact of the experiment. Start in a [staging environment](../doc-stack/cicd.md#staging-and-preview-environments). When moving to production, limit the blast radius to a specific subset of users, a single container, or a specific geographic region. While scheduling experiments during low-traffic hours reduces impact, it is not a substitute for a technical containment boundary. Always have a pre-validated rollback plan to immediately restore the steady state.
 
 ---
 
 ## Document a chaos experiment plan
 
-Before running an experiment, write a clear, peer-reviewed plan. Use a documentation template that includes the following items:
+Before running an experiment, write a clear, peer-reviewed plan. Use a documentation [template](../references/templates.md) that includes the following items:
 
 - **Hypothesis:** The specific behavior or resilience pattern you are testing.
 - **Blast radius:** The specific users, services, or infrastructure components exposed to the experiment.

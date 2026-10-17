@@ -22,18 +22,18 @@ In the world of technical documentation, this discipline acts as a bridge betwee
 
 Documentation often fails when it becomes a disorganized repository of facts. When users face a large volume of unstructured data, they experience a high cognitive load, which often leads to frustration or product abandonment. 
 
-Strategic design mitigates this by chunking information. By delivering only the data necessary for a specific task—a core tenet of minimalist instruction—you improve scannability and speed. For critical software environments, helping a developer find and execute a command in seconds is not only about clarity; it is about improving the overall developer experience (DX).
+Strategic design mitigates this by chunking information. By delivering only the data necessary for a specific task—a core tenet of minimalist instruction—you improve scannability and speed. For critical software environments, helping a developer find and execute a command in seconds is not only about clarity; it is about improving the overall [developer experience](../industry-terms/developer-experience.md) (DX).
 
 ---
 
 ## Core principles
 
-Effective documentation relies on several foundational elements that ensure content remains practical and supports Web Content Accessibility Guidelines (WCAG).
+Effective documentation relies on several foundational elements that ensure content remains practical and supports Web Content [Accessibility](../references/accessibility.md) Guidelines (WCAG).
 
 - **Action-oriented objectives:** Replace vague goals such as *understand* with measurable verbs. Users should know exactly what they can *configure*, *initialize*, or *deploy* after reading.
 - **Sequential scaffolding:** Information should flow from foundational concepts to advanced workflows. This prevents burnout by ensuring the user has the necessary context before tackling complex tasks.
-- **Active application:** Embed hands-on tasks, such as code snippets or command-line interface (CLI) commands, directly into the narrative. This creates a feedback loop where the user confirms their comprehension through immediate action.
-- **Visual accessibility:** Standardized typography and high-contrast code blocks improve readability and help meet WCAG success criteria for visual presentation and contrast.
+- **Active application:** Embed hands-on tasks, such as code snippets or command-line interface (CLI) commands, directly into the narrative. This creates a [feedback loop](../systems-thinking/feedback-loop.md) where the user confirms their comprehension through immediate action.
+- **Visual accessibility:** Standardized typography and high-contrast code blocks improve [readability](../technical-writing/readability-scores.md) and help meet WCAG success criteria for visual presentation and contrast.
 
 ### Knowledge acquisition flow
 
@@ -92,7 +92,7 @@ Compare these two approaches to an API reference page to see how instructional d
     ```bash
     curl -X POST https://api.example.com/v1/auth \
       -H "Authorization: Bearer $API_KEY" \
-      -H "Content-Type: application/json" \
+      -H "Content-Type: application/[json](../doc-stack/json-logic.md)" \
       -d '{
         "token_id": "usr_98213",
         "session_ttl": 3600
@@ -119,10 +119,10 @@ A structured educational format shifts more than just the layout; it changes use
 
 ## Implementation best practices
 
-To integrate these principles into your Documentation Development Life Cycle (DDLC), consider these strategies:
+To integrate these principles into your Documentation Development Life Cycle ([DDLC](../doc-lifecycle/ddlc.md)), consider these strategies:
 
 - **Analyze the persona:** Tailor the technical depth to your specific audience to avoid over-explaining basics or skipping vital context.
-- **Progressive disclosure:** Use expandable sections to hide deep-dive technical details. This keeps the primary path clean while allowing experts to access more information.
+- **[Progressive disclosure](../industry-terms/progressive-disclosure.md):** Use expandable sections to hide deep-dive technical details. This keeps the primary path clean while allowing experts to access more information.
 
 ??? example "Configuration details for proxy environments"
     If running behind a proxy, update these variables in your `.env` file:
@@ -131,9 +131,9 @@ To integrate these principles into your Documentation Development Life Cycle (DD
     PROXY_IP_ALLOWLIST="192.168.1.1"
     ```
 
-- **Direct communication:** Use the active voice. Addressing the user as "you" and starting steps with imperative verbs makes instructions easier to parse.
-- **SME validation:** Maintain a feedback loop with subject matter experts (SMEs) during the DDLC to ensure educational steps match the current technical reality.
-- **Learning-focused architecture:** Organize your Information Architecture (IA) to follow the user journey, starting with installation and moving toward complex references.
+- **Direct communication:** Use the [active voice](../technical-writing/active-passive.md). Addressing the user as "you" and starting steps with imperative verbs makes instructions easier to parse.
+- **SME validation:** Maintain a feedback loop with [subject matter experts](../doc-lifecycle/sme-interviewing.md) (SMEs) during the DDLC to ensure educational steps match the current technical reality.
+- **Learning-focused architecture:** Organize your [Information Architecture](../references/ia-design.md) (IA) to follow the user journey, starting with installation and moving toward complex references.
 
 ---
 
@@ -146,4 +146,4 @@ To integrate these principles into your Documentation Development Life Cycle (DD
 
 ## Validation and testing
 
-Finally, test your documentation with actual users to ensure the knowledge transfer is working. Task-based usability testing—where a user is asked to complete a goal such as "Deploy a test server"—will quickly reveal where the design fails. Regular readability audits can also help catch overly complex phrasing or jargon that might block comprehension.
+Finally, test your documentation with actual users to ensure the knowledge transfer is working. Task-based [usability testing](../doc-lifecycle/usability-testing.md)—where a user is asked to complete a goal such as "Deploy a test server"—will quickly reveal where the design fails. Regular readability audits can also help catch overly complex phrasing or jargon that might block comprehension.

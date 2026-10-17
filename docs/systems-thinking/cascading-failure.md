@@ -6,7 +6,7 @@ revision_date: 2026-09-21
 
 # Cascading failure
 
-A cascading failure occurs when a failure in one component of a system triggers consecutive failures in other dependent components through a positive feedback loop. To prevent an initial outage from disabling an entire system, teams must document dependency chains, enforce load-management policies (such as circuit breakers and rate limiting), and establish clear, automated recovery procedures.
+A cascading failure occurs when a failure in one component of a system triggers consecutive failures in other dependent components through a positive [feedback loop](../systems-thinking/feedback-loop.md). To prevent an initial outage from disabling an entire system, teams must document dependency chains, enforce load-management policies (such as circuit breakers and rate limiting), and establish clear, automated recovery procedures.
 
 ---
 
@@ -72,7 +72,7 @@ When a cascading failure occurs in production, standard procedures to restart ev
     2. Pre-warm the cache with critical data.
     3. Enable internal service traffic.
     4. Gradually open the load balancer to public traffic in increments, such as 5%, 25%, and 100%.
-- **Identify operational kill switches:** Document feature flags that allow teams to disable non-essential, high-resource features, such as recommendation engines, complex analytics, or non-critical logging. This preserves CPU and RAM for core transactions during an incident.
+- **Identify operational kill switches:** Document [feature flags](../industry-terms/feature-flags.md) that allow teams to disable non-essential, high-resource features, such as recommendation engines, complex analytics, or non-critical logging. This preserves CPU and RAM for core transactions during an incident.
 
 ---
 
@@ -81,5 +81,5 @@ When a cascading failure occurs in production, standard procedures to restart ev
 By documenting dependency relationships and cascading prevention tactics:
 
 - **Operators** can resolve complex incidents by identifying the root of the cascade rather than just restarting the most recently failed node.
-- **Product managers** can define graceful degradation policies, deciding which features can be sacrificed to maintain the availability of core business functions.
+- **Product managers** can define [graceful degradation](../systems-thinking/graceful-degradation.md) policies, deciding which features can be sacrificed to maintain the availability of core business functions.
 - **Developers** can implement resilient integration patterns such as timeouts, circuit breakers, and bulkhead isolation to ensure a single component failure is contained.

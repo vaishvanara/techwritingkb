@@ -20,7 +20,7 @@ If the client retries the request without idempotency protection, the server mig
 
 ## HTTP methods and idempotency
 
-When you document [REST](https://en.wikipedia.org/wiki/Representational_state_transfer){: target="_blank" rel="noopener" } APIs, specify which [HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP){: target="_blank" rel="noopener" } methods are inherently idempotent:
+When you document REST APIs, specify which HTTP methods are inherently idempotent:
 
 - GET, HEAD, OPTIONS, and TRACE: Safe and idempotent. These methods are intended for retrieval and do not modify system state.
 - PUT: Idempotent. Replacing a resource with a specific payload multiple times results in the same state as a single request.
@@ -34,7 +34,8 @@ When you document [REST](https://en.wikipedia.org/wiki/Representational_state_tr
 
 Because POST and PATCH requests are not inherently idempotent, systems use unique identifiers, called idempotency keys, to make these operations safe. 
 
-**Note:** An idempotency key must be unique per request payload. If the server receives the same key with a different request body, it should return a `400 Bad Request` or `409 Conflict` error to prevent semantic errors.
+!!! Note
+    An idempotency key must be unique per request payload. If the server receives the same key with a different request body, it should return a `400 Bad Request` or `409 Conflict` error to prevent semantic errors.
 
 If your API supports idempotency keys, your documentation must explain the following process:
 

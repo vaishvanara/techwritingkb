@@ -21,8 +21,8 @@ This iterative loop mitigates two primary issues in LLM deployment: logical hall
 The framework operates as a cycle where the model's output is parsed to trigger external execution, the results of which are fed back into the prompt context.
 
 - **Thought:** The model generates a reasoning trace documenting its internal logic, analyzing the current state, and planning the next action.
-- **Action:** The model outputs a specific command or function call (for example, a JSON-formatted tool call or a string like `Search[query]`) intended for an external executor.
-- **Observation:** The external system executes the action and appends the result back into the model's context window. The model then processes this observation to determine the next step.
+- **Action:** The model outputs a specific command or function call (for example, a [JSON](../doc-stack/json-logic.md)-formatted tool call or a string like `Search[query]`) intended for an external executor.
+- **Observation:** The external system executes the action and appends the result back into the model's [context window](../technical-writing/prompt-engineering.md#context-window-management). The model then processes this observation to determine the next step.
 
 ---
 
@@ -61,7 +61,7 @@ In this example, an agent verifies system status using a database and a validati
 **Final Answer:** The endpoint `/v1/users` is inactive and deprecated. It has been replaced by `/v2/users`, which is currently operational (Status 200).
 
 ??? note "Prompting Requirements"
-    ReAct requires a system prompt that defines a strict execution grammar (for example, `Thought:`, `Action:`, `Observation:`, `Final Answer:`). It often utilizes few-shot prompting to demonstrate the interleaved format. Modern models with native function calling capabilities effectively implement a structured version of the Action/Observation loop.
+    ReAct requires a system prompt that defines a strict execution grammar (for example, `Thought:`, `Action:`, `Observation:`, `Final Answer:`). It often utilizes [few-shot prompting](../industry-terms/few-shot-prompting.md) to demonstrate the interleaved format. Modern models with native function calling capabilities effectively implement a structured version of the Action/Observation loop.
 
 ---
 

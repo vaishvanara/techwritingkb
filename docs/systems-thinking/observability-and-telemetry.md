@@ -6,7 +6,7 @@ revision_date: 2026-09-17
 
 # Observability and telemetry
 
-Observability is a property of a system, specifically the degree to which you can understand its internal state by examining its external outputs. These outputs, known as telemetry, consist primarily of logs, metrics, and traces. Telemetry provides the diagnostic data required to author accurate troubleshooting guides and automated runbooks.
+[Observability](../doc-stack/developer-portals.md#feedback-loops-and-sentiment) is a property of a system, specifically the degree to which you can understand its internal state by examining its external outputs. These outputs, known as telemetry, consist primarily of logs, metrics, and traces. Telemetry provides the diagnostic data required to author accurate troubleshooting guides and automated runbooks.
 
 ---
 
@@ -31,7 +31,7 @@ By incorporating telemetry into your documentation, you provide operators with d
 - **Use trace context for distributed debugging:** Explain how to use Trace IDs to correlate events across service boundaries. For example, extract the `traceparent` ID from the failing HTTP header and search for it in [Jaeger](https://www.jaegertracing.io/){: target="_blank" rel="noopener" } to identify which downstream microservice returned the error.
 
 !!! tip "Structured logging and documentation"
-    When engineers write logs, they should use structured formats such as JSON to ensure machine readability. Work with your development team to document the log schema. Providing a directory of standardized attributes, such as `service.name`, `span.id`, `trace.id`, and `severity_number`, helps operators write precise queries during an incident.
+    When engineers write logs, they should use structured formats such as JSON to ensure machine [readability](../technical-writing/readability-scores.md). Work with your development team to document the log schema. Providing a directory of standardized attributes, such as `service.name`, `span.id`, `trace.id`, and `severity_number`, helps operators write precise queries during an incident.
 
 ---
 
@@ -49,6 +49,6 @@ If you write internal engineering documentation, ensure you document the specifi
 
 Clear documentation of telemetry reduces the cognitive load on engineers during high-pressure incidents:
 
-- **Lower Mean Time to Recovery (MTTR):** Precise documentation points operators to the exact telemetry signals needed to identify a root cause, bypassing manual discovery.
-- **Reduced Mean Time to Detection (MTTD):** Properly documented alert definitions ensure that on-call engineers understand the significance of a signal as soon as it fires.
+- **Lower mean time to recovery (MTTR):** Precise documentation points operators to the exact telemetry signals needed to identify a root cause, bypassing manual discovery.
+- **Reduced mean time to detection (MTTD):** Properly documented alert definitions ensure that on-call engineers understand the significance of a signal as soon as it fires.
 - **Higher-quality bug reports:** When support engineers can interpret trace spans and log attributes, they can provide developers with the specific line of code or service interaction that failed, accelerating the development of a permanent fix.

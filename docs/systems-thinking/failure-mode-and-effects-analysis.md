@@ -25,7 +25,7 @@ $$\text{RPN} = \text{Severity (S)} \times \text{Occurrence (O)} \times \text{Det
 A higher RPN indicates a higher risk. However, items with high severity scores (for example, 9 or 10) often require mitigation regardless of the resulting RPN.
 
 !!! note "Using RPN to prioritize documentation"
-    Technical writing teams can use RPN scores to prioritize a documentation backlog. For example, a failure mode with an RPN of 400 (S: 8, O: 5, D: 10) requires immediate mitigation through troubleshooting guides and telemetry alerts. After these controls are implemented and documented, the detection score is reassessed, resulting in a lower residual RPN.
+    [Technical writing](../technical-writing/basics.md) teams can use RPN scores to prioritize a documentation backlog. For example, a failure mode with an RPN of 400 (S: 8, O: 5, D: 10) requires immediate mitigation through troubleshooting guides and telemetry alerts. After these controls are implemented and documented, the detection score is reassessed, resulting in a lower residual RPN.
 
 ---
 
@@ -35,7 +35,7 @@ An FMEA provides the technical data needed to design effective information archi
 
 - **Logic-based warning levels:** Use severity scores to align with ANSI/ISO warning standards. If a step could cause permanent data loss or hardware damage (severity 8 to 10), use a `!!! danger` or `!!! warning` notice. For minor errors (severity 1 to 3), a `!!! note` or `!!! tip` is appropriate.
 - **Observability documentation:** If a failure mode has a high detection score, documentation should focus on the specific metrics, logs, or error codes that allow an operator to identify the issue.
-- **Fallback and recovery:** For failure modes that cannot be designed out (high severity and occurrence), write clear procedures for graceful degradation to ensure system availability in a limited state.
+- **Fallback and recovery:** For failure modes that cannot be designed out (high severity and occurrence), write clear procedures for [graceful degradation](../systems-thinking/graceful-degradation.md) to ensure system availability in a limited state.
 
 ---
 

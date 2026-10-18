@@ -1,7 +1,7 @@
 ---
 title: Blast radius
 description: "The extent of impact or damage a failure or software deployment can cause across connected systems"
-revision_date: 2026-09-21
+revision_date: 2026-10-19
 ---
 
 # Blast radius
@@ -62,7 +62,7 @@ Product teams use documentation to map and limit the impact of technical changes
 
 Software engineers use containment strategies to minimize the blast radius. Your documentation must reflect these [boundaries](../systems-thinking/system-boundary.md) so teams do not accidentally bypass them during development:
 
-- **Bulkheads**: This pattern isolates resources, such as CPU, memory, or connections, to prevent a single failure from cascading. For example, if you allocate separate thread pools for different API endpoints, document these allocations so developers do not accidentally assign unrelated, long-running tasks to critical pools, which could lead to resource exhaustion for the entire service.
+- **Bulkheads**: This pattern isolates resources, such as CPU, memory, or connections, to prevent [a single failure from cascading](../systems-thinking/cascading-failure.md). For example, if you allocate separate thread pools for different API endpoints, document these allocations so developers do not accidentally assign unrelated, long-running tasks to critical pools, which could lead to resource exhaustion for the entire service.
 - **Rate limiting and quotas**: Document API rate limits. By enforcing limits on a per-client or per-key basis, the blast radius of a malicious actor or a noisy neighbor is contained to that specific user, protecting the platform's overall availability.
 - **Canary deployments**: Document the rollout process. A canary deployment releases updates to a small percentage of users first. If errors occur, the blast radius is limited to that small subset of users, allowing for an automated or manual rollback before a full production release.
 
@@ -70,6 +70,6 @@ Software engineers use containment strategies to minimize the blast radius. Your
 
 ## Impact of mapping the blast radius
 
-- **Faster incident resolution**: When a failure occurs, operators use dependency documentation to isolate the [root cause](../systems-thinking/root-cause-analysis.md) and determine the extent of the damage, reducing the [mean time to recovery (MTTR)](../systems-thinking/mean-time-to-recovery.md).
+- **Faster incident resolution**: When a failure occurs, operators use dependency documentation to [isolate the root cause](../systems-thinking/root-cause-analysis.md) and determine the extent of the damage, reducing the [mean time to recovery (MTTR)](../systems-thinking/mean-time-to-recovery.md).
 - **Safe deployments**: Engineers can deploy code with more confidence when they understand the boundaries and failover systems intended to contain failures.
 - **Targeted customer communication**: Understanding the blast radius allows support teams to send incident notifications only to affected users, such as users in a specific cell or shard, rather than alerting the entire customer base.

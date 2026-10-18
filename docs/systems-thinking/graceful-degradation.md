@@ -12,7 +12,7 @@ Graceful degradation is a system ability to maintain essential functionality whe
 
 ## Hard failure versus soft failure
 
-When a system component fails, a poorly designed architecture may suffer a hard failure or [cascading failure](../systems-thinking/cascading-failure.md). In this scenario, the failure of a single non-critical dependency causes the entire system to become unavailable. For example, if a recommendation microservice on an ecommerce site crashes and the checkout page is tightly coupled to it, the user cannot complete their purchase.
+When a system component fails, a poorly designed architecture may suffer a hard failure or a [cascading failure](../systems-thinking/cascading-failure.md). In this scenario, the failure of a single non-critical dependency causes the entire system to become unavailable. For example, if a recommendation microservice on an ecommerce site crashes and the checkout page is tightly coupled to it, the user cannot complete their purchase.
 
 By contrast, a system designed with graceful degradation experiences a soft failure. If the system detects that the recommendation service is unresponsive, it invokes a fallback mechanism, such as replacing the widget with a static popular items list or hiding the section entirely, allowing the core checkout workflow to continue.
 
@@ -30,7 +30,7 @@ graph TD
 
 Common examples of graceful degradation include:
 
-- **Streaming services:** Using Adaptive Bitrate Streaming to lower video resolution when bandwidth drops, rather than buffering or terminating the stream.
+- **Streaming services:** Using Adaptive Bitrate Streaming (ABR) to lower video resolution when bandwidth drops, rather than buffering or terminating the stream.
 - **Search interfaces:** Falling back to a cached result set or a simplified top results index when the primary search cluster (such as [Elasticsearch](https://www.elastic.co/elasticsearch/){: target="_blank" rel="noopener" }) is unavailable.
 - **Mobile apps:** Implementing an offline-first approach where data is written to a local database (such as SQLite or Realm) and synchronized with the server once connectivity is restored.
 
@@ -55,8 +55,8 @@ To support graceful degradation, work with engineering teams to document how the
 
 When a system degrades, the user interface must communicate the state of the system to prevent user frustration:
 
-- **Avoid raw technical errors:** Do not expose low-level errors such as a 500 Internal Server Error or an upstream timeout. Use banners that explain the functional impact, such as stating that search is temporarily available, but users can still browse categories and check out.
-- **Disable rather than hide user interface elements:** If a feature is temporarily disabled by a kill switch, gray out the user interface element and provide a tooltip. Hiding elements can lead users to believe their account permissions have changed or the user interface is buggy.
+- **Avoid raw technical errors:** Do not expose low-level errors such as a `500 Internal Server Error` or an upstream timeout. Use banners that explain the functional impact, such as stating that search is temporarily available, but users can still browse categories and check out.
+- **Disable rather than hide user interface elements:** If a feature is temporarily disabled by a kill switch, gray out the user interface element and provide a [tooltip](../doc-stack/terminology-tooltips.md). Hiding elements can lead users to believe their account permissions have changed or the user interface is buggy.
 
 ---
 

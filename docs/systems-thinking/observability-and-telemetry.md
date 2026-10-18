@@ -1,12 +1,12 @@
 ---
 title: Observability and telemetry
 description: "System capabilities that allow operators to measure internal states via logs, metrics, and traces. These are essential for writing troubleshooting guides."
-revision_date: 2026-09-17
+revision_date: 2026-10-19
 ---
 
 # Observability and telemetry
 
-[Observability](../doc-stack/developer-portals.md#feedback-loops-and-sentiment) is a property of a system, specifically the degree to which you can understand its internal state by examining its external outputs. These outputs, known as telemetry, consist primarily of logs, metrics, and traces. Telemetry provides the diagnostic data required to author accurate troubleshooting guides and automated runbooks.
+Observability is a property of a system, specifically the degree to which you can understand its internal state by examining its external outputs. These outputs, known as telemetry, consist primarily of logs, metrics, and traces. Telemetry provides the diagnostic data required to author accurate troubleshooting guides and automated runbooks.
 
 ---
 
@@ -16,7 +16,7 @@ To write effective support and engineering documentation, you must understand th
 
 - **Logs:** Immutable, timestamped text or structured records of discrete events. Logs provide high-cardinality context to describe what happened. For example, a log might record a `LoginFailed` event containing a specific user ID and the reason for the failure.
 - **Metrics:** Numerical representations of data measured over intervals of time. Metrics are used for aggregation and mathematical observation of system health, such as CPU utilization, request rates, or error counts. Metrics indicate if a problem is occurring and the scale of the impact.
-- **Traces:** Data representing the end-to-end journey of a single request or transaction as it moves through various components of a distributed system. A trace is composed of **spans**, where each span represents a specific operation within a service. Traces identify where a bottleneck or failure occurred in a request chain.
+- **Traces:** Data representing the end-to-end journey of a single request or transaction as it moves through various components of a distributed system. A trace is composed of *spans*, where each span represents a specific operation within a service. Traces identify where a bottleneck or failure occurred in a request chain.
 
 ---
 
@@ -40,14 +40,14 @@ By incorporating telemetry into your documentation, you provide operators with d
 If you write internal engineering documentation, ensure you document the specific implementation of your organization's observability stack:
 
 - **Dashboard directories:** Provide links to standard monitoring dashboards in tools such as [Grafana](https://grafana.com/){: target="_blank" rel="noopener" } or [Datadog](https://www.datadoghq.com/){: target="_blank" rel="noopener" }. Define the data source and the meaning of specific visualizations, such as distinguishing between P99 latency and average latency.
-- **Alert definitions and thresholds:** Document the logic behind automated alerts, the specific thresholds, such as static versus anomaly-based, and the expected immediate action (SOP) when an alert triggers.
+- **Alert definitions and thresholds:** Document the logic behind automated alerts, the specific thresholds, such as static versus anomaly-based, and the expected immediate action when an alert triggers.
 - **Instrumentation standards:** Document the team's standards for log severity levels, such as following the [OpenTelemetry Logs Data Model](https://opentelemetry.io/docs/specs/otel/logs/data-model/#severity-fields){: target="_blank" rel="noopener" }, and the naming conventions for custom metrics, such as `namespace_suffix_unit`.
 
 ---
 
 ## How documenting telemetry improves operations
 
-Clear documentation of telemetry reduces the cognitive load on engineers during high-pressure incidents:
+Clear documentation of telemetry reduces the [cognitive load](../technical-writing/cognitive-load.md) on engineers during high-pressure incidents:
 
 - **Lower mean time to recovery (MTTR):** Precise documentation points operators to the exact telemetry signals needed to identify a root cause, bypassing manual discovery.
 - **Reduced mean time to detection (MTTD):** Properly documented alert definitions ensure that on-call engineers understand the significance of a signal as soon as it fires.

@@ -1,7 +1,7 @@
 ---
 title: Bounded context
 description: Explicit semantic boundaries that isolate domain models and their ubiquitous language to protect model integrity and prevent linguistic ambiguity
-revision_date: 2026-09-21
+revision_date: 2026-10-19
 ---
 
 # Bounded context
@@ -42,9 +42,9 @@ Trying to force a single, enterprise-wide definition of an order creates a model
 
 Documentation should reflect the bounded contexts of the system. To maintain clarity, align your [information architecture (IA)](../references/ia-design.md) with the following established domain boundaries:
 
-- **Namespace-driven documentation**: Organize content by domain, such as /docs/billing/order or /docs/fulfillment/order. This creates a direct mapping between the documentation and the specific domain services.
+- **Namespace-driven documentation**: Organize content by domain, such as `/docs/billing/order or /docs/fulfillment/order`. This creates a direct mapping between the documentation and the specific domain services.
 - **Context-specific glossaries**: Avoid a global, enterprise-wide glossary. Instead, maintain localized glossaries that define the ubiquitous language of that specific domain to prevent cross-context confusion.
-- **Isolated schemas**: Make sure [API documentation](../industry-terms/api-documentation.md) reflects context-specific data structures. An identity context user object focuses on authentication (multi-factor authentication) and credentials, whereas a support context user object focuses on ticket history and service-level agreement (SLA) tiers.
+- **Isolated schemas**: Make sure [API documentation](../industry-terms/api-documentation.md) reflects context-specific data structures. An *identity* context user object focuses on authentication (multi-factor authentication) and credentials, whereas a *support* context user object focuses on ticket history and service-level agreement (SLA) tiers.
 
 !!! warning "The canonical data model trap"
     Resist the urge to document a universal object model, which is a single schema used by all departments. Universal models result in fat schemas filled with nullable fields that weaken type safety. Instead, document the specialized model required for the specific context to minimize implementation errors.

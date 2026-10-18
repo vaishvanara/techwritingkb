@@ -1,7 +1,7 @@
 ---
 title: Feedback loops
 description: How system output influences future behavior through balancing or reinforcing mechanisms, including rate limiting and retry logic.
-revision_date: 2026-09-17
+revision_date: 2026-10-19
 ---
 
 # Feedback loops
@@ -61,7 +61,7 @@ def get_wait_time(retry_count):
 
 ### Thresholds and cooldown periods
 
-For systems using autoscaling or circuit breakers, document the exact conditions that trigger the feedback loop.
+For systems using autoscaling or [circuit breakers](../systems-thinking/circuit-breaker-pattern.md), document the exact conditions that trigger the feedback loop.
 
 -   **Threshold values:** State the exact metrics, such as *Autoscaling triggers when average memory utilization exceeds 85% for 5 consecutive minutes.*
 -   **Cooldown or settling time:** Describe the delay built into the loop to prevent flapping (rapid, unstable oscillations). For example, specify if the system waits 10 minutes after a scaling event before it reevaluates the metrics.

@@ -1,12 +1,12 @@
 ---
 title: Root cause analysis (RCA)
 description: "Problem-solving methodologies, such as the 5 Whys or fault tree analysis, used to trace failures back to underlying systemic flaws rather than surface symptoms."
-revision_date: 2026-09-17
+revision_date: 2026-10-19
 ---
 
 # Root cause analysis (RCA)
 
-Root cause analysis (RCA) is a structured problem-solving methodology used to identify the fundamental, systemic vulnerabilities that lead to operational failures or incidents. In technical communication, writing and editing RCA documents helps organizations understand system failures and transform incident findings into actionable documentation updates that prevent issues from recurring.
+Root cause analysis (RCA) is a structured problem-solving methodology used to identify the fundamental, systemic vulnerabilities that lead to operational failures or incidents. In [technical communication](../technical-writing/basics.md), writing and editing RCA documents helps organizations understand system failures and transform incident findings into actionable documentation updates that prevent issues from recurring.
 
 ---
 
@@ -49,7 +49,7 @@ Technical writers provide essential skills during the RCA and post-mortem proces
 - **Structure post-mortem templates:** Help engineers write internal RCAs by designing standardized templates. A good template ensures teams capture critical details, such as the incident timeline, detection mechanisms, mitigation actions, and action items.
 - **Maintain a blameless tone:** Focus the narrative on system weaknesses rather than individual mistakes.
 
-!!! note "The Principle of Blameless Post-Mortems"
+!!! note "The principle of blameless post-mortems"
     In modern software engineering, an effective RCA assumes that employees work with good intentions based on the information they have at the time. Instead of stating "The operator ran the wrong command," write: "The database management tool permitted destructive commands without a confirmation prompt." Focus on the system design, not the person.
 
 ---

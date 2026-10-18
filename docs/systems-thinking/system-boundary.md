@@ -1,7 +1,7 @@
 ---
 title: System boundary
 description: "The conceptual perimeter that defines the components under a team's direct control versus external dependencies, such as third-party APIs, host operating systems, or user-managed infrastructure."
-revision_date: 2026-09-17
+revision_date: 2026-10-19
 ---
 
 # System boundary
@@ -29,8 +29,8 @@ To define where your system ends and external dependencies begin, analyze the fl
 - **Administrative control:** If your team does not manage the source code, deployment lifecycle, or versioning of a component, that component exists outside your system boundary.
 - **Security and data trust:** Identify the trust boundary. Points where data crosses from your managed environment into an external system (for example, via a [webhook](../doc-stack/emerging-architectures.md#event-driven-architecture-webhooks) or a payment gateway) represent clear system boundaries.
 - **Delivery Model:** The boundary location shifts based on the architecture:
-    - **SaaS:** The boundary typically encompasses the exposed APIs, User Interface (UI), and the managed backend services. The underlying cloud infrastructure (for example, AWS/GCP) is an external dependency relative to the user-facing documentation.
-    - **On-premises/SDKs:** The boundary lies between your binary/library and the user's runtime environment (JVM, CLR, etc.), operating system, or host application.
+    - **Software as a service (SaaS)**:** The boundary typically encompasses the exposed APIs, UI, and the managed backend services. The underlying cloud infrastructure (for example, AWS/GCP) is an external dependency relative to the user-facing documentation.
+    - **On-premises or SDKs:** The boundary lies between your binary or library and the user's runtime environment, (for example, Java virtual machine (JVM), Common Language Runtime (CLR)), operating system, or host application.
 
 ### Boundary visualization
 
@@ -60,17 +60,17 @@ graph TD
 
 ## Strategies for documenting system boundaries
 
-Once identified, use these methods to enforce the boundary in your technical content.
+Once identified, use the following methods to enforce the boundary in your technical content.
 
-### Use boundary diagrams in architecture overviews
+### 1. Use boundary diagrams in architecture overviews
 
 Visual diagrams define the scope of documentation.
 
 - **Group by ownership:** Use subgraphs or boxes to cluster internal services and place external dependencies (for example, "The Internet," "Customer VPC") outside those containers.
-- **Identify Handoff Protocols:** Clearly label the protocols (HTTPS, gRPC, MQTT) and authentication methods used at the boundary transition.
+- **Identify handoff protocols:** Clearly label the protocols (HTTPS, gRPC, MQTT) and authentication methods used at the boundary transition.
 - **Color-code by responsibility:** Use a legend to distinguish between service-provider-managed components and user-managed components.
 
-### Establish a support and documentation boundary statement
+### 2. Establish a support and documentation boundary statement
 
 Include a Prerequisites or Scope section to set user expectations.
 
@@ -78,7 +78,7 @@ Include a Prerequisites or Scope section to set user expectations.
 - **Example:** 
     > "This documentation covers the integration and configuration of `[Product Name]`. It does not provide instructions for hardening your host operating system or managing your database cluster's high-availability (HA) settings. Consult the `[OS/Vendor]` documentation for infrastructure-level configuration."
 
-### Standardize handoff points
+### 3. Standardize handoff points
 
 When a task requires an external system, document the *requirements* rather than the *process*.
 
@@ -101,4 +101,4 @@ If your platform uses Stripe for payments:
 If your software requires a PostgreSQL database:
 
 - **Inside the boundary:** The required schema, database user permissions, and the connection string parameters used by your application.
-- **Outside the boundary:** PostgreSQL installation, kernel tuning for the host operating system, storage volume encryption, and backup/restore procedures for the database engine.
+- **Outside the boundary:** PostgreSQL installation, kernel tuning for the host operating system, storage volume encryption, and backup or restore procedures for the database engine.

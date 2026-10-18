@@ -1,7 +1,7 @@
 ---
 title: Cascading failure
 description: "A process in which a failure in one component triggers failures in successive dependent components"
-revision_date: 2026-09-21
+revision_date: 2026-10-19
 ---
 
 # Cascading failure
@@ -14,7 +14,7 @@ A cascading failure occurs when a failure in one component of a system triggers 
 
 In distributed systems, components often share a common pool of resources or depend on one another's availability. When one node or service fails, the total system capacity decreases, but the incoming demand typically remains constant. The traffic or workload previously handled by the failed node is redistributed to the surviving nodes. 
 
-This sudden increase in resource demand, such as CPU, memory, or connection pools, can exceed the capacity of the remaining components, causing them to fail and further shrinking the available capacity until the entire system collapses.
+This sudden increase in resource demand, such as CPU, memory, or connection pools, can exceed the capacity of the remaining components, causing them to fail and shrink the available capacity further until the entire system collapses.
 
 ```mermaid
 graph TD
@@ -39,6 +39,9 @@ graph TD
     style S3_Fail fill:#f66,stroke:#333,stroke-width:2px
 ```
 
+
+### Common triggers
+
 Common triggers for cascading failures include:
 
 - **Resource exhaustion:** A slow database query consumes all available worker threads or database connections. Upstream services waiting for responses continue to hold their own connections open while waiting for a timeout, eventually exhausting their own connection pools and crashing.
@@ -52,13 +55,24 @@ Common triggers for cascading failures include:
 
 To prevent cascading failures, document system limits, circuit breakers, and architecture boundaries before an incident occurs:
 
-- **Map upstream and downstream dependencies:** Make sure system architecture documentation explicitly shows hard dependencies, which are required for the system to function, and soft dependencies, which are non-essential features. This helps engineers understand the potential [blast radius](../systems-thinking/blast-radius.md).
-- **Document circuit breaker patterns:** Define the thresholds at which a service should stop calling a failing downstream dependency. Documentation should specify the open, closed, and half-open states for these breakers to prevent a failing service from dragging down its callers.
-- **Document load-shedding and backpressure policies:** Describe how the system handles overload. If an API drops requests, known as load-shedding, or signals upstream systems to slow down, known as backpressure, document these mechanisms. This helps developers handle the resulting HTTP status codes, such as 429 Too Many Requests or 503 Service Unavailable.
-- **Publish retry guidelines:** Make sure developer guides require exponential backoff with jitter for all API client integrations. This spreads out retry attempts over time and prevents synchronized retry spikes from becoming a self-inflicted distributed denial of service (DDoS) attack.
+### 1. Map upstream and downstream dependencies
+
+Make sure [system architecture documentation](../systems-thinking/system-boundary.md) explicitly shows hard dependencies, which are required for the system to function, and soft dependencies, which are non-essential features. This helps engineers understand the potential [blast radius](../systems-thinking/blast-radius.md).
+
+### 2. Document circuit breaker patterns
+
+Define the thresholds at which a service should stop calling a failing downstream dependency. Documentation should specify the open, closed, and half-open states for these breakers to prevent a failing service from dragging down its callers. See: [circuit breaker pattern](../systems-thinking/circuit-breaker-pattern.md).
+
+### 3. Document load-shedding and backpressure policies
+
+Describe how the system handles overload. If an API drops requests, known as load-shedding, or signals upstream systems to slow down, known as backpressure, document these mechanisms. This helps developers handle the resulting HTTP status codes, such as `429 Too Many Requests` or `503 Service Unavailable`.
+
+### 4. Publish retry guidelines
+
+Make sure developer guides require exponential backoff with jitter for all API client integrations. This spreads out retry attempts over time and prevents synchronized retry spikes from becoming a self-inflicted distributed denial of service (DDoS) attack.
 
 !!! warning "The thundering herd and cache stampedes"
-    A thundering herd occurs when many processes wait for an event, such as a service restart or a lock release, and all attempt to process it simultaneously. A similar issue is the cache stampede, where a popular cache key expires and multiple workers simultaneously attempt to recompute the value and write it to the database. [Runbooks](../technical-writing/engineering-runbooks.md) must include strategies to warm caches or use locks to prevent these surges.
+    A *thundering herd* occurs when many processes wait for an event, such as a service restart or a lock release, and all attempt to process it simultaneously. A similar issue is the *cache stampede*, where a popular cache key expires and multiple workers simultaneously attempt to recompute the value and write it to the database. [Runbooks](../technical-writing/engineering-runbooks.md) must include strategies to warm caches or use locks to prevent these surges.
 
 ---
 
@@ -66,13 +80,22 @@ To prevent cascading failures, document system limits, circuit breakers, and arc
 
 When a cascading failure occurs in production, standard procedures to restart everything can worsen the situation. Your operational documentation must guide engineers through safe, phased recovery:
 
-- **Document the shutdown sequence:** Sometimes, the only way to stop a cascade is to cut the line, which means disabling upstream traffic to allow downstream services to clear their queues. Your runbook should list the specific commands to drop traffic at the edge or load balancer.
-- **Specify a phased restart order:** Provide a clear, step-by-step startup sequence. For example: 
-    1. Start the database.
-    2. Pre-warm the cache with critical data.
-    3. Enable internal service traffic.
-    4. Gradually open the load balancer to public traffic in increments, such as 5%, 25%, and 100%.
-- **Identify operational kill switches:** Document [feature flags](../industry-terms/feature-flags.md) that allow teams to disable non-essential, high-resource features, such as recommendation engines, complex analytics, or non-critical logging. This preserves CPU and RAM for core transactions during an incident.
+### 1. Document the shutdown sequence
+
+Sometimes, the only way to stop a cascade is to cut the line, which means disabling upstream traffic to allow downstream services to clear their queues. Your runbook should list the specific commands to drop traffic at the edge or load balancer.
+
+### 2. Specify a phased restart order
+
+Provide a clear, step-by-step startup sequence. For example: 
+
+1. Start the database.
+2. Pre-warm the cache with critical data.
+3. Enable internal service traffic.
+4. Gradually open the load balancer to public traffic in increments, such as 5%, 25%, and 100%.
+
+### 3. Identify operational kill switches
+
+Document [feature flags](../industry-terms/feature-flags.md) that allow teams to disable non-essential, high-resource features, such as recommendation engines, complex analytics, or non-critical logging. This preserves CPU and RAM for core transactions during an incident.
 
 ---
 

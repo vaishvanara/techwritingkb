@@ -1,18 +1,18 @@
 ---
 title: Chaos engineering
 description: "The practice of intentionally introducing failures into a system to test its resilience and expose undocumented dependencies"
-revision_date: 2026-09-17
+revision_date: 2026-10-19
 ---
 
 # Chaos engineering
 
 Chaos engineering involves intentionally introducing controlled failures into a software system to verify its resilience and find hidden vulnerabilities. 
 
-For technical communicators and product teams, chaos engineering helps validate the accuracy of runbooks, expose undocumented system dependencies, and ensure that operational documentation remains effective during simulated disasters.
+For technical communicators and product teams, chaos engineering helps validate the accuracy of [runbooks](../technical-writing/engineering-runbooks.md), expose undocumented system dependencies, and ensure that operational documentation remains effective during simulated disasters.
 
 ---
 
-## The scientific method of system failure
+## Analyzing system failures
 
 Chaos engineering is a structured practice used to test hypotheses about how a system behaves during a failure. It is not about randomly breaking production environments; it is a controlled experiment.
 
@@ -45,13 +45,13 @@ While chaos engineering primarily tests software, it is also effective for testi
 - **Refine error and alert messages:** Verify that telemetry platforms generate the exact alerts and error codes described in troubleshooting guides. If the system produces an undocumented error code or fails to trigger an alert during an experiment, update the monitoring configuration and the guides.
 
 !!! warning "Limit the blast radius"
-    When planning chaos experiments, always define a blast radius, which is the maximum potential impact of the experiment. Start in a [staging environment](../doc-stack/cicd.md#staging-and-preview-environments). When moving to production, limit the blast radius to a specific subset of users, a single container, or a specific geographic region. While scheduling experiments during low-traffic hours reduces impact, it is not a substitute for a technical containment boundary. Always have a pre-validated rollback plan to immediately restore the steady state.
+    When planning chaos experiments, always define a [blast radius](../systems-thinking/blast-radius.md), which is the maximum potential impact of the experiment. Start in a [staging environment](../doc-stack/cicd.md#staging-and-preview-environments). When moving to production, limit the blast radius to a specific subset of users, a single container, or a specific geographic region. While scheduling experiments during low-traffic hours reduces impact, it is not a substitute for a technical containment boundary. Always have a pre-validated rollback plan to immediately restore the steady state.
 
 ---
 
 ## Document a chaos experiment plan
 
-Before running an experiment, write a clear, peer-reviewed plan. Use a documentation [template](../references/templates.md) that includes the following items:
+Before running an experiment, write a clear, peer-reviewed plan. Use a documentation template that includes the following items:
 
 - **Hypothesis:** The specific behavior or resilience pattern you are testing.
 - **Blast radius:** The specific users, services, or infrastructure components exposed to the experiment.
@@ -65,5 +65,5 @@ Before running an experiment, write a clear, peer-reviewed plan. Use a documenta
 ## Why chaos engineering benefits product teams
 
 - **Higher production confidence:** Teams can deploy code knowing the system can survive server failures, network drops, and resource exhaustion.
-- **Improved incident response:** Engineers practice resolving failures during controlled exercises, which lowers the real-world mean time to recovery (MTTR).
+- **Improved incident response:** Engineers practice resolving failures during controlled exercises, which lowers the real-world [mean time to recovery (MTTR)](../systems-thinking/mean-time-to-recovery.md).
 - **Current documentation:** Treating runbooks as active components of a resilience plan ensures they are regularly audited and updated against actual system behavior.

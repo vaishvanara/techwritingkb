@@ -1,7 +1,7 @@
 ---
 title: Coupling and cohesion
 description: "The degree of direct dependency between system modules (coupling) versus how focused a single module's responsibilities are (cohesion)."
-revision_date: 2026-09-17
+revision_date: 2026-10-19
 ---
 
 # Coupling and cohesion
@@ -37,9 +37,9 @@ Tightly coupled documentation is brittle. When you change a file path or reword 
 
 ### Signs of high coupling
 
-- **Positional reliance:** Phrases such as "as mentioned earlier" or "the table in the next section" fail when content is reordered or components are embedded elsewhere.
-- **Path-heavy linking:** Linking by using hardcoded relative paths (for example, `../../setup.md`) makes the documentation structure rigid. If a file moves, the build might fail or links will break unless the environment handles path refactoring automatically.
-- **Grammatical bleeding:** A reusable snippet that assumes it is part of a numbered list or depends on the context of the preceding paragraph cannot be reused effectively.
+1. **Positional reliance:** Phrases such as "as mentioned earlier" or "the table in the next section" fail when content is reordered or components are embedded elsewhere.
+2. **Path-heavy linking:** Linking by using hardcoded relative paths (for example, `../../setup.md`) makes the documentation structure rigid. If a file moves, the build might fail or links will break unless the environment handles path refactoring automatically.
+3. **Grammatical bleeding:** A reusable snippet that assumes it is part of a numbered list or depends on the context of the preceding paragraph cannot be reused effectively.
 
 ### Strategies for decoupling
 
@@ -53,13 +53,13 @@ To build a resilient documentation set, aim for stateless content.
 
 ## Improve focus with high cohesion
 
-Low cohesion creates monolithic pages. These topics are difficult to scan because they try to address multiple needs at once. High cohesion follows the Single Responsibility Principle: one topic, one intent.
+Low cohesion creates monolithic pages. These topics are difficult to scan because they try to address multiple needs at once. High cohesion follows the Single Responsibility Principle (SRP): one topic, one intent.
 
 ### Identifying low cohesion
 
-- **Overloaded pages:** A single 4,000-word article covering high-level sales pitches, deep-dive application programming interface (API) specifications, and basic installation.
-- **Context switching:** When a procedural step is interrupted by three paragraphs of theoretical background, it breaks the flow for the user. 
-- **Mismatched intent:** If a paragraph explains why something matters under a How to configure heading, that content belongs elsewhere.
+1. **Overloaded pages:** A single 4,000-word article covering high-level sales pitches, deep-dive API specifications, and basic installation.
+2. **Context switching:** When a procedural step is interrupted by three paragraphs of theoretical background, it breaks the flow for the user. 
+3. **Mismatched intent:** If a paragraph explains why something matters under a "How to configure" heading, that content belongs elsewhere.
 
 ### Information mapping for cohesion
 

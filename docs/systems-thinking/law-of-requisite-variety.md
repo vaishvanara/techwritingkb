@@ -1,14 +1,14 @@
 ---
 title: "Ashby's law of requisite variety in technical communication"
 description: "How the cybernetic principle of requisite variety ensures documentation frameworks are robust enough to prevent a loss of system control."
-revision_date: 2026-09-17
+revision_date: 2026-10-19
 ---
 
 # Ashby's law of requisite variety in technical communication
 
 When a user encounters a system state that the documentation does not cover, the documentation has failed as a control mechanism. In the field of cybernetics, this gap is explained by Ashby's law of requisite variety. 
 
-The law states that for a control system to be successful, the variety of the regulator must be at least as great as the variety of the disturbances it must compensate for. In simpler terms: only variety can absorb variety.
+The law states that for a control system to be successful, the variety of the regulator must be at least as great as the variety of the disturbances it must compensate for. In simpler terms: *only variety can absorb variety*.
 
 In this context, variety is defined as the number of distinguishable states a system can exhibit. If your product can enter 100 distinct error states (disturbances), but your troubleshooting guide only addresses 10, your documentation (the regulator) lacks the requisite variety to maintain the system's essential variable: user success.
 
@@ -25,7 +25,9 @@ graph LR
 
 W. Ross Ashby, a pioneer in cybernetics, formulated the law of requisite variety to define the minimum requirements for an effective regulator.
 
-To understand this, consider the difference between a standard light switch and a dimmer. A standard switch has a variety of two: {on, off}. A dimmer has a much higher variety because it can occupy a continuous range or dozens of discrete brightness levels. If the environmental requirements (disturbances) demand precise lighting for tasks such as filming, reading, or sleeping, a simple on/off switch lacks the variety to absorb those requirements. The regulator cannot match the variety of the environment, and the system fails to meet the needs of the user.
+To understand this, consider the difference between a standard light switch and a dimmer:
+
+> A standard switch has a variety of two: {on, off}. A dimmer has a much higher variety because it can occupy a continuous range or dozens of discrete brightness levels. If the environmental requirements (disturbances) demand precise lighting for tasks such as filming, reading, or sleeping, a simple on/off switch lacks the variety to absorb those requirements. The regulator cannot match the variety of the environment, and the system fails to meet the needs of the user.
 
 In [technical communication](../technical-writing/basics.md), disturbances are the environmental variables your users face, such as different operating systems, fluctuating network speeds, or varying levels of expertise. To maintain a state of user success, your documentation must provide a regulatory response for every significant state the system can enter due to these disturbances.
 
@@ -35,8 +37,8 @@ In [technical communication](../technical-writing/basics.md), disturbances are t
 
 To effectively apply the law of requisite variety, you must map the variety of the disturbances against the variety of your content:
 
-- **Environment (Disturbances)**: This includes software architecture, third-party integrations, user personas, and every possible failure state.
-- **Regulator (Control system)**: This is your documentation suite, including API references, installation guides, and in-app help.
+- **Environment (disturbances)**: This includes software architecture, third-party integrations, user personas, and every possible failure state.
+- **Regulator (control system)**: This is your documentation suite, including API references, installation guides, and in-app help.
 
 If you ship a distributed database with hundreds of configuration variables but only provide a Quick Start guide, you have a variety mismatch. When users deploy that database, they encounter disturbances, such as latency spikes or permission errors, that your guide cannot absorb. This leads to a loss of control, resulting in system downtime and a spike in support tickets.
 
@@ -60,7 +62,7 @@ When the product is inherently complex, the variety of the regulator must be amp
 
 - **Implement single sourcing and conditional processing**. Use tools that allow you to reuse modular content to generate custom outputs. This matches the variety of user environments, such as OS or subscription tier, without a linear increase in maintenance effort.
 - **Create interactive decision trees**. Replace static troubleshooting pages with diagnostic tools. These tools guide users toward a specific solution based on error codes, effectively matching the high variety of the software internal states.
-- **Use metadata. Organize content with a precise taxonomy. This allows users to filter a high-variety documentation portal to find the specific path that matches their unique environmental variety.
+- **Use metadata**. Organize content with a precise taxonomy. This allows users to filter a high-variety documentation portal to find the specific path that matches their unique environmental variety.
 
 ---
 

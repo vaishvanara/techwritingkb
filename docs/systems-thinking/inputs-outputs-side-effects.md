@@ -1,12 +1,12 @@
 ---
 title: Inputs, outputs, and side effects
 description: "Data or triggers entering a system, the generated response, and any secondary impacts on neighboring modules, such as database writes or webhook dispatches."
-revision_date: 2026-09-17
+revision_date: 2026-10-19
 ---
 
 # Inputs, outputs, and side effects
 
-Inputs are data, triggers, or requests that enter a system. Outputs are the direct responses generated in return. Side effects are state changes or impacts on downstream systems that occur as a result of processing inputs, such as writing to a database or triggering a [webhook](../doc-stack/emerging-architectures.md#event-driven-architecture-webhooks).
+*Inputs* are data, triggers, or requests that enter a system. *Outputs* are the direct responses generated in return. *Side effects* are state changes or impacts on downstream systems that occur as a result of processing inputs, such as writing to a database or triggering a [webhook](../doc-stack/emerging-architectures.md#event-driven-architecture-webhooks).
 
 ---
 
@@ -27,15 +27,15 @@ To document a system effectively, analyze how data flows into, through, and out 
 
 ## Why side effects require clear documentation
 
-While inputs and outputs are usually visible in API schemas, such as OpenAPI specifications, side effects are often encapsulated within the business logic. Failing to document side effects creates risks:
+While inputs and outputs are usually visible in API schemas, such as [OpenAPI specifications](../doc-stack/openapi.md), side effects are often encapsulated within the business logic. Failing to document side effects creates risks:
 
-- **Violations of idempotency:** If an endpoint is not idempotent, a developer might inadvertently trigger multiple financial charges or resource allocations by retrying a failed request. 
+- **Violations of idempotency:** If an endpoint is not [idempotent](../systems-thinking/idempotency.md), a developer might inadvertently trigger multiple financial charges or resource allocations by retrying a failed request. 
 - **Performance and cost issues:** Downstream side effects, such as complex database triggers or expensive third-party API calls, consume system resources. Documentation must clarify which operations trigger these intensive background tasks.
-- **Security and compliance gaps:** Side effects that involve data persistence, such as logging PII to an internal file, can violate privacy regulations such as [GDPR](https://gdpr.eu/){: target="_blank" rel="noopener" } or [HIPAA](https://www.hhs.gov/hipaa/index.html){: target="_blank" rel="noopener" }.
+- **Security and compliance gaps:** Side effects that involve data persistence, such as logging personally identifiable information (PII) to an internal file, can violate privacy regulations such as [GDPR](https://gdpr.eu/){: target="_blank" rel="noopener" } or [HIPAA](https://www.hhs.gov/hipaa/index.html){: target="_blank" rel="noopener" }.
 
 ---
 
-## Strategies for documenting inputs, outputs, and side effects
+## Strategies for documentation
 
 ### 1. Use organized API reference tables
 
@@ -53,7 +53,7 @@ In [API documentation](../industry-terms/api-documentation.md), distinguish betw
 
 ### 2. Highlight asynchronous behavior
 
-If a side effect occurs asynchronously, such as via a worker process or message queue after the HTTP response is sent, document the workflow using sequence diagrams. This helps developers understand that while the output is immediate, the side effect may be eventually consistent.
+If a side effect occurs asynchronously, such as through a worker process or message queue after the HTTP response is sent, document the workflow using sequence diagrams. This helps developers understand that while the output is immediate, the side effect may be eventually consistent.
 
 ### 3. Document read-only versus state-changing operations
 
@@ -92,7 +92,7 @@ Creates a new user profile.
 
 A successful request results in the following state changes and downstream actions:
 
-- **Primary State Change (Synchronous):** A new record is created in the `users` table.
-- **Asynchronous Task:** The system queues a transactional email containing a verification link.
-- **Billing Integration:** If `plan_id` is a paid tier, the system calls the Stripe API to create a Customer object. 
-- **Audit Logging:** An entry is appended to the `security_audit` log containing the event type (`user_registration`), the new `user_id`, and the origin IP address.
+- **Primary state change (Synchronous):** A new record is created in the `users` table.
+- **Asynchronous task:** The system queues a transactional email containing a verification link.
+- **Billing integration:** If `plan_id` is a paid tier, the system calls the API to create a Customer object. 
+- **Audit logging:** An entry is appended to the `security_audit` log containing the event type (`user_registration`), the new `user_id`, and the origin IP address.

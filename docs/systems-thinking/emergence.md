@@ -1,7 +1,7 @@
 ---
 title: Emergence
 description: "Complex behaviors or properties that arise from the interaction of smaller components that individual components do not possess on their own."
-revision_date: 2026-09-17
+revision_date: 2026-10-19
 ---
 
 # Emergence
@@ -16,8 +16,8 @@ In technical environments, emergence explains why complex systems often behave i
 
 Emergent behavior falls into two main categories:
 
-- **Functional emergence:** The intended functionality of a complex system. For example, when multiple independent microservices, messaging queues, and databases interact to create a responsive, auto-scaling e-commerce platform. No single microservice represents the platform, but the platform emerges from their combination.
-- **Emergent misbehavior:** Unintended or catastrophic failures that arise from component interactions. Common examples include race conditions, resource contention, split-brain scenarios in distributed clusters, and cascading failures such as retry storms.
+- **Functional emergence:** The intended functionality of a complex system, such as when multiple independent microservices, messaging queues, and databases interact to create a responsive, auto-scaling e-commerce platform. No single microservice represents the platform, but the platform emerges from their combination.
+- **Emergent misbehavior:** Unintended or catastrophic failures that arise from component interactions. Common examples include race conditions, resource contention, split-brain scenarios in distributed clusters, and [cascading failures](../systems-thinking/cascading-failure.md) such as retry storms.
 
 ---
 
@@ -48,7 +48,7 @@ Make sure your documentation includes architectural overviews that explain the r
 
 Instead of organizing all your content around individual features, create guides based on common usage patterns and real-world scenarios.
 
-- **End-to-end tutorials:** Write step-by-step guides that guide users through complete workflows involving multiple systems. For example, a guide on integrating payment, inventory, and notification services.
+- **End-to-end tutorials:** Write step-by-step tutorials that guide users through complete workflows involving multiple systems. For example, you can write a guide on integrating payment, inventory, and notification services.
 - **State transition maps:** Document how the state of the overall system changes as different components process data at different times.
 
 ### 3. Focus on system-level failure modes in troubleshooting
@@ -107,4 +107,4 @@ To prevent this emergent conflict, follow these guidelines:
 
 - **Schedule bulk updates during off-peak hours:** Run imports when customer transaction volume is lowest to minimize the probability of lock contention.
 - **Batch your transactions:** Do not process the entire CSV in a single database transaction. Limit batches to 500 records and commit each batch individually to release locks quickly.
-- **Implement optimistic concurrency control (OCC):** Where possible, use versioning (for example, a `version` column) for price and description updates instead of pessimistic row locks. This allows the inventory service to continue processing stock changes without being blocked by metadata updates.
+- **Implement optimistic concurrency control (OCC):** Where possible, use [versioning](../doc-stack/git.md) (for example, a `version` column) for price and description updates instead of pessimistic row locks. This allows the inventory service to continue processing stock changes without being blocked by metadata updates.

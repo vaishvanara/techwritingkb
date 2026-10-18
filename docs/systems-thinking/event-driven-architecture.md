@@ -1,7 +1,7 @@
 ---
 title: Event-driven architecture (EDA)
 description: "A software architecture pattern where decoupled systems communicate asynchronously by emitting and listening for events, such as webhooks, Kafka, or RabbitMQ."
-revision_date: 2026-09-17
+revision_date: 2026-10-19
 ---
 
 # Event-driven architecture (EDA)
@@ -12,7 +12,7 @@ Event-driven architecture (EDA) is a software design pattern where decoupled ser
 
 ## Documenting asynchronous communication
 
-In a REST API, documentation follows a linear path: a client sends a request to an endpoint, and the server returns a response. 
+In a [REST API](../doc-stack/openapi.md), documentation follows a linear path: a client sends a request to an endpoint, and the server returns a response. 
 
 Event-driven communication is decoupled. A service publishes an event, such as `order.created`, to a message broker such as Apache Kafka or RabbitMQ and resumes its process. The publishing service typically has no awareness of which downstream services consume that event.
 

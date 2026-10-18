@@ -1,12 +1,12 @@
 ---
 title: Mean time to recovery (MTTR)
 description: "A service-level metric that measures the average time from the start of a service failure or outage until the service is fully restored to its normal state."
-revision_date: 2026-09-17
+revision_date: 2026-10-19
 ---
 
 # Mean time to recovery (MTTR)
 
-Mean time to recovery (MTTR) is a service-level metric that measures the average time from the start of a service failure or outage until the service is fully restored to its normal state. In technical communication, improving the structure, searchability, and accuracy of incident response guides and runbooks is an effective way to lower MTTR and reduce the operational impact of outages.
+Mean time to recovery (MTTR) is a service-level metric that measures the average time from the start of a service failure or outage until the service is fully restored to its normal state. In [technical communication](../technical-writing/basics.md), improving the structure, searchability, and accuracy of incident response guides and runbooks is an effective way to lower MTTR and reduce the operational impact of outages.
 
 ---
 
@@ -17,8 +17,8 @@ To understand how documentation affects MTTR, consider the typical phases of an 
 - **Detection:** The system identifies a failure via automated monitoring or telemetry, triggering an alert.
 - **Triage:** On-call engineers acknowledge the alert, identify the affected services, and determine the severity or impact.
 - **Diagnosis:** Engineers investigate the root cause by analyzing logs, traces, and metrics to isolate the fault.
-- **Mitigation/Recovery:** Operators perform actions to restore service, such as failing over to a redundant system, rolling back a deployment, or scaling resources.
-- **Verification:** The team confirms the system is stable and meeting Service Level Objectives (SLOs).
+- **Mitigation or recovery:** Operators perform actions to restore service, such as failing over to a redundant system, rolling back a deployment, or scaling resources.
+- **Verification:** The team confirms the system is stable and meeting service level objectives (SLOs).
 
 When documentation is disorganized, outdated, or difficult to search, engineers lose time at every stage. Clear documentation turns these critical moments into predictable, sequential steps.
 
@@ -36,16 +36,16 @@ graph LR
 
 ## Designing runbooks for high-stress situations
 
-During a production outage, engineers experience high cognitive load. Design your runbooks for quick scanning and rapid execution:
+During a production outage, engineers experience high [cognitive load](../technical-writing/cognitive-load.md). Design your  [runbooks](../technical-writing/engineering-runbooks.md) for quick scanning and rapid execution:
 
-- **Include explicit entry criteria:** At the top of the [runbook](../technical-writing/engineering-runbooks.md), list the specific alerts or metric thresholds that validate the guide. For example, use this runbook if the `DatabaseConnectionTimeout` alert fires or if the `db_cpu_utilization` metric exceeds 95 percent for more than 5 minutes.
-- **Format commands for immediate execution:** Write command-line interface commands in code blocks. Use standardized delimiters for variables, such as `{{ENVIRONMENT_NAME}}` or `${DATABASE_ID}`, to make placeholders visually distinct from valid shell syntax and to prevent accidental execution of unreplaced strings.
-- **Show expected outputs:** After a critical command, show an example of the expected successful standard output or JavaScript Object Notation response. This allows the operator to verify state transitions before proceeding.
+- **Include explicit entry criteria:** At the top of the runbook, list the specific alerts or metric thresholds that validate the guide. For example, use this runbook if the `DatabaseConnectionTimeout` alert fires or if the `db_cpu_utilization` metric exceeds 95 percent for more than 5 minutes.
+- **Format commands for immediate execution:** Write CLI commands in code blocks. Use standardized delimiters for variables, such as `{{ENVIRONMENT_NAME}}` or `${DATABASE_ID}`, to make placeholders visually distinct from valid shell syntax and to prevent accidental execution of unreplaced strings.
+- **Show expected outputs:** After a critical command, show an example of the expected successful standard output or JSON response. This allows the operator to verify state transitions before proceeding.
 
 !!! tip "The 5-second scan rule"
     An engineer under pressure should be able to scan a runbook in five seconds and locate:
     - The emergency rollback or mitigation command.
-    - Contact information for the escalation team or Subject Matter Expert (SME).
+    - Contact information for the escalation team or subject matter expert (SME).
     - Links to the relevant monitoring dashboards, such as CloudWatch or Datadog.
     Use clear headers, bold formatting, and lists to make these elements stand out.
 
@@ -55,7 +55,7 @@ During a production outage, engineers experience high cognitive load. Design you
 
 An incident is not recovered until system health is verified against baseline metrics. Your runbooks must include a verification section:
 
-- **Define successful health states:** Specify which application programming interface endpoints to query and what response codes or body to expect. For example, the `/readyz` endpoint must return `200 OK`, which indicates the service is ready to accept traffic, rather than just `/livez`, which indicates the process is running.
+- **Define successful health states:** Specify which API endpoints to query and what response codes or body to expect. For example, the `/readyz` endpoint must return `200 OK`, which indicates the service is ready to accept traffic, rather than just `/livez`, which indicates the process is running.
 - **Highlight metric recovery targets:** Explain what normal telemetry looks like. For example, verify that the response latency (p99) on the Grafana dashboard has returned to less than 200 milliseconds.
 - **Document rollback steps:** If the mitigation attempt fails or introduces new regressions, provide a rollback plan to return the system to its previous known-good state.
 
@@ -63,4 +63,4 @@ An incident is not recovered until system health is verified against baseline me
 
 ## Why MTTR is a key technical writing metric
 
-Measuring MTTR gives [technical writing](../technical-writing/basics.md) teams a way to demonstrate business value. By comparing MTTR before and after a runbook update or the implementation of a documentation portal, you do not just guess; you quantify how high-quality documentation saves engineering hours, prevents customer churn, and reduces the cost of downtime.
+Measuring MTTR gives technical writing teams a way to demonstrate business value. By comparing MTTR before and after a runbook update or the implementation of a documentation portal, you do not just guess; you quantify how high-quality documentation saves engineering hours, prevents customer churn, and reduces the cost of downtime.

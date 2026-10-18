@@ -1,12 +1,12 @@
 ---
 title: State and state transition
 description: "The condition of a system at a specific time (such as authenticated, idle, or error) and the rules governing how it moves between states."
-revision_date: 2026-09-17
+revision_date: 2026-10-19
 ---
 
 # State and state transition
 
-State is the condition of a system at a specific time. A state transition is the process and the rules that govern how the system moves from one state to another in response to an event or input.
+*State* is the condition of a system at a specific time. A *state transition* is the process and the rules that govern how the system moves from one state to another in response to an event or input.
 
 ---
 
@@ -25,9 +25,9 @@ Understanding system states is essential for users, developers, and support team
 When documenting state-based systems, you will work with four main elements:
 
 1. **State:** The static condition of the system. Examples include `Connected`, `Offline`, `Synchronizing`, or `Active`.
-2. **Event (or Trigger):** An external or internal occurrence that initiates a state change. This could be a user action, an API call, a system timeout, or a hardware signal.
+2. **Event (or trigger):** An external or internal occurrence that initiates a state change. This could be a user action, an API call, a system timeout, or a hardware signal.
 3. **Transition:** The allowed path between two states.
-4. **Guard Condition:** A Boolean expression that must evaluate to `true` for a transition to fire. For example, a user can transition from `Guest` to `Authenticated` only if the provided credentials are valid.
+4. **Guard condition:** A Boolean expression that must evaluate to `true` for a transition to fire. For example, a user can transition from `Guest` to `Authenticated` only if the provided credentials are valid.
 
 ---
 

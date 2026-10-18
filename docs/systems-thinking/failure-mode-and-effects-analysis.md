@@ -1,10 +1,10 @@
 ---
 title: Failure mode and effects analysis (FMEA)
 description: "A step-by-step approach for identifying all possible points of failure in a system or workflow and assessing their severity."
-revision_date: 2026-09-17
+revision_date: 2026-10-19
 ---
 
-# Failure mode and effects analysis (FMEA)
+# Failure mode and effects analysis
 
 Failure mode and effects analysis (FMEA) is a proactive, systematic method for evaluating a process or design to identify where and how it might fail and to assess the relative impact of different failures. For technical writers and product teams, FMEA provides a data-driven basis for prioritizing documentation, safety warnings, and recovery runbooks.
 
@@ -25,13 +25,13 @@ $$\text{RPN} = \text{Severity (S)} \times \text{Occurrence (O)} \times \text{Det
 A higher RPN indicates a higher risk. However, items with high severity scores (for example, 9 or 10) often require mitigation regardless of the resulting RPN.
 
 !!! note "Using RPN to prioritize documentation"
-    [Technical writing](../technical-writing/basics.md) teams can use RPN scores to prioritize a documentation backlog. For example, a failure mode with an RPN of 400 (S: 8, O: 5, D: 10) requires immediate mitigation through troubleshooting guides and telemetry alerts. After these controls are implemented and documented, the detection score is reassessed, resulting in a lower residual RPN.
+    Technical writing teams can use RPN scores to prioritize a documentation backlog. For example, a failure mode with an RPN of 400 (S: 8, O: 5, D: 10) requires immediate mitigation through troubleshooting guides and telemetry alerts. After these controls are implemented and documented, the detection score is reassessed, resulting in a lower residual RPN.
 
 ---
 
 ## How FMEA improves technical documentation
 
-An FMEA provides the technical data needed to design effective information architecture:
+FMEA provides the technical data needed to design effective information architecture:
 
 - **Logic-based warning levels:** Use severity scores to align with ANSI/ISO warning standards. If a step could cause permanent data loss or hardware damage (severity 8 to 10), use a `!!! danger` or `!!! warning` notice. For minor errors (severity 1 to 3), a `!!! note` or `!!! tip` is appropriate.
 - **Observability documentation:** If a failure mode has a high detection score, documentation should focus on the specific metrics, logs, or error codes that allow an operator to identify the issue.
@@ -39,7 +39,7 @@ An FMEA provides the technical data needed to design effective information archi
 
 ---
 
-## Conduct an FMEA for technical workflows
+## Conduct FMEA for technical workflows
 
 FMEA can be applied to software architecture, hardware assembly, or human-centric processes such as manual deployment workflows.
 
@@ -55,7 +55,7 @@ graph TD
 - **Map the workflow:** Break the process into discrete, sequential steps.
 - **Identify failure modes:** For each step, ask "How could this fail to meet its intended function?"
 - **Analyze effects and causes:** Identify the impact of the failure (effect) and the underlying reason it would happen (cause).
-- **Assign S, O, and D scores:** Collaborate with subject matter experts (SMEs). Occurrence is based on the cause; detection is based on the effectiveness of current diagnostic tools or processes.
+- **Assign S, O, and D scores:** Collaborate with [subject matter experts (SME)](../doc-lifecycle/sme-interviewing.md). Occurrence is based on the cause; detection is based on the effectiveness of current diagnostic tools or processes.
 - **Calculate RPN and implement actions:** Propose mitigations for high-risk items.
 - **Rescore residual RPN:** After implementing mitigations (such as new validation logic or improved documentation), reevaluate the scores to make sure the risk has been reduced to an acceptable level.
 

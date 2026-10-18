@@ -1,7 +1,7 @@
 ---
 title: Domain-driven design (DDD)
 description: Align software implementation and technical documentation with business domains through bounded contexts and ubiquitous language.
-revision_date: 2026-09-17
+revision_date: 2026-10-19
 ---
 
 # Domain-driven design (DDD)
@@ -14,9 +14,9 @@ In [technical communication](../technical-writing/basics.md), DDD prevents the m
 
 ## Strategic design: Ubiquitous language
 
-Ubiquitous language replaces generic glossaries with a rigorous, shared vocabulary embedded directly into the source code and documentation. If a term is defined in the domain model, it must be the exact term used in class names, API endpoints, and technical guides.
+[Ubiquitous language](../systems-thinking/domain-driven-design.md#strategic-design-ubiquitous-language) replaces generic glossaries with a rigorous, shared vocabulary embedded directly into the source code and documentation. If a term is defined in the domain model, it must be the exact term used in class names, API endpoints, and technical guides.
 
-Terminological drift (for example, using *Tenant* in the code, *Subscriber* in the docs, and *Client* in the UI) is a technical defect. This drift increases cognitive load and leads to logic errors during implementation.
+Terminological drift (for example, using *Tenant* in the code, *Subscriber* in the docs, and *Client* in the UI) is a technical defect. This drift increases [cognitive load](../technical-writing/cognitive-load.md) and leads to logic errors during implementation.
 
 -   **Codify the source of truth:** Technical writers should collaborate with domain experts to formalize terms during [event storming](https://en.wikipedia.org/wiki/Event_storming){: target="_blank" rel="noopener" } sessions, ensuring the language is consistent before the API contract is finalized.
 -   **Treat mismatches as bugs:** Any discrepancy between a code-level identifier (for example, a `tenant_id` property) and its documentation label is a bug that must be resolved to maintain model integrity.
@@ -29,7 +29,7 @@ Terminological drift (for example, using *Tenant* in the code, *Subscriber* in t
 
 ## Bounded contexts and information architecture
 
-In large systems, the same term can have different meanings and logic depending on the environment. DDD manages this through bounded contexts, which define the explicit logical boundaries where a specific model and its ubiquitous language are valid.
+In large systems, the same term can have different meanings and logic depending on the environment. DDD manages this through [bounded contexts](../systems-thinking/bounded-context.md), which define the explicit logical boundaries where a specific model and its ubiquitous language are valid.
 
 ```mermaid
 graph LR
@@ -59,7 +59,7 @@ Technical writers should participate in the initial design phase to identify amb
 
 ### Parallel directory structures
 
-Align the documentation file structure with the domain modules of the repository. If the code is organized by domain (for example, `src/shipping/` and `src/billing/`), the conceptual and reference documentation should follow the same path. This allows developers to navigate the doc-as-code structure using the same mental model they use for the codebase.
+Align the documentation file structure with the domain modules of the repository. If the code is organized by domain (for example, `src/shipping/` and `src/billing/`), the conceptual and reference documentation should follow the same path. This allows developers to navigate the [Docs as Code (DaC)](../doc-stack/docs-as-code.md) structure using the same mental model they use for the codebase.
 
 ### Automated language enforcement
 
@@ -77,4 +77,4 @@ swap:
   user_account: tenant
 ```
 
-By grounding documentation in DDD principles, the technical narrative becomes a functional component of the system architecture, reducing [cognitive load](../technical-writing/cognitive-load.md) and ensuring scalability.
+By grounding documentation in DDD principles, the technical narrative becomes a functional component of the system architecture, reducing cognitive load and ensuring scalability.

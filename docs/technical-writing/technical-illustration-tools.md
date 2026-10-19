@@ -7,7 +7,7 @@ revision_date: 2026-07-16
 
 # Technical illustration software
 
-> *Creating high-fidelity, complex visual assets to bridge the gap between physical reality and technical documentation.*
+> *Creating high-fidelity, complex visual assets to bridge the gap between physical reality and technical documentation*
 
 ---
 

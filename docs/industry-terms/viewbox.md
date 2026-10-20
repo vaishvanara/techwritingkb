@@ -1,12 +1,12 @@
 ---
 title: viewBox
 description: An SVG attribute that defines the internal coordinate system and aspect ratio, allowing vector graphics to scale fluidly within any container.
-revision_date: 2026-09-03
+revision_date: 2026-10-19
 ---
 
 # viewBox
 
-> *A [Scalable Vector Graphics](../technical-writing/svg-for-docs.md) (SVG) attribute that defines the internal coordinate system and aspect ratio, allowing vector graphics to scale fluidly within any container*
+> *A Scalable Vector Graphics (SVG) attribute that defines the internal coordinate system and aspect ratio, allowing vector graphics to scale fluidly within any container*
 
 ---
 

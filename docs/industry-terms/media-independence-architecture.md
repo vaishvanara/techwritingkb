@@ -1,12 +1,12 @@
 ---
 title: Media independence architecture (MIA)
 description: An information design strategy that separates source content from its presentation layer to ensure consistent delivery across web, print, and mobile platforms.
-revision_date: 2026-09-03
+revision_date: 2026-10-19
 ---
 
 # Media independence architecture (MIA)
 
-> *An [information design](../technical-writing/content-design-foundations.md) strategy that separates source content from its presentation layer to ensure consistent delivery across web, print, and mobile platforms*
+> *An information design strategy that separates source content from its presentation layer to ensure consistent delivery across web, print, and mobile platforms*
 
 ---
 

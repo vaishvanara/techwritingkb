@@ -1,7 +1,7 @@
 ---
 title: Inclusive language
 description: A writing methodology that avoids bias, exclusionary metaphors, and gendered language to improve accessibility and global translation efficiency.
-revision_date: 2026-09-03
+revision_date: 2026-10-19
 ---
 
 # Inclusive language

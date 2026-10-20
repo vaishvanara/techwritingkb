@@ -1,7 +1,7 @@
 ---
 title: Neural search
 description: An information retrieval method using machine learning and vector embeddings to match user queries with content based on semantic intent rather than keywords.
-revision_date: 2026-09-03
+revision_date: 2026-10-19
 ---
 
 # Neural search
@@ -66,7 +66,7 @@ Effective neural search requires more than just an embedding model; it requires 
 
 - **Granular [chunking](../industry-terms/chunking.md):** Do not index entire pages as single vectors, as this dilutes the semantic signal. Break articles into logical blocks, for example, 256–512 tokens, such as specific procedures or descriptive paragraphs. Use overlapping windows to maintain context between chunks.
 - **Hybrid search strategies:** Combine semantic vector search with traditional lexical search using reciprocal rank fusion. This ensures that specific technical tokens, such as error codes (404), specific function names (for example, `#!python os.path.join()`), or unique identifiers, remain discoverable, as vector models can sometimes smooth over these critical literal details.
-- **[Metadata](../doc-lifecycle/governance-maintenance.md#metadata-governance) enrichment and prefiltering:** Use YAML front matter to categorize content, such as `product_version`, `language`, or `platform`. Applying these as hard filters before performing vector similarity prevents relevance errors from unrelated product versions or documentation sets.
+- **[Metadata](../doc-lifecycle/governance-maintenance.md#metadata-governance) enrichment and prefiltering:** Use YAML frontmatter to categorize content, such as `product_version`, `language`, or `platform`. Applying these as hard filters before performing vector similarity prevents relevance errors from unrelated product versions or documentation sets.
 
 ---
 

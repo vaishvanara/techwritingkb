@@ -1,7 +1,7 @@
 ---
 title: Technical translation
 description: The specialized process of adapting technical content into other languages while maintaining strict functional equivalence, terminological accuracy, and structural integrity for localized environments.
-revision_date: 2026-09-03
+revision_date: 2026-10-19
 ---
 
 # Technical translation

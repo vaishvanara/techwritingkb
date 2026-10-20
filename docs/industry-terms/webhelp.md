@@ -1,7 +1,7 @@
 ---
 title: WebHelp and responsive HTML5
 description: Standardized web-based documentation formats that deliver responsive, searchable, and browser-accessible content across all modern devices and platforms.
-revision_date: 2026-09-03
+revision_date: 2026-10-19
 ---
 
 # WebHelp and responsive HTML5

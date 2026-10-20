@@ -1,7 +1,7 @@
 ---
 title: Feature flags
 description: Feature flags are software toggles that enable or disable functionality at run time, allowing documentation to sync with phased feature rollouts.
-revision_date: 2026-09-03
+revision_date: 2026-10-19
 ---
 
 # Feature flags
@@ -26,7 +26,7 @@ Integrating documentation with feature flags ensures that content visibility mat
 
 ## Strategic adoption 
 
-This workflow is essential for teams using continuous integration and continuous delivery ([CI/CD](../doc-stack/cicd.md)) pipelines to deploy multiple times a day. Linking the documentation pipeline to feature toggles is necessary when a product uses targeted rollouts (based on user ID, geography, or persona) or when the user interface (UI) changes too rapidly for traditional publishing cycles.
+This workflow is essential for teams using [CI/CD pipelines](../doc-stack/cicd.md#the-pipeline-concept) to deploy multiple times a day. Linking the documentation pipeline to feature toggles is necessary when a product uses targeted rollouts (based on user ID, geography, or persona) or when the user interface changes too rapidly for traditional publishing cycles.
 
 ---
 
@@ -45,7 +45,7 @@ graph TD
     F --> G[Production Deployment]
 ```
 
-1.  **Mapping:** Identify which documentation components (application programming interface (API) references, UI guides, or conceptual topics) correspond to specific feature flag keys in the application code.
+1.  **Mapping:** Identify which documentation components (API references, UI guides, or conceptual topics) correspond to specific feature flag keys in the application code.
 2.  **Conditional Tagging:** Wrap content blocks in conditional statements (for example, If/Else blocks in Markdown or [DITA](../references/dita.md)) that reference the feature flag keys.
 3.  **Validation:** Test the documentation in a [staging environment](../doc-stack/cicd.md#staging-and-preview-environments) by toggling flag states in the flag provider (for example, LaunchDarkly) to ensure the correct content is rendered or excluded.
 4.  **Deployment:** 
@@ -59,22 +59,22 @@ graph TD
 - **Technical writers:** Tag documentation source files and manage conditional logic blocks.
 - **Software engineers:** Provide the specific flag keys and notify the docs team of changes to flag logic (for example, moving from a boolean to a multivariate flag).
 - **Product managers:** Define the rollout schedule and manage the state of flags in the production environment.
-- **QA and [SMEs](../doc-lifecycle/sme-interviewing.md):** Validate that the documentation accurately reflects the behavior of the feature in different states.
+- **QA and SMEs:** Validate that the documentation accurately reflects the behavior of the feature in different states.
 
 ---
 
 ## Pipeline integration
 
-Documentation as code ([DaC](../doc-stack/diagrams-as-code.md)) allows for deep integration with feature management platforms like [LaunchDarkly](https://launchdarkly.com/) or [Split](https://www.split.io/). 
+[Docs as Code (DaC)](../doc-stack/docs-as-code.md) allows for deep integration with feature management platforms like [LaunchDarkly](https://launchdarkly.com/){: target="_blank" rel="noopener" } or [Split](https://www.split.io/){: target="_blank" rel="noopener" }. 
 
-- **Build-time integration:** The [static site generator](../doc-stack/ssg.md) (SSG) fetches the current flag states through an API during the build process. Content wrapped in off flags is completely omitted from the generated HTML, providing better security for sensitive features.
+- **Build-time integration:** The [static site generator (SSG)](../doc-stack/ssg.md) fetches the current flag states through an API during the build process. Content wrapped in off flags is completely omitted from the generated HTML, providing better security for sensitive features.
 - **Runtime integration:** JavaScript in the browser queries the flag provider and dynamically updates the Document Object Model (DOM). While this allows for instant updates without a rebuild, writers must be aware that hidden content may still be present in the source code of the page.
 
 ---
 
 ## Troubleshooting
 
-- **Build latency:** In build-time configurations, there is a delay between toggling a flag in the product and the documentation update. Use webhooks from your feature flag provider to trigger an automated CI/[CD](../technical-writing/content-design-foundations.md) pipeline rebuild immediately upon flag state changes.
+- **Build latency:** In build-time configurations, there is a delay between toggling a flag in the product and the documentation update. Use webhooks from your feature flag provider to trigger an automated CI/CD pipeline rebuild immediately upon flag state changes.
 - **Tag debt:** Once a feature is 100% rolled out and the flag is retired in the code, the conditional tags in the documentation become dead code. Establish a flag cleanup cadence to remove these tags and convert the conditional content into standard documentation.
 
 ---

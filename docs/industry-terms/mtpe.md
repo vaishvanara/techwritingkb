@@ -1,7 +1,7 @@
 ---
 title: Machine translation post-editing (MTPE)
 description: A localization workflow where human linguists refine machine-generated drafts to ensure technical accuracy, linguistic naturalness, and brand consistency.
-revision_date: 2026-09-03
+revision_date: 2026-10-19
 ---
 
 # Machine translation post-editing (MTPE)

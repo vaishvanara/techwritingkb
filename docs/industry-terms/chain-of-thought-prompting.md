@@ -1,12 +1,12 @@
 ---
 title: Chain-of-thought (CoT) prompting
 description: A prompt engineering technique that directs AI models to generate intermediate reasoning steps, improving accuracy in multi-step logical tasks by leveraging sequential token generation.
-revision_date: 2026-09-03
+revision_date: 2026-10-19
 ---
 
 # Chain-of-thought (CoT) prompting
 
-> *A [prompt engineering](../technical-writing/prompt-engineering.md) technique that directs AI models to generate intermediate reasoning steps, improving accuracy in multi-step logical tasks*
+> *A prompt engineering technique that directs AI models to generate intermediate reasoning steps, improving accuracy in multi-step logical tasks*
 
 ---
 
@@ -24,8 +24,8 @@ This reduces logical hallucinations and ensures that the final token prediction 
 
 Accuracy is the baseline for a functional developer experience (DX). If an AI-assisted tool generates invalid code or broken architecture, it creates [technical debt](../industry-terms/content-debt.md). Chain-of-thought prompting provides a reasoning trace that serves two purposes:
 
-1.  **Computation Expansion:** It allows the model to allocate more total compute (floating-point operations per second or FLOPs) to a problem by generating more tokens. Each new token generated is a serial computation step that informs the next.
-2.  **Verification:** It allows human review to audit the path of the model. If the conclusion is incorrect, the reviewer can pinpoint whether the error occurred during the initial decomposition (input parsing) or during a specific step of the logical derivation.
+1.  **Computation expansion:** It allows the model to allocate more total compute (floating-point operations per second or FLOPs) to a problem by generating more tokens. Each new token generated is a serial computation step that informs the next.
+2.  **Verification:** It allows human reviewers to audit the path of the model. If the conclusion is incorrect, the reviewer can pinpoint whether the error occurred during the initial decomposition (input parsing) or during a specific step of the logical derivation.
 
 ---
 
@@ -33,9 +33,9 @@ Accuracy is the baseline for a functional developer experience (DX). If an AI-as
 
 Chain-of-thought prompting relies on three primary mechanics:
 
--   **Task Deconstruction:** Forcing the model to break a compound problem into discrete, sequential sub-problems.
--   **Recursive Context:** Using the output of Step $N$ as the grounded context for Step $N+1$, ensuring the final answer is a mathematical consequence of the preceding tokens.
--   **Prompt Activation:** Triggering this behavior via Zero-Shot CoT (for example, adding "Let us think step by step") or Few-Shot CoT, where the model is provided with examples of problems and their corresponding reasoning chains.
+-   **Task deconstruction:** Forcing the model to break a compound problem into discrete, sequential sub-problems.
+-   **Recursive context:** Using the output of Step $N$ as the grounded context for Step $N+1$, ensuring the final answer is a mathematical consequence of the preceding tokens.
+-   **Prompt activation:** Triggering this behavior through Zero-Shot CoT (for example, adding "Let us think step by step") or Few-Shot CoT, where the model is provided with examples of problems and their corresponding reasoning chains.
 
 ---
 
@@ -62,22 +62,22 @@ To implement this, move away from open-ended queries toward structured, sequenti
 
 === "Before: Direct Prompting"
     ```text
-    [ User Prompt ]
-    Analyze this code snippet and tell me if the application programming interface (API) endpoint supports pagination.
+    `[ User Prompt ]`
+    Analyze this code snippet and tell me if the API endpoint supports pagination.
     
-    [ Model Output ]
+    `[ Model Output ]`
     Yes, it does.
     ```
 
 === "After: Chain-of-Thought (CoT) Prompting"
     ```text
-    [ User Prompt ]
+    `[ User Prompt ]`
     Analyze this code snippet by following these steps: 
     1. Identify parameters related to limits, offsets, or cursors. 
     2. Explain how those parameters interact with the data payload. 
     3. Determine if the endpoint supports pagination based on those findings.
     
-    [ Model Output ]
+    `[ Model Output ]`
     1. Parameter identification: The code utilizes `pageSize` and `startingAfter`.
     2. Payload analysis: `pageSize` defines the record limit per request, while `startingAfter` serves as a cursor for the next set of results.
     3. Conclusion: Yes, the API supports cursor-based pagination.
@@ -87,14 +87,14 @@ To implement this, move away from open-ended queries toward structured, sequenti
 
 ## Best practices and anti-patterns
 
-### Effective Application
+### Effective application
 
--   **Instructional Directives:** Use imperative verbs to define the reasoning structure: Identify, Verify, and Calculate before Conclude.
--   **Delimiter usage:** Instruct the model to separate reasoning from the final answer (for example, using Extensible [Markup](../doc-stack/markup-languages.md) Language (XML) tags such as `<reasoning>` or [JavaScript Object Notation](../doc-stack/json-logic.md) (JSON) keys) to allow for programmatic extraction of the result without the unnecessary information of the thought process.
--   **Model Suitability:** CoT is most effective on models with high parameter counts. While smaller models (such as Llama 3 8B) can perform CoT, they are more susceptible to logical drift, where an error in an early reasoning step cascades into a confidently wrong conclusion.
+-   **Instructional directives:** Use imperative verbs to define the reasoning structure: Identify, Verify, and Calculate before Conclude.
+-   **Delimiter usage:** Instruct the model to separate reasoning from the final answer (for example, using XML tags such as `<reasoning>` or JSON keys) to allow for programmatic extraction of the result without the unnecessary information of the thought process.
+-   **Model suitability:** CoT is most effective on models with high parameter counts. While smaller models (such as Llama 3 8B) can perform CoT, they are more susceptible to logical drift, where an error in an early reasoning step cascades into a confidently wrong conclusion.
 
-### Pitfalls to Avoid
+### Pitfalls to avoid
 
--   **The Silent Thought Trap:** For standard autoregressive models (GPT-4o, Claude 3.5), thoughts must be output as tokens to influence the final result. Note: This differs from reasoning models (such as OpenAI o1), which use a hidden, internal chain of thought before outputting the first visible token.
--   **Token Overhead:** Do not use CoT for low-complexity or high-throughput tasks. Generating reasoning steps increases latency and costs (input and output tokens).
--   **Unconstrained Reasoning:** Without a structured format, the model may diverge into irrelevant tangents. Use a numbered list or specific headers to keep the reasoning path relevant to the objective.
+-   **The Silent Thought trap:** For standard autoregressive models, thoughts must be output as tokens to influence the final result. Take note that his differs from reasoning models which use a hidden, internal chain of thought before outputting the first visible token.
+-   **Token overhead:** Do not use CoT for low-complexity or high-throughput tasks. Generating reasoning steps increases latency and costs (input and output tokens).
+-   **Unconstrained reasoning:** Without a structured format, the model may diverge into irrelevant tangents. Use a numbered list or specific headers to keep the reasoning path relevant to the objective.

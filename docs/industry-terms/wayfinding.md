@@ -1,12 +1,12 @@
 ---
 title: Wayfinding
 description: The system of visual and structural cues used to orient users and guide their navigation through complex information environments.
-revision_date: 2026-09-03
+revision_date: 2026-10-19
 ---
 
 # Wayfinding
 
-> *The system of visual and structural cues used to orient users and guide their [navigation](../references/ia-design.md#the-three-level-rule) through complex information environments*
+> *The system of visual and structural cues used to orient users and guide their navigation through complex information environments*
 
 ---
 

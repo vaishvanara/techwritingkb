@@ -1,12 +1,12 @@
 ---
 title: Heuristic evaluation (HE)
 description: A usability inspection method where experts audit documentation against predefined usability principles to identify UX friction points and structural issues.
-revision_date: 2026-09-03
+revision_date: 2026-10-19
 ---
 
 # Heuristic evaluation
 
-> *A usability inspection method where experts audit content against predefined principles to identify friction points and improve [information architecture](../references/ia-design.md)*
+> *A usability inspection method where experts audit content against predefined principles to identify friction points and improve information architecture*
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Style guide as code
 description: A system for enforcing editorial standards by converting style rules into programmable configuration files integrated directly into development pipelines.
-revision_date: 2026-09-03
+revision_date: 2026-10-19
 ---
 
 # Style guide as code

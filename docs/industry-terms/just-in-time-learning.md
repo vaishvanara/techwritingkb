@@ -1,7 +1,7 @@
 ---
 title: Just-in-Time (JIT) Learning
 description: A design strategy that delivers specific, actionable, and context-sensitive information at the exact moment a user requires it to complete a task.
-revision_date: 2026-09-03
+revision_date: 2026-10-19
 ---
 
 # Just-in-Time (JIT) learning

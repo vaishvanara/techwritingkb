@@ -1,7 +1,7 @@
 ---
 title: User-centered design (UCD)
 description: A design framework prioritizing user needs and feedback throughout the development process to create intuitive, task-oriented technical documentation.
-revision_date: 2026-09-03
+revision_date: 2026-10-19
 ---
 
 # User-centered design (UCD)

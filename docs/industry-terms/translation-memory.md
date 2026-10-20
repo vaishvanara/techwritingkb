@@ -1,7 +1,7 @@
 ---
 title: Translation memory
 description: A database of bilingual text segments that stores previously translated content to improve linguistic consistency and reduce localization costs.
-revision_date: 2026-09-03
+revision_date: 2026-10-19
 ---
 
 # Translation memory

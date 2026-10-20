@@ -1,12 +1,12 @@
 ---
 title: Controlled language
 description: A restricted form of a natural language that uses standardized vocabulary and grammar rules to improve the clarity, translatability, and readability of content.
-revision_date: 2026-09-03
+revision_date: 2026-10-19
 ---
 
 # Controlled language
 
-> *A restricted form of a natural language that uses standardized vocabulary and grammar rules to improve the clarity, translatability, and [readability](../technical-writing/readability-scores.md) of content*
+> *A restricted form of a natural language that uses standardized vocabulary and grammar rules to improve the clarity, translatability, and readability of content*
 
 ---
 
@@ -16,16 +16,18 @@ Controlled language streamlines [technical communication](../technical-writing/b
 
 Standardizing language minimizes the mental effort required to parse instructions. While nested clauses and heavy nominalization force readers to stop and decode syntax, controlled language prioritizes the [subject-verb-object (SVO) format](../technical-writing/active-passive.md#the-svo-formula) and the imperative mood. This directness aligns the reading pattern of a user with their logical task execution, leading to faster comprehension and a reduction in operational errors.
 
-??? note "Practical Application: Simplified Technical English"
+??? note "Practical application: Simplified technical English"
     ASD-STE100 is the most widely used implementation of these principles. Created for the aerospace industry, it restricts vocabulary to prevent dangerous misunderstandings. For instance, the word "close" is permitted only as a verb ("close the hatch"), never as an adjective. To describe proximity, writers must use the approved term "near."
 
 ---
 
 ## The impact of linguistic consistency
 
-Documentation often reaches a diverse global audience, ranging from expert engineers to non-native speakers. Idiomatic expressions and inconsistent synonyms create challenges, causing human users to hesitate and automated systems to fail. For global enterprises, uncontrolled writing increases translation costs and introduces errors during localization. For example, a translator might treat two synonyms as distinct technical components.
+Documentation often reaches a diverse global audience, ranging from expert engineers to non-native speakers. Idiomatic expressions and inconsistent synonyms create challenges, causing human users to hesitate and automated systems to fail. 
 
-Beyond human readability, standardized writing supports content engineering. Inconsistent terminology degrades search relevance and disrupts semantic tagging. If terminology is not standardized, [search engine optimization](../doc-stack/metadata-frontmatter.md#search-engine-optimization) (SEO) and internal retrieval strategies often fail due to keyword fragmentation. This occurs when a single concept is split across multiple terms such as "display," "monitor," and "screen." Adopting predictable language patterns ensures that search algorithms and large language models (LLMs) can index and retrieve information with higher precision.
+For global enterprises, uncontrolled writing increases translation costs and introduces errors during [localization](../industry-terms/gilt.md). For example, a translator might treat two synonyms as distinct technical components.
+
+Beyond human readability, standardized writing supports [content engineering](../doc-stack/tech-stack.md). Inconsistent terminology degrades search relevance and disrupts semantic tagging. If terminology is not standardized, [search engine optimization (SEO)](../doc-stack/metadata-frontmatter.md#search-engine-optimization) and internal retrieval strategies often fail due to keyword fragmentation. This occurs when a single concept is split across multiple terms such as "display," "monitor," and "screen." Adopting predictable language patterns ensures that search algorithms and large language models (LLMs) can index and retrieve information with higher precision.
 
 ```mermaid
 graph TD
@@ -48,7 +50,7 @@ graph TD
 Implementing a controlled language requires a focus on three specific areas:
 
 -   **Grammatical boundaries:** Limit instructional sentences to a maximum of 20 words and descriptive text to 25 words. Prioritize the [active voice](../technical-writing/active-passive.md) and imperative mood while removing complex verb tenses, gerunds, and present participles used as adjectives.
--   **Lexical precision:** Mandate a one word, one meaning policy. For example, "start" is the designated term for activation actions, while "initiate" and "launch" are prohibited. Note: Technical names, such as cold boot, are often exempt but must be defined in a project-specific dictionary.
+-   **Lexical precision:** Mandate a one word, one meaning policy. For example, "start" is the designated term for activation actions, while "initiate" and "launch" are prohibited. Take note that technical names, such as cold boot, are often exempt but must be defined in a project-specific dictionary.
 -   **Structural predictability:** Use consistent phrasing patterns so that both human readers and machine translation (MT) engines can process data without encountering ambiguity or translation noise.
 
 ---
@@ -57,15 +59,15 @@ Implementing a controlled language requires a focus on three specific areas:
 
 Effective transformation moves content from passive observation to active instruction:
 
-**Before (Uncontrolled)**
-Prior to initiating the installation procedure, it is recommended that the administrator verify that all system dependencies, which are outlined in the appendix, have been completely downloaded, because failure to do so may result in the system being rendered inoperative.
+**Before (uncontrolled)**
+> Prior to initiating the installation procedure, it is recommended that the administrator verify that all system dependencies, which are outlined in the appendix, have been completely downloaded, because failure to do so may result in the system being rendered inoperative.
 
-**After (Controlled)**
-Before you install the software, verify that you downloaded all dependencies. See the appendix for the list of dependencies. If you do not download all dependencies, the system will not operate.
+**After (controlled)**
+> Before you install the software, verify that you downloaded all dependencies. See the appendix for the list of dependencies. If you do not download all dependencies, the system will not operate.
 
 ### Why the controlled version works
 
-The revised text replaces the passive, wordy phrase "it is recommended that the administrator verify" with a direct command. By replacing the verb "initiating" with "install" and removing the complex "rendered inoperative" construction, the message becomes immediate. Breaking a single 39-word sentence into three shorter statements significantly lowers the reader's cognitive load and meets the 20-word limit for instructions.
+The revised text replaces the passive, wordy phrase "it is recommended that the administrator verify" with a direct command. By replacing the verb "initiating" with "install" and removing the complex "rendered inoperative" construction, the message becomes immediate. Breaking a single 39-word sentence into three shorter statements significantly lowers the reader's [cognitive load](../technical-writing/cognitive-load.md) and meets the 20-word limit for instructions.
 
 ---
 
@@ -74,8 +76,8 @@ The revised text replaces the passive, wordy phrase "it is recommended that the 
 Successfully integrating these rules into a [documentation pipeline](../doc-stack/cicd.md#the-pipeline-concept) involves more than just a style guide:
 
 1.  **Develop a restricted lexicon:** Curate a master list of approved nouns and verbs. Document banned synonyms alongside their mandatory replacements.
-2.  **Automate the validation:** Use prose-[linting](../doc-stack/prose-linting.md) tools such as [Vale](https://vale.sh/){: target="_blank" rel="noopener" } to flag non-compliant words, passive voice, or overly long sentences during the drafting phase.
-3.  **Embed checks in [CI/CD](../doc-stack/cicd.md):** Integrate linguistic validation into your continuous integration and continuous delivery (CI/CD) pipeline (for example, via GitHub Actions). This ensures that non-compliant terminology is caught before a pull request is merged.
+2.  **Automate the validation:** Use prose-linting tools such as [Vale](../doc-stack/prose-linting.md#introduction-to-vale) to flag non-compliant words, passive voice, or overly long sentences during the drafting phase.
+3.  **Embed checks in CI/CD:** Integrate linguistic validation into your [continuous integration and continuous deployment (CI/CD)](../doc-stack/cicd.md) pipeline (for example, via GitHub Actions). This ensures that non-compliant terminology is caught before a pull request is merged.
 4.  **Standardize reusable components:** Maintain a library of pre-approved strings for warnings, notes, and boilerplate text to ensure a [single source of truth](../doc-stack/git.md#the-single-source-of-truth) for safety-critical information.
 
 ---

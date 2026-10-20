@@ -1,7 +1,7 @@
 ---
 title: Concept-Task-Reference (CTR) model
 description: A documentation framework that organizes technical content into conceptual, procedural, and factual topics to improve clarity and reduce cognitive load.
-revision_date: 2026-09-03
+revision_date: 2026-10-19
 ---
 
 # Concept-Task-Reference (CTR) model
@@ -12,9 +12,11 @@ revision_date: 2026-09-03
 
 ## What is the CTR model?
 
-The CTR model is an information architecture strategy that classifies content based on its communicative intent. Technical writers can deliver precisely what a user needs at a specific moment by separating information into three distinct categories: what something is (concept), how to perform it (task), and technical specifications (reference). While often associated with the [Darwin Information Typing Architecture](../references/dita.md) (DITA), this modular approach is now a standard practice for modern documentation and developer portals.
+The CTR model is an information architecture strategy that classifies content based on its communicative intent. Technical writers can deliver precisely what a user needs at a specific moment by separating information into three distinct categories: what something is (concept), how to perform it (task), and technical specifications (reference). 
 
-The framework draws from cognitive psychology and [user-centered design](../industry-terms/user-centered-design.md) (UCD). Complex systems require users to process abstract explanations, sequential instructions, and raw data. Mixing these types into a single, undifferentiated stream forces the reader to filter the content manually. Topic-based authoring eliminates this friction by isolating content types to match natural information-seeking behaviors.
+While often associated with the [Darwin Information Typing Architecture (DITA)](../references/dita.md), this modular approach is now a standard practice for modern documentation and developer portals.
+
+The framework draws from cognitive psychology and [user-centered design (UCD)](../industry-terms/user-centered-design.md). Complex systems require users to process abstract explanations, sequential instructions, and raw data. Mixing these types into a single, undifferentiated stream forces the reader to filter the content manually. [Topic-based authoring](../references/dita.md#core-philosophy-topic-based-authoring) eliminates this friction by isolating content types to match natural information-seeking behaviors.
 
 ---
 
@@ -22,7 +24,7 @@ The framework draws from cognitive psychology and [user-centered design](../indu
 
 Without a structural model such as CTR, documentation tends to devolve into dense, chronological narratives. A developer seeking a specific API port, for instance, should not have to search through architectural theory and installation prerequisites to find a single value. This lack of structure increases the time required to resolve issues and frustrates users.
 
-The CTR model utilizes [progressive disclosure](../industry-terms/progressive-disclosure.md) to manage cognitive load. By isolating different information types, you ensure users encounter only the details relevant to their current goal. This separation also benefits machine readability; search engines and internal tools can index a concise how-to page more effectively than a sprawling, multi-purpose guide.
+The CTR model uses [progressive disclosure](../industry-terms/progressive-disclosure.md) to manage [cognitive load](../technical-writing/cognitive-load.md). By isolating different information types, you ensure users encounter only the details relevant to their current goal. This separation also benefits machine readability; search engines and internal tools can index a concise how-to page more effectively than a sprawling, multi-purpose guide.
 
 ---
 
@@ -31,7 +33,7 @@ The CTR model utilizes [progressive disclosure](../industry-terms/progressive-di
 CTR divides documentation into three archetypes, each governed by its own structural rules:
 
 - **Concept topics:** Provide context and mental models. They define the "what" and "why" of a subject, explaining system architecture, component relationships, and background theory through descriptive prose and diagrams.
-- **Task topics:** Provide goal-oriented, step-by-step instructions (the "how"). Following [minimalist instruction](../technical-writing/cognitive-load.md#minimalist-instruction-theory) principles, tasks focus on a single procedure using numbered lists and the imperative mood. For example, use "Enter the command" rather than "The command should be entered."
+- **Task topics:** Provide goal-oriented, step-by-step instructions (the "how"). Following [minimalist instruction principles](../technical-writing/cognitive-load.md#minimalist-instruction-theory), tasks focus on a single procedure using numbered lists and the imperative mood. For example, use "Enter the command" rather than "The command should be entered."
 - **Reference topics:** Provide quick lookups of objective facts (the data). This includes API schemas, configuration properties, and system requirements. Structured layouts such as tables and code blocks are required here to maximize [scannability](../industry-terms/scannability.md).
 
 ---
@@ -55,7 +57,7 @@ graph TD
 
 The following examples show how these components appear in practice:
 
-=== "Concept File"
+=== "Concept file"
     ```markdown
     # About API key authentication
     
@@ -66,7 +68,7 @@ The following examples show how these components appear in practice:
         Treat your API keys as sensitive credentials. Never commit keys to public repositories or share them in unencrypted logs.
     ```
 
-=== "Task File"
+=== "Task file"
     ```markdown
     # Create an API key
     
@@ -89,7 +91,7 @@ The following examples show how these components appear in practice:
     - Add the key to your application environment variables.
     ```
 
-=== "Reference File"
+=== "Reference file"
     ```markdown
     # API key reference schema
     
@@ -103,6 +105,7 @@ The following examples show how these components appear in practice:
     ```
 
 ### Structural advantages
+
 - **Contextual isolation:** Readers who already understand the theory can skip directly to the steps or the schema.
 - **Actionable instructions:** Task files remain focused on execution, free from distracting additional background information.
 - **Scannable data:** Tabular reference data allows for instant fact-finding.
@@ -113,18 +116,18 @@ The following examples show how these components appear in practice:
 
 Effective CTR implementation requires discipline in the team style guide:
 
-- **One topic, one goal:** Avoid mixing tutorials and deep-dive schemas in one [Markdown](../doc-stack/markup-languages.md#markdown-fundamentals) file. Keep them separate and use cross-links to provide a path for users who need more detail.
+- **One topic, one goal:** Avoid mixing tutorials and deep-dive schemas in one Markdown file. Keep them separate and use cross-links to provide a path for users who need more detail.
 - **Purposeful titling:** Use imperative verbs for tasks, such as "Configure the database," and nouns or gerunds for concepts, such as "Database architecture" or "About database configuration."
-- **Folder organization:** Reflect the model in your repository structure with directories such as /concepts/, /tasks/, and /reference/.
+- **Folder organization:** Reflect the model in your repository structure with directories such as `/concepts/`, `/tasks/`, and `/reference/`.
 
 ---
 
 ## Common anti-patterns
 
-Avoid these pitfalls during the [document development life cycle](../doc-lifecycle/ddlc.md) (DDLC):
+Avoid these pitfalls during the [document development life cycle (DDLC)](../doc-lifecycle/ddlc.md):
 
-- **The mixed-purpose topic:** A single page that starts with a definition, shifts into a tutorial, and concludes with a data table. This format is difficult to scan and maintain.
-- **The empty task:** A how-to page that contains only descriptions without actionable steps. If no physical action is required, the content is a concept, not a task.
+- **Mixed-purpose topic:** A single page that starts with a definition, shifts into a tutorial, and concludes with a data table. This format is difficult to scan and maintain.
+- **Empty task:** A how-to page that contains only descriptions without actionable steps. If no physical action is required, the content is a concept, not a task.
 
 ---
 
@@ -132,5 +135,5 @@ Avoid these pitfalls during the [document development life cycle](../doc-lifecyc
 
 To ensure your CTR implementation works, use these diagnostic methods:
 
-- **The [visual hierarchy](../industry-terms/visual-hierarchy.md) test:** Review the page to ensure the hierarchy of the headings clearly indicates whether the page is a list of steps or a data set.
+- **Visual hierarchy test:** Review the page to ensure the hierarchy of the headings clearly indicates whether the page is a list of steps or a data set. (See: [Visual hierarchy](../industry-terms/visual-hierarchy.md))
 - **Targeted retrieval testing:** Challenge a user to find a specific technical limit or error code. If they must read a narrative tutorial to find it, the reference information is not properly isolated.

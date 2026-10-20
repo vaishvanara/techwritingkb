@@ -1,7 +1,7 @@
 ---
 title: Single sourcing
 description: A documentation strategy for creating and managing content in a single location to be published across multiple formats, ensuring consistency and efficiency.
-revision_date: 2026-09-03
+revision_date: 2026-10-19
 ---
 
 # Single sourcing

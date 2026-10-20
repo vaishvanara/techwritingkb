@@ -1,7 +1,7 @@
 ---
 title: Omnichannel Delivery
 description: A content strategy that serves structured documentation as decoupled data, ensuring a consistent experience across all digital and physical user touchpoints.
-revision_date: 2026-09-03
+revision_date: 2026-10-19
 ---
 
 # Omnichannel delivery

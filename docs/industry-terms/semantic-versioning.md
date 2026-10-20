@@ -1,7 +1,7 @@
 ---
 title: Semantic versioning (SemVer)
 description: A software versioning standard using a three-part number (MAJOR.MINOR.PATCH) to communicate the impact of code changes on backward compatibility.
-revision_date: 2026-09-03
+revision_date: 2026-10-19
 ---
 
 # Semantic versioning (SemVer)

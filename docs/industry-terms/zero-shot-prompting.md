@@ -2,7 +2,7 @@
 title: Zero-shot prompting
 icon: lucide/cpu
 description: A technique where an AI model executes tasks using only natural language instructions, without needing prior examples (few-shot) or task-specific fine-tuning.
-revision_date: 2026-09-03
+revision_date: 2026-10-19
 ---
 
 # Zero-shot prompting

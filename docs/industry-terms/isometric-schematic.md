@@ -1,7 +1,7 @@
 ---
 title: Isometric schematic
 description: A 3D technical drawing on a 2D plane that uses a 30-degree projection and 1:1:1 axial scaling to represent hardware and networks without perspective distortion.
-revision_date: 2026-09-03
+revision_date: 2026-10-19
 ---
 
 # Isometric schematic

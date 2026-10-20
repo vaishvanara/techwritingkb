@@ -1,12 +1,12 @@
 ---
 title: Multi-channel compilation model
 description: A documentation architecture that transforms semantic XML source modules into multiple output formats (PDF, HTML5, EPUB) using a transformation engine, map-driven hierarchy, and target-specific stylesheets.
-revision_date: 2026-09-03
+revision_date: 2026-10-19
 ---
 
 # Multi-channel compilation model
 
-> *A documentation architecture that transforms semantic XML source modules into various formats ([PDF](../doc-stack/pdf-epub-generation.md#pdf-versus-epub-architectures), web, EPUB) through target-specific configuration, conditional profiling, and layout processing*
+> *A documentation architecture that transforms semantic XML source modules into various formats (PDF, web, EPUB) through target-specific configuration, conditional profiling, and layout processing*
 
 ---
 

@@ -1,12 +1,12 @@
 ---
 title: Visual hierarchy
 description: The arrangement of typography, color, and layout to prioritize information, helping users navigate complex documentation and immediately identify key details.
-revision_date: 2026-09-03
+revision_date: 2026-10-19
 ---
 
 # Visual hierarchy
 
-> *The arrangement of [typography](../technical-writing/visual-communication.md#typography-and-legibility), color, and layout to prioritize information, helping users navigate complex documentation and immediately identify key details*
+> *The arrangement of typography, color, and layout to prioritize information, helping users navigate complex documentation and immediately identify key details*
 
 ---
 

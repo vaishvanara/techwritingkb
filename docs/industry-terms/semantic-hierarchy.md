@@ -1,12 +1,12 @@
 ---
 title: Semantic hierarchy
 description: A system of organizing digital content through nested headings and tags to establish a logical information architecture and improve accessibility.
-revision_date: 2026-09-03
+revision_date: 2026-10-19
 ---
 
 # Semantic hierarchy
 
-> *A system of organizing digital content through nested headings and tags to establish a logical [information architecture](../references/ia-design.md) and improve accessibility*
+> *A system of organizing digital content through nested headings and tags to establish a logical information architecture and improve accessibility*
 
 ---
 

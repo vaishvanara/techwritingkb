@@ -1,7 +1,7 @@
 ---
 title: Knowledge harvesting
 description: A systematic process for identifying, validating, and converting decentralized community contributions into official, verified documentation.
-revision_date: 2026-09-03
+revision_date: 2026-10-19
 ---
 
 # Knowledge harvesting

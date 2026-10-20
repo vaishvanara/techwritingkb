@@ -1,7 +1,7 @@
 ---
 title: Scannability
 description: The strategic arrangement of text and visuals to help readers quickly identify, filter, and extract key information from digital content.
-revision_date: 2026-09-03
+revision_date: 2026-10-19
 ---
 
 # Scannability

@@ -1,7 +1,7 @@
 ---
 title: Semantic chunking
 description: A documentation strategy and data processing technique that divides text into self-contained, meaningful units to optimize human comprehension and AI vector retrieval accuracy.
-revision_date: 2026-09-03
+revision_date: 2026-10-19
 ---
 
 # Semantic chunking

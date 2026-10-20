@@ -1,12 +1,12 @@
 ---
 title: RACI matrix
 description: A responsibility assignment framework mapping who is responsible, accountable, consulted, and informed across the documentation lifecycle
-revision_date: 2026-09-03
+revision_date: 2026-10-19
 ---
 
 # RACI matrix
 
-> *A responsibility assignment framework mapping who is responsible, accountable, consulted, and informed across the [documentation lifecycle](../doc-lifecycle/ddlc.md)*
+> *A responsibility assignment framework mapping who is responsible, accountable, consulted, and informed across the documentation lifecycle*
 
 ---
 

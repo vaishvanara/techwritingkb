@@ -1,7 +1,7 @@
 ---
 title: Progressive disclosure
 description: A design technique that sequences information across multiple layers, presenting complex details only when needed to reduce cognitive load.
-revision_date: 2026-09-03
+revision_date: 2026-10-19
 ---
 
 # Progressive disclosure

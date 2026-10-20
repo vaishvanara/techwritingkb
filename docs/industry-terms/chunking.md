@@ -6,11 +6,11 @@ revision_date: 2026-09-03
 
 # Chunking
 
-> *A content organization strategy that breaks complex information into small, logical units to improve [scannability](../industry-terms/scannability.md) and reduce user cognitive load*
+> *A content organization strategy that breaks complex information into small, logical units to improve scannability and reduce user cognitive load*
 
 ---
 
-## The mechanics of information processing
+## Information processing mechanics
 
 Chunking groups related information into manageable packages. It acknowledges a fundamental constraint of human psychology: working memory is a bottleneck. When documentation presents long, unstructured blocks of text, it exceeds a reader's mental processing limit. This limit is often cited as the 7 ± 2 rule (Miller's Law) or the more contemporary 4 ± 1 rule (Cowan's Law). By dividing data into logical segments, you align the content with how the brain naturally encodes information.
 
@@ -41,7 +41,7 @@ Strategic chunking reduces this mental effort. A structured layout guides the ey
 Effective chunking relies on four key characteristics:
 
 -   **Logical grouping:** Each unit should focus on a single task, concept, or step. If a section covers two different functions, split it.
--   **[Visual hierarchy](../industry-terms/visual-hierarchy.md):** Use Heading 2 (H2) and Heading 3 (H3) headings to signal the importance of information. This creates a map for the scanning eye.
+-   **Visual hierarchy:** Use H2 and H3 headings to signal the importance of information. This creates a map for the scanning eye. (See: [Visual hierarchy](../industry-terms/visual-hierarchy.md))
 -   **Whitespace:** Do not fear empty space. Strategic gaps between paragraphs, lists, and code blocks provide the visual clarity necessary for the eye to rest.
 -   **Brevity:** Keep paragraphs focused. Aim for five sentences or fewer, ensuring every line supports the central topic of that specific block.
 
@@ -51,17 +51,18 @@ Effective chunking relies on four key characteristics:
 
 The following example demonstrates how restructuring a dense paragraph into a scannable format improves utility while preserving all technical instructions.
 
-### Before / Poor Pattern
+### Before (Poor Pattern)
 
-To configure the integration, you must first verify that your API key is active. Once verified, open the config.[json](../doc-stack/json-logic.md) file in your project directory. Inside this file, look for the "auth" object. You need to insert your key into the "token" field. Ensure you do not commit this raw key to your repository. After pasting the key, save the file and restart your local server by running the command 'npm run dev' in your terminal window. If you see a green success message, the authentication process was successful. If an error occurs, verify your network settings and confirm that you copied the key correctly from the developer console.
+To configure the integration, you must first verify that your API key is active. Once verified, open the config.json file in your project directory. Inside this file, look for the "auth" object. You need to insert your key into the "token" field. Ensure you do not commit this raw key to your repository. After pasting the key, save the file and restart your local server by running the command 'npm run dev' in your terminal window. If you see a green success message, the authentication process was successful. If an error occurs, verify your network settings and confirm that you copied the key correctly from the developer console.
 
-### After / Applied Pattern
+### After (Applied Pattern)
 
 #### Step 1: Configure the local authentication settings
-Before starting, confirm that your Application Programming Interface (API) key is active in the developer console.
+
+Before starting, confirm that your API key is active in the developer console.
 
 1. Open your project `config.json` file.
-2. Locate the `auth` object.
+2. Find the `auth` object.
 3. Paste your API key into the `token` field.
 
 !!! warning "Keep your keys secure"
@@ -71,18 +72,19 @@ Before starting, confirm that your Application Programming Interface (API) key i
 5. Restart your local server: `npm run dev`.
 
 #### Step 2: Verify connection
+
 -   **Success:** A green success message indicates authentication is complete.
--   **Failure:** If an error occurs, verify your network settings and confirm the API key matches the developer console.
+-   **Failure:** If an error occurs, verify your network settings and check whether the API key matches the developer console.
 
 ---
 
 ## Implementation best practices
 
-To refine your technical communication, apply these standards:
+To refine your technical communication skills, apply these standards:
 
 -   **Convert lists to bullet points:** If a sentence contains three or more items separated by commas, move them into a vertical list.
 -   **Audit paragraph length:** If a paragraph introduces a second concept, it is time to split it.
--   **Use the [active voice](../technical-writing/active-passive.md):** Direct, action-oriented sentences keep content blocks concise and reduce unnecessary information.
+-   **Use the active voice:** Direct, action-oriented sentences keep content blocks concise and reduce unnecessary information. (See: [Active voice](../technical-writing/active-passive.md))
 -   **Avoid over-chunking:** Breaking text into too many single-sentence blocks can feel disjointed and interrupt the logical flow.
 -   **Beware of visual-only chunking:** Subheadings are useless if the underlying ideas are not actually grouped by logic.
 

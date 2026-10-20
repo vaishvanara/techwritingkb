@@ -1,7 +1,7 @@
 ---
 title: Spec-driven development
 description: A methodology using machine-readable specifications to align engineering and documentation, ensuring features match their technical contracts from design to deployment.
-revision_date: 2026-09-03
+revision_date: 2026-10-19
 ---
 
 # Spec-driven development

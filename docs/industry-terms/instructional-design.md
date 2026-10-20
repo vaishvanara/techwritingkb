@@ -1,7 +1,7 @@
 ---
 title: Instructional design
 description: The systematic methodology of creating educational content and structured pathways to help users master complex technical systems.
-revision_date: 2026-09-03
+revision_date: 2026-10-19
 ---
 
 # Instructional design

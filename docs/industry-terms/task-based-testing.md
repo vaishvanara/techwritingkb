@@ -1,12 +1,12 @@
 ---
 title: Task-based testing
 description: A usability research method where participants perform specific goals using documentation to identify instruction gaps, findability issues, and technical friction points.
-revision_date: 2026-09-03
+revision_date: 2026-10-19
 ---
 
 # Task-based testing
 
-> *A usability research method where participants perform specific goals using documentation to identify instruction gaps and [findability](../doc-stack/kb-architecture.md#findability-and-internal-linking) issues*
+> *A usability research method where participants perform specific goals using documentation to identify instruction gaps and findability issues*
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Globalization, internationalization, localization, and translation (GILT)
 description: A framework for adapting products to global markets by integrating business strategy, engineering design, cultural adaptation, and linguistic translation.
-revision_date: 2026-09-03
+revision_date: 2026-10-19
 ---
 
 # Globalization, internationalization, localization, and translation (GILT)

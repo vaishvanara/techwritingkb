@@ -1,7 +1,7 @@
 ---
 title: Developer Experience (DX)
 description: The environment, tools, and workflows that define how developers interact with a technical product, focused on reducing friction and mental overhead.
-revision_date: 2026-09-03
+revision_date: 2026-10-19
 ---
 
 # Developer Experience (DX)
@@ -12,17 +12,17 @@ revision_date: 2026-09-03
 
 ## Defining the Developer Environment
 
-Developer experience (DX) encompasses the workflows and resources engineers navigate when interacting with a technical platform. While user experience (UX) focuses on general consumption, DX addresses specialized interfaces such as application programming interfaces (APIs), including Representational State Transfer (REST), GraphQL, and gRPC. It also includes command-line interfaces (CLIs), [software development kits](../doc-stack/emerging-architectures.md#documenting-sdks) (SDKs), and client libraries. 
+Developer experience (DX) encompasses the workflows and resources engineers navigate when interacting with a technical platform. While user experience (UX) focuses on general consumption, DX addresses specialized interfaces such as APIs, including REST, GraphQL, and gRPC. It also includes CLIs, SDKs, and client libraries. 
 
 At its core, DX is the application of [cognitive load theory](../technical-writing/cognitive-load.md) to software engineering. If an engineer spends mental energy deciphering inconsistent endpoint naming or fragmented documentation, they have less capacity to solve architectural problems.
 
-Prioritizing DX is a business strategy. High-quality DX lowers the barrier to entry and drives product adoption through self-service onboarding. When documentation aligns with code through docs-as-code workflows, developers solve their own problems rather than opening support tickets. In these workflows, documentation is versioned and tested alongside the codebase. Conversely, poor DX leads to platform abandonment. If a code example is deprecated or an integration path is opaque, developers will migrate to a competitor with a lower friction threshold.
+Prioritizing DX is a business strategy. High-quality DX lowers the barrier to entry and drives product adoption through self-service onboarding. When documentation aligns with code through [Docs as Code (DaC)](../doc-stack/docs-as-code.md) workflows, developers solve their own problems rather than opening support tickets. In these workflows, documentation is versioned and tested alongside the codebase. Conversely, poor DX leads to platform abandonment. If a code example is deprecated or an integration path is opaque, developers will migrate to a competitor with a lower friction threshold.
 
 ---
 
 ## Core Principles and Anatomy
 
-A functional developer experience guides a user from their first evaluation to a stable production deployment. This process includes the critical middle step of sandbox testing.
+A functional DX guides a user from their first evaluation to a stable production deployment. This process includes the critical middle step of sandbox testing.
 
 ```mermaid
 graph TD
@@ -36,14 +36,14 @@ graph TD
     style E fill:#bbf,stroke:#333,stroke-width:2px
 ```
 
-- **Goal-oriented learning:** Organize content around specific use cases, such as **Process a Refund**, rather than only listing system properties.
+- **Goal-oriented learning:** Organize content around specific use cases, such as `Process a Refund`, rather than only listing system properties.
 - **Predictable reference material:** Use standards such as OpenAPI (Swagger) or AsyncAPI. Developers should be able to predict endpoint behavior, status codes, and data types without trial and error.
 - **Time to First Hello World (TTFHW):** A concise quickstart guide is essential. Aim for a successful authenticated request or command execution within minutes of landing on the website.
-- **Constructive error architecture:** System feedback must be actionable. Adhere to standards such as Request for Comments (RFC) 7807 (Problem Details for HTTP APIs). Errors should provide a unique error code, a human-readable explanation, and a link to relevant troubleshooting documentation.
+- **Constructive error architecture:** System feedback must be actionable. Adhere to standards such as RFC 7807 (Problem Details for HTTP APIs). Errors should provide a unique error code, a human-readable explanation, and a link to relevant troubleshooting documentation.
 
 ---
 
-## Design Pattern: From Narrative to Structure
+## Design Pattern
 
 Dense text hinders information retrieval. Transforming instructional prose into structured, scannable steps improves technical usability.
 
@@ -77,6 +77,6 @@ Dense text hinders information retrieval. Transforming instructional prose into 
 Great DX requires continuous maintenance and automated validation to prevent documentation rot.
 
 - **Write for scanners:** Use H2 and H3 headings and bulleted lists. Developers typically use F-shaped scanning patterns to locate code blocks.
-- **Verified code snippets:** Do not publish partial snippets. Every code block should be a functional unit and ideally verified through a [CI/CD](../doc-stack/cicd.md) pipeline, such as by using tools like `markdown-code-block-tester`, to ensure compatibility with the latest API version.
+- **Verified code snippets:** Do not publish partial snippets. Every code block should be a functional unit and ideally verified through a [CI/CD pipeline](../doc-stack/cicd.md#the-pipeline-concept), such as by using tools like `markdown-code-block-tester`, to ensure compatibility with the latest API version.
 - **Observational testing (friction logging):** Perform friction logs where a developer attempts an integration from scratch. Document every instance where they consulted a search engine or felt frustrated.
-- **Tight [feedback loops](../systems-thinking/feedback-loop.md):** Provide **Was this helpful?** widgets and a public issue tracker. Community feedback is the primary sensor for identifying edge-case bugs or outdated SDK dependencies.
+- **Tight feedback loops:** Provide Was this helpful? widgets and a public issue tracker. Community feedback is the primary sensor for identifying edge-case bugs or outdated SDK dependencies. (See: [Feedback loops](../systems-thinking/feedback-loop.md))

@@ -1,7 +1,7 @@
 ---
 title: Exploded view
 description: A technical illustration that displays the individual components of an assembly separated by distance to reveal their relative positions and assembly order.
-revision_date: 2026-09-03
+revision_date: 2026-10-19
 ---
 
 # Exploded view
@@ -24,7 +24,7 @@ In [technical communication](../technical-writing/basics.md), these drawings act
 
 Complex hardware often creates a problem where users know what the device does but not how it is held together. Exploded views solve this problem by externalizing the mental effort required to understand an assembly. Instead of forcing a technician to cross-reference long text descriptions while rotating a heavy object, the diagram provides an immediate spatial reference.
 
-When these views are integrated into digital documentation, they typically map directly to a bill of materials (BOM). This creates a functional link between a 3D shape and its [metadata](../doc-lifecycle/governance-maintenance.md#metadata-governance), such as part numbers, torque specifications, or supplier links, which accelerates the troubleshooting and procurement process.
+When these views are integrated into digital documentation, they typically map directly to a bill of materials (BOM). This creates a functional link between a 3D shape and its metadata, such as part numbers, torque specifications, or supplier links, which accelerates the troubleshooting and procurement process.
 
 ---
 
@@ -35,7 +35,7 @@ To maintain clarity, an exploded view relies on a few necessary structural eleme
 - **Trail lines:** These dashed or lightweight lines, also known as leader lines or flow lines, act as the path for each part. They show exactly where a component seats or the axis along which it travels during installation.
 - **Spatial displacement:** Parts must be moved far enough to eliminate overlapping edges but must stay close enough to maintain the visual connection of the assembly.
 - **Isometric or axonometric projection:** Using a standard 30-degree angle for isometric drawings ensures that depth is represented without the distortion found in perspective drawings, which keeps component proportions consistent.
-- **[Callouts](../doc-stack/markup-languages.md#extending-markup-admonitions):** These alphanumeric tags, or balloons, link the drawing to the parts list and act as the primary index for the user.
+- **Callouts:** These alphanumeric tags, or balloons, link the drawing to the parts list and act as the primary index for the user.
 
 ---
 

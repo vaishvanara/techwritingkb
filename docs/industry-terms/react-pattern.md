@@ -1,7 +1,7 @@
 ---
 title: ReAct Pattern
 description: A design framework that helps large language models solve complex problems by combining step-by-step reasoning with external actions.
-revision_date: 2026-09-03
+revision_date: 2026-10-19
 ---
 
 # ReAct Pattern

@@ -1,7 +1,7 @@
 ---
 title: Few-shot prompting
 description: A prompt design technique providing specific input-output examples to guide an AI model's logic, style, and formatting within the context of a single query.
-revision_date: 2026-10-19
+revision_date: 2026-10-20
 ---
 
 # Few-shot prompting
@@ -26,7 +26,7 @@ While few-shot prompting acts as a quality guardrail, it introduces a trade-off 
 
 ---
 
-## Anatomy of a few-shot prompt
+## Key elements of a few-shot prompt
 
 A high-performing few-shot prompt relies on a deliberate, modular layout. 
 
@@ -49,7 +49,7 @@ graph TD
 ```
 
 !!! tip "Delimiter best practice"
-    Using XML-style tags, such as `<example></example>`, is increasingly recommended for frontier models, such as GPT-4o or Claude 3.5, as they are explicitly trained to recognize these tags as structural boundaries.
+    Using XML-style tags, such as `<example></example>`, is increasingly recommended for frontier models as they are explicitly trained to recognize these tags as structural boundaries.
 
 ---
 
@@ -99,7 +99,7 @@ The following comparison illustrates how few-shot examples shift a model from co
 
 ## Implementation rules
 
-- **Precision over volume**: Two to five high-quality examples are usually more effective than ten mediocre ones. Excessive examples increase noise and can lead to recency bias, where the model over-weights the last example provided.
+- **Precision over volume**: Two to five high-quality examples are usually more effective than 10 mediocre ones. Excessive examples increase noise and can lead to recency bias, where the model over-weights the last example provided.
 - **Edge case representation**: Include at least one example that handles an outlier or negative scenario to prevent the model from over-generalizing.
 - **Contrastive prompting**: If the model consistently fails a specific rule, provide positive and negative example pairs, explicitly labeling the incorrect version to steer the model away from specific errors.
 

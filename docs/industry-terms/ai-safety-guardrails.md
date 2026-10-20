@@ -31,7 +31,7 @@ Deploying LLMs without safeguards exposes an application to several critical fai
 
 ---
 
-## Core anatomy of a guarded system
+## Key elements of a guarded system
 
 Effective safety frameworks rely on a multilayered defense strategy:
 

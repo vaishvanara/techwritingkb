@@ -2,7 +2,7 @@
 title: Zero-shot prompting
 icon: lucide/cpu
 description: A technique where an AI model executes tasks using only natural language instructions, without needing prior examples (few-shot) or task-specific fine-tuning.
-revision_date: 2026-10-19
+revision_date: 2026-10-20
 ---
 
 # Zero-shot prompting
@@ -21,13 +21,13 @@ In [technical writing](../technical-writing/basics.md), this enables instant lin
 
 ## Efficiency in the documentation pipeline
 
-Manual editing is often the primary bottleneck in Docs as Code (DaC) workflows. By automating the alignment of draft content with corporate style guides, teams can redirect focus toward [information architecture](../references/ia-design.md) and user research. 
+Manual editing is often the primary bottleneck in [Docs as Code (DaC)](../doc-stack/docs-as-code.md) workflows. By automating the alignment of draft content with corporate style guides, teams can redirect focus toward [information architecture (IA)](../references/ia-design.md) and user research. 
 
-Integrating zero-shot automation allows style and consistency checks to happen at the point of creation, often via continuous integration and continuous delivery ([CI/CD](../doc-stack/cicd.md)) hooks or integrated development environment (IDE) plugins, ensuring the human in the loop focuses on technical accuracy rather than rote grammar policing.
+Integrating zero-shot automation allows style and consistency checks to happen at the point of creation, often through [continuous integration and continuous deployment (CI/CD)](../doc-stack/cicd.md) hooks or integrated development environment (IDE) plugins, ensuring the human in the loop focuses on technical accuracy rather than rote grammar policing.
 
 ---
 
-## Structural anatomy of a prompt
+## Zero-shot prompt key elements
 
 A functional zero-shot prompt provides the model with clear boundaries through a structured syntax:
 
@@ -50,7 +50,7 @@ flowchart TD
     D --> E[Style-Compliant Output]
 ```
 
-=== "Prompt (Input)"
+=== "Prompt (input)"
     ```markdown
     Role: You are an expert technical editor.
     Task: Rewrite the input text below to comply with plain language standards.
@@ -63,7 +63,7 @@ flowchart TD
     Input: "Utilization of the system interface should be initiated by the operator upon receipt of the verification token."
     ```
 
-=== "Response (Output)"
+=== "Response (output)"
     ```markdown
     "Verify the token to start using the system."
     ```
@@ -76,7 +76,7 @@ By removing passive phrasing and nominalizations in a single inference step, the
 
 Automating these edits directly improves how users consume information:
 
-- **Scanability:** Simplifying language allows developers to quickly locate commands without parsing dense paragraphs.
+- **Scannability:** Simplifying language allows developers to quickly locate commands without parsing dense paragraphs. (See: [Scannability](../industry-terms/scannability.md))
 - **Direct action:** Converting passive instructions into direct, imperative steps reduces the cognitive effort required for a reader to determine their next move.
 
 ---
@@ -87,7 +87,7 @@ To achieve consistent results across different large language models (LLMs), app
 
 - **Use imperative verbs:** Start instructions with *Rewrite*, *Format*, or *Convert*. Avoid soft phrasing such as "Please try to make this better."
 - **Define negative constraints:** Explicitly state what the model should avoid (for example, "Do not change the code snippets within backticks").
-- **Use delimiters:** Use [Markdown](../doc-stack/markup-languages.md#markdown-fundamentals) delimiters, such as triple backticks (```) or XML tags (<text></text>), to ensure the model does not confuse instructions with the input text.
+- **Use delimiters:** Use Markdown delimiters, such as triple backticks (```) or XML tags (<text></text>), to ensure the model does not confuse instructions with the input text.
 
 !!! tip "Style integration"
     Instead of writing new rules from scratch, provide the model with a specific excerpt from your organization's style guide as context. This forces the model to apply the specific standards of your team to the draft.
@@ -107,5 +107,5 @@ Poorly designed zero-shot prompts can degrade content quality through:
 
 Because LLMs are non-deterministic, you must validate outputs:
 
-- **Automated [readability](../technical-writing/readability-scores.md) auditing:** Use tools (such as Vale or Hemingway) to verify that the output actually meets the targeted reading grade level.
+- **Automated readability auditing:** Use tools (such as [Vale](../doc-stack/prose-linting.md#introduction-to-vale) or Hemingway) to verify that the output actually meets the targeted reading grade level. (See: [Readability score methodologies](../technical-writing/readability-scores.md))
 - **Regression testing:** Maintain a golden set of prompt-response pairs to ensure that model updates or prompt tweaks do not degrade the quality of common edits.

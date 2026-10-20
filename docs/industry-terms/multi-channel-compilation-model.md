@@ -1,7 +1,7 @@
 ---
 title: Multi-channel compilation model
 description: A documentation architecture that transforms semantic XML source modules into multiple output formats (PDF, HTML5, EPUB) using a transformation engine, map-driven hierarchy, and target-specific stylesheets.
-revision_date: 2026-10-19
+revision_date: 2026-10-20
 ---
 
 # Multi-channel compilation model
@@ -12,15 +12,17 @@ revision_date: 2026-10-19
 
 ## Technical framework
 
-The multi-channel compilation model decouples raw content (semantics) from visual presentation (format). In this system, authors manage text and media as modular, schema-compliant XML files, such as [Darwin Information Typing Architecture](../references/dita.md) (DITA) or DocBook, which are then processed into distinct layouts. This architecture eliminates manual duplication across deliverables. Instead of maintaining separate drafts for a web portal and a printed manual, a technical writer uses a transformation engine, for example, the DITA Open Toolkit, to generate multiple outputs from a single source.
+The multi-channel compilation model decouples raw content (semantics) from visual presentation (format). In this system, authors manage text and media as modular, schema-compliant XML files, such as [Darwin Information Typing Architecture (DITA)](../references/dita.md) or DocBook, which are then processed into distinct layouts. 
 
-This approach addresses the reality that documentation requirements shift based on the medium. A developer troubleshooting an application programming interface (API) requires a searchable, responsive web portal, while a field technician might require a paginated, offline PDF. By using a [transformation engine](../doc-stack/tech-stack.md#transformation-engines-and-api-documentation) to parse source modules and apply format-specific Extensible Stylesheet Language Transformations (XSLT) or Cascading Style Sheets (CSS) Paged Media rules, organizations deliver tailored user experiences without the overhead of duplicate authoring.
+This architecture eliminates manual duplication across deliverables. Instead of maintaining separate drafts for a web portal and a printed manual, a technical writer uses a transformation engine (for example, the DITA Open Toolkit) to generate multiple outputs from a single source.
+
+This approach addresses the reality that documentation requirements shift based on the medium. A developer troubleshooting an API requires a searchable, responsive web portal, while a field technician might require a paginated, offline PDF. By using a [transformation engine](../doc-stack/tech-stack.md#transformation-engines-and-api-documentation) to parse source modules and apply format-specific Extensible Stylesheet Language Transformations (XSLT) or [CSS Paged Media](../industry-terms/css-paged-media-module.md) rules, organizations deliver tailored user experiences without the overhead of duplicate authoring.
 
 ---
 
 ## Strategic advantages
 
-Single-sourcing eliminates maintenance debt and documentation lag, where updates to a web guide fail to reach the downloadable manual. Standardizing the compilation pipeline also reduces cognitive load. The [information architecture](../references/ia-design.md) and visual hierarchy remain consistent across all platforms because style rules are applied programmatically during the build. This consistency ensures that terminology and navigation patterns remain synchronized across the entire product ecosystem.
+Single-sourcing eliminates maintenance debt and documentation lag where updates to a web guide fail to reach the downloadable manual. Standardizing the compilation pipeline also reduces [cognitive load](../technical-writing/cognitive-load.md). The [information architecture](../references/ia-design.md) and [visual hierarchy](../industry-terms/visual-hierarchy.md) remain consistent across all platforms because style rules are applied programmatically during the build. This consistency ensures that terminology and navigation patterns remain synchronized across the entire product ecosystem.
 
 ---
 
@@ -28,11 +30,11 @@ Single-sourcing eliminates maintenance debt and documentation lag, where updates
 
 Five structural pillars govern the transition from raw content to finished deliverable:
 
-- Modular sourcing: Content is authored in self-contained units (concepts, tasks, or references) by using semantic tags, devoid of presentational [markup](../doc-stack/markup-languages.md).
-- Hierarchical mapping: A map or manifest file defines the organization and sequence of modules for a specific publication.
-- Conditional profiling: [Metadata](../doc-lifecycle/governance-maintenance.md#metadata-governance) attributes allow the engine to include, exclude, or flag content blocks based on target parameters, such as `audience="admin"` or `product="pro"`.
-- Target configuration: Parameters define variables, such as version numbers, and output-specific settings, such as search indexing for the web versus bookmarks for PDF.
-- Presentation decoupling: [Typography](../technical-writing/visual-communication.md#typography-and-legibility) and layout are handled by external stylesheets (CSS for the web, XSL-FO, or CSS Paged Media for PDF) applied during the transformation.
+- **Modular sourcing**: Content is authored in self-contained units (concepts, tasks, or references) by using semantic tags, devoid of presentational [markup](../doc-stack/markup-languages.md).
+- **Hierarchical mapping**: A map or manifest file defines the organization and sequence of modules for a specific publication.
+- **Conditional profiling**: Metadata attributes allow the engine to include, exclude, or flag content blocks based on target parameters, such as `audience="admin"` or `product="pro"`.
+- **Target configuration**: Parameters define variables, such as version numbers, and output-specific settings, such as search indexing for the web versus bookmarks for PDF.
+- **Presentation decoupling**: Typography and layout are handled by external stylesheets (CSS for the web, XSL-FO, or CSS Paged Media for PDF) applied during the transformation.
 
 ---
 
@@ -62,33 +64,33 @@ graph TD
 
 The transformation engine ingests semantic modules according to the hierarchy defined in a map file. It resolves condition profiles, which act as a logic filter to include or exclude specific data nodes.
 
-When a build is triggered, for example, through a continuous integration and continuous delivery ([CI/CD](../doc-stack/cicd.md)) pipeline using Apache Ant or Apache Maven, the engine processes these inputs to construct unique outputs. A web target receives responsive CSS and JavaScript-based search indexes. A PDF target undergoes a second processing pass (using a PDF renderer such as Antenna House or Apache FOP) to convert the XML into paginated layouts with dynamic headers and cross-reference page numbering.
+When a build is triggered, for example, through a [continuous integration and continuous delivery (CI/CD)](../doc-stack/cicd.md) pipeline using Apache Ant or Apache Maven, the engine processes these inputs to construct unique outputs. A web target receives responsive CSS and JavaScript-based search indexes. A PDF target undergoes a second processing pass (using a PDF renderer such as Antenna House or Apache FOP) to convert the XML into paginated layouts with dynamic headers and cross-reference page numbering.
 
 ---
 
 ## User experience impact
 
-- Consistency across device handoffs: Identical terminology and structure across media prevent disorientation when users switch from mobile setup guides to desktop interfaces.
-- Contextual density: The model allows the same text block to adapt to different media by utilizing [progressive disclosure](../industry-terms/progressive-disclosure.md) (expandable sections) on the web while rendering fully expanded text in print.
+- **Consistency across device handoffs**: Identical terminology and structure across media prevent disorientation when users switch from mobile setup guides to desktop interfaces.
+- **Contextual density**: The model allows the same text block to adapt to different media by using [progressive disclosure](../industry-terms/progressive-disclosure.md) (expandable sections) on the web while rendering fully expanded text in print.
 
 ---
 
 ## Implementation best practices
 
-- Enforce semantic markup: Authors must use tags based on their structural role, such as `<step>` or `<codeph>`, rather than visual intent. The engine relies on these tags to map elements to the correct layout styles.
-- Maintain format-agnostic source files: Avoid media-specific phrases such as **Select the Next button** or **See page 4**. Use neutral phrasing and semantic cross-references that the engine can resolve to either hyperlinks or page numbers.
-- Automate validation: Use Schematron and build-time testing to ensure hyperlinks resolve and metadata attributes remain within the allowed values across all targets.
+- **Enforce semantic markup**: Authors must use tags based on their structural role, such as `<step>` or `<codeph>`, rather than visual intent. The engine relies on these tags to map elements to the correct layout styles.
+- **Maintain format-agnostic source files**: Avoid media-specific phrases such as "Select the Next button" or "See page 4." Use neutral phrasing and semantic cross-references that the engine can resolve to either hyperlinks or page numbers.
+- **Automate validation**: Use Schematron and build-time testing to ensure hyperlinks resolve and metadata attributes remain within the allowed values across all targets.
 
 ---
 
 ## Common anti-patterns
 
-- Presentational tagging: Manually forcing line breaks or font changes within the XML source bypasses the engine, leading to layout breaks in non-web targets.
-- Over-segmentation: Fragmenting content into excessively small modules, for example, one paragraph per file, creates link rot and complicates the hierarchical map management.
+- **Presentational tagging**: Manually forcing line breaks or font changes within the XML source bypasses the engine, leading to layout breaks in non-web targets.
+- **Over-segmentation**: Fragmenting content into excessively small modules, for example, one paragraph per file, creates link rot and complicates the hierarchical map management.
 
 ---
 
 ## Validation and testing
 
-- Cross-output regression testing: Compare target outputs to ensure visual weight and hierarchy remain balanced across both fluid web layouts and fixed-page PDFs.
-- Link resolution audits: Confirm that interactive elements ([breadcrumbs](../references/ia-design.md#breadcrumbs), related links) function in digital formats and correctly translate to static references, such as See Safety on page 12, in print.
+- **Cross-output regression testing**: Compare target outputs to ensure visual weight and hierarchy remain balanced across both fluid web layouts and fixed-page PDFs.
+- **Link resolution audits**: Confirm that interactive elements (breadcrumbs, related links) function in digital formats and correctly translate to static references, such as "See Safety on page 12," in print.

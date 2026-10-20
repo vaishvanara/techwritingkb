@@ -1,7 +1,7 @@
 ---
 title: Wayfinding
 description: The system of visual and structural cues used to orient users and guide their navigation through complex information environments.
-revision_date: 2026-10-19
+revision_date: 2026-10-20
 ---
 
 # Wayfinding
@@ -10,17 +10,17 @@ revision_date: 2026-10-19
 
 ---
 
-## The mechanics of digital orientation
+## Digital orientation mechanics
 
-Wayfinding is a concept borrowed from architecture and urban planning. Just as an airport uses signage and landmarks to move travelers toward a gate, technical documentation relies on structural indicators to help readers map out [information architecture](../references/ia-design.md) (IA).
+Wayfinding is a concept borrowed from architecture and urban planning. Just as an airport uses signage and landmarks to move travelers toward a gate, technical documentation relies on structural indicators to help readers map out [information architecture (IA)](../references/ia-design.md).
 
-When a developer lands on your site, they scan for environmental cues. Effective wayfinding turns a sprawling documentation site into a predictable system. By organizing menus, page headers, [breadcrumbs](../references/ia-design.md#breadcrumbs), and search boundaries into a cohesive framework, you minimize cognitive load and allow readers to transition seamlessly from high-level overviews to granular technical tasks.
+When a developer lands on your site, they scan for environmental cues. Effective wayfinding turns a sprawling documentation site into a predictable system. By organizing menus, page headers, breadcrumbs, and search boundaries into a cohesive framework, you minimize [cognitive load](../technical-writing/cognitive-load.md) and allow readers to transition seamlessly from high-level overviews to granular technical tasks.
 
 ---
 
 ## Why orientation beats navigation
 
-Navigation is the physical or digital act of moving between points; wayfinding is the cognitive process of determining the current location and possible trajectories. This distinction is critical because technical readers manage high mental workloads. When a site forces a user to deduce their location, they experience cognitive fatigue, leading to choice paralysis and abandoned sessions.
+Navigation is the physical or digital act of moving between points; wayfinding is the cognitive process of determining the current location and possible trajectories. This distinction is crucial because technical readers manage high mental workloads. When a site forces a user to deduce their location, they experience cognitive fatigue, leading to choice paralysis and abandoned sessions.
 
 Most users bypass homepages, arriving at deep-linked pages via search engines. Without clear environmental cues, these pages become black boxes. Wayfinding solves this by immediately communicating the position of a page within the product ecosystem, providing the context necessary to complete a task without backtracking.
 
@@ -28,9 +28,9 @@ Most users bypass homepages, arriving at deep-linked pages via search engines. W
 
 ## Core principles
 
-- **[Semantic hierarchy](../industry-terms/semantic-hierarchy.md):** Use logical HTML heading levels (`<h1>` through `<h6>`) to establish a machine-readable and visually obvious relationship between topics. This ensures wayfinding remains functional for both sighted users and [screen reader](../references/accessibility.md#screen-reader-optimization) users.
+- **Semantic hierarchy:** Use logical HTML heading levels (`<h1>` through `<h6>`) to establish a machine-readable and visually obvious relationship between topics. This ensures wayfinding remains functional for both sighted users and [screen reader](../references/accessibility.md#screen-reader-optimization) users. (See: [Semantic hierarchy](../industry-terms/semantic-hierarchy.md))
 - **Visual anchors:** Persistent elements, such as a fixed header or an active state in the sidebar, act as fixed reference points during long scrolling sessions.
-- **[Progressive disclosure](../industry-terms/progressive-disclosure.md):** Manage navigation complexity by showing top-level categories first, using interactive accordion menus or drill-downs to reveal advanced technical details only when requested.
+- **Progressive disclosure:** Manage navigation complexity by showing top-level categories first, using interactive accordion menus or drill-downs to reveal advanced technical details only when requested. (See: [Progressive disclosure](../industry-terms/progressive-disclosure.md))
 
 ---
 
@@ -87,7 +87,7 @@ graph TD
 ### Pattern breakdown
 
 1. **Persistent global header:** Sets global context and ensures the search bar is always reachable, regardless of page depth.
-2. **Breadcrumb trails:** Provides a linear path back to the entry point, allowing users to move up the hierarchy (vertical navigation) immediately.
+2. **Breadcrumb trails:** Provides a linear path back to the entry point, allowing users to move up the hierarchy (vertical navigation) immediately. (See: [Breadcrumbs](../references/ia-design.md#breadcrumbs))
 3. **Active-state indicators (Scrollspy):** Highlighting the current page in the sidebar provides an immediate You are here marker that updates as the user scrolls through sub-sections.
 4. **Structured reading area:** Consistent use of whitespace and [typography](../technical-writing/visual-communication.md#typography-and-legibility) separates core instructions from secondary information.
 

@@ -1,7 +1,7 @@
 ---
 title: Inclusive language
 description: A writing methodology that avoids bias, exclusionary metaphors, and gendered language to improve accessibility and global translation efficiency.
-revision_date: 2026-10-19
+revision_date: 2026-10-20
 ---
 
 # Inclusive language
@@ -12,15 +12,17 @@ revision_date: 2026-10-19
 
 ## Defining inclusive language
 
-Inclusive language removes bias and unnecessary barriers to comprehension. By replacing terms tied to gender, race, or physical ability with objective alternatives, writers create content focused purely on the objective of the user. In software and product management, this is a core component of [information design](../technical-writing/content-design-foundations.md). This ensures that every reader, regardless of background, can execute a task without navigating linguistic obstacles.
+Inclusive language removes bias and unnecessary barriers to comprehension. By replacing terms tied to gender, race, or physical ability with objective alternatives, writers create content focused purely on the objective of the user. 
 
-The foundation of this approach lies in cognitive science. When a reader encounters exclusionary or outdated [jargon](../technical-writing/plain-language.md#the-jargon-filter), such as "master/slave" or "sanity check," it creates cognitive friction. These terms distract from technical instructions by invoking cultural or historical baggage. Using neutral, precise phrasing minimizes this cognitive load and keeps the user focused on the technical implementation.
+In software and product management, this is a core component of [information design](../technical-writing/content-design-foundations.md). This ensures that every reader, regardless of background, can execute a task without navigating linguistic obstacles.
+
+The foundation of this approach lies in cognitive science. When a reader encounters exclusionary or outdated jargon, such as "master/slave" or "sanity check," it creates cognitive friction. These terms distract from technical instructions by invoking cultural or historical baggage. Using neutral, precise phrasing minimizes this [cognitive load](../technical-writing/cognitive-load.md) and keeps the user focused on the technical implementation.
 
 ---
 
 ## Strategic impact
 
-Inclusive language is a prerequisite for global scale. For organizations managing localization (L10n) and internationalization (I18n), non-inclusive phrasing introduces technical debt. Idioms and metaphors rarely survive translation. They inflate costs and result in localized content that is confusing or offensive to native speakers. Aligning terminology during the drafting phase streamlines [globalization, internationalization, localization, and translation](../industry-terms/gilt.md) (GILT) workflows.
+Inclusive language is a prerequisite for global scale. For organizations managing localization (L10n) and internationalization (I18n), non-inclusive phrasing introduces [content debt](../industry-terms/content-debt.md). Idioms and metaphors rarely survive translation. They inflate costs and result in localized content that is confusing or offensive to native speakers. Aligning terminology during the drafting phase streamlines [globalization, internationalization, localization, and translation (GILT)](../industry-terms/gilt.md) workflows.
 
 Beyond translation, exclusionary language erodes user trust. Documentation that assumes the gender of a user or uses ableist metaphors can alienate demographics, leading to higher support volumes and decreased product adoption. Precise, inclusive language ensures that the focus remains on product value and technical accuracy.
 
@@ -28,11 +30,11 @@ Beyond translation, exclusionary language erodes user trust. Documentation that 
 
 ## Core principles
 
-Three rules guide the implementation of inclusive language:
+Three core principles guide the implementation of inclusive language:
 
 - **People-first phrasing:** Focus on the individual rather than a characteristic. Prioritize dignity and avoid equating a person with a specific condition. For example, use "users with visual impairments" rather than "the blind."
 - **Bias-free terminology:** Replace loaded historical jargon with functional alternatives. Precision creates a more professional environment for all engineers.
-- **Global [accessibility](../references/accessibility.md):** Use plain English. Avoid regional idioms and use consistent grammatical structures to improve machine translatability and comprehension for non-native speakers.
+- **Global accessibility:** Use plain English. Avoid regional idioms and use consistent grammatical structures to improve machine translatability and comprehension for non-native speakers.
 
 ---
 
@@ -81,7 +83,7 @@ You must then manually run the script.
 
 - **Technical precision:** "Smoke test" or "confidence check" provides a clearer technical instruction than "sanity check," which is an ableist metaphor for basic functional verification.
 - **Objective architecture:** Using "primary/replica" (or "leader/follower") replaces metaphors of human ownership with industry-standard engineering terms that describe data relationship and hierarchy.
-- **Direct address:** Swapping the gendered "[he](../industry-terms/heuristic-evaluation.md)" for the second-person "you" clarifies the actor and aligns with the Microsoft and Google technical style guides.
+- **Direct address:** Swapping the gendered "he" for the second-person "you" clarifies the actor and aligns with the Microsoft and Google technical style guides.
 
 ---
 
@@ -92,7 +94,7 @@ To move beyond manual checks, use these organizational strategies:
 - **Audit legacy repositories:** Use regex-based scripts to scan codebases and documentation for terms such as "whitelist," "blacklist," or "master/slave." Schedule these replacements during routine maintenance or breaking-change windows.
 - **The "You" standard:** Address the reader directly. This avoids the trap of third-person singular pronouns ("he/she") and simplifies sentence structure.
 - **Web Content Accessibility Guidelines (WCAG) alignment:** Ensure alt-text for diagrams remains objective, focusing on the logical flow rather than the physical appearance of icons or personas.
-- **Automated linters:** Integrate tools such as Vale (using the Microsoft or Google styles) or AlexJS into your continuous integration and continuous delivery ([CI/CD](../doc-stack/cicd.md)) pipeline to flag non-inclusive language during the pull request (PR) phase.
+- **Automated linters:** Integrate tools such as Vale (using the Microsoft or Google styles) or AlexJS into your [CI/CD pipeline](../doc-stack/cicd.md) to flag non-inclusive language during the pull request (PR) phase.
 
 ---
 

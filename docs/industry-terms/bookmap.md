@@ -28,7 +28,7 @@ For teams, this reduces the overhead of manual updates; changing a topic once en
 
 ---
 
-## Technical Foundation
+## Technical foundation
 
 Bookmaps leverage four primary mechanisms to control output:
 
@@ -39,7 +39,7 @@ Bookmaps leverage four primary mechanisms to control output:
 
 ---
 
-## Visualizing the Hierarchy
+## Visualizing the hierarchy
 
 A bookmap transforms a directory of independent files into a logical, readable sequence.
 
@@ -72,7 +72,7 @@ By organizing flat files into chapters, you provide the navigational aids necess
 
 ---
 
-## Implementation Best Practices
+## Implementation best practices
 
 - **Prioritize modularity:** Write topics that function independently. Removing context-dependent phrases such as "as mentioned in the previous chapter" allows the bookmap to reposition the topic without breaking narrative logic.
 - **Use keys for variables:** Define product names and version numbers using `<keydef>` in the bookmap. This allows the map to inject specific strings into topics by using `<ph keyref="product_name"/>`, preventing the need to find and replace text across individual files.
@@ -81,7 +81,7 @@ By organizing flat files into chapters, you provide the navigational aids necess
 
 ---
 
-## Validation and Testing
+## Validation and testing
 
 1. **DITAVAL verification:** If you use conditional processing, validate the bookmap against specific `.ditaval` files to ensure no orphan content or broken sequences are generated for specific audiences.
 2. **Link and key validation:** Run automated tools, such as the DITA Open Toolkit, to catch unresolved `keyrefs` or broken `href` paths that occur when topics are moved or renamed.

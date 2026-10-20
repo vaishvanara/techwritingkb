@@ -14,7 +14,9 @@ revision_date: 2026-10-19
 
 The `viewBox` attribute defines a virtual window over the artwork of an SVG. It separates the internal coordinate system (user space) from the physical dimensions of the SVG viewport. This separation ensures that graphics scale proportionally to fit their container without manual recalculation of coordinates.
 
-Without this attribute, the SVG uses a 1:1 mapping between user units and viewport pixels. If the container size changes, the SVG viewport expands or shrinks, but the internal elements remain at their fixed absolute sizes. This behavior leads to clipping (if the container is smaller than the drawing) or excessive white space (if the container is larger). Adding a `viewBox` allows the browser to transform the internal coordinate system to fit the viewport dimensions.
+Without this attribute, the SVG uses a 1:1 mapping between user units and viewport pixels. If the container size changes, the SVG viewport expands or shrinks, but the internal elements remain at their fixed absolute sizes. 
+
+This behavior leads to clipping (if the container is smaller than the drawing) or excessive white space (if the container is larger). Adding a `viewBox` allows the browser to transform the internal coordinate system to fit the viewport dimensions.
 
 ```mermaid
 graph TD
@@ -31,7 +33,7 @@ graph TD
 
 Fixed `height` and `width` attributes on an `<svg>` tag define the size of the viewport but do not dictate how content scales. In responsive design, an SVG typically needs to occupy 100% of the width of a fluid container.
 
-A properly configured `viewBox` ensures that the internal geometry, such as paths, circles, and text, maintains its spatial relationship as the container scales. This is essential for cross-platform user interface (UI) development, ensuring that a single icon asset looks identical on a 16px button and a 500px hero section.
+A properly configured `viewBox` ensures that the internal geometry, such as paths, circles, and text, maintains its spatial relationship as the container scales. This is essential for cross-platform UI development, ensuring that a single icon asset looks identical on a 16px button and a 500px hero section.
 
 ---
 
@@ -44,8 +46,8 @@ The syntax consists of four unitless values: `viewBox="min-x min-y width height"
 - **width**: The horizontal span of the coordinate system.
 - **height**: The vertical span of the coordinate system.
 
-!!! note "Aspect Ratio Control"
-    The `viewBox` works with the `preserveAspectRatio` attribute. If the aspect ratio of the `viewBox` does not match the aspect ratio of the SVG viewport (defined by `width` and `height` attributes or Cascading Style Sheets (CSS)), `preserveAspectRatio` determines whether to scale the image to fit (meet), fill the area by cropping (slice), or distort the image (none).
+!!! note "Aspect ratio control"
+    The `viewBox` works with the `preserveAspectRatio` attribute. If the aspect ratio of the `viewBox` does not match the aspect ratio of the SVG viewport (defined by `width` and `height` attributes or CSS), `preserveAspectRatio` determines whether to scale the image to fit (meet), fill the area by cropping (slice), or distort the image (none).
 
 ---
 
@@ -60,35 +62,31 @@ This configuration enables the coordinate system to fill its parent container wh
 </svg>
 ```
 
-### Breakdown
-
-- `viewBox="0 0 100 100"`: Defines a window from `(0,0)` to `(100,100)`.
-- `width="100%" height="100%"`: Sets the SVG viewport to fill the parent container. The `viewBox` will stretch or shrink to fit this viewport.
-- `circle cx="50" cy="50" r="40"`: Positions the circle relative to the 100-unit grid. The circle remains centered regardless of the physical size of the SVG because `50,50` is the center of the `viewBox`.
+**Breakdown:**  
+> - `viewBox="0 0 100 100"`: Defines a window from `(0,0)` to `(100,100)`.
+> - `width="100%" height="100%"`: Sets the SVG viewport to fill the parent container. The `viewBox` will stretch or shrink to fit this viewport.
+> - `circle cx="50" cy="50" r="40"`: Positions the circle relative to the 100-unit grid. The circle remains centered regardless of the physical size of the SVG because `50,50` is the center of the `viewBox`.
 
 ---
 
 ## Common pitfalls
 
-### Negative width or height
+**Negative width or height**  
+> In the `viewBox` attribute, the `width` and `height` parameters must not be negative. A negative value is a syntax error, causing the browser to ignore the `viewBox` entirely and revert to default 1:1 mapping.
 
-In the `viewBox` attribute, the `width` and `height` parameters must not be negative. A negative value is a syntax error, causing the browser to ignore the `viewBox` entirely and revert to default 1:1 mapping.
+**Zero width or height**  
+> If the `width` or `height` in the `viewBox` is set to `0`, the element will not be rendered.
 
-### Zero width or height
-
-If the `width` or `height` in the `viewBox` is set to `0`, the element will not be rendered.
-
-### Overflow clipping
-
-By default, SVG content that falls outside the `viewBox` coordinates is visible unless the SVG has `overflow: hidden` (the default in most browsers). However, it will not scale with the rest of the drawing.
+**Overflow clipping**  
+> By default, SVG content that falls outside the `viewBox` coordinates is visible unless the SVG has `overflow: hidden` (the default in most browsers). However, it will not scale with the rest of the drawing.
 
 ---
 
 ## Tooling
 
-- **Browsers**: Use the **Computed** tab in **Developer Tools** to see how `viewBox` transforms translate to actual pixel dimensions.
-- **Optimization**: Tools such as [SVGO](https://github.com/svg/svgo) can automatically calculate the tightest possible `viewBox` for a path, removing unnecessary whitespace.
-- **Design Export**: When exporting from Figma or Illustrator, ensure **Include viewBox** is selected; otherwise, the tool may export fixed pixel dimensions only.
+- **Browsers**: Use the Computed tab in Developer Tools to see how `viewBox` transforms translate to actual pixel dimensions.
+- **Optimization**: Tools such as [SVGO](https://github.com/svg/svgo){: target="_blank" rel="noopener" } can automatically calculate the tightest possible `viewBox` for a path, removing unnecessary whitespace.
+- **Design export**: When exporting from Figma or Illustrator, ensure `Include viewBox` is selected; otherwise, the tool may export fixed pixel dimensions only.
 
 ---
 

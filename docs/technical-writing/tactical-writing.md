@@ -50,7 +50,7 @@ To prevent a community wiki or forum from becoming a data graveyard, technical w
 2.  **The "verified" badge:** In forums or Discord channels, implement a system to tag or pin solutions that the product team has technically validated.
 3.  **Active pruning:** Regularly archive threads or wiki pages that are no longer accurate because of product deprecations.
 
-??? note "Anatomy of a tactical wiki page"
+??? note "Key elements of a tactical wiki page"
     A successful community-driven page should prioritize scannability over prose.
     
     - **Summary box:** What problem does this solve?

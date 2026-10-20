@@ -28,7 +28,7 @@ When these views are integrated into digital documentation, they typically map d
 
 ---
 
-## Anatomy of a readable diagram
+## Key elements of a readable diagram
 
 To maintain clarity, an exploded view relies on a few necessary structural elements:
 

@@ -1,18 +1,18 @@
 ---
-title: ReAct Pattern
+title: ReAct pattern
 description: A design framework that helps large language models solve complex problems by combining step-by-step reasoning with external actions.
-revision_date: 2026-10-19
+revision_date: 2026-10-20
 ---
 
-# ReAct Pattern
+# ReAct pattern
 
-> *A design framework that helps large language models solve complex problems by combining step-by-step reasoning with external actions*
+> *A design framework that helps large language models (LLMs) solve complex problems by combining step-by-step reasoning with external actions*
 
 ---
 
-The Reasoning and Acting (ReAct) pattern enables large language models (LLMs) to alternate between generating explicit reasoning traces and executing discrete actions. While traditional prompting relies on a model's internal weights to generate a response in a single pass, ReAct allows the model to interact with external environments, such as APIs, databases, or search engines, to retrieve live data or perform computations.
+The Reasoning and Acting (ReAct) pattern enables LLMs to alternate between generating explicit reasoning traces and executing discrete actions. While traditional prompting relies on a model's internal weights to generate a response in a single pass, ReAct allows the model to interact with external environments, such as APIs, databases, or search engines, to retrieve live data or perform computations.
 
-This iterative loop mitigates two primary issues in LLM deployment: logical hallucinations, by grounding reasoning in facts, and information staleness, by accessing real-time data. By requiring the model to think before it acts, the pattern creates a transparent execution log that helps developers audit the model's decision-making process.
+This iterative loop mitigates two primary issues in LLM deployment: logical hallucinations (by grounding reasoning in facts) and information staleness (by accessing real-time data). By requiring the model to think before it acts, the pattern creates a transparent execution log that helps developers audit the model's decision-making process.
 
 ---
 
@@ -21,7 +21,7 @@ This iterative loop mitigates two primary issues in LLM deployment: logical hall
 The framework operates as a cycle where the model's output is parsed to trigger external execution, the results of which are fed back into the prompt context.
 
 - **Thought:** The model generates a reasoning trace documenting its internal logic, analyzing the current state, and planning the next action.
-- **Action:** The model outputs a specific command or function call (for example, a [JSON](../doc-stack/json-logic.md)-formatted tool call or a string like `Search[query]`) intended for an external executor.
+- **Action:** The model outputs a specific command or function call (for example, a JSON-formatted tool call or a string like `Search[query]`) intended for an external executor.
 - **Observation:** The external system executes the action and appends the result back into the model's [context window](../technical-writing/prompt-engineering.md#context-window-management). The model then processes this observation to determine the next step.
 
 ---
@@ -60,24 +60,24 @@ In this example, an agent verifies system status using a database and a validati
 **Thought 3:** I have confirmed that `/v1/users` is inactive and its replacement `/v2/users` is active. I can now provide the final response.
 **Final Answer:** The endpoint `/v1/users` is inactive and deprecated. It has been replaced by `/v2/users`, which is currently operational (Status 200).
 
-??? note "Prompting Requirements"
-    ReAct requires a system prompt that defines a strict execution grammar (for example, `Thought:`, `Action:`, `Observation:`, `Final Answer:`). It often utilizes [few-shot prompting](../industry-terms/few-shot-prompting.md) to demonstrate the interleaved format. Modern models with native function calling capabilities effectively implement a structured version of the Action/Observation loop.
+??? note "Prompting requirements"
+    ReAct requires a system prompt that defines a strict execution grammar (for example, `Thought:`, `Action:`, `Observation:`, `Final Answer:`). It often uses [few-shot prompting](../industry-terms/few-shot-prompting.md) to demonstrate the interleaved format. Modern models with native function calling capabilities effectively implement a structured version of the Action/Observation loop.
 
 ---
 
 ## Implementation best practices
 
-- **Strict Tool Schemas:** Use JSON Schema or similar structured definitions. Clear descriptions prevent the model from hallucinating non-existent parameters or selecting the wrong tool for the task.
-- **Maximum Iteration Limit:** Implement a hard limit, such as 5 to 10 loops. This prevents infinite loops and runaway costs if the model encounters recursive logic or a tool consistently returns errors.
-- **Context Window Management:** Every ReAct loop appends new Thought, Action, and Observation text to the prompt. For long-running tasks, implement a strategy to prune or summarize earlier steps to stay within token limits.
-- **Robust Parsing:** Use regular expressions or structured output parsing to extract the Action from the model's text. If the model fails the format, feed the parsing error back into the loop as an Observation so the model can self-correct.
+- **Strict tool schemas:** Use [JSON Schema](../doc-stack/json-logic.md) or similar structured definitions. Clear descriptions prevent the model from hallucinating non-existent parameters or selecting the wrong tool for the task.
+- **Maximum iteration limit:** Implement a hard limit, such as 5 to 10 loops. This prevents infinite loops and runaway costs if the model encounters recursive logic or a tool consistently returns errors.
+- **Context window management:** Every ReAct loop appends new Thought, Action, and Observation text to the prompt. For long-running tasks, implement a strategy to prune or summarize earlier steps to stay within token limits.
+- **Robust parsing:** Use regular expressions or structured output parsing to extract the Action from the model's text. If the model fails the format, feed the parsing error back into the loop as an Observation so the model can self-correct.
 
 ---
 
 ## Common anti-patterns
 
-- **The Infinite Reasoner:** Forcing complex reasoning for trivial queries, for example, "Hello". Allow the model to bypass the loop and provide a Final Answer immediately if no action is required.
-- **The Observation Gap:** Failing to handle empty or error-heavy observations. If a tool returns no data, the model might hallucinate a result unless the prompt instructs it on how to handle null observations.
+- **Infinite Reasoning:** Forcing complex reasoning for trivial queries, for example, "Hello". Allow the model to bypass the loop and provide a Final Answer immediately if no action is required.
+- **Observation gap:** Failing to handle empty or error-heavy observations. If a tool returns no data, the model might hallucinate a result unless the prompt instructs it on how to handle null observations.
 
 ---
 

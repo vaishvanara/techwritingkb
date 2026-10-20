@@ -28,7 +28,7 @@ The CTR model uses [progressive disclosure](../industry-terms/progressive-disclo
 
 ---
 
-## Core principles and anatomy
+## Core principles
 
 CTR divides documentation into three archetypes, each governed by its own structural rules:
 

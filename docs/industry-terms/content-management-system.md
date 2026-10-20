@@ -1,10 +1,10 @@
 ---
-title: Content Management System (CMS)
+title: Content management system (CMS)
 description: A software application used to manage the creation and modification of digital content, separating underlying data from its visual presentation.
 revision_date: 2026-10-19
 ---
 
-# Content Management System (CMS)
+# Content management system (CMS)
 
 > *A software application used to manage the creation and modification of digital content, separating underlying data from its visual presentation*
 

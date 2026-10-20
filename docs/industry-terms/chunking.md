@@ -36,7 +36,7 @@ Strategic chunking reduces this mental effort. A structured layout guides the ey
 
 ---
 
-## Core anatomy of a chunk
+## Key elements of a chunk
 
 Effective chunking relies on four key characteristics:
 
@@ -51,11 +51,11 @@ Effective chunking relies on four key characteristics:
 
 The following example demonstrates how restructuring a dense paragraph into a scannable format improves utility while preserving all technical instructions.
 
-### Before (Poor Pattern)
+### Before (poor pattern)
 
 To configure the integration, you must first verify that your API key is active. Once verified, open the config.json file in your project directory. Inside this file, look for the "auth" object. You need to insert your key into the "token" field. Ensure you do not commit this raw key to your repository. After pasting the key, save the file and restart your local server by running the command 'npm run dev' in your terminal window. If you see a green success message, the authentication process was successful. If an error occurs, verify your network settings and confirm that you copied the key correctly from the developer console.
 
-### After (Applied Pattern)
+### After (applied pattern)
 
 #### Step 1: Configure the local authentication settings
 

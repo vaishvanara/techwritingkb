@@ -1,5 +1,5 @@
 ---
-title: Documentation Funnel
+title: Documentation funnel
 description: A framework for organizing technical content by user intent, mapping articles to specific stages of product adoption and expertise.
 revision_date: 2026-10-19
 ---

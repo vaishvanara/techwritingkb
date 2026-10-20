@@ -1,10 +1,10 @@
 ---
-title: API Documentation
+title: API documentation
 description: Documenting software interfaces using OpenAPI, covering structured schemas, automation workflows, and best practices for developer experience.
 revision_date: 2026-10-19
 ---
 
-# API Documentation
+# API documentation
 
 > *Documenting software interfaces using OpenAPI, covering structured schemas, automation workflows, and best practices for developer experience*
 

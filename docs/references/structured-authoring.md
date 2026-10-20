@@ -33,7 +33,7 @@ The difference between traditional word processing and structured authoring lies
 
 Information mapping is a system used to analyze and organize technical information for better scannability and comprehension. By breaking complex subjects into discrete, self-contained blocks, you can provide users with specific information at the exact moment they need it. This structure helps reduce [cognitive load](../technical-writing/cognitive-load.md) and makes content easier to update.
 
-### Anatomy of a map
+### Key elements of a map
 
 - **Content blocks:** These are the smallest modular units of information. Each block focuses on a single purpose or idea, such as a specific warning or a data table.
 - **Maps:** These are files that act as blueprints. [A map](../references/dita.md#the-map-concept) organizes different content blocks into a logical hierarchy to produce a specific output, such as a user guide or a help article.

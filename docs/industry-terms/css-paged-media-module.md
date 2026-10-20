@@ -10,7 +10,7 @@ revision_date: 2026-10-19
 
 ---
 
-## Defining Paged Media
+## Defining paged media
 
 While the web traditionally functions as a continuous scroll, the CSS Paged Media Module shifts the focus to discrete pages. It maps digital elements to a page model consisting of the page box, which contains the page area and the margin area. This allows developers to treat HTML content as a series of bounded sheets, which is essential for manuals, books, or any document intended for print. 
 
@@ -113,7 +113,7 @@ This configuration establishes a standard letter size and uses the `@top-center`
 
 ---
 
-## Tooling and Best Practices
+## Tooling and best practices
 
 - **Validation:** Use Stylelint with print-specific plugins to catch invalid properties before document generation.
 - **Physical units:** Use absolute units such as `in`, `mm`, or `pt`. Avoid `px`, because its physical scale can vary between rendering engines.

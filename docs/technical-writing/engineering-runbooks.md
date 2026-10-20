@@ -31,7 +31,7 @@ To manage [cognitive load](../technical-writing/cognitive-load.md), runbooks mus
 
 ---
 
-## Standard runbook anatomy
+## Key elements of a standard runbook
 
 To maintain consistency across complex infrastructure systems, every runbook should follow a uniform structural schema. This helps engineers orient themselves instantly during an active incident.
 

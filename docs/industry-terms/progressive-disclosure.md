@@ -1,7 +1,7 @@
 ---
 title: Progressive disclosure
 description: A design technique that sequences information across multiple layers, presenting complex details only when needed to reduce cognitive load.
-revision_date: 2026-10-19
+revision_date: 2026-10-20
 ---
 
 # Progressive disclosure
@@ -12,15 +12,15 @@ revision_date: 2026-10-19
 
 ## The logic of layered information
 
-Progressive disclosure sequences information across multiple screens, steps, or layers. Rather than presenting a user with too much information at once, you surface essential data first and defer granular or rarely used information to secondary layers, such as expandable sections, such as accordions, subpages, or modals.
+Progressive disclosure sequences information across multiple screens, steps, or layers. Rather than presenting a user with too much information at once, you surface essential data first and defer granular or rarely used information to secondary layers, such as expandable sections, accordions, subpages, or modals.
 
-This approach acknowledges the limits of human cognitive load. When [information architecture](../references/ia-design.md) (IA) mirrors a user's workflow, it transforms a large amount of data into a guided narrative. By analyzing your audience, you can separate the must-know functional requirements from the nice-to-know optimization parameters, ensuring advanced procedures do not obstruct the critical path.
+This approach acknowledges the limits of human [cognitive load](../technical-writing/cognitive-load.md). When [information architecture (IA)](../references/ia-design.md) mirrors a user's workflow, it transforms a large amount of data into a guided narrative. By analyzing your audience, you can separate the must-know functional requirements from the nice-to-know optimization parameters, ensuring advanced procedures do not obstruct the critical path.
 
 ---
 
 ## The cost of dense text
 
-Ignoring this principle creates friction for both user experience (UX) and [developer experience](../industry-terms/developer-experience.md) (DX). Documentation fails when it forces installation steps, configuration variables, API schemas, and troubleshooting tips into a single, flat hierarchy. This lack of prioritization obscures critical commands and leads to choice paralysis, where users abandon a product because they cannot identify the entry point.
+Ignoring this principle creates friction for both user experience (UX) and [developer experience (DX)](../industry-terms/developer-experience.md). Documentation fails when it forces installation steps, configuration variables, API schemas, and troubleshooting tips into a single, flat hierarchy. This lack of prioritization obscures critical commands and leads to choice paralysis, where users abandon a product because they cannot identify the entry point.
 
 Integrating progressive disclosure lowers the barrier to entry. It allows new users to onboard via streamlined instructions while keeping advanced configurations accessible via toggles or deep links for power users.
 
@@ -34,7 +34,7 @@ Integrating progressive disclosure lowers the barrier to entry. It allows new us
 Tiered structures manage information density by categorizing content into three functional parts:
 
 - **Primary layer:** The default view. It contains high-level summaries and standard use cases that satisfy the 80 percent use case.
-- **Disclosure trigger:** Interactive user interface (UI) elements, such as **Advanced** toggles, **Details** tags, or **Read More** links, that signal the presence of deeper content.
+- **Disclosure trigger:** Interactive UI elements, such as Advanced toggles, Details tags, or Read More links, that signal the presence of deeper content.
 - **Secondary layer:** The deferred content, including comprehensive reference tables, edge cases, or low-level parameters revealed only upon user interaction.
 
 ---
@@ -87,17 +87,17 @@ Compare these two approaches to configuration blocks:
         ca_bundle_path: "/etc/ssl/certs/ca-certificates.crt"
         ```
 
-### Impact on readability
-The improved example reduces the visual weight of the initial setup. By moving secondary parameters into an expandable container, the standard user can complete the task without parsing variables irrelevant to their environment.
+**Impact on readability:**  
+> The improved example reduces the visual weight of the initial setup. By moving secondary parameters into an expandable container, the standard user can complete the task without parsing variables irrelevant to their environment.
 
 ---
 
 ## Implementation best practices
 
 - **Target the 80th percentile:** Design the primary layer for the vast majority of users. Use telemetry or usability data to confirm which details are essential for initial success.
-- **Write descriptive triggers:** Avoid generic **More info** labels. Use action-oriented text, such as **View advanced configuration variables** or **Check system requirements**.
+- **Write descriptive triggers:** Avoid generic More info labels. Use action-oriented text, such as "View advanced configuration variables" or "Check system requirements."
 - **Maintain local context:** Use UI controls, such as tabs or accordions, to reveal information in-place. Redirecting a user to a new page for a single variable adds unnecessary interaction cost and breaks their workflow.
-- **Maintain searchability:** Ensure that content hidden within disclosure elements remains indexable by site search and [search engine optimization](../doc-stack/metadata-frontmatter.md#search-engine-optimization) (SEO) crawlers.
+- **Maintain searchability:** Ensure that content hidden within disclosure elements remains indexable by site search and SEO crawlers.
 
 ---
 
@@ -112,4 +112,4 @@ The improved example reduces the visual weight of the initial setup. By moving s
 ## Validation and testing
 
 - **Cognitive walkthroughs:** Ask a participant to complete a task and observe whether they naturally find the disclosure triggers or if they overlook secondary details critical to their specific environment.
-- **Heatmap analysis:** Use tools to see if users are actually clicking your **Show More** triggers. If the interaction rate is near zero, the content may be redundant; if it is 100 percent, the content belongs in the primary layer.
+- **Heatmap analysis:** Use tools to see if users are actually clicking your Show More triggers. If the interaction rate is near zero, the content may be redundant; if it is 100 percent, the content belongs in the primary layer.

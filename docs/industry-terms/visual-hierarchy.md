@@ -1,7 +1,7 @@
 ---
 title: Visual hierarchy
 description: The arrangement of typography, color, and layout to prioritize information, helping users navigate complex documentation and immediately identify key details.
-revision_date: 2026-10-19
+revision_date: 2026-10-20
 ---
 
 # Visual hierarchy
@@ -14,7 +14,7 @@ revision_date: 2026-10-19
 
 Visual hierarchy dictates the order in which a user processes information. Instead of presenting technical content as an undifferentiated block of text, a strong hierarchy establishes a clear scanning path. By manipulating size, weight, color, and positioning, you signal the relative importance of each element, which distinguishes a high-level system warning from standard body text.
 
-This approach manages cognitive load. When readers encounter a digital document, they immediately look for structure to categorize information. Cues such as heading depth and indentation transform dense data into an intuitive map, directly improving scannability for users who need to find specific [technical specifications](../references/templates.md#technical-specifications-and-fgds) quickly.
+This approach manages [cognitive load](../technical-writing/cognitive-load.md). When readers encounter a digital document, they immediately look for structure to categorize information. Cues such as heading depth and indentation transform dense data into an intuitive map, directly improving [scannability](../industry-terms/scannability.md) for users who need to find specific [technical specifications](../references/templates.md#technical-specifications-and-fgds) quickly.
 
 ---
 
@@ -22,7 +22,7 @@ This approach manages cognitive load. When readers encounter a digital document,
 
 Ignoring hierarchy forces the reader to expend working memory simply to distinguish between concepts, leading to rapid fatigue. For an engineer searching for a code block or a manager checking a release milestone, a lack of visual landmarks makes the content functionally inaccessible.
 
-Predictable layouts reinforce [information architecture](../references/ia-design.md) (IA). When headings, lists, and callouts behave consistently, users build a reliable mental model of the content. This reduces cognitive friction, increases task success rates, and ultimately lowers support volume by making the documentation self-service.
+Predictable layouts reinforce [information architecture (IA)](../references/ia-design.md). When headings, lists, and callouts behave consistently, users build a reliable mental model of the content. This reduces cognitive friction, increases task success rates, and ultimately lowers support volume by making the documentation self-service.
 
 ---
 
@@ -40,7 +40,7 @@ Technical writers use several specific design tools to establish visual dominanc
 
 ## Design pattern example
 
-The following comparison illustrates how structured layouts improve [readability](../technical-writing/readability-scores.md) for installation steps.
+The following comparison describes how structured layouts improve [readability](../technical-writing/readability-scores.md) for installation steps.
 
 === "Unstructured layout"
     ### Installation
@@ -79,7 +79,7 @@ The structured layout succeeds by applying these rules:
 
 - **Type scale:** The H2 heading is visually dominant over the H3 subsection.
 - **Visual grouping:** Lists separate discrete actions from conceptual descriptions.
-- **Contrast [callouts](../doc-stack/markup-languages.md#extending-markup-admonitions):** A high-contrast container (`!!! danger`) interrupts the scanning path to highlight risk.
+- **Contrast callouts:** A high-contrast container (`!!! danger`) interrupts the scanning path to highlight risk. (See: [Extending markup admonitions](../doc-stack/markup-languages.md#extending-markup-admonitions))
 - **Semantic styling:** Command-line strings and keyboard shortcuts (**Y**) are visually distinct from standard copy.
 
 ---
@@ -88,15 +88,15 @@ The structured layout succeeds by applying these rules:
 
 Effective hierarchy serves two primary user behaviors:
 
-1. Rapid orientation: Readers can determine the scope of a page in seconds by scanning titles and callouts.
-2. Information retrieval: Returning users can skip prose and jump directly to visual anchors such as code samples or parameter tables.
+1. **Rapid orientation**: Readers can determine the scope of a page in seconds by scanning titles and callouts.
+2. **Information retrieval**: Returning users can skip prose and jump directly to visual anchors such as code samples or parameter tables.
 
 ---
 
 ## Best practices
 
 - **Logical heading sequences:** Do not skip heading levels (for example, jumping from H1 to H3) for aesthetic reasons. Use the styling engine to manage appearance while maintaining semantic order.
-- **[Progressive disclosure](../industry-terms/progressive-disclosure.md):** Keep the main path clear by using expandable containers for advanced configurations or edge cases.
+- **Progressive disclosure:** Keep the main path clear by using expandable containers for advanced configurations or edge cases. (See: [Progressive disclosure](../industry-terms/progressive-disclosure.md))
 
 ??? note "Example: View advanced configuration values"
     | Parameter | Type | Default | Description |

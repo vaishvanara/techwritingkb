@@ -1,16 +1,16 @@
 ---
-title: Developer Experience (DX)
+title: Developer experience (DX)
 description: The environment, tools, and workflows that define how developers interact with a technical product, focused on reducing friction and mental overhead.
 revision_date: 2026-10-19
 ---
 
-# Developer Experience (DX)
+# Developer experience (DX)
 
 > *The environment, tools, and workflows that define how developers interact with a technical product, focused on reducing friction and mental overhead*
 
 ---
 
-## Defining the Developer Environment
+## Defining the developer environment
 
 Developer experience (DX) encompasses the workflows and resources engineers navigate when interacting with a technical platform. While user experience (UX) focuses on general consumption, DX addresses specialized interfaces such as APIs, including REST, GraphQL, and gRPC. It also includes CLIs, SDKs, and client libraries. 
 
@@ -20,7 +20,7 @@ Prioritizing DX is a business strategy. High-quality DX lowers the barrier to en
 
 ---
 
-## Core Principles and Anatomy
+## Core principles and key elements
 
 A functional DX guides a user from their first evaluation to a stable production deployment. This process includes the critical middle step of sandbox testing.
 
@@ -43,7 +43,7 @@ graph TD
 
 ---
 
-## Design Pattern
+## Design pattern
 
 Dense text hinders information retrieval. Transforming instructional prose into structured, scannable steps improves technical usability.
 
@@ -72,7 +72,7 @@ Dense text hinders information retrieval. Transforming instructional prose into 
 
 ---
 
-## Implementation and Validation
+## Implementation and validation
 
 Great DX requires continuous maintenance and automated validation to prevent documentation rot.
 

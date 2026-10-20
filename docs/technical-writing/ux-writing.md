@@ -29,7 +29,7 @@ Every element in a user interface (UI) should have a clear, actionable label. Am
 
 ---
 
-## Anatomy of an error message
+## Key elements of an error message
 
 A poor error message, such as **Error 404** or **System failure**, leaves a user stranded. A professional error message follows the problem, reason, and solution framework.
 

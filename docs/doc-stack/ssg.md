@@ -90,7 +90,7 @@ By using BEM, UI developers ensure that changing the color of an active link in 
 
 ---
 
-## SSG project anatomy (local preview)
+## Key elements of an SSG project (local preview)
 
 Before pushing changes to the live website, technical writers run a *local server* on their own computer. This allows for *hot reloading*. Every time you hit **Save** in your Markdown file, the browser refreshes instantly to show your changes.
 

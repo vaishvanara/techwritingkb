@@ -100,7 +100,7 @@ Once the specification is finalized, it acts as the *single source of truth*. En
 
 ---
 
-### Anatomy of an endpoint definition
+### Key elements of an endpoint definition
 
 This annotated YAML block demonstrates how a single GET request is structured within the OpenAPI schema.
 

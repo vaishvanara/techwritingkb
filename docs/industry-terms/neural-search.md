@@ -1,7 +1,7 @@
 ---
 title: Neural search
 description: An information retrieval method using machine learning and vector embeddings to match user queries with content based on semantic intent rather than keywords.
-revision_date: 2026-10-19
+revision_date: 2026-10-20
 ---
 
 # Neural search
@@ -14,15 +14,15 @@ revision_date: 2026-10-19
 
 Neural search shifts information retrieval from literal string matching to semantic understanding. While traditional lexical engines rely on exact keyword matches and inverted indices, neural search converts documentation and queries into dense mathematical representations known as vector embeddings. Since these embeddings capture the linguistic context and relationships within a high-dimensional space, the system can surface relevant results even when the searcher's vocabulary does not explicitly overlap with the source text.
 
-Mapping documentation to a semantic vector space aligns the search interface with the user mental model. This transitions the search experience from a keyword-guessing game into an intent-driven discovery process, facilitating [navigation](../references/ia-design.md#the-three-level-rule) through dense technical libraries.
+Mapping documentation to a semantic vector space aligns the search interface with the user mental model. This transitions the search experience from a keyword-guessing game into an intent-driven discovery process, facilitating navigation through dense technical libraries.
 
 ---
 
 ## The problem with lexical search
 
-Traditional keyword-based systems, using algorithms such as term frequency-inverse document frequency (TF-IDF) or [best matching 25](../doc-stack/bm25-search.md) (BM25), often fail when users do not use the specific terminology established in the documentation. A query containing synonyms or related concepts may return zero hits, leading to an inefficient cycle of clicking through irrelevant results and returning to the search bar.
+Traditional keyword-based systems, using algorithms such as term frequency-inverse document frequency (TF-IDF) or [BM25 (Best Matching 25)](../doc-stack/bm25-search.md), often fail when users do not use the specific terminology established in the documentation. A query containing synonyms or related concepts may return zero hits, leading to an inefficient cycle of clicking through irrelevant results and returning to the search bar.
 
-Neural search addresses this vocabulary mismatch by calculating the distance, or similarity, between vectors in a latent space. For example, a [bi](../doc-lifecycle/observability-analytics.md#business-intelligence-tools)-encoder model can place the query "stop a container" and the document "Terminating active processes" in close proximity within the vector space. For developers, this accelerates integration; for support teams, it increases the deflection rate by enabling effective self-service.
+Neural search addresses this vocabulary mismatch by calculating the distance, or similarity, between vectors in a latent space. For example, a BI-encoder model can place the query "stop a container" and the document "Terminating active processes" in close proximity within the vector space. For developers, this accelerates integration; for support teams, it increases the deflection rate by enabling effective self-service.
 
 ---
 
@@ -30,7 +30,7 @@ Neural search addresses this vocabulary mismatch by calculating the distance, or
 
 A functional neural search architecture requires three primary elements to process and index documentation:
 
-- **Dense vector embeddings:** Text segments transformed into fixed-length numerical arrays by a transformer-based model, such as Bidirectional Encoder Representations from Transformers (BERT), Robustly Optimized BERT Pretraining Approach (RoBERTa), or Ada. These arrays encode semantic, syntactic, and contextual information.
+- **Dense vector embeddings:** Text segments transformed into fixed-length numerical arrays by a transformer-based model, such as Bidirectional Encoder Representations from Transformers (BERT) or Robustly Optimized BERT Pretraining Approach (RoBERTa). These arrays encode semantic, syntactic, and contextual information.
 - **Vector databases:** Specialized storage systems designed for high-dimensional vectors. They use specialized indexing structures, such as hierarchical navigable small world (HNSW) or inverted file index (IVF), to perform approximate nearest neighbor (ANN) searches, which are significantly more efficient than exhaustive linear scans.
 - **Bi-encoder query pipeline:** An architecture where the embedding model, the encoder, processes documentation at index time and the user query at inference time independently. This ensures both inputs are mapped to the same coordinate space for comparison.
 
@@ -56,7 +56,7 @@ graph TD
     ANN --> SemanticResults[Result: Terminating Virtual Machines]
 ```
 
-The system generates a unique numerical vector for every text chunk during the indexing phase and stores it within a specialized vector index. When a user queries "How to halt an instance," the system encodes the input into a vector and performs an approximate nearest neighbor (ANN) search, often using cosine similarity or dot product, against the indexed vectors. The most mathematically proximal match, Terminating Virtual Machines, is returned despite the lack of shared keywords.
+The system generates a unique numerical vector for every text chunk during the indexing phase and stores it within a specialized vector index. When a user queries "How to halt an instance," the system encodes the input into a vector and performs an ANN search, often using cosine similarity or dot product, against the indexed vectors. The most mathematically proximal match, Terminating Virtual Machines, is returned despite the lack of shared keywords.
 
 ---
 
@@ -64,9 +64,9 @@ The system generates a unique numerical vector for every text chunk during the i
 
 Effective neural search requires more than just an embedding model; it requires thoughtful [content engineering](../doc-stack/tech-stack.md).
 
-- **Granular [chunking](../industry-terms/chunking.md):** Do not index entire pages as single vectors, as this dilutes the semantic signal. Break articles into logical blocks, for example, 256–512 tokens, such as specific procedures or descriptive paragraphs. Use overlapping windows to maintain context between chunks.
+- **Granular chunking]:** Do not index entire pages as single vectors, as this dilutes the semantic signal. Break articles into logical blocks, for example, 256–512 tokens, such as specific procedures or descriptive paragraphs. Use overlapping windows to maintain context between chunks. (See: [Chunking](../industry-terms/chunking.md))
 - **Hybrid search strategies:** Combine semantic vector search with traditional lexical search using reciprocal rank fusion. This ensures that specific technical tokens, such as error codes (404), specific function names (for example, `#!python os.path.join()`), or unique identifiers, remain discoverable, as vector models can sometimes smooth over these critical literal details.
-- **[Metadata](../doc-lifecycle/governance-maintenance.md#metadata-governance) enrichment and prefiltering:** Use YAML frontmatter to categorize content, such as `product_version`, `language`, or `platform`. Applying these as hard filters before performing vector similarity prevents relevance errors from unrelated product versions or documentation sets.
+- **Metadata enrichment and prefiltering:** Use [YAML frontmatter](../doc-stack/metadata-frontmatter.md#what-is-frontmatter) to categorize content, such as `product_version`, `language`, or `platform`. Applying these as hard filters before performing vector similarity prevents relevance errors from unrelated product versions or documentation sets. (See: [Metadata governance](../doc-lifecycle/governance-maintenance.md#metadata-governance))
 
 ---
 

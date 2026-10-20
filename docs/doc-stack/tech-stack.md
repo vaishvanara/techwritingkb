@@ -16,7 +16,7 @@ This directory explores the layers of the modern documentation tech stack, categ
 
 ---
 
-## Anatomy of a modern stack
+## Key elements of a modern stack
 
 To build a scalable documentation system, technical writers must think like engineers. A professional stack is generally composed of four distinct layers that work in sequence.
 

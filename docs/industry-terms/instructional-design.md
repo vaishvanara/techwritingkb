@@ -1,7 +1,7 @@
 ---
 title: Instructional design
 description: The systematic methodology of creating educational content and structured pathways to help users master complex technical systems.
-revision_date: 2026-10-19
+revision_date: 2026-10-20
 ---
 
 # Instructional design
@@ -14,25 +14,27 @@ revision_date: 2026-10-19
 
 Instructional design is the practice of engineering educational experiences to make learning more efficient. Rather than just listing features, it uses cognitive frameworks to map out how a user moves from their first interaction with a system to full autonomy.
 
-In the world of technical documentation, this discipline acts as a bridge between engineering specifications and actual user onboarding. It transforms static reference manuals into goal-oriented environments. By applying these principles, writers ensure content aligns with how developers and engineers actually learn on the job. This learning usually occurs through trial, error, and incremental success.
+In [technical documentation](../technical-writing/basics.md), this discipline acts as a bridge between engineering specifications and actual user onboarding. It transforms static reference manuals into goal-oriented environments. 
+
+By applying these principles, writers ensure content aligns with how developers and engineers actually learn on the job. This learning usually occurs through trial, error, and incremental success.
 
 ---
 
 ## The value of structured learning
 
-Documentation often fails when it becomes a disorganized repository of facts. When users face a large volume of unstructured data, they experience a high cognitive load, which often leads to frustration or product abandonment. 
+Documentation often fails when it becomes a disorganized repository of facts. When users face a large volume of unstructured data, they experience high [cognitive load](../technical-writing/cognitive-load.md), which often leads to frustration or product abandonment. 
 
-Strategic design mitigates this by chunking information. By delivering only the data necessary for a specific task—a core tenet of minimalist instruction—you improve scannability and speed. For critical software environments, helping a developer find and execute a command in seconds is not only about clarity; it is about improving the overall [developer experience](../industry-terms/developer-experience.md) (DX).
+Strategic design mitigates this by [chunking](../industry-terms/chunking.md) information. By delivering only the data necessary for a specific task (a core tenet of minimalist instruction), you improve [scannability](../industry-terms/scannability.md) and speed. For critical software environments, helping a developer find and execute a command in seconds is not only about clarity; it is about improving the overall [developer experience (DX)](../industry-terms/developer-experience.md).
 
 ---
 
 ## Core principles
 
-Effective documentation relies on several foundational elements that ensure content remains practical and supports Web Content [Accessibility](../references/accessibility.md) Guidelines (WCAG).
+Effective documentation relies on several foundational elements that ensure content remains practical and supports Web Content Accessibility Guidelines (WCAG).
 
 - **Action-oriented objectives:** Replace vague goals such as *understand* with measurable verbs. Users should know exactly what they can *configure*, *initialize*, or *deploy* after reading.
 - **Sequential scaffolding:** Information should flow from foundational concepts to advanced workflows. This prevents burnout by ensuring the user has the necessary context before tackling complex tasks.
-- **Active application:** Embed hands-on tasks, such as code snippets or command-line interface (CLI) commands, directly into the narrative. This creates a [feedback loop](../systems-thinking/feedback-loop.md) where the user confirms their comprehension through immediate action.
+- **Active application:** Embed hands-on tasks, such as code snippets or CLI commands, directly into the narrative. This creates a [feedback loop](../systems-thinking/feedback-loop.md) where the user confirms their comprehension through immediate action.
 - **Visual accessibility:** Standardized typography and high-contrast code blocks improve [readability](../technical-writing/readability-scores.md) and help meet WCAG success criteria for visual presentation and contrast.
 
 ### Knowledge acquisition flow
@@ -103,8 +105,8 @@ Compare these two approaches to an API reference page to see how instructional d
         The session duration defaults to 3600 seconds (1 hour).
     ````
 
-### Why this works
-The instructional pattern swaps generic headers for behavioral outcomes. By using a "Prerequisites" checklist, you provide the necessary scaffolding to prevent runtime errors. Finally, providing a functional, copy-pasteable script instead of an abstract list of parameters reduces friction, allowing the user to succeed immediately.
+**Why this works:**  
+> The instructional pattern swaps generic headers for behavioral outcomes. By using a "Prerequisites" checklist, you provide the necessary scaffolding to prevent runtime errors. Finally, providing a functional, copy-pasteable script instead of an abstract list of parameters reduces friction, allowing the user to succeed immediately.
 
 ---
 
@@ -112,17 +114,17 @@ The instructional pattern swaps generic headers for behavioral outcomes. By usin
 
 A structured educational format shifts more than just the layout; it changes user behavior:
 
-- **Confidence (Self-efficacy):** Successfully running code on the first try encourages further exploration and reduces early drop-off.
+- **Confidence (self-efficacy):** Successfully running code on the first try encourages further exploration and reduces early drop-off.
 - **Retention:** Active loops move knowledge from short-term memory to long-term mastery, which means users spend less time looking up the same basic syntax.
 
 ---
 
 ## Implementation best practices
 
-To integrate these principles into your Documentation Development Life Cycle ([DDLC](../doc-lifecycle/ddlc.md)), consider these strategies:
+To integrate these principles into your [document development life cycle (DDLC)](../doc-lifecycle/ddlc.md), consider these strategies:
 
 - **Analyze the persona:** Tailor the technical depth to your specific audience to avoid over-explaining basics or skipping vital context.
-- **[Progressive disclosure](../industry-terms/progressive-disclosure.md):** Use expandable sections to hide deep-dive technical details. This keeps the primary path clean while allowing experts to access more information.
+- **Progressive disclosure:** Use expandable sections to hide deep-dive technical details. This keeps the primary path clean while allowing experts to access more information. (See: [Progressive disclosure](../industry-terms/progressive-disclosure.md))
 
 ??? example "Configuration details for proxy environments"
     If running behind a proxy, update these variables in your `.env` file:
@@ -132,8 +134,8 @@ To integrate these principles into your Documentation Development Life Cycle ([D
     ```
 
 - **Direct communication:** Use the [active voice](../technical-writing/active-passive.md). Addressing the user as "you" and starting steps with imperative verbs makes instructions easier to parse.
-- **SME validation:** Maintain a feedback loop with [subject matter experts](../doc-lifecycle/sme-interviewing.md) (SMEs) during the DDLC to ensure educational steps match the current technical reality.
-- **Learning-focused architecture:** Organize your [Information Architecture](../references/ia-design.md) (IA) to follow the user journey, starting with installation and moving toward complex references.
+- **SME validation:** Maintain a feedback loop with subject matter experts (SMEs) during the DDLC to ensure educational steps match the current technical reality.
+- **Learning-focused architecture:** Organize your [information architecture (IA)](../references/ia-design.md) to follow the user journey, starting with installation and moving toward complex references.
 
 ---
 
@@ -146,4 +148,4 @@ To integrate these principles into your Documentation Development Life Cycle ([D
 
 ## Validation and testing
 
-Finally, test your documentation with actual users to ensure the knowledge transfer is working. Task-based [usability testing](../doc-lifecycle/usability-testing.md)—where a user is asked to complete a goal such as "Deploy a test server"—will quickly reveal where the design fails. Regular readability audits can also help catch overly complex phrasing or jargon that might block comprehension.
+Finally, test your documentation with actual users to ensure the knowledge transfer is working. Task-based [usability testing](../doc-lifecycle/usability-testing.md), where a user is asked to complete a goal such as "Deploy a test server," will quickly reveal where the design fails. Regular readability audits can also help catch overly complex phrasing or jargon that might block comprehension.

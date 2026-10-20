@@ -1,5 +1,5 @@
 ---
-title: Atomic Content
+title: Atomic content
 description: Modular documentation design that treats technical information as self-contained, reusable units to simplify maintenance and multi-channel delivery.
 revision_date: 2026-10-19
 ---
@@ -26,7 +26,7 @@ Relying on traditional, lengthy layouts often leads to outdated or redundant con
 
 ---
 
-## Core principles and anatomy
+## Core principles
 
 Effective atomic units must be autonomous, complete, and structurally consistent.
 

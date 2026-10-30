@@ -7,89 +7,164 @@ hide:
     - feedback    
 ---
 
-<div class="grid cards" style="gap: 2rem; margin-top: 2rem;">
-  
-  <div>
-    <h1>Minimize cognitive load: Maximize impact</h1>
-    <p>
-      Dense technical data forces readers to waste mental energy decoding complex structures instead of acting on instructions. Learn to design clear, intuitive information layouts that align with how the human brain actually processes data.
-    </p>
-    <p style="margin-top: 1.5rem;">
-      <a href="technical-writing/basics/" class="md-button md-button--primary">Get started →</a>
-    </p>
+<!-- Full-Page Background Dot Matrix Canvas -->
+<canvas id="page-dot-matrix" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 0;"></canvas>
+
+<!-- Content Wrapper to stay above the canvas layer -->
+<div style="position: relative; z-index: 1;">
+
+  <div class="grid cards" style="gap: 2rem; margin-top: 2rem;">
+    
+    <div>
+      <h1>Minimize cognitive load: Maximize impact</h1>
+      <p>
+        Dense technical data forces readers to waste mental energy decoding complex structures instead of acting on instructions. Learn to design clear, intuitive information layouts that align with how the human brain actually processes data.
+      </p>
+      <p style="margin-top: 1.5rem;">
+        <a href="technical-writing/basics/" class="md-button md-button--primary">Get started →</a>
+      </p>
+    </div>
+
+    <div style="display: flex; flex-direction: column; justify-content: center;">
+      <p style="font-family: var(--md-code-font-family, monospace); opacity: 0.6; font-size: 0.75rem; text-transform: uppercase; tracking: 0.1em; margin-bottom: 1rem;">
+        —— DIRECTORY_ROOT
+      </p>
+      <ul style="list-style-type: none; padding-left: 0; margin: 0; line-height: 2;">
+        <li><strong>01</strong> <a href="technical-writing/basics/">Technical writing</a></li>
+        <li style="padding-left: 1rem; border-left: 1px solid var(--md-typeset-color, #e0e0e0);"><strong>02</strong> <a href="doc-stack/tech-stack/">Documentation infrastructure</a></li>
+        <li style="padding-left: 1rem; border-left: 1px solid var(--md-typeset-color, #e0e0e0);"><strong>03</strong> <a href="doc-lifecycle/ddlc/">Documentation lifecycle</a></li>
+        <li style="padding-left: 1rem; border-left: 1px solid var(--md-typeset-color, #e0e0e0);"><strong>04</strong> <a href="references/career-paths/">Reference materials</a></li>
+      </ul>
+    </div>
+
   </div>
 
-  <div style="display: flex; flex-direction: column; justify-content: center;">
-    <p style="font-family: var(--md-code-font-family, monospace); opacity: 0.6; font-size: 0.75rem; text-transform: uppercase; tracking: 0.1em; margin-bottom: 1rem;">
-      —— DIRECTORY_ROOT
-    </p>
-    <ul style="list-style-type: none; padding-left: 0; margin: 0; line-height: 2;">
-      <li><strong>01</strong> <a href="technical-writing/basics/">Technical writing</a></li>
-      <li style="padding-left: 1rem; border-left: 1px solid var(--md-typeset-color, #e0e0e0);"><strong>02</strong> <a href="doc-stack/tech-stack/">Documentation infrastructure</a></li>
-      <li style="padding-left: 1rem; border-left: 1px solid var(--md-typeset-color, #e0e0e0);"><strong>03</strong> <a href="doc-lifecycle/ddlc/">Documentation lifecycle</a></li>
-      <li style="padding-left: 1rem; border-left: 1px solid var(--md-typeset-color, #e0e0e0);"><strong>04</strong> <a href="references/career-paths/">Reference materials</a></li>
-    </ul>
+  <hr style="margin: 4rem 0 3rem 0; opacity: 0.2;" />
+
+  <h2>Featured deep dives</h2>
+  <p style="font-size: 0.8rem; opacity: 0.6; margin-top: -1rem; margin-bottom: 2rem;"><em>Exploration of programmatic prose</em></p>
+
+  <div class="grid cards">
+
+    <!-- Card 1: Information science -->
+    <div class="card" style="background-color: var(--md-default-bg-color);">
+      <p style="font-size: 0.7rem; opacity: 0.5; text-transform: uppercase; font-family: var(--md-code-font-family, monospace); margin-bottom: 0.5rem;">Technical Writing</p>
+      <h3 style="display: flex; align-items: center; gap: 0.5rem;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;" aria-hidden="true">
+          <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/>
+          <path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/>
+          <path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/>
+          <path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/>
+          <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/>
+          <path d="M3.477 10.896a4 4 0 0 1 .585-.396"/>
+          <path d="M19.938 10.5a4 4 0 0 1 .585.396"/>
+          <path d="M6 18a4 4 0 0 1-1.967-.516"/>
+          <path d="M19.967 17.484A4 4 0 0 1 18 18"/>
+        </svg>
+        <a href="technical-writing/cognitive-load/">Information science</a>
+      </h3>
+      <p>Cognitive frameworks including Miller's law, scannability patterns, and visual hierarchy to optimize content processing and reduce choice paralysis</p>
+    </div>
+
+    <!-- Card 2: Visual automation -->
+    <div class="card" style="background-color: var(--md-default-bg-color);">
+      <p style="font-size: 0.7rem; opacity: 0.5; text-transform: uppercase; font-family: var(--md-code-font-family, monospace); margin-bottom: 0.5rem;">Documentation Infrastructure</p>
+      <h3 style="display: flex; align-items: center; gap: 0.5rem;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;" aria-hidden="true">
+          <path d="M3 3h6v6H3z"/>
+          <path d="M15 3h6v6h-6z"/>
+          <path d="M3 15h6v6H3z"/>
+          <path d="M21 16l-3 3 3 3"/>
+          <path d="M18 19h-4a4 4 0 0 1-4-4v-1"/>
+          <path d="M6 9v1a4 4 0 0 0 4 4h1"/>
+        </svg>
+        <a href="doc-stack/diagrams-as-code/">Visual automation</a>
+      </h3>
+      <p>Programmatic visual asset management using text-to-visual syntax such as Mermaid.js to version control architecture flowcharts and sequence diagrams</p>
+    </div>
+
+    <!-- Card 3: Software integration -->
+    <div class="card" style="background-color: var(--md-default-bg-color);">
+      <p style="font-size: 0.7rem; opacity: 0.5; text-transform: uppercase; font-family: var(--md-code-font-family, monospace); margin-bottom: 0.5rem;">Documentation Lifecycle</p>
+      <h3 style="display: flex; align-items: center; gap: 0.5rem;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;" aria-hidden="true">
+          <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/>
+          <path d="M21 3v5h-5"/>
+          <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/>
+          <path d="M8 16H3v5"/>
+        </svg>
+        <a href="doc-lifecycle/sdlc-integration/">Software integration</a>
+      </h3>
+      <p>Implementing shift-left methodologies within the SDLC to sync documentation sprints directly with definitions of done and releases</p>
+    </div>
+
   </div>
 
 </div>
 
-<hr style="margin: 4rem 0 3rem 0; opacity: 0.2;" />
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const canvas = document.getElementById('page-dot-matrix');
+    const ctx = canvas.getContext('2d');
 
-<h2>Featured deep dives</h2>
-<p style="font-size: 0.8rem; opacity: 0.6; margin-top: -1rem; margin-bottom: 2rem;"><em>Exploration of programmatic prose</em></p>
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
 
-<div class="grid cards">
+    const spacing = 32;
+    const dotRadius = 1.1;
+    let mouse = { x: -1000, y: -1000, radius: 140 };
 
-  <!-- Card 1: Information science -->
-  <div class="card">
-    <p style="font-size: 0.7rem; opacity: 0.5; text-transform: uppercase; font-family: var(--md-code-font-family, monospace); margin-bottom: 0.5rem;">Technical Writing</p>
-    <h3 style="display: flex; align-items: center; gap: 0.5rem;">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;" aria-hidden="true">
-        <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/>
-        <path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/>
-        <path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/>
-        <path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/>
-        <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/>
-        <path d="M3.477 10.896a4 4 0 0 1 .585-.396"/>
-        <path d="M19.938 10.5a4 4 0 0 1 .585.396"/>
-        <path d="M6 18a4 4 0 0 1-1.967-.516"/>
-        <path d="M19.967 17.484A4 4 0 0 1 18 18"/>
-      </svg>
-      <a href="technical-writing/cognitive-load/">Information science</a>
-    </h3>
-    <p>Cognitive frameworks including Miller's law, scannability patterns, and visual hierarchy to optimize content processing and reduce choice paralysis</p>
-  </div>
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
 
-  <!-- Card 2: Visual automation -->
-  <div class="card">
-    <p style="font-size: 0.7rem; opacity: 0.5; text-transform: uppercase; font-family: var(--md-code-font-family, monospace); margin-bottom: 0.5rem;">Documentation Infrastructure</p>
-    <h3 style="display: flex; align-items: center; gap: 0.5rem;">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;" aria-hidden="true">
-        <path d="M3 3h6v6H3z"/>
-        <path d="M15 3h6v6h-6z"/>
-        <path d="M3 15h6v6H3z"/>
-        <path d="M21 16l-3 3 3 3"/>
-        <path d="M18 19h-4a4 4 0 0 1-4-4v-1"/>
-        <path d="M6 9v1a4 4 0 0 0 4 4h1"/>
-      </svg>
-      <a href="doc-stack/diagrams-as-code/">Visual automation</a>
-    </h3>
-    <p>Programmatic visual asset management using text-to-visual syntax such as Mermaid.js to version control architecture flowcharts and sequence diagrams</p>
-  </div>
+    window.addEventListener('mouseleave', () => {
+      mouse.x = -1000;
+      mouse.y = -1000;
+    });
 
-  <!-- Card 3: Software integration -->
-  <div class="card">
-    <p style="font-size: 0.7rem; opacity: 0.5; text-transform: uppercase; font-family: var(--md-code-font-family, monospace); margin-bottom: 0.5rem;">Documentation Lifecycle</p>
-    <h3 style="display: flex; align-items: center; gap: 0.5rem;">
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;" aria-hidden="true">
-        <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/>
-        <path d="M21 3v5h-5"/>
-        <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/>
-        <path d="M8 16H3v5"/>
-      </svg>
-      <a href="doc-lifecycle/sdlc-integration/">Software integration</a>
-    </h3>
-    <p>Implementing shift-left methodologies within the SDLC to sync documentation sprints directly with definitions of done and releases</p>
-  </div>
+    function drawGrid() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      const isDark = document.body.getAttribute('data-md-color-scheme') === 'slate' || 
+                     document.documentElement.getAttribute('data-md-color-scheme') === 'slate';
+      
+      // Pull subtle theme-matching tone using accent/foreground variables
+      const dotColor = isDark ? '195, 167, 138' : '139, 111, 76'; 
 
-</div>
+      for (let x = spacing / 2; x < canvas.width; x += spacing) {
+        for (let y = spacing / 2; y < canvas.height; y += spacing) {
+          let dx = mouse.x - x;
+          let dy = mouse.y - y;
+          let distance = Math.sqrt(dx * dx + dy * dy);
+          
+          let alpha = isDark ? 0.12 : 0.16;
+          let scale = dotRadius;
+
+          if (distance < mouse.radius) {
+            let factor = (1 - distance / mouse.radius);
+            alpha += factor * 0.45;
+            scale += factor * 1.2;
+          }
+
+          ctx.beginPath();
+          ctx.arc(x, y, scale, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(${dotColor}, ${alpha})`;
+          ctx.fill();
+        }
+      }
+    }
+
+    function animate() {
+      drawGrid();
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  });
+</script>

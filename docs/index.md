@@ -103,68 +103,89 @@ hide:
 </div>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const canvas = document.getElementById('page-dot-matrix');
-    const ctx = canvas.getContext('2d');
-
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    const spacing = 32;
-    const dotRadius = 1.1;
-    let mouse = { x: -1000, y: -1000, radius: 140 };
-
-    window.addEventListener('mousemove', (e) => {
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
-    });
-
-    window.addEventListener('mouseleave', () => {
-      mouse.x = -1000;
-      mouse.y = -1000;
-    });
-
-    function drawGrid() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+  (function() {
+    function initDotMatrix() {
+      const canvas = document.getElementById('page-dot-matrix');
+      if (!canvas) return;
       
-      const isDark = document.body.getAttribute('data-md-color-scheme') === 'slate' || 
-                     document.documentElement.getAttribute('data-md-color-scheme') === 'slate';
-      
-      // Pull subtle theme-matching tone using accent/foreground variables
-      const dotColor = isDark ? '195, 167, 138' : '139, 111, 76'; 
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
 
-      for (let x = spacing / 2; x < canvas.width; x += spacing) {
-        for (let y = spacing / 2; y < canvas.height; y += spacing) {
-          let dx = mouse.x - x;
-          let dy = mouse.y - y;
-          let distance = Math.sqrt(dx * dx + dy * dy);
-          
-          let alpha = isDark ? 0.12 : 0.16;
-          let scale = dotRadius;
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
 
-          if (distance < mouse.radius) {
-            let factor = (1 - distance / mouse.radius);
-            alpha += factor * 0.45;
-            scale += factor * 1.2;
+      const spacing = 32;
+      const dotRadius = 1.1;
+      let mouse = { x: -1000, y: -1000, radius: 140 };
+
+      function onMouseMove(e) {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+      }
+
+      function onMouseLeave() {
+        mouse.x = -1000;
+        mouse.y = -1000;
+      }
+
+      window.addEventListener('mousemove', onMouseMove);
+      window.addEventListener('mouseleave', onMouseLeave);
+
+      function drawGrid() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        const isDark = document.body.getAttribute('data-md-color-scheme') === 'slate' || 
+                       document.documentElement.getAttribute('data-md-color-scheme') === 'slate';
+        
+        const dotColor = isDark ? '195, 167, 138' : '139, 111, 76'; 
+
+        for (let x = spacing / 2; x < canvas.width; x += spacing) {
+          for (let y = spacing / 2; y < canvas.height; y += spacing) {
+            let dx = mouse.x - x;
+            let dy = mouse.y - y;
+            let distance = Math.sqrt(dx * dx + dy * dy);
+            
+            let alpha = isDark ? 0.12 : 0.16;
+            let scale = dotRadius;
+
+            if (distance < mouse.radius) {
+              let factor = (1 - distance / mouse.radius);
+              alpha += factor * 0.45;
+              scale += factor * 1.2;
+            }
+
+            ctx.beginPath();
+            ctx.arc(x, y, scale, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(${dotColor}, ${alpha})`;
+            ctx.fill();
           }
-
-          ctx.beginPath();
-          ctx.arc(x, y, scale, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(${dotColor}, ${alpha})`;
-          ctx.fill();
         }
       }
+
+      let animationFrameId;
+      function animate() {
+        drawGrid();
+        animationFrameId = requestAnimationFrame(animate);
+      }
+      animate();
     }
 
-    function animate() {
-      drawGrid();
-      requestAnimationFrame(animate);
+    // Run on initial page load
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initDotMatrix);
+    } else {
+      initDotMatrix();
     }
 
-    animate();
-  });
+    // Re-run on Zensical / Material client-side navigation events
+    if (typeof document$ !== 'undefined') {
+      document$.subscribe(function() {
+        initDotMatrix();
+      });
+    }
+  })();
 </script>
